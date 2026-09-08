@@ -1,0 +1,1462 @@
+match_id,date,day,season,home_team,away_team,home_goals,away_goals,result,scoreline,competition,source
+1,2010-09-14,Tue,2010,Barcelona,Panathinaikos,5,1,H,5-1,UEFA Champions League,kaggle_ucl
+2,2010-09-14,Tue,2010,Benfica,Hapoel Tel Aviv,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+3,2010-09-14,Tue,2010,Bursaspor,Valencia,0,4,A,0-4,UEFA Champions League,kaggle_ucl
+4,2010-09-14,Tue,2010,FC Copenhagen,Rubin Kazan,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+5,2010-09-14,Tue,2010,Lyon,Schalke 04,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+6,2010-09-14,Tue,2010,Manchester Utd,Rangers,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+7,2010-09-14,Tue,2010,Twente,Inter,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+8,2010-09-14,Tue,2010,Werder Bremen,Tottenham,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+9,2010-09-15,Wed,2010,Arsenal,Braga,6,0,H,6-0,UEFA Champions League,kaggle_ucl
+10,2010-09-15,Wed,2010,Bayern Munich,Roma,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+11,2010-09-15,Wed,2010,CFR Cluj,Basel,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+12,2010-09-15,Wed,2010,Marseille,Spartak Moscow,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+13,2010-09-15,Wed,2010,Milan,Auxerre,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+14,2010-09-15,Wed,2010,MÅ K Å½ilina,Chelsea,1,4,A,1-4,UEFA Champions League,kaggle_ucl
+15,2010-09-15,Wed,2010,Real Madrid,Ajax,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+16,2010-09-15,Wed,2010,Shakhtar,Partizan,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+17,2010-09-28,Tue,2010,Ajax,Milan,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+18,2010-09-28,Tue,2010,Auxerre,Real Madrid,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+19,2010-09-28,Tue,2010,Basel,Bayern Munich,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+20,2010-09-28,Tue,2010,Braga,Shakhtar,0,3,A,0-3,UEFA Champions League,kaggle_ucl
+21,2010-09-28,Tue,2010,Chelsea,Marseille,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+22,2010-09-28,Tue,2010,Partizan,Arsenal,1,3,A,1-3,UEFA Champions League,kaggle_ucl
+23,2010-09-28,Tue,2010,Roma,CFR Cluj,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+24,2010-09-28,Tue,2010,Spartak Moscow,MÅ K Å½ilina,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+25,2010-09-29,Wed,2010,Hapoel Tel Aviv,Lyon,1,3,A,1-3,UEFA Champions League,kaggle_ucl
+26,2010-09-29,Wed,2010,Inter,Werder Bremen,4,0,H,4-0,UEFA Champions League,kaggle_ucl
+27,2010-09-29,Wed,2010,Panathinaikos,FC Copenhagen,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+28,2010-09-29,Wed,2010,Rangers,Bursaspor,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+29,2010-09-29,Wed,2010,Rubin Kazan,Barcelona,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+30,2010-09-29,Wed,2010,Schalke 04,Benfica,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+31,2010-09-29,Wed,2010,Tottenham,Twente,4,1,H,4-1,UEFA Champions League,kaggle_ucl
+32,2010-09-29,Wed,2010,Valencia,Manchester Utd,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+33,2010-10-19,Tue,2010,Ajax,Auxerre,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+34,2010-10-19,Tue,2010,Arsenal,Shakhtar,5,1,H,5-1,UEFA Champions League,kaggle_ucl
+35,2010-10-19,Tue,2010,Bayern Munich,CFR Cluj,3,2,H,3-2,UEFA Champions League,kaggle_ucl
+36,2010-10-19,Tue,2010,Braga,Partizan,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+37,2010-10-19,Tue,2010,Marseille,MÅ K Å½ilina,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+38,2010-10-19,Tue,2010,Real Madrid,Milan,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+39,2010-10-19,Tue,2010,Roma,Basel,1,3,A,1-3,UEFA Champions League,kaggle_ucl
+40,2010-10-19,Tue,2010,Spartak Moscow,Chelsea,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+41,2010-10-20,Wed,2010,Barcelona,FC Copenhagen,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+42,2010-10-20,Wed,2010,Inter,Tottenham,4,3,H,4-3,UEFA Champions League,kaggle_ucl
+43,2010-10-20,Wed,2010,Lyon,Benfica,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+44,2010-10-20,Wed,2010,Manchester Utd,Bursaspor,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+45,2010-10-20,Wed,2010,Panathinaikos,Rubin Kazan,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+46,2010-10-20,Wed,2010,Rangers,Valencia,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+47,2010-10-20,Wed,2010,Schalke 04,Hapoel Tel Aviv,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+48,2010-10-20,Wed,2010,Twente,Werder Bremen,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+49,2010-11-02,Tue,2010,Benfica,Lyon,4,3,H,4-3,UEFA Champions League,kaggle_ucl
+50,2010-11-02,Tue,2010,FC Copenhagen,Barcelona,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+51,2010-11-02,Tue,2010,Hapoel Tel Aviv,Schalke 04,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+52,2010-11-02,Tue,2010,Rubin Kazan,Panathinaikos,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+53,2010-11-02,Tue,2010,Tottenham,Inter,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+54,2010-11-02,Tue,2010,Valencia,Rangers,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+55,2010-11-02,Tue,2010,Werder Bremen,Twente,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+56,2010-11-03,Wed,2010,Auxerre,Ajax,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+57,2010-11-03,Wed,2010,Basel,Roma,2,3,A,2-3,UEFA Champions League,kaggle_ucl
+58,2010-11-03,Wed,2010,CFR Cluj,Bayern Munich,0,4,A,0-4,UEFA Champions League,kaggle_ucl
+59,2010-11-03,Wed,2010,Chelsea,Spartak Moscow,4,1,H,4-1,UEFA Champions League,kaggle_ucl
+60,2010-11-03,Wed,2010,Milan,Real Madrid,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+61,2010-11-03,Wed,2010,MÅ K Å½ilina,Marseille,0,7,A,0-7,UEFA Champions League,kaggle_ucl
+62,2010-11-03,Wed,2010,Partizan,Braga,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+63,2010-11-03,Wed,2010,Shakhtar,Arsenal,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+64,2010-11-23,Tue,2010,Ajax,Real Madrid,0,4,A,0-4,UEFA Champions League,kaggle_ucl
+65,2010-11-23,Tue,2010,Auxerre,Milan,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+66,2010-11-23,Tue,2010,Basel,CFR Cluj,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+67,2010-11-23,Tue,2010,Braga,Arsenal,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+68,2010-11-23,Tue,2010,Chelsea,MÅ K Å½ilina,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+69,2010-11-23,Tue,2010,Partizan,Shakhtar,0,3,A,0-3,UEFA Champions League,kaggle_ucl
+70,2010-11-23,Tue,2010,Roma,Bayern Munich,3,2,H,3-2,UEFA Champions League,kaggle_ucl
+71,2010-11-23,Tue,2010,Spartak Moscow,Marseille,0,3,A,0-3,UEFA Champions League,kaggle_ucl
+72,2010-11-24,Wed,2010,Hapoel Tel Aviv,Benfica,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+73,2010-11-24,Wed,2010,Inter,Twente,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+74,2010-11-24,Wed,2010,Panathinaikos,Barcelona,0,3,A,0-3,UEFA Champions League,kaggle_ucl
+75,2010-11-24,Wed,2010,Rangers,Manchester Utd,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+76,2010-11-24,Wed,2010,Rubin Kazan,FC Copenhagen,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+77,2010-11-24,Wed,2010,Schalke 04,Lyon,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+78,2010-11-24,Wed,2010,Tottenham,Werder Bremen,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+79,2010-12-07,Tue,2010,Barcelona,Rubin Kazan,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+80,2010-12-07,Tue,2010,Benfica,Schalke 04,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+81,2010-12-07,Tue,2010,Bursaspor,Rangers,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+82,2010-12-07,Tue,2010,FC Copenhagen,Panathinaikos,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+83,2010-12-07,Tue,2010,Lyon,Hapoel Tel Aviv,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+84,2010-12-07,Tue,2010,Manchester Utd,Valencia,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+85,2010-12-07,Tue,2010,Twente,Tottenham,3,3,D,3-3,UEFA Champions League,kaggle_ucl
+86,2010-12-07,Tue,2010,Werder Bremen,Inter,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+87,2010-12-08,Wed,2010,Arsenal,Partizan,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+88,2010-12-08,Wed,2010,Bayern Munich,Basel,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+89,2010-12-08,Wed,2010,CFR Cluj,Roma,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+90,2010-12-08,Wed,2010,Marseille,Chelsea,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+91,2010-12-08,Wed,2010,Milan,Ajax,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+92,2010-12-08,Wed,2010,MÅ K Å½ilina,Spartak Moscow,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+93,2010-12-08,Wed,2010,Real Madrid,Auxerre,4,0,H,4-0,UEFA Champions League,kaggle_ucl
+94,2010-12-08,Wed,2010,Shakhtar,Braga,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+95,2011-02-15,Tue,2010,Valencia,Schalke 04,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+96,2011-02-16,Wed,2010,Arsenal,Barcelona,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+97,2011-02-16,Wed,2010,Roma,Shakhtar,2,3,A,2-3,UEFA Champions League,kaggle_ucl
+98,2011-02-22,Tue,2010,FC Copenhagen,Chelsea,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+99,2011-02-22,Tue,2010,Lyon,Real Madrid,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+100,2011-02-23,Wed,2010,Inter,Bayern Munich,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+101,2011-02-23,Wed,2010,Marseille,Manchester Utd,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+102,2011-03-08,Tue,2010,Barcelona,Arsenal,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+103,2011-03-08,Tue,2010,Shakhtar,Roma,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+104,2011-03-09,Wed,2010,Schalke 04,Valencia,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+105,2011-03-09,Wed,2010,Tottenham,Milan,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+106,2011-03-15,Tue,2010,Bayern Munich,Inter,2,3,A,2-3,UEFA Champions League,kaggle_ucl
+107,2011-03-15,Tue,2010,Manchester Utd,Marseille,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+108,2011-03-16,Wed,2010,Chelsea,FC Copenhagen,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+109,2011-03-16,Wed,2010,Real Madrid,Lyon,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+110,2011-04-05,Tue,2010,Inter,Schalke 04,2,5,A,2-5,UEFA Champions League,kaggle_ucl
+111,2011-04-05,Tue,2010,Real Madrid,Tottenham,4,0,H,4-0,UEFA Champions League,kaggle_ucl
+112,2011-04-06,Wed,2010,Barcelona,Shakhtar,5,1,H,5-1,UEFA Champions League,kaggle_ucl
+113,2011-04-06,Wed,2010,Chelsea,Manchester Utd,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+114,2011-04-12,Tue,2010,Manchester Utd,Chelsea,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+115,2011-04-12,Tue,2010,Shakhtar,Barcelona,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+116,2011-04-13,Wed,2010,Schalke 04,Inter,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+117,2011-04-13,Wed,2010,Tottenham,Real Madrid,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+118,2011-04-26,Tue,2010,Schalke 04,Manchester Utd,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+119,2011-04-27,Wed,2010,Real Madrid,Barcelona,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+120,2011-05-03,Tue,2010,Barcelona,Real Madrid,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+121,2011-05-04,Wed,2010,Manchester Utd,Schalke 04,4,1,H,4-1,UEFA Champions League,kaggle_ucl
+122,2011-05-28,Sat,2010,Barcelona,Manchester Utd,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+123,2011-09-13,Tue,2011,APOEL FC,Zenit,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+124,2011-09-13,Tue,2011,Barcelona,Milan,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+125,2011-09-13,Tue,2011,Chelsea,Leverkusen,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+126,2011-09-13,Tue,2011,Dortmund,Arsenal,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+127,2011-09-13,Tue,2011,Genk,Valencia,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+128,2011-09-13,Tue,2011,Olympiacos,Marseille,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+129,2011-09-13,Tue,2011,Porto,Shakhtar,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+130,2011-09-13,Tue,2011,Viktoria PlzeÅ,BATE Borisov,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+131,2011-09-14,Wed,2011,Ajax,Lyon,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+132,2011-09-14,Wed,2011,Basel,OÈelul GalaÈi,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+133,2011-09-14,Wed,2011,Benfica,Manchester Utd,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+134,2011-09-14,Wed,2011,Dinamo Zagreb,Real Madrid,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+135,2011-09-14,Wed,2011,Inter,Trabzonspor,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+136,2011-09-14,Wed,2011,Lille,CSKA Moscow,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+137,2011-09-14,Wed,2011,Manchester City,Napoli,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+138,2011-09-14,Wed,2011,Villarreal,Bayern Munich,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+139,2011-09-27,Tue,2011,Bayern Munich,Manchester City,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+140,2011-09-27,Tue,2011,CSKA Moscow,Inter,2,3,A,2-3,UEFA Champions League,kaggle_ucl
+141,2011-09-27,Tue,2011,Lyon,Dinamo Zagreb,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+142,2011-09-27,Tue,2011,Manchester Utd,Basel,3,3,D,3-3,UEFA Champions League,kaggle_ucl
+143,2011-09-27,Tue,2011,Napoli,Villarreal,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+144,2011-09-27,Tue,2011,OÈelul GalaÈi,Benfica,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+145,2011-09-27,Tue,2011,Real Madrid,Ajax,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+146,2011-09-27,Tue,2011,Trabzonspor,Lille,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+147,2011-09-28,Wed,2011,Arsenal,Olympiacos,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+148,2011-09-28,Wed,2011,BATE Borisov,Barcelona,0,5,A,0-5,UEFA Champions League,kaggle_ucl
+149,2011-09-28,Wed,2011,Leverkusen,Genk,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+150,2011-09-28,Wed,2011,Marseille,Dortmund,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+151,2011-09-28,Wed,2011,Milan,Viktoria PlzeÅ,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+152,2011-09-28,Wed,2011,Shakhtar,APOEL FC,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+153,2011-09-28,Wed,2011,Valencia,Chelsea,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+154,2011-09-28,Wed,2011,Zenit,Porto,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+155,2011-10-18,Tue,2011,Basel,Benfica,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+156,2011-10-18,Tue,2011,CSKA Moscow,Trabzonspor,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+157,2011-10-18,Tue,2011,Dinamo Zagreb,Ajax,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+158,2011-10-18,Tue,2011,Lille,Inter,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+159,2011-10-18,Tue,2011,Manchester City,Villarreal,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+160,2011-10-18,Tue,2011,Napoli,Bayern Munich,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+161,2011-10-18,Tue,2011,OÈelul GalaÈi,Manchester Utd,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+162,2011-10-18,Tue,2011,Real Madrid,Lyon,4,0,H,4-0,UEFA Champions League,kaggle_ucl
+163,2011-10-19,Wed,2011,Barcelona,Viktoria PlzeÅ,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+164,2011-10-19,Wed,2011,Chelsea,Genk,5,0,H,5-0,UEFA Champions League,kaggle_ucl
+165,2011-10-19,Wed,2011,Leverkusen,Valencia,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+166,2011-10-19,Wed,2011,Marseille,Arsenal,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+167,2011-10-19,Wed,2011,Milan,BATE Borisov,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+168,2011-10-19,Wed,2011,Olympiacos,Dortmund,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+169,2011-10-19,Wed,2011,Porto,APOEL FC,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+170,2011-10-19,Wed,2011,Shakhtar,Zenit,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+171,2011-11-01,Tue,2011,APOEL FC,Porto,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+172,2011-11-01,Tue,2011,Arsenal,Marseille,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+173,2011-11-01,Tue,2011,BATE Borisov,Milan,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+174,2011-11-01,Tue,2011,Dortmund,Olympiacos,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+175,2011-11-01,Tue,2011,Genk,Chelsea,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+176,2011-11-01,Tue,2011,Viktoria PlzeÅ,Barcelona,0,4,A,0-4,UEFA Champions League,kaggle_ucl
+177,2011-11-01,Tue,2011,Zenit,Shakhtar,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+178,2011-11-02,Wed,2011,Ajax,Dinamo Zagreb,4,0,H,4-0,UEFA Champions League,kaggle_ucl
+179,2011-11-02,Wed,2011,Bayern Munich,Napoli,3,2,H,3-2,UEFA Champions League,kaggle_ucl
+180,2011-11-02,Wed,2011,Benfica,Basel,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+181,2011-11-02,Wed,2011,Inter,Lille,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+182,2011-11-02,Wed,2011,Lyon,Real Madrid,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+183,2011-11-02,Wed,2011,Manchester Utd,OÈelul GalaÈi,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+184,2011-11-02,Wed,2011,Trabzonspor,CSKA Moscow,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+185,2011-11-02,Wed,2011,Villarreal,Manchester City,0,3,A,0-3,UEFA Champions League,kaggle_ucl
+186,2011-11-22,Tue,2011,Bayern Munich,Villarreal,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+187,2011-11-22,Tue,2011,CSKA Moscow,Lille,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+188,2011-11-22,Tue,2011,Lyon,Ajax,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+189,2011-11-22,Tue,2011,Manchester Utd,Benfica,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+190,2011-11-22,Tue,2011,Napoli,Manchester City,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+191,2011-11-22,Tue,2011,OÈelul GalaÈi,Basel,2,3,A,2-3,UEFA Champions League,kaggle_ucl
+192,2011-11-22,Tue,2011,Real Madrid,Dinamo Zagreb,6,2,H,6-2,UEFA Champions League,kaggle_ucl
+193,2011-11-22,Tue,2011,Trabzonspor,Inter,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+194,2011-11-23,Wed,2011,Arsenal,Dortmund,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+195,2011-11-23,Wed,2011,BATE Borisov,Viktoria PlzeÅ,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+196,2011-11-23,Wed,2011,Marseille,Olympiacos,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+197,2011-11-23,Wed,2011,Milan,Barcelona,2,3,A,2-3,UEFA Champions League,kaggle_ucl
+198,2011-11-23,Wed,2011,Shakhtar,Porto,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+199,2011-11-23,Wed,2011,Valencia,Genk,7,0,H,7-0,UEFA Champions League,kaggle_ucl
+200,2011-11-23,Wed,2011,Zenit,APOEL FC,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+201,2011-12-06,Tue,2011,APOEL FC,Shakhtar,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+202,2011-12-06,Tue,2011,Barcelona,BATE Borisov,4,0,H,4-0,UEFA Champions League,kaggle_ucl
+203,2011-12-06,Tue,2011,Chelsea,Valencia,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+204,2011-12-06,Tue,2011,Dortmund,Marseille,2,3,A,2-3,UEFA Champions League,kaggle_ucl
+205,2011-12-06,Tue,2011,Genk,Leverkusen,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+206,2011-12-06,Tue,2011,Olympiacos,Arsenal,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+207,2011-12-06,Tue,2011,Porto,Zenit,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+208,2011-12-06,Tue,2011,Viktoria PlzeÅ,Milan,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+209,2011-12-07,Wed,2011,Ajax,Real Madrid,0,3,A,0-3,UEFA Champions League,kaggle_ucl
+210,2011-12-07,Wed,2011,Basel,Manchester Utd,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+211,2011-12-07,Wed,2011,Benfica,OÈelul GalaÈi,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+212,2011-12-07,Wed,2011,Dinamo Zagreb,Lyon,1,7,A,1-7,UEFA Champions League,kaggle_ucl
+213,2011-12-07,Wed,2011,Inter,CSKA Moscow,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+214,2011-12-07,Wed,2011,Lille,Trabzonspor,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+215,2011-12-07,Wed,2011,Manchester City,Bayern Munich,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+216,2011-12-07,Wed,2011,Villarreal,Napoli,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+217,2012-02-14,Tue,2011,Leverkusen,Barcelona,1,3,A,1-3,UEFA Champions League,kaggle_ucl
+218,2012-02-15,Wed,2011,Milan,Arsenal,4,0,H,4-0,UEFA Champions League,kaggle_ucl
+219,2012-02-15,Wed,2011,Zenit,Benfica,3,2,H,3-2,UEFA Champions League,kaggle_ucl
+220,2012-02-21,Tue,2011,CSKA Moscow,Real Madrid,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+221,2012-02-21,Tue,2011,Napoli,Chelsea,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+222,2012-02-22,Wed,2011,Basel,Bayern Munich,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+223,2012-02-22,Wed,2011,Marseille,Inter,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+224,2012-03-06,Tue,2011,Arsenal,Milan,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+225,2012-03-06,Tue,2011,Benfica,Zenit,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+226,2012-03-07,Wed,2011,APOEL FC,Lyon,4,3,H,4-3,UEFA Champions League,kaggle_ucl
+227,2012-03-07,Wed,2011,Barcelona,Leverkusen,7,1,H,7-1,UEFA Champions League,kaggle_ucl
+228,2012-03-13,Tue,2011,Bayern Munich,Basel,7,0,H,7-0,UEFA Champions League,kaggle_ucl
+229,2012-03-13,Tue,2011,Inter,Marseille,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+230,2012-03-14,Wed,2011,Chelsea,Napoli,4,1,H,4-1,UEFA Champions League,kaggle_ucl
+231,2012-03-14,Wed,2011,Real Madrid,CSKA Moscow,4,1,H,4-1,UEFA Champions League,kaggle_ucl
+232,2012-03-27,Tue,2011,APOEL FC,Real Madrid,0,3,A,0-3,UEFA Champions League,kaggle_ucl
+233,2012-03-27,Tue,2011,Benfica,Chelsea,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+234,2012-03-28,Wed,2011,Marseille,Bayern Munich,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+235,2012-03-28,Wed,2011,Milan,Barcelona,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+236,2012-04-03,Tue,2011,Barcelona,Milan,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+237,2012-04-03,Tue,2011,Bayern Munich,Marseille,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+238,2012-04-04,Wed,2011,Chelsea,Benfica,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+239,2012-04-04,Wed,2011,Real Madrid,APOEL FC,5,2,H,5-2,UEFA Champions League,kaggle_ucl
+240,2012-04-17,Tue,2011,Bayern Munich,Real Madrid,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+241,2012-04-18,Wed,2011,Chelsea,Barcelona,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+242,2012-04-24,Tue,2011,Barcelona,Chelsea,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+243,2012-04-25,Wed,2011,Real Madrid,Bayern Munich,1,3,A,1-3,UEFA Champions League,kaggle_ucl
+244,2012-05-19,Sat,2011,Bayern Munich,Chelsea,3,4,A,3-4,UEFA Champions League,kaggle_ucl
+245,2012-09-18,Tue,2012,Dinamo Zagreb,Porto,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+246,2012-09-18,Tue,2012,Dortmund,Ajax,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+247,2012-09-18,Tue,2012,Milan,Anderlecht,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+248,2012-09-18,Tue,2012,Montpellier,Arsenal,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+249,2012-09-18,Tue,2012,Málaga,Zenit,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+250,2012-09-18,Tue,2012,Olympiacos,Schalke 04,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+251,2012-09-18,Tue,2012,Paris S-G,Dynamo Kyiv,4,1,H,4-1,UEFA Champions League,kaggle_ucl
+252,2012-09-18,Tue,2012,Real Madrid,Manchester City,3,2,H,3-2,UEFA Champions League,kaggle_ucl
+253,2012-09-19,Wed,2012,Barcelona,Spartak Moscow,3,2,H,3-2,UEFA Champions League,kaggle_ucl
+254,2012-09-19,Wed,2012,Bayern Munich,Valencia,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+255,2012-09-19,Wed,2012,Braga,CFR Cluj,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+256,2012-09-19,Wed,2012,Celtic,Benfica,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+257,2012-09-19,Wed,2012,Chelsea,Juventus,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+258,2012-09-19,Wed,2012,Lille,BATE Borisov,1,3,A,1-3,UEFA Champions League,kaggle_ucl
+259,2012-09-19,Wed,2012,Manchester Utd,Galatasaray,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+260,2012-09-19,Wed,2012,Shakhtar,Nordsjælland,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+261,2012-10-02,Tue,2012,BATE Borisov,Bayern Munich,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+262,2012-10-02,Tue,2012,Benfica,Barcelona,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+263,2012-10-02,Tue,2012,CFR Cluj,Manchester Utd,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+264,2012-10-02,Tue,2012,Galatasaray,Braga,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+265,2012-10-02,Tue,2012,Juventus,Shakhtar,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+266,2012-10-02,Tue,2012,Nordsjælland,Chelsea,0,4,A,0-4,UEFA Champions League,kaggle_ucl
+267,2012-10-02,Tue,2012,Spartak Moscow,Celtic,2,3,A,2-3,UEFA Champions League,kaggle_ucl
+268,2012-10-02,Tue,2012,Valencia,Lille,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+269,2012-10-03,Wed,2012,Ajax,Real Madrid,1,4,A,1-4,UEFA Champions League,kaggle_ucl
+270,2012-10-03,Wed,2012,Anderlecht,Málaga,0,3,A,0-3,UEFA Champions League,kaggle_ucl
+271,2012-10-03,Wed,2012,Arsenal,Olympiacos,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+272,2012-10-03,Wed,2012,Dynamo Kyiv,Dinamo Zagreb,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+273,2012-10-03,Wed,2012,Manchester City,Dortmund,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+274,2012-10-03,Wed,2012,Porto,Paris S-G,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+275,2012-10-03,Wed,2012,Schalke 04,Montpellier,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+276,2012-10-03,Wed,2012,Zenit,Milan,2,3,A,2-3,UEFA Champions League,kaggle_ucl
+277,2012-10-23,Tue,2012,BATE Borisov,Valencia,0,3,A,0-3,UEFA Champions League,kaggle_ucl
+278,2012-10-23,Tue,2012,Barcelona,Celtic,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+279,2012-10-23,Tue,2012,Galatasaray,CFR Cluj,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+280,2012-10-23,Tue,2012,Lille,Bayern Munich,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+281,2012-10-23,Tue,2012,Manchester Utd,Braga,3,2,H,3-2,UEFA Champions League,kaggle_ucl
+282,2012-10-23,Tue,2012,Nordsjælland,Juventus,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+283,2012-10-23,Tue,2012,Shakhtar,Chelsea,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+284,2012-10-23,Tue,2012,Spartak Moscow,Benfica,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+285,2012-10-24,Wed,2012,Ajax,Manchester City,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+286,2012-10-24,Wed,2012,Arsenal,Schalke 04,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+287,2012-10-24,Wed,2012,Dinamo Zagreb,Paris S-G,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+288,2012-10-24,Wed,2012,Dortmund,Real Madrid,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+289,2012-10-24,Wed,2012,Montpellier,Olympiacos,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+290,2012-10-24,Wed,2012,Málaga,Milan,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+291,2012-10-24,Wed,2012,Porto,Dynamo Kyiv,3,2,H,3-2,UEFA Champions League,kaggle_ucl
+292,2012-10-24,Wed,2012,Zenit,Anderlecht,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+293,2012-11-06,Tue,2012,Anderlecht,Zenit,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+294,2012-11-06,Tue,2012,Dynamo Kyiv,Porto,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+295,2012-11-06,Tue,2012,Milan,Málaga,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+296,2012-11-06,Tue,2012,Olympiacos,Montpellier,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+297,2012-11-06,Tue,2012,Paris S-G,Dinamo Zagreb,4,0,H,4-0,UEFA Champions League,kaggle_ucl
+298,2012-11-06,Tue,2012,Real Madrid,Dortmund,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+299,2012-11-06,Tue,2012,Schalke 04,Arsenal,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+300,2012-11-07,Wed,2012,Bayern Munich,Lille,6,1,H,6-1,UEFA Champions League,kaggle_ucl
+301,2012-11-07,Wed,2012,Benfica,Spartak Moscow,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+302,2012-11-07,Wed,2012,Braga,Manchester Utd,1,3,A,1-3,UEFA Champions League,kaggle_ucl
+303,2012-11-07,Wed,2012,CFR Cluj,Galatasaray,1,3,A,1-3,UEFA Champions League,kaggle_ucl
+304,2012-11-07,Wed,2012,Celtic,Barcelona,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+305,2012-11-07,Wed,2012,Chelsea,Shakhtar,3,2,H,3-2,UEFA Champions League,kaggle_ucl
+306,2012-11-07,Wed,2012,Juventus,Nordsjælland,4,0,H,4-0,UEFA Champions League,kaggle_ucl
+307,2012-11-07,Wed,2012,Valencia,BATE Borisov,4,2,H,4-2,UEFA Champions League,kaggle_ucl
+308,2012-11-20,Tue,2012,BATE Borisov,Lille,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+309,2012-11-20,Tue,2012,Benfica,Celtic,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+310,2012-11-20,Tue,2012,CFR Cluj,Braga,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+311,2012-11-20,Tue,2012,Galatasaray,Manchester Utd,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+312,2012-11-20,Tue,2012,Juventus,Chelsea,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+313,2012-11-20,Tue,2012,Nordsjælland,Shakhtar,2,5,A,2-5,UEFA Champions League,kaggle_ucl
+314,2012-11-20,Tue,2012,Spartak Moscow,Barcelona,0,3,A,0-3,UEFA Champions League,kaggle_ucl
+315,2012-11-20,Tue,2012,Valencia,Bayern Munich,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+316,2012-11-21,Wed,2012,Ajax,Dortmund,1,4,A,1-4,UEFA Champions League,kaggle_ucl
+317,2012-11-21,Wed,2012,Anderlecht,Milan,1,3,A,1-3,UEFA Champions League,kaggle_ucl
+318,2012-11-21,Wed,2012,Arsenal,Montpellier,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+319,2012-11-21,Wed,2012,Dynamo Kyiv,Paris S-G,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+320,2012-11-21,Wed,2012,Manchester City,Real Madrid,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+321,2012-11-21,Wed,2012,Porto,Dinamo Zagreb,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+322,2012-11-21,Wed,2012,Zenit,Málaga,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+323,2012-12-04,Tue,2012,Dinamo Zagreb,Dynamo Kyiv,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+324,2012-12-04,Tue,2012,Dortmund,Manchester City,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+325,2012-12-04,Tue,2012,Milan,Zenit,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+326,2012-12-04,Tue,2012,Montpellier,Schalke 04,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+327,2012-12-04,Tue,2012,Málaga,Anderlecht,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+328,2012-12-04,Tue,2012,Olympiacos,Arsenal,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+329,2012-12-04,Tue,2012,Paris S-G,Porto,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+330,2012-12-04,Tue,2012,Real Madrid,Ajax,4,1,H,4-1,UEFA Champions League,kaggle_ucl
+331,2012-12-05,Wed,2012,Barcelona,Benfica,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+332,2012-12-05,Wed,2012,Bayern Munich,BATE Borisov,4,1,H,4-1,UEFA Champions League,kaggle_ucl
+333,2012-12-05,Wed,2012,Braga,Galatasaray,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+334,2012-12-05,Wed,2012,Celtic,Spartak Moscow,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+335,2012-12-05,Wed,2012,Chelsea,Nordsjælland,6,1,H,6-1,UEFA Champions League,kaggle_ucl
+336,2012-12-05,Wed,2012,Lille,Valencia,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+337,2012-12-05,Wed,2012,Manchester Utd,CFR Cluj,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+338,2012-12-05,Wed,2012,Shakhtar,Juventus,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+339,2013-02-12,Tue,2012,Celtic,Juventus,0,3,A,0-3,UEFA Champions League,kaggle_ucl
+340,2013-02-13,Wed,2012,Real Madrid,Manchester Utd,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+341,2013-02-13,Wed,2012,Shakhtar,Dortmund,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+342,2013-02-19,Tue,2012,Arsenal,Bayern Munich,1,3,A,1-3,UEFA Champions League,kaggle_ucl
+343,2013-02-19,Tue,2012,Porto,Málaga,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+344,2013-02-20,Wed,2012,Galatasaray,Schalke 04,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+345,2013-02-20,Wed,2012,Milan,Barcelona,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+346,2013-03-05,Tue,2012,Dortmund,Shakhtar,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+347,2013-03-05,Tue,2012,Manchester Utd,Real Madrid,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+348,2013-03-06,Wed,2012,Juventus,Celtic,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+349,2013-03-06,Wed,2012,Paris S-G,Valencia,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+350,2013-03-12,Tue,2012,Barcelona,Milan,4,0,H,4-0,UEFA Champions League,kaggle_ucl
+351,2013-03-12,Tue,2012,Schalke 04,Galatasaray,2,3,A,2-3,UEFA Champions League,kaggle_ucl
+352,2013-03-13,Wed,2012,Bayern Munich,Arsenal,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+353,2013-03-13,Wed,2012,Málaga,Porto,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+354,2013-04-02,Tue,2012,Bayern Munich,Juventus,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+355,2013-04-02,Tue,2012,Paris S-G,Barcelona,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+356,2013-04-03,Wed,2012,Málaga,Dortmund,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+357,2013-04-03,Wed,2012,Real Madrid,Galatasaray,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+358,2013-04-09,Tue,2012,Dortmund,Málaga,3,2,H,3-2,UEFA Champions League,kaggle_ucl
+359,2013-04-09,Tue,2012,Galatasaray,Real Madrid,3,2,H,3-2,UEFA Champions League,kaggle_ucl
+360,2013-04-10,Wed,2012,Barcelona,Paris S-G,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+361,2013-04-10,Wed,2012,Juventus,Bayern Munich,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+362,2013-04-23,Tue,2012,Bayern Munich,Barcelona,4,0,H,4-0,UEFA Champions League,kaggle_ucl
+363,2013-04-24,Wed,2012,Dortmund,Real Madrid,4,1,H,4-1,UEFA Champions League,kaggle_ucl
+364,2013-04-30,Tue,2012,Real Madrid,Dortmund,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+365,2013-05-01,Wed,2012,Barcelona,Bayern Munich,0,3,A,0-3,UEFA Champions League,kaggle_ucl
+366,2013-05-25,Sat,2012,Dortmund,Bayern Munich,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+367,2013-09-17,Tue,2013,Bayern Munich,CSKA Moscow,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+368,2013-09-17,Tue,2013,Benfica,Anderlecht,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+369,2013-09-17,Tue,2013,FC Copenhagen,Juventus,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+370,2013-09-17,Tue,2013,Galatasaray,Real Madrid,1,6,A,1-6,UEFA Champions League,kaggle_ucl
+371,2013-09-17,Tue,2013,Manchester Utd,Leverkusen,4,2,H,4-2,UEFA Champions League,kaggle_ucl
+372,2013-09-17,Tue,2013,Olympiacos,Paris S-G,1,4,A,1-4,UEFA Champions League,kaggle_ucl
+373,2013-09-17,Tue,2013,Real Sociedad,Shakhtar,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+374,2013-09-17,Tue,2013,Viktoria PlzeÅ,Manchester City,0,3,A,0-3,UEFA Champions League,kaggle_ucl
+375,2013-09-18,Wed,2013,Atlético Madrid,Zenit,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+376,2013-09-18,Wed,2013,Austria Wien,Porto,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+377,2013-09-18,Wed,2013,Barcelona,Ajax,4,0,H,4-0,UEFA Champions League,kaggle_ucl
+378,2013-09-18,Wed,2013,Chelsea,Basel,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+379,2013-09-18,Wed,2013,Marseille,Arsenal,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+380,2013-09-18,Wed,2013,Milan,Celtic,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+381,2013-09-18,Wed,2013,Napoli,Dortmund,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+382,2013-09-18,Wed,2013,Schalke 04,Steaua,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+383,2013-10-01,Tue,2013,Ajax,Milan,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+384,2013-10-01,Tue,2013,Arsenal,Napoli,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+385,2013-10-01,Tue,2013,Basel,Schalke 04,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+386,2013-10-01,Tue,2013,Celtic,Barcelona,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+387,2013-10-01,Tue,2013,Dortmund,Marseille,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+388,2013-10-01,Tue,2013,Porto,Atlético Madrid,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+389,2013-10-01,Tue,2013,Steaua,Chelsea,0,4,A,0-4,UEFA Champions League,kaggle_ucl
+390,2013-10-01,Tue,2013,Zenit,Austria Wien,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+391,2013-10-02,Wed,2013,Anderlecht,Olympiacos,0,3,A,0-3,UEFA Champions League,kaggle_ucl
+392,2013-10-02,Wed,2013,CSKA Moscow,Viktoria PlzeÅ,3,2,H,3-2,UEFA Champions League,kaggle_ucl
+393,2013-10-02,Wed,2013,Juventus,Galatasaray,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+394,2013-10-02,Wed,2013,Leverkusen,Real Sociedad,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+395,2013-10-02,Wed,2013,Manchester City,Bayern Munich,1,3,A,1-3,UEFA Champions League,kaggle_ucl
+396,2013-10-02,Wed,2013,Paris S-G,Benfica,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+397,2013-10-02,Wed,2013,Real Madrid,FC Copenhagen,4,0,H,4-0,UEFA Champions League,kaggle_ucl
+398,2013-10-02,Wed,2013,Shakhtar,Manchester Utd,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+399,2013-10-22,Tue,2013,Arsenal,Dortmund,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+400,2013-10-22,Tue,2013,Austria Wien,Atlético Madrid,0,3,A,0-3,UEFA Champions League,kaggle_ucl
+401,2013-10-22,Tue,2013,Celtic,Ajax,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+402,2013-10-22,Tue,2013,Marseille,Napoli,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+403,2013-10-22,Tue,2013,Milan,Barcelona,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+404,2013-10-22,Tue,2013,Porto,Zenit,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+405,2013-10-22,Tue,2013,Schalke 04,Chelsea,0,3,A,0-3,UEFA Champions League,kaggle_ucl
+406,2013-10-22,Tue,2013,Steaua,Basel,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+407,2013-10-23,Wed,2013,Anderlecht,Paris S-G,0,5,A,0-5,UEFA Champions League,kaggle_ucl
+408,2013-10-23,Wed,2013,Bayern Munich,Viktoria PlzeÅ,5,0,H,5-0,UEFA Champions League,kaggle_ucl
+409,2013-10-23,Wed,2013,Benfica,Olympiacos,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+410,2013-10-23,Wed,2013,CSKA Moscow,Manchester City,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+411,2013-10-23,Wed,2013,Galatasaray,FC Copenhagen,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+412,2013-10-23,Wed,2013,Leverkusen,Shakhtar,4,0,H,4-0,UEFA Champions League,kaggle_ucl
+413,2013-10-23,Wed,2013,Manchester Utd,Real Sociedad,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+414,2013-10-23,Wed,2013,Real Madrid,Juventus,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+415,2013-11-05,Tue,2013,FC Copenhagen,Galatasaray,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+416,2013-11-05,Tue,2013,Juventus,Real Madrid,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+417,2013-11-05,Tue,2013,Olympiacos,Benfica,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+418,2013-11-05,Tue,2013,Paris S-G,Anderlecht,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+419,2013-11-05,Tue,2013,Real Sociedad,Manchester Utd,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+420,2013-11-05,Tue,2013,Shakhtar,Leverkusen,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+421,2013-11-05,Tue,2013,Viktoria PlzeÅ,Bayern Munich,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+422,2013-11-06,Wed,2013,Ajax,Celtic,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+423,2013-11-06,Wed,2013,Atlético Madrid,Austria Wien,4,0,H,4-0,UEFA Champions League,kaggle_ucl
+424,2013-11-06,Wed,2013,Barcelona,Milan,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+425,2013-11-06,Wed,2013,Basel,Steaua,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+426,2013-11-06,Wed,2013,Chelsea,Schalke 04,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+427,2013-11-06,Wed,2013,Dortmund,Arsenal,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+428,2013-11-06,Wed,2013,Napoli,Marseille,3,2,H,3-2,UEFA Champions League,kaggle_ucl
+429,2013-11-06,Wed,2013,Zenit,Porto,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+430,2013-11-26,Tue,2013,Ajax,Barcelona,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+431,2013-11-26,Tue,2013,Arsenal,Marseille,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+432,2013-11-26,Tue,2013,Basel,Chelsea,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+433,2013-11-26,Tue,2013,Celtic,Milan,0,3,A,0-3,UEFA Champions League,kaggle_ucl
+434,2013-11-26,Tue,2013,Dortmund,Napoli,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+435,2013-11-26,Tue,2013,Porto,Austria Wien,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+436,2013-11-26,Tue,2013,Steaua,Schalke 04,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+437,2013-11-26,Tue,2013,Zenit,Atlético Madrid,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+438,2013-11-27,Wed,2013,Anderlecht,Benfica,2,3,A,2-3,UEFA Champions League,kaggle_ucl
+439,2013-11-27,Wed,2013,CSKA Moscow,Bayern Munich,1,3,A,1-3,UEFA Champions League,kaggle_ucl
+440,2013-11-27,Wed,2013,Juventus,FC Copenhagen,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+441,2013-11-27,Wed,2013,Manchester City,Viktoria PlzeÅ,4,2,H,4-2,UEFA Champions League,kaggle_ucl
+442,2013-11-27,Wed,2013,Paris S-G,Olympiacos,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+443,2013-11-27,Wed,2013,Real Madrid,Galatasaray,4,1,H,4-1,UEFA Champions League,kaggle_ucl
+444,2013-11-27,Wed,2013,Shakhtar,Real Sociedad,4,0,H,4-0,UEFA Champions League,kaggle_ucl
+445,2013-12-10,Tue,2013,Bayern Munich,Manchester City,2,3,A,2-3,UEFA Champions League,kaggle_ucl
+446,2013-12-10,Tue,2013,Benfica,Paris S-G,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+447,2013-12-10,Tue,2013,FC Copenhagen,Real Madrid,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+448,2013-12-10,Tue,2013,Manchester Utd,Shakhtar,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+449,2013-12-10,Tue,2013,Olympiacos,Anderlecht,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+450,2013-12-10,Tue,2013,Real Sociedad,Leverkusen,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+451,2013-12-10,Tue,2013,Viktoria PlzeÅ,CSKA Moscow,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+452,2013-12-11,Wed,2013,Atlético Madrid,Porto,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+453,2013-12-11,Wed,2013,Austria Wien,Zenit,4,1,H,4-1,UEFA Champions League,kaggle_ucl
+454,2013-12-11,Wed,2013,Barcelona,Celtic,6,1,H,6-1,UEFA Champions League,kaggle_ucl
+455,2013-12-11,Wed,2013,Chelsea,Steaua,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+456,2013-12-11,Wed,2013,Galatasaray,Juventus,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+457,2013-12-11,Wed,2013,Marseille,Dortmund,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+458,2013-12-11,Wed,2013,Milan,Ajax,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+459,2013-12-11,Wed,2013,Napoli,Arsenal,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+460,2013-12-11,Wed,2013,Schalke 04,Basel,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+461,2014-02-18,Tue,2013,Manchester City,Barcelona,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+462,2014-02-19,Wed,2013,Arsenal,Bayern Munich,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+463,2014-02-19,Wed,2013,Milan,Atlético Madrid,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+464,2014-02-25,Tue,2013,Olympiacos,Manchester Utd,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+465,2014-02-25,Tue,2013,Zenit,Dortmund,2,4,A,2-4,UEFA Champions League,kaggle_ucl
+466,2014-02-26,Wed,2013,Galatasaray,Chelsea,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+467,2014-02-26,Wed,2013,Schalke 04,Real Madrid,1,6,A,1-6,UEFA Champions League,kaggle_ucl
+468,2014-03-11,Tue,2013,Atlético Madrid,Milan,4,1,H,4-1,UEFA Champions League,kaggle_ucl
+469,2014-03-11,Tue,2013,Bayern Munich,Arsenal,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+470,2014-03-12,Wed,2013,Barcelona,Manchester City,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+471,2014-03-12,Wed,2013,Paris S-G,Leverkusen,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+472,2014-03-18,Tue,2013,Chelsea,Galatasaray,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+473,2014-03-18,Tue,2013,Real Madrid,Schalke 04,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+474,2014-03-19,Wed,2013,Dortmund,Zenit,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+475,2014-03-19,Wed,2013,Manchester Utd,Olympiacos,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+476,2014-04-01,Tue,2013,Barcelona,Atlético Madrid,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+477,2014-04-01,Tue,2013,Manchester Utd,Bayern Munich,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+478,2014-04-02,Wed,2013,Paris S-G,Chelsea,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+479,2014-04-02,Wed,2013,Real Madrid,Dortmund,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+480,2014-04-08,Tue,2013,Chelsea,Paris S-G,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+481,2014-04-08,Tue,2013,Dortmund,Real Madrid,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+482,2014-04-09,Wed,2013,Atlético Madrid,Barcelona,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+483,2014-04-09,Wed,2013,Bayern Munich,Manchester Utd,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+484,2014-04-22,Tue,2013,Atlético Madrid,Chelsea,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+485,2014-04-23,Wed,2013,Real Madrid,Bayern Munich,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+486,2014-04-29,Tue,2013,Bayern Munich,Real Madrid,0,4,A,0-4,UEFA Champions League,kaggle_ucl
+487,2014-04-30,Wed,2013,Chelsea,Atlético Madrid,1,3,A,1-3,UEFA Champions League,kaggle_ucl
+488,2014-05-24,Sat,2013,Real Madrid,Atlético Madrid,4,1,H,4-1,UEFA Champions League,kaggle_ucl
+489,2014-09-16,Tue,2014,Benfica,Zenit,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+490,2014-09-16,Tue,2014,Dortmund,Arsenal,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+491,2014-09-16,Tue,2014,Galatasaray,Anderlecht,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+492,2014-09-16,Tue,2014,Juventus,Malmö,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+493,2014-09-16,Tue,2014,Liverpool,Ludogorets,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+494,2014-09-16,Tue,2014,Monaco,Leverkusen,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+495,2014-09-16,Tue,2014,Olympiacos,Atlético Madrid,3,2,H,3-2,UEFA Champions League,kaggle_ucl
+496,2014-09-16,Tue,2014,Real Madrid,Basel,5,1,H,5-1,UEFA Champions League,kaggle_ucl
+497,2014-09-17,Wed,2014,Ajax,Paris S-G,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+498,2014-09-17,Wed,2014,Athletic Club,Shakhtar,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+499,2014-09-17,Wed,2014,Barcelona,APOEL FC,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+500,2014-09-17,Wed,2014,Bayern Munich,Manchester City,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+501,2014-09-17,Wed,2014,Chelsea,Schalke 04,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+502,2014-09-17,Wed,2014,NK Maribor,Sporting CP,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+503,2014-09-17,Wed,2014,Porto,BATE Borisov,6,0,H,6-0,UEFA Champions League,kaggle_ucl
+504,2014-09-17,Wed,2014,Roma,CSKA Moscow,5,1,H,5-1,UEFA Champions League,kaggle_ucl
+505,2014-09-30,Tue,2014,APOEL FC,Ajax,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+506,2014-09-30,Tue,2014,BATE Borisov,Athletic Club,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+507,2014-09-30,Tue,2014,CSKA Moscow,Bayern Munich,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+508,2014-09-30,Tue,2014,Manchester City,Roma,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+509,2014-09-30,Tue,2014,Paris S-G,Barcelona,3,2,H,3-2,UEFA Champions League,kaggle_ucl
+510,2014-09-30,Tue,2014,Schalke 04,NK Maribor,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+511,2014-09-30,Tue,2014,Shakhtar,Porto,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+512,2014-09-30,Tue,2014,Sporting CP,Chelsea,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+513,2014-10-01,Wed,2014,Anderlecht,Dortmund,0,3,A,0-3,UEFA Champions League,kaggle_ucl
+514,2014-10-01,Wed,2014,Arsenal,Galatasaray,4,1,H,4-1,UEFA Champions League,kaggle_ucl
+515,2014-10-01,Wed,2014,Atlético Madrid,Juventus,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+516,2014-10-01,Wed,2014,Basel,Liverpool,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+517,2014-10-01,Wed,2014,Leverkusen,Benfica,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+518,2014-10-01,Wed,2014,Ludogorets,Real Madrid,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+519,2014-10-01,Wed,2014,Malmö,Olympiacos,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+520,2014-10-01,Wed,2014,Zenit,Monaco,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+521,2014-10-21,Tue,2014,APOEL FC,Paris S-G,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+522,2014-10-21,Tue,2014,BATE Borisov,Shakhtar,0,7,A,0-7,UEFA Champions League,kaggle_ucl
+523,2014-10-21,Tue,2014,Barcelona,Ajax,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+524,2014-10-21,Tue,2014,CSKA Moscow,Manchester City,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+525,2014-10-21,Tue,2014,Chelsea,NK Maribor,6,0,H,6-0,UEFA Champions League,kaggle_ucl
+526,2014-10-21,Tue,2014,Porto,Athletic Club,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+527,2014-10-21,Tue,2014,Roma,Bayern Munich,1,7,A,1-7,UEFA Champions League,kaggle_ucl
+528,2014-10-21,Tue,2014,Schalke 04,Sporting CP,4,3,H,4-3,UEFA Champions League,kaggle_ucl
+529,2014-10-22,Wed,2014,Anderlecht,Arsenal,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+530,2014-10-22,Wed,2014,Atlético Madrid,Malmö,5,0,H,5-0,UEFA Champions League,kaggle_ucl
+531,2014-10-22,Wed,2014,Galatasaray,Dortmund,0,4,A,0-4,UEFA Champions League,kaggle_ucl
+532,2014-10-22,Wed,2014,Leverkusen,Zenit,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+533,2014-10-22,Wed,2014,Liverpool,Real Madrid,0,3,A,0-3,UEFA Champions League,kaggle_ucl
+534,2014-10-22,Wed,2014,Ludogorets,Basel,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+535,2014-10-22,Wed,2014,Monaco,Benfica,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+536,2014-10-22,Wed,2014,Olympiacos,Juventus,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+537,2014-11-04,Tue,2014,Basel,Ludogorets,4,0,H,4-0,UEFA Champions League,kaggle_ucl
+538,2014-11-04,Tue,2014,Benfica,Monaco,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+539,2014-11-04,Tue,2014,Dortmund,Galatasaray,4,1,H,4-1,UEFA Champions League,kaggle_ucl
+540,2014-11-04,Tue,2014,Juventus,Olympiacos,3,2,H,3-2,UEFA Champions League,kaggle_ucl
+541,2014-11-04,Tue,2014,Malmö,Atlético Madrid,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+542,2014-11-04,Tue,2014,Real Madrid,Liverpool,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+543,2014-11-04,Tue,2014,Zenit,Leverkusen,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+544,2014-11-05,Wed,2014,Ajax,Barcelona,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+545,2014-11-05,Wed,2014,Athletic Club,Porto,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+546,2014-11-05,Wed,2014,Bayern Munich,Roma,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+547,2014-11-05,Wed,2014,Manchester City,CSKA Moscow,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+548,2014-11-05,Wed,2014,NK Maribor,Chelsea,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+549,2014-11-05,Wed,2014,Paris S-G,APOEL FC,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+550,2014-11-05,Wed,2014,Shakhtar,BATE Borisov,5,0,H,5-0,UEFA Champions League,kaggle_ucl
+551,2014-11-05,Wed,2014,Sporting CP,Schalke 04,4,2,H,4-2,UEFA Champions League,kaggle_ucl
+552,2014-11-25,Tue,2014,APOEL FC,Barcelona,0,4,A,0-4,UEFA Champions League,kaggle_ucl
+553,2014-11-25,Tue,2014,BATE Borisov,Porto,0,3,A,0-3,UEFA Champions League,kaggle_ucl
+554,2014-11-25,Tue,2014,CSKA Moscow,Roma,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+555,2014-11-25,Tue,2014,Manchester City,Bayern Munich,3,2,H,3-2,UEFA Champions League,kaggle_ucl
+556,2014-11-25,Tue,2014,Paris S-G,Ajax,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+557,2014-11-25,Tue,2014,Schalke 04,Chelsea,0,5,A,0-5,UEFA Champions League,kaggle_ucl
+558,2014-11-25,Tue,2014,Shakhtar,Athletic Club,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+559,2014-11-25,Tue,2014,Sporting CP,NK Maribor,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+560,2014-11-26,Wed,2014,Anderlecht,Galatasaray,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+561,2014-11-26,Wed,2014,Atlético Madrid,Olympiacos,4,0,H,4-0,UEFA Champions League,kaggle_ucl
+562,2014-11-26,Wed,2014,Basel,Real Madrid,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+563,2014-11-26,Wed,2014,Leverkusen,Monaco,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+564,2014-11-26,Wed,2014,Ludogorets,Liverpool,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+565,2014-11-26,Wed,2014,Malmö,Juventus,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+566,2014-11-26,Wed,2014,Zenit,Benfica,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+567,2014-12-09,Tue,2014,Benfica,Leverkusen,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+568,2014-12-09,Tue,2014,Dortmund,Anderlecht,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+569,2014-12-09,Tue,2014,Galatasaray,Arsenal,1,4,A,1-4,UEFA Champions League,kaggle_ucl
+570,2014-12-09,Tue,2014,Juventus,Atlético Madrid,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+571,2014-12-09,Tue,2014,Liverpool,Basel,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+572,2014-12-09,Tue,2014,Monaco,Zenit,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+573,2014-12-09,Tue,2014,Olympiacos,Malmö,4,2,H,4-2,UEFA Champions League,kaggle_ucl
+574,2014-12-09,Tue,2014,Real Madrid,Ludogorets,4,0,H,4-0,UEFA Champions League,kaggle_ucl
+575,2014-12-10,Wed,2014,Ajax,APOEL FC,4,0,H,4-0,UEFA Champions League,kaggle_ucl
+576,2014-12-10,Wed,2014,Athletic Club,BATE Borisov,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+577,2014-12-10,Wed,2014,Barcelona,Paris S-G,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+578,2014-12-10,Wed,2014,Bayern Munich,CSKA Moscow,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+579,2014-12-10,Wed,2014,Chelsea,Sporting CP,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+580,2014-12-10,Wed,2014,NK Maribor,Schalke 04,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+581,2014-12-10,Wed,2014,Porto,Shakhtar,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+582,2014-12-10,Wed,2014,Roma,Manchester City,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+583,2015-02-17,Tue,2014,Paris S-G,Chelsea,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+584,2015-02-18,Wed,2014,Basel,Porto,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+585,2015-02-18,Wed,2014,Schalke 04,Real Madrid,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+586,2015-02-24,Tue,2014,Juventus,Dortmund,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+587,2015-02-24,Tue,2014,Manchester City,Barcelona,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+588,2015-02-25,Wed,2014,Arsenal,Monaco,1,3,A,1-3,UEFA Champions League,kaggle_ucl
+589,2015-02-25,Wed,2014,Leverkusen,Atlético Madrid,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+590,2015-03-10,Tue,2014,Porto,Basel,4,0,H,4-0,UEFA Champions League,kaggle_ucl
+591,2015-03-10,Tue,2014,Real Madrid,Schalke 04,3,4,A,3-4,UEFA Champions League,kaggle_ucl
+592,2015-03-11,Wed,2014,Bayern Munich,Shakhtar,7,0,H,7-0,UEFA Champions League,kaggle_ucl
+593,2015-03-11,Wed,2014,Chelsea,Paris S-G,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+594,2015-03-17,Tue,2014,Atlético Madrid,Leverkusen,3,2,H,3-2,UEFA Champions League,kaggle_ucl
+595,2015-03-17,Tue,2014,Monaco,Arsenal,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+596,2015-03-18,Wed,2014,Barcelona,Manchester City,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+597,2015-03-18,Wed,2014,Dortmund,Juventus,0,3,A,0-3,UEFA Champions League,kaggle_ucl
+598,2015-04-14,Tue,2014,Atlético Madrid,Real Madrid,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+599,2015-04-14,Tue,2014,Juventus,Monaco,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+600,2015-04-15,Wed,2014,Paris S-G,Barcelona,1,3,A,1-3,UEFA Champions League,kaggle_ucl
+601,2015-04-15,Wed,2014,Porto,Bayern Munich,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+602,2015-04-21,Tue,2014,Barcelona,Paris S-G,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+603,2015-04-21,Tue,2014,Bayern Munich,Porto,6,1,H,6-1,UEFA Champions League,kaggle_ucl
+604,2015-04-22,Wed,2014,Monaco,Juventus,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+605,2015-04-22,Wed,2014,Real Madrid,Atlético Madrid,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+606,2015-05-05,Tue,2014,Juventus,Real Madrid,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+607,2015-05-06,Wed,2014,Barcelona,Bayern Munich,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+608,2015-05-12,Tue,2014,Bayern Munich,Barcelona,3,2,H,3-2,UEFA Champions League,kaggle_ucl
+609,2015-05-13,Wed,2014,Real Madrid,Juventus,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+610,2015-06-06,Sat,2014,Juventus,Barcelona,1,3,A,1-3,UEFA Champions League,kaggle_ucl
+611,2015-09-15,Tue,2015,Benfica,FC Astana,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+612,2015-09-15,Tue,2015,Galatasaray,Atlético Madrid,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+613,2015-09-15,Tue,2015,Manchester City,Juventus,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+614,2015-09-15,Tue,2015,PSV Eindhoven,Manchester Utd,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+615,2015-09-15,Tue,2015,Paris S-G,Malmö,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+616,2015-09-15,Tue,2015,Real Madrid,Shakhtar,4,0,H,4-0,UEFA Champions League,kaggle_ucl
+617,2015-09-15,Tue,2015,Sevilla,M'Gladbach,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+618,2015-09-15,Tue,2015,Wolfsburg,CSKA Moscow,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+619,2015-09-16,Wed,2015,Chelsea,Maccabi Tel Aviv,4,0,H,4-0,UEFA Champions League,kaggle_ucl
+620,2015-09-16,Wed,2015,Dinamo Zagreb,Arsenal,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+621,2015-09-16,Wed,2015,Dynamo Kyiv,Porto,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+622,2015-09-16,Wed,2015,Gent,Lyon,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+623,2015-09-16,Wed,2015,Leverkusen,BATE Borisov,4,1,H,4-1,UEFA Champions League,kaggle_ucl
+624,2015-09-16,Wed,2015,Olympiacos,Bayern Munich,0,3,A,0-3,UEFA Champions League,kaggle_ucl
+625,2015-09-16,Wed,2015,Roma,Barcelona,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+626,2015-09-16,Wed,2015,Valencia,Zenit,2,3,A,2-3,UEFA Champions League,kaggle_ucl
+627,2015-09-29,Tue,2015,Arsenal,Olympiacos,2,3,A,2-3,UEFA Champions League,kaggle_ucl
+628,2015-09-29,Tue,2015,BATE Borisov,Roma,3,2,H,3-2,UEFA Champions League,kaggle_ucl
+629,2015-09-29,Tue,2015,Barcelona,Leverkusen,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+630,2015-09-29,Tue,2015,Bayern Munich,Dinamo Zagreb,5,0,H,5-0,UEFA Champions League,kaggle_ucl
+631,2015-09-29,Tue,2015,Lyon,Valencia,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+632,2015-09-29,Tue,2015,Maccabi Tel Aviv,Dynamo Kyiv,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+633,2015-09-29,Tue,2015,Porto,Chelsea,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+634,2015-09-29,Tue,2015,Zenit,Gent,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+635,2015-09-30,Wed,2015,Atlético Madrid,Benfica,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+636,2015-09-30,Wed,2015,CSKA Moscow,PSV Eindhoven,3,2,H,3-2,UEFA Champions League,kaggle_ucl
+637,2015-09-30,Wed,2015,FC Astana,Galatasaray,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+638,2015-09-30,Wed,2015,Juventus,Sevilla,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+639,2015-09-30,Wed,2015,M'Gladbach,Manchester City,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+640,2015-09-30,Wed,2015,Malmö,Real Madrid,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+641,2015-09-30,Wed,2015,Manchester Utd,Wolfsburg,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+642,2015-09-30,Wed,2015,Shakhtar,Paris S-G,0,3,A,0-3,UEFA Champions League,kaggle_ucl
+643,2015-10-20,Tue,2015,Arsenal,Bayern Munich,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+644,2015-10-20,Tue,2015,BATE Borisov,Barcelona,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+645,2015-10-20,Tue,2015,Dinamo Zagreb,Olympiacos,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+646,2015-10-20,Tue,2015,Dynamo Kyiv,Chelsea,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+647,2015-10-20,Tue,2015,Leverkusen,Roma,4,4,D,4-4,UEFA Champions League,kaggle_ucl
+648,2015-10-20,Tue,2015,Porto,Maccabi Tel Aviv,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+649,2015-10-20,Tue,2015,Valencia,Gent,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+650,2015-10-20,Tue,2015,Zenit,Lyon,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+651,2015-10-21,Wed,2015,Atlético Madrid,FC Astana,4,0,H,4-0,UEFA Champions League,kaggle_ucl
+652,2015-10-21,Wed,2015,CSKA Moscow,Manchester Utd,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+653,2015-10-21,Wed,2015,Galatasaray,Benfica,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+654,2015-10-21,Wed,2015,Juventus,M'Gladbach,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+655,2015-10-21,Wed,2015,Malmö,Shakhtar,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+656,2015-10-21,Wed,2015,Manchester City,Sevilla,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+657,2015-10-21,Wed,2015,Paris S-G,Real Madrid,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+658,2015-10-21,Wed,2015,Wolfsburg,PSV Eindhoven,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+659,2015-11-03,Tue,2015,FC Astana,Atlético Madrid,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+660,2015-11-03,Tue,2015,M'Gladbach,Juventus,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+661,2015-11-03,Tue,2015,Manchester Utd,CSKA Moscow,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+662,2015-11-03,Tue,2015,PSV Eindhoven,Wolfsburg,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+663,2015-11-03,Tue,2015,Real Madrid,Paris S-G,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+664,2015-11-03,Tue,2015,Sevilla,Manchester City,1,3,A,1-3,UEFA Champions League,kaggle_ucl
+665,2015-11-03,Tue,2015,Shakhtar,Malmö,4,0,H,4-0,UEFA Champions League,kaggle_ucl
+666,2015-11-04,Wed,2015,Barcelona,BATE Borisov,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+667,2015-11-04,Wed,2015,Bayern Munich,Arsenal,5,1,H,5-1,UEFA Champions League,kaggle_ucl
+668,2015-11-04,Wed,2015,Chelsea,Dynamo Kyiv,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+669,2015-11-04,Wed,2015,Gent,Valencia,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+670,2015-11-04,Wed,2015,Lyon,Zenit,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+671,2015-11-04,Wed,2015,Maccabi Tel Aviv,Porto,1,3,A,1-3,UEFA Champions League,kaggle_ucl
+672,2015-11-04,Wed,2015,Olympiacos,Dinamo Zagreb,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+673,2015-11-04,Wed,2015,Roma,Leverkusen,3,2,H,3-2,UEFA Champions League,kaggle_ucl
+674,2015-11-24,Tue,2015,Arsenal,Dinamo Zagreb,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+675,2015-11-24,Tue,2015,BATE Borisov,Leverkusen,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+676,2015-11-24,Tue,2015,Barcelona,Roma,6,1,H,6-1,UEFA Champions League,kaggle_ucl
+677,2015-11-24,Tue,2015,Bayern Munich,Olympiacos,4,0,H,4-0,UEFA Champions League,kaggle_ucl
+678,2015-11-24,Tue,2015,Lyon,Gent,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+679,2015-11-24,Tue,2015,Maccabi Tel Aviv,Chelsea,0,4,A,0-4,UEFA Champions League,kaggle_ucl
+680,2015-11-24,Tue,2015,Porto,Dynamo Kyiv,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+681,2015-11-24,Tue,2015,Zenit,Valencia,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+682,2015-11-25,Wed,2015,Atlético Madrid,Galatasaray,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+683,2015-11-25,Wed,2015,CSKA Moscow,Wolfsburg,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+684,2015-11-25,Wed,2015,FC Astana,Benfica,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+685,2015-11-25,Wed,2015,Juventus,Manchester City,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+686,2015-11-25,Wed,2015,M'Gladbach,Sevilla,4,2,H,4-2,UEFA Champions League,kaggle_ucl
+687,2015-11-25,Wed,2015,Malmö,Paris S-G,0,5,A,0-5,UEFA Champions League,kaggle_ucl
+688,2015-11-25,Wed,2015,Shakhtar,Real Madrid,3,4,A,3-4,UEFA Champions League,kaggle_ucl
+689,2015-12-08,Tue,2015,Benfica,Atlético Madrid,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+690,2015-12-08,Tue,2015,Galatasaray,FC Astana,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+691,2015-12-08,Tue,2015,Manchester City,M'Gladbach,4,2,H,4-2,UEFA Champions League,kaggle_ucl
+692,2015-12-08,Tue,2015,PSV Eindhoven,CSKA Moscow,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+693,2015-12-08,Tue,2015,Paris S-G,Shakhtar,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+694,2015-12-08,Tue,2015,Real Madrid,Malmö,8,0,H,8-0,UEFA Champions League,kaggle_ucl
+695,2015-12-08,Tue,2015,Sevilla,Juventus,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+696,2015-12-08,Tue,2015,Wolfsburg,Manchester Utd,3,2,H,3-2,UEFA Champions League,kaggle_ucl
+697,2015-12-09,Wed,2015,Chelsea,Porto,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+698,2015-12-09,Wed,2015,Dinamo Zagreb,Bayern Munich,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+699,2015-12-09,Wed,2015,Dynamo Kyiv,Maccabi Tel Aviv,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+700,2015-12-09,Wed,2015,Gent,Zenit,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+701,2015-12-09,Wed,2015,Leverkusen,Barcelona,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+702,2015-12-09,Wed,2015,Olympiacos,Arsenal,0,3,A,0-3,UEFA Champions League,kaggle_ucl
+703,2015-12-09,Wed,2015,Roma,BATE Borisov,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+704,2015-12-09,Wed,2015,Valencia,Lyon,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+705,2016-02-16,Tue,2015,Benfica,Zenit,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+706,2016-02-17,Wed,2015,Gent,Wolfsburg,2,3,A,2-3,UEFA Champions League,kaggle_ucl
+707,2016-02-17,Wed,2015,Roma,Real Madrid,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+708,2016-02-23,Tue,2015,Arsenal,Barcelona,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+709,2016-02-23,Tue,2015,Juventus,Bayern Munich,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+710,2016-02-24,Wed,2015,Dynamo Kyiv,Manchester City,1,3,A,1-3,UEFA Champions League,kaggle_ucl
+711,2016-02-24,Wed,2015,PSV Eindhoven,Atlético Madrid,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+712,2016-03-08,Tue,2015,Real Madrid,Roma,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+713,2016-03-08,Tue,2015,Wolfsburg,Gent,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+714,2016-03-09,Wed,2015,Chelsea,Paris S-G,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+715,2016-03-09,Wed,2015,Zenit,Benfica,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+716,2016-03-15,Tue,2015,Atlético Madrid,PSV Eindhoven,8,7,H,8-7,UEFA Champions League,kaggle_ucl
+717,2016-03-15,Tue,2015,Manchester City,Dynamo Kyiv,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+718,2016-03-16,Wed,2015,Barcelona,Arsenal,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+719,2016-03-16,Wed,2015,Bayern Munich,Juventus,4,2,H,4-2,UEFA Champions League,kaggle_ucl
+720,2016-04-05,Tue,2015,Barcelona,Atlético Madrid,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+721,2016-04-05,Tue,2015,Bayern Munich,Benfica,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+722,2016-04-06,Wed,2015,Paris S-G,Manchester City,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+723,2016-04-06,Wed,2015,Wolfsburg,Real Madrid,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+724,2016-04-12,Tue,2015,Manchester City,Paris S-G,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+725,2016-04-12,Tue,2015,Real Madrid,Wolfsburg,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+726,2016-04-13,Wed,2015,Atlético Madrid,Barcelona,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+727,2016-04-13,Wed,2015,Benfica,Bayern Munich,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+728,2016-04-26,Tue,2015,Manchester City,Real Madrid,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+729,2016-04-27,Wed,2015,Atlético Madrid,Bayern Munich,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+730,2016-05-03,Tue,2015,Bayern Munich,Atlético Madrid,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+731,2016-05-04,Wed,2015,Real Madrid,Manchester City,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+732,2016-05-28,Sat,2015,Real Madrid,Atlético Madrid,5,3,H,5-3,UEFA Champions League,kaggle_ucl
+733,2016-09-13,Tue,2016,Barcelona,Celtic,7,0,H,7-0,UEFA Champions League,kaggle_ucl
+734,2016-09-13,Tue,2016,Basel,Ludogorets,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+735,2016-09-13,Tue,2016,Bayern Munich,Rostov,5,0,H,5-0,UEFA Champions League,kaggle_ucl
+736,2016-09-13,Tue,2016,Benfica,BeÅiktaÅ,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+737,2016-09-13,Tue,2016,Dynamo Kyiv,Napoli,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+738,2016-09-13,Tue,2016,PSV Eindhoven,Atlético Madrid,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+739,2016-09-13,Tue,2016,Paris S-G,Arsenal,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+740,2016-09-14,Wed,2016,Club Brugge,Leicester City,0,3,A,0-3,UEFA Champions League,kaggle_ucl
+741,2016-09-14,Wed,2016,Juventus,Sevilla,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+742,2016-09-14,Wed,2016,Legia Warsaw,Dortmund,0,6,A,0-6,UEFA Champions League,kaggle_ucl
+743,2016-09-14,Wed,2016,Leverkusen,CSKA Moscow,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+744,2016-09-14,Wed,2016,Lyon,Dinamo Zagreb,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+745,2016-09-14,Wed,2016,Manchester City,M'Gladbach,4,0,H,4-0,UEFA Champions League,kaggle_ucl
+746,2016-09-14,Wed,2016,Porto,FC Copenhagen,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+747,2016-09-14,Wed,2016,Real Madrid,Sporting CP,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+748,2016-09-14,Wed,2016,Tottenham,Monaco,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+749,2016-09-27,Tue,2016,CSKA Moscow,Tottenham,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+750,2016-09-27,Tue,2016,Dinamo Zagreb,Juventus,0,4,A,0-4,UEFA Champions League,kaggle_ucl
+751,2016-09-27,Tue,2016,Dortmund,Real Madrid,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+752,2016-09-27,Tue,2016,FC Copenhagen,Club Brugge,4,0,H,4-0,UEFA Champions League,kaggle_ucl
+753,2016-09-27,Tue,2016,Leicester City,Porto,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+754,2016-09-27,Tue,2016,Monaco,Leverkusen,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+755,2016-09-27,Tue,2016,Sevilla,Lyon,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+756,2016-09-27,Tue,2016,Sporting CP,Legia Warsaw,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+757,2016-09-28,Wed,2016,Arsenal,Basel,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+758,2016-09-28,Wed,2016,Atlético Madrid,Bayern Munich,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+759,2016-09-28,Wed,2016,BeÅiktaÅ,Dynamo Kyiv,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+760,2016-09-28,Wed,2016,Celtic,Manchester City,3,3,D,3-3,UEFA Champions League,kaggle_ucl
+761,2016-09-28,Wed,2016,Ludogorets,Paris S-G,1,3,A,1-3,UEFA Champions League,kaggle_ucl
+762,2016-09-28,Wed,2016,M'Gladbach,Barcelona,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+763,2016-09-28,Wed,2016,Napoli,Benfica,4,2,H,4-2,UEFA Champions League,kaggle_ucl
+764,2016-09-28,Wed,2016,Rostov,PSV Eindhoven,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+765,2016-10-18,Tue,2016,CSKA Moscow,Monaco,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+766,2016-10-18,Tue,2016,Club Brugge,Porto,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+767,2016-10-18,Tue,2016,Dinamo Zagreb,Sevilla,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+768,2016-10-18,Tue,2016,Leicester City,FC Copenhagen,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+769,2016-10-18,Tue,2016,Leverkusen,Tottenham,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+770,2016-10-18,Tue,2016,Lyon,Juventus,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+771,2016-10-18,Tue,2016,Real Madrid,Legia Warsaw,5,1,H,5-1,UEFA Champions League,kaggle_ucl
+772,2016-10-18,Tue,2016,Sporting CP,Dortmund,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+773,2016-10-19,Wed,2016,Arsenal,Ludogorets,6,0,H,6-0,UEFA Champions League,kaggle_ucl
+774,2016-10-19,Wed,2016,Barcelona,Manchester City,4,0,H,4-0,UEFA Champions League,kaggle_ucl
+775,2016-10-19,Wed,2016,Bayern Munich,PSV Eindhoven,4,1,H,4-1,UEFA Champions League,kaggle_ucl
+776,2016-10-19,Wed,2016,Celtic,M'Gladbach,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+777,2016-10-19,Wed,2016,Dynamo Kyiv,Benfica,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+778,2016-10-19,Wed,2016,Napoli,BeÅiktaÅ,2,3,A,2-3,UEFA Champions League,kaggle_ucl
+779,2016-10-19,Wed,2016,Paris S-G,Basel,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+780,2016-10-19,Wed,2016,Rostov,Atlético Madrid,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+781,2016-11-01,Tue,2016,Atlético Madrid,Rostov,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+782,2016-11-01,Tue,2016,Basel,Paris S-G,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+783,2016-11-01,Tue,2016,Benfica,Dynamo Kyiv,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+784,2016-11-01,Tue,2016,BeÅiktaÅ,Napoli,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+785,2016-11-01,Tue,2016,Ludogorets,Arsenal,2,3,A,2-3,UEFA Champions League,kaggle_ucl
+786,2016-11-01,Tue,2016,M'Gladbach,Celtic,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+787,2016-11-01,Tue,2016,PSV Eindhoven,Bayern Munich,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+788,2016-11-02,Wed,2016,Dortmund,Sporting CP,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+789,2016-11-02,Wed,2016,FC Copenhagen,Leicester City,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+790,2016-11-02,Wed,2016,Juventus,Lyon,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+791,2016-11-02,Wed,2016,Legia Warsaw,Real Madrid,3,3,D,3-3,UEFA Champions League,kaggle_ucl
+792,2016-11-02,Wed,2016,Monaco,CSKA Moscow,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+793,2016-11-02,Wed,2016,Porto,Club Brugge,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+794,2016-11-02,Wed,2016,Sevilla,Dinamo Zagreb,4,0,H,4-0,UEFA Champions League,kaggle_ucl
+795,2016-11-02,Wed,2016,Tottenham,Leverkusen,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+796,2016-11-22,Tue,2016,CSKA Moscow,Leverkusen,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+797,2016-11-22,Tue,2016,Dinamo Zagreb,Lyon,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+798,2016-11-22,Tue,2016,Dortmund,Legia Warsaw,8,4,H,8-4,UEFA Champions League,kaggle_ucl
+799,2016-11-22,Tue,2016,FC Copenhagen,Porto,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+800,2016-11-22,Tue,2016,Leicester City,Club Brugge,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+801,2016-11-22,Tue,2016,Monaco,Tottenham,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+802,2016-11-22,Tue,2016,Sevilla,Juventus,1,3,A,1-3,UEFA Champions League,kaggle_ucl
+803,2016-11-22,Tue,2016,Sporting CP,Real Madrid,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+804,2016-11-23,Wed,2016,Atlético Madrid,PSV Eindhoven,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+805,2016-11-23,Wed,2016,BeÅiktaÅ,Benfica,3,3,D,3-3,UEFA Champions League,kaggle_ucl
+806,2016-11-23,Wed,2016,Celtic,Barcelona,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+807,2016-11-23,Wed,2016,Ludogorets,Basel,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+808,2016-11-23,Wed,2016,M'Gladbach,Manchester City,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+809,2016-11-23,Wed,2016,Napoli,Dynamo Kyiv,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+810,2016-11-23,Wed,2016,Rostov,Bayern Munich,3,2,H,3-2,UEFA Champions League,kaggle_ucl
+811,2016-12-06,Tue,2016,Barcelona,M'Gladbach,4,0,H,4-0,UEFA Champions League,kaggle_ucl
+812,2016-12-06,Tue,2016,Basel,Arsenal,1,4,A,1-4,UEFA Champions League,kaggle_ucl
+813,2016-12-06,Tue,2016,Bayern Munich,Atlético Madrid,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+814,2016-12-06,Tue,2016,Benfica,Napoli,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+815,2016-12-06,Tue,2016,Dynamo Kyiv,BeÅiktaÅ,6,0,H,6-0,UEFA Champions League,kaggle_ucl
+816,2016-12-06,Tue,2016,Manchester City,Celtic,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+817,2016-12-06,Tue,2016,PSV Eindhoven,Rostov,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+818,2016-12-06,Tue,2016,Paris S-G,Ludogorets,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+819,2016-12-07,Wed,2016,Club Brugge,FC Copenhagen,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+820,2016-12-07,Wed,2016,Juventus,Dinamo Zagreb,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+821,2016-12-07,Wed,2016,Legia Warsaw,Sporting CP,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+822,2016-12-07,Wed,2016,Leverkusen,Monaco,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+823,2016-12-07,Wed,2016,Lyon,Sevilla,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+824,2016-12-07,Wed,2016,Porto,Leicester City,5,0,H,5-0,UEFA Champions League,kaggle_ucl
+825,2016-12-07,Wed,2016,Real Madrid,Dortmund,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+826,2016-12-07,Wed,2016,Tottenham,CSKA Moscow,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+827,2017-02-14,Tue,2016,Benfica,Dortmund,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+828,2017-02-15,Wed,2016,Bayern Munich,Arsenal,5,1,H,5-1,UEFA Champions League,kaggle_ucl
+829,2017-02-15,Wed,2016,Real Madrid,Napoli,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+830,2017-02-21,Tue,2016,Leverkusen,Atlético Madrid,2,4,A,2-4,UEFA Champions League,kaggle_ucl
+831,2017-02-21,Tue,2016,Manchester City,Monaco,5,3,H,5-3,UEFA Champions League,kaggle_ucl
+832,2017-02-22,Wed,2016,Porto,Juventus,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+833,2017-02-22,Wed,2016,Sevilla,Leicester City,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+834,2017-03-07,Tue,2016,Arsenal,Bayern Munich,1,5,A,1-5,UEFA Champions League,kaggle_ucl
+835,2017-03-07,Tue,2016,Napoli,Real Madrid,1,3,A,1-3,UEFA Champions League,kaggle_ucl
+836,2017-03-08,Wed,2016,Barcelona,Paris S-G,6,1,H,6-1,UEFA Champions League,kaggle_ucl
+837,2017-03-08,Wed,2016,Dortmund,Benfica,4,0,H,4-0,UEFA Champions League,kaggle_ucl
+838,2017-03-14,Tue,2016,Juventus,Porto,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+839,2017-03-14,Tue,2016,Leicester City,Sevilla,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+840,2017-03-15,Wed,2016,Atlético Madrid,Leverkusen,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+841,2017-03-15,Wed,2016,Monaco,Manchester City,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+842,2017-04-11,Tue,2016,Juventus,Barcelona,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+843,2017-04-12,Wed,2016,Atlético Madrid,Leicester City,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+844,2017-04-12,Wed,2016,Bayern Munich,Real Madrid,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+845,2017-04-12,Wed,2016,Dortmund,Monaco,2,3,A,2-3,UEFA Champions League,kaggle_ucl
+846,2017-04-18,Tue,2016,Leicester City,Atlético Madrid,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+847,2017-04-18,Tue,2016,Real Madrid,Bayern Munich,4,2,H,4-2,UEFA Champions League,kaggle_ucl
+848,2017-04-19,Wed,2016,Barcelona,Juventus,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+849,2017-04-19,Wed,2016,Monaco,Dortmund,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+850,2017-05-02,Tue,2016,Real Madrid,Atlético Madrid,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+851,2017-05-03,Wed,2016,Monaco,Juventus,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+852,2017-05-09,Tue,2016,Juventus,Monaco,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+853,2017-05-10,Wed,2016,Atlético Madrid,Real Madrid,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+854,2017-06-03,Sat,2016,Juventus,Real Madrid,1,4,A,1-4,UEFA Champions League,kaggle_ucl
+855,2017-09-12,Tue,2017,Barcelona,Juventus,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+856,2017-09-12,Tue,2017,Bayern Munich,Anderlecht,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+857,2017-09-12,Tue,2017,Benfica,CSKA Moscow,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+858,2017-09-12,Tue,2017,Celtic,Paris S-G,0,5,A,0-5,UEFA Champions League,kaggle_ucl
+859,2017-09-12,Tue,2017,Chelsea,QarabaÄ FK,6,0,H,6-0,UEFA Champions League,kaggle_ucl
+860,2017-09-12,Tue,2017,Manchester Utd,Basel,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+861,2017-09-12,Tue,2017,Olympiacos,Sporting CP,2,3,A,2-3,UEFA Champions League,kaggle_ucl
+862,2017-09-12,Tue,2017,Roma,Atlético Madrid,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+863,2017-09-13,Wed,2017,Feyenoord,Manchester City,0,4,A,0-4,UEFA Champions League,kaggle_ucl
+864,2017-09-13,Wed,2017,Liverpool,Sevilla,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+865,2017-09-13,Wed,2017,NK Maribor,Spartak Moscow,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+866,2017-09-13,Wed,2017,Porto,BeÅiktaÅ,1,3,A,1-3,UEFA Champions League,kaggle_ucl
+867,2017-09-13,Wed,2017,RB Leipzig,Monaco,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+868,2017-09-13,Wed,2017,Real Madrid,APOEL FC,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+869,2017-09-13,Wed,2017,Shakhtar,Napoli,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+870,2017-09-13,Wed,2017,Tottenham,Dortmund,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+871,2017-09-26,Tue,2017,APOEL FC,Tottenham,0,3,A,0-3,UEFA Champions League,kaggle_ucl
+872,2017-09-26,Tue,2017,BeÅiktaÅ,RB Leipzig,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+873,2017-09-26,Tue,2017,Dortmund,Real Madrid,1,3,A,1-3,UEFA Champions League,kaggle_ucl
+874,2017-09-26,Tue,2017,Manchester City,Shakhtar,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+875,2017-09-26,Tue,2017,Monaco,Porto,0,3,A,0-3,UEFA Champions League,kaggle_ucl
+876,2017-09-26,Tue,2017,Napoli,Feyenoord,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+877,2017-09-26,Tue,2017,Sevilla,NK Maribor,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+878,2017-09-26,Tue,2017,Spartak Moscow,Liverpool,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+879,2017-09-27,Wed,2017,Anderlecht,Celtic,0,3,A,0-3,UEFA Champions League,kaggle_ucl
+880,2017-09-27,Wed,2017,Atlético Madrid,Chelsea,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+881,2017-09-27,Wed,2017,Basel,Benfica,5,0,H,5-0,UEFA Champions League,kaggle_ucl
+882,2017-09-27,Wed,2017,Juventus,Olympiacos,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+883,2017-09-27,Wed,2017,Paris S-G,Bayern Munich,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+884,2017-09-27,Wed,2017,QarabaÄ FK,Roma,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+885,2017-09-27,Wed,2017,Sporting CP,Barcelona,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+886,2017-09-28,Thu,2017,CSKA Moscow,Manchester Utd,1,4,A,1-4,UEFA Champions League,kaggle_ucl
+887,2017-10-17,Tue,2017,APOEL FC,Dortmund,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+888,2017-10-17,Tue,2017,Feyenoord,Shakhtar,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+889,2017-10-17,Tue,2017,Manchester City,Napoli,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+890,2017-10-17,Tue,2017,Monaco,BeÅiktaÅ,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+891,2017-10-17,Tue,2017,NK Maribor,Liverpool,0,7,A,0-7,UEFA Champions League,kaggle_ucl
+892,2017-10-17,Tue,2017,RB Leipzig,Porto,3,2,H,3-2,UEFA Champions League,kaggle_ucl
+893,2017-10-17,Tue,2017,Real Madrid,Tottenham,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+894,2017-10-17,Tue,2017,Spartak Moscow,Sevilla,5,1,H,5-1,UEFA Champions League,kaggle_ucl
+895,2017-10-18,Wed,2017,Anderlecht,Paris S-G,0,4,A,0-4,UEFA Champions League,kaggle_ucl
+896,2017-10-18,Wed,2017,Barcelona,Olympiacos,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+897,2017-10-18,Wed,2017,Bayern Munich,Celtic,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+898,2017-10-18,Wed,2017,Benfica,Manchester Utd,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+899,2017-10-18,Wed,2017,CSKA Moscow,Basel,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+900,2017-10-18,Wed,2017,Chelsea,Roma,3,3,D,3-3,UEFA Champions League,kaggle_ucl
+901,2017-10-18,Wed,2017,Juventus,Sporting CP,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+902,2017-10-18,Wed,2017,QarabaÄ FK,Atlético Madrid,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+903,2017-10-31,Tue,2017,Atlético Madrid,QarabaÄ FK,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+904,2017-10-31,Tue,2017,Basel,CSKA Moscow,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+905,2017-10-31,Tue,2017,Manchester Utd,Benfica,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+906,2017-10-31,Tue,2017,Olympiacos,Barcelona,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+907,2017-10-31,Tue,2017,Paris S-G,Anderlecht,5,0,H,5-0,UEFA Champions League,kaggle_ucl
+908,2017-10-31,Tue,2017,Roma,Chelsea,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+909,2017-10-31,Tue,2017,Sporting CP,Juventus,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+910,2017-11-01,Wed,2017,BeÅiktaÅ,Monaco,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+911,2017-11-01,Wed,2017,Dortmund,APOEL FC,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+912,2017-11-01,Wed,2017,Liverpool,NK Maribor,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+913,2017-11-01,Wed,2017,Napoli,Manchester City,2,4,A,2-4,UEFA Champions League,kaggle_ucl
+914,2017-11-01,Wed,2017,Porto,RB Leipzig,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+915,2017-11-01,Wed,2017,Sevilla,Spartak Moscow,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+916,2017-11-01,Wed,2017,Shakhtar,Feyenoord,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+917,2017-11-01,Wed,2017,Tottenham,Real Madrid,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+918,2017-11-21,Tue,2017,APOEL FC,Real Madrid,0,6,A,0-6,UEFA Champions League,kaggle_ucl
+919,2017-11-21,Tue,2017,BeÅiktaÅ,Porto,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+920,2017-11-21,Tue,2017,Dortmund,Tottenham,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+921,2017-11-21,Tue,2017,Manchester City,Feyenoord,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+922,2017-11-21,Tue,2017,Monaco,RB Leipzig,1,4,A,1-4,UEFA Champions League,kaggle_ucl
+923,2017-11-21,Tue,2017,Napoli,Shakhtar,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+924,2017-11-21,Tue,2017,Sevilla,Liverpool,3,3,D,3-3,UEFA Champions League,kaggle_ucl
+925,2017-11-21,Tue,2017,Spartak Moscow,NK Maribor,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+926,2017-11-22,Wed,2017,Anderlecht,Bayern Munich,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+927,2017-11-22,Wed,2017,Atlético Madrid,Roma,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+928,2017-11-22,Wed,2017,Basel,Manchester Utd,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+929,2017-11-22,Wed,2017,CSKA Moscow,Benfica,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+930,2017-11-22,Wed,2017,Juventus,Barcelona,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+931,2017-11-22,Wed,2017,Paris S-G,Celtic,7,1,H,7-1,UEFA Champions League,kaggle_ucl
+932,2017-11-22,Wed,2017,QarabaÄ FK,Chelsea,0,4,A,0-4,UEFA Champions League,kaggle_ucl
+933,2017-12-05,Tue,2017,Barcelona,Sporting CP,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+934,2017-12-05,Tue,2017,Bayern Munich,Paris S-G,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+935,2017-12-05,Tue,2017,Benfica,Basel,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+936,2017-12-05,Tue,2017,Celtic,Anderlecht,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+937,2017-12-05,Tue,2017,Chelsea,Atlético Madrid,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+938,2017-12-05,Tue,2017,Manchester Utd,CSKA Moscow,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+939,2017-12-05,Tue,2017,Olympiacos,Juventus,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+940,2017-12-05,Tue,2017,Roma,QarabaÄ FK,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+941,2017-12-06,Wed,2017,Feyenoord,Napoli,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+942,2017-12-06,Wed,2017,Liverpool,Spartak Moscow,7,0,H,7-0,UEFA Champions League,kaggle_ucl
+943,2017-12-06,Wed,2017,NK Maribor,Sevilla,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+944,2017-12-06,Wed,2017,Porto,Monaco,5,2,H,5-2,UEFA Champions League,kaggle_ucl
+945,2017-12-06,Wed,2017,RB Leipzig,BeÅiktaÅ,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+946,2017-12-06,Wed,2017,Real Madrid,Dortmund,3,2,H,3-2,UEFA Champions League,kaggle_ucl
+947,2017-12-06,Wed,2017,Shakhtar,Manchester City,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+948,2017-12-06,Wed,2017,Tottenham,APOEL FC,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+949,2018-02-13,Tue,2017,Basel,Manchester City,0,4,A,0-4,UEFA Champions League,kaggle_ucl
+950,2018-02-14,Wed,2017,Porto,Liverpool,0,5,A,0-5,UEFA Champions League,kaggle_ucl
+951,2018-02-14,Wed,2017,Real Madrid,Paris S-G,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+952,2018-02-20,Tue,2017,Bayern Munich,BeÅiktaÅ,5,0,H,5-0,UEFA Champions League,kaggle_ucl
+953,2018-02-20,Tue,2017,Chelsea,Barcelona,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+954,2018-02-21,Wed,2017,Sevilla,Manchester Utd,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+955,2018-02-21,Wed,2017,Shakhtar,Roma,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+956,2018-03-06,Tue,2017,Liverpool,Porto,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+957,2018-03-06,Tue,2017,Paris S-G,Real Madrid,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+958,2018-03-07,Wed,2017,Manchester City,Basel,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+959,2018-03-07,Wed,2017,Tottenham,Juventus,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+960,2018-03-13,Tue,2017,Manchester Utd,Sevilla,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+961,2018-03-13,Tue,2017,Roma,Shakhtar,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+962,2018-03-14,Wed,2017,Barcelona,Chelsea,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+963,2018-03-14,Wed,2017,BeÅiktaÅ,Bayern Munich,1,3,A,1-3,UEFA Champions League,kaggle_ucl
+964,2018-04-03,Tue,2017,Juventus,Real Madrid,0,3,A,0-3,UEFA Champions League,kaggle_ucl
+965,2018-04-03,Tue,2017,Sevilla,Bayern Munich,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+966,2018-04-04,Wed,2017,Barcelona,Roma,4,1,H,4-1,UEFA Champions League,kaggle_ucl
+967,2018-04-04,Wed,2017,Liverpool,Manchester City,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+968,2018-04-10,Tue,2017,Manchester City,Liverpool,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+969,2018-04-10,Tue,2017,Roma,Barcelona,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+970,2018-04-11,Wed,2017,Bayern Munich,Sevilla,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+971,2018-04-11,Wed,2017,Real Madrid,Juventus,1,3,A,1-3,UEFA Champions League,kaggle_ucl
+972,2018-04-24,Tue,2017,Liverpool,Roma,5,2,H,5-2,UEFA Champions League,kaggle_ucl
+973,2018-04-25,Wed,2017,Bayern Munich,Real Madrid,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+974,2018-05-01,Tue,2017,Real Madrid,Bayern Munich,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+975,2018-05-02,Wed,2017,Roma,Liverpool,4,2,H,4-2,UEFA Champions League,kaggle_ucl
+976,2018-05-26,Sat,2017,Real Madrid,Liverpool,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+977,2018-09-18,Tue,2018,Barcelona,PSV Eindhoven,4,0,H,4-0,UEFA Champions League,kaggle_ucl
+978,2018-09-18,Tue,2018,Club Brugge,Dortmund,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+979,2018-09-18,Tue,2018,Galatasaray,Loko Moscow,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+980,2018-09-18,Tue,2018,Inter,Tottenham,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+981,2018-09-18,Tue,2018,Liverpool,Paris S-G,3,2,H,3-2,UEFA Champions League,kaggle_ucl
+982,2018-09-18,Tue,2018,Monaco,Atlético Madrid,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+983,2018-09-18,Tue,2018,Red Star,Napoli,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+984,2018-09-18,Tue,2018,Schalke 04,Porto,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+985,2018-09-19,Wed,2018,Ajax,AEK Athens,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+986,2018-09-19,Wed,2018,Benfica,Bayern Munich,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+987,2018-09-19,Wed,2018,Manchester City,Lyon,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+988,2018-09-19,Wed,2018,Real Madrid,Roma,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+989,2018-09-19,Wed,2018,Shakhtar,Hoffenheim,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+990,2018-09-19,Wed,2018,Valencia,Juventus,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+991,2018-09-19,Wed,2018,Viktoria PlzeÅ,CSKA Moscow,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+992,2018-09-19,Wed,2018,Young Boys,Manchester Utd,0,3,A,0-3,UEFA Champions League,kaggle_ucl
+993,2018-10-02,Tue,2018,AEK Athens,Benfica,2,3,A,2-3,UEFA Champions League,kaggle_ucl
+994,2018-10-02,Tue,2018,Bayern Munich,Ajax,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+995,2018-10-02,Tue,2018,CSKA Moscow,Real Madrid,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+996,2018-10-02,Tue,2018,Hoffenheim,Manchester City,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+997,2018-10-02,Tue,2018,Juventus,Young Boys,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+998,2018-10-02,Tue,2018,Lyon,Shakhtar,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+999,2018-10-02,Tue,2018,Manchester Utd,Valencia,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+1000,2018-10-02,Tue,2018,Roma,Viktoria PlzeÅ,5,0,H,5-0,UEFA Champions League,kaggle_ucl
+1001,2018-10-03,Wed,2018,Atlético Madrid,Club Brugge,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+1002,2018-10-03,Wed,2018,Dortmund,Monaco,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+1003,2018-10-03,Wed,2018,Loko Moscow,Schalke 04,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+1004,2018-10-03,Wed,2018,Napoli,Liverpool,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+1005,2018-10-03,Wed,2018,PSV Eindhoven,Inter,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+1006,2018-10-03,Wed,2018,Paris S-G,Red Star,6,1,H,6-1,UEFA Champions League,kaggle_ucl
+1007,2018-10-03,Wed,2018,Porto,Galatasaray,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+1008,2018-10-03,Wed,2018,Tottenham,Barcelona,2,4,A,2-4,UEFA Champions League,kaggle_ucl
+1009,2018-10-23,Tue,2018,AEK Athens,Bayern Munich,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+1010,2018-10-23,Tue,2018,Ajax,Benfica,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+1011,2018-10-23,Tue,2018,Hoffenheim,Lyon,3,3,D,3-3,UEFA Champions League,kaggle_ucl
+1012,2018-10-23,Tue,2018,Manchester Utd,Juventus,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+1013,2018-10-23,Tue,2018,Real Madrid,Viktoria PlzeÅ,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+1014,2018-10-23,Tue,2018,Roma,CSKA Moscow,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+1015,2018-10-23,Tue,2018,Shakhtar,Manchester City,0,3,A,0-3,UEFA Champions League,kaggle_ucl
+1016,2018-10-23,Tue,2018,Young Boys,Valencia,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+1017,2018-10-24,Wed,2018,Barcelona,Inter,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+1018,2018-10-24,Wed,2018,Club Brugge,Monaco,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+1019,2018-10-24,Wed,2018,Dortmund,Atlético Madrid,4,0,H,4-0,UEFA Champions League,kaggle_ucl
+1020,2018-10-24,Wed,2018,Galatasaray,Schalke 04,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+1021,2018-10-24,Wed,2018,Liverpool,Red Star,4,0,H,4-0,UEFA Champions League,kaggle_ucl
+1022,2018-10-24,Wed,2018,Loko Moscow,Porto,1,3,A,1-3,UEFA Champions League,kaggle_ucl
+1023,2018-10-24,Wed,2018,PSV Eindhoven,Tottenham,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+1024,2018-10-24,Wed,2018,Paris S-G,Napoli,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+1025,2018-11-06,Tue,2018,Atlético Madrid,Dortmund,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+1026,2018-11-06,Tue,2018,Inter,Barcelona,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+1027,2018-11-06,Tue,2018,Monaco,Club Brugge,0,4,A,0-4,UEFA Champions League,kaggle_ucl
+1028,2018-11-06,Tue,2018,Napoli,Paris S-G,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+1029,2018-11-06,Tue,2018,Porto,Loko Moscow,4,1,H,4-1,UEFA Champions League,kaggle_ucl
+1030,2018-11-06,Tue,2018,Schalke 04,Galatasaray,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+1031,2018-11-06,Tue,2018,Tottenham,PSV Eindhoven,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+1032,2018-11-07,Wed,2018,Bayern Munich,AEK Athens,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+1033,2018-11-07,Wed,2018,Benfica,Ajax,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+1034,2018-11-07,Wed,2018,CSKA Moscow,Roma,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+1035,2018-11-07,Wed,2018,Juventus,Manchester Utd,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+1036,2018-11-07,Wed,2018,Lyon,Hoffenheim,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+1037,2018-11-07,Wed,2018,Manchester City,Shakhtar,6,0,H,6-0,UEFA Champions League,kaggle_ucl
+1038,2018-11-07,Wed,2018,Valencia,Young Boys,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+1039,2018-11-07,Wed,2018,Viktoria PlzeÅ,Real Madrid,0,5,A,0-5,UEFA Champions League,kaggle_ucl
+1040,2018-11-27,Tue,2018,AEK Athens,Ajax,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+1041,2018-11-27,Tue,2018,Bayern Munich,Benfica,5,1,H,5-1,UEFA Champions League,kaggle_ucl
+1042,2018-11-27,Tue,2018,CSKA Moscow,Viktoria PlzeÅ,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+1043,2018-11-27,Tue,2018,Hoffenheim,Shakhtar,2,3,A,2-3,UEFA Champions League,kaggle_ucl
+1044,2018-11-27,Tue,2018,Juventus,Valencia,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+1045,2018-11-27,Tue,2018,Lyon,Manchester City,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+1046,2018-11-27,Tue,2018,Manchester Utd,Young Boys,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+1047,2018-11-27,Tue,2018,Roma,Real Madrid,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+1048,2018-11-28,Wed,2018,Dortmund,Club Brugge,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+1049,2018-11-28,Wed,2018,Loko Moscow,Galatasaray,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+1050,2018-11-28,Wed,2018,Napoli,Red Star,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+1051,2018-11-28,Wed,2018,PSV Eindhoven,Barcelona,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+1052,2018-11-28,Wed,2018,Paris S-G,Liverpool,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+1053,2018-11-28,Wed,2018,Porto,Schalke 04,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+1054,2018-11-28,Wed,2018,Tottenham,Inter,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+1055,2018-12-11,Tue,2018,Barcelona,Tottenham,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+1056,2018-12-11,Tue,2018,Club Brugge,Atlético Madrid,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+1057,2018-12-11,Tue,2018,Galatasaray,Porto,2,3,A,2-3,UEFA Champions League,kaggle_ucl
+1058,2018-12-11,Tue,2018,Inter,PSV Eindhoven,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+1059,2018-12-11,Tue,2018,Liverpool,Napoli,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+1060,2018-12-11,Tue,2018,Monaco,Dortmund,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+1061,2018-12-11,Tue,2018,Red Star,Paris S-G,1,4,A,1-4,UEFA Champions League,kaggle_ucl
+1062,2018-12-11,Tue,2018,Schalke 04,Loko Moscow,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+1063,2018-12-12,Wed,2018,Ajax,Bayern Munich,3,3,D,3-3,UEFA Champions League,kaggle_ucl
+1064,2018-12-12,Wed,2018,Benfica,AEK Athens,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+1065,2018-12-12,Wed,2018,Manchester City,Hoffenheim,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+1066,2018-12-12,Wed,2018,Real Madrid,CSKA Moscow,0,3,A,0-3,UEFA Champions League,kaggle_ucl
+1067,2018-12-12,Wed,2018,Shakhtar,Lyon,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+1068,2018-12-12,Wed,2018,Valencia,Manchester Utd,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+1069,2018-12-12,Wed,2018,Viktoria PlzeÅ,Roma,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+1070,2018-12-12,Wed,2018,Young Boys,Juventus,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+1071,2019-02-12,Tue,2018,Manchester Utd,Paris S-G,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+1072,2019-02-13,Wed,2018,Ajax,Real Madrid,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+1073,2019-02-13,Wed,2018,Tottenham,Dortmund,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+1074,2019-02-19,Tue,2018,Liverpool,Bayern Munich,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+1075,2019-02-19,Tue,2018,Lyon,Barcelona,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+1076,2019-02-20,Wed,2018,Atlético Madrid,Juventus,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+1077,2019-02-20,Wed,2018,Schalke 04,Manchester City,2,3,A,2-3,UEFA Champions League,kaggle_ucl
+1078,2019-03-05,Tue,2018,Dortmund,Tottenham,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+1079,2019-03-05,Tue,2018,Real Madrid,Ajax,1,4,A,1-4,UEFA Champions League,kaggle_ucl
+1080,2019-03-06,Wed,2018,Paris S-G,Manchester Utd,1,3,A,1-3,UEFA Champions League,kaggle_ucl
+1081,2019-03-06,Wed,2018,Porto,Roma,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+1082,2019-03-12,Tue,2018,Juventus,Atlético Madrid,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+1083,2019-03-12,Tue,2018,Manchester City,Schalke 04,7,0,H,7-0,UEFA Champions League,kaggle_ucl
+1084,2019-03-13,Wed,2018,Barcelona,Lyon,5,1,H,5-1,UEFA Champions League,kaggle_ucl
+1085,2019-03-13,Wed,2018,Bayern Munich,Liverpool,1,3,A,1-3,UEFA Champions League,kaggle_ucl
+1086,2019-04-09,Tue,2018,Liverpool,Porto,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+1087,2019-04-09,Tue,2018,Tottenham,Manchester City,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+1088,2019-04-10,Wed,2018,Ajax,Juventus,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+1089,2019-04-10,Wed,2018,Manchester Utd,Barcelona,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+1090,2019-04-16,Tue,2018,Barcelona,Manchester Utd,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+1091,2019-04-16,Tue,2018,Juventus,Ajax,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+1092,2019-04-17,Wed,2018,Manchester City,Tottenham,4,3,H,4-3,UEFA Champions League,kaggle_ucl
+1093,2019-04-17,Wed,2018,Porto,Liverpool,1,4,A,1-4,UEFA Champions League,kaggle_ucl
+1094,2019-04-30,Tue,2018,Tottenham,Ajax,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+1095,2019-05-01,Wed,2018,Barcelona,Liverpool,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+1096,2019-05-07,Tue,2018,Liverpool,Barcelona,4,0,H,4-0,UEFA Champions League,kaggle_ucl
+1097,2019-05-08,Wed,2018,Ajax,Tottenham,2,3,A,2-3,UEFA Champions League,kaggle_ucl
+1098,2019-06-01,Sat,2018,Tottenham,Liverpool,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+1099,2019-09-17,Tue,2019,Ajax,Lille,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+1100,2019-09-17,Tue,2019,Benfica,RB Leipzig,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+1101,2019-09-17,Tue,2019,Chelsea,Valencia,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+1102,2019-09-17,Tue,2019,Dortmund,Barcelona,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+1103,2019-09-17,Tue,2019,Inter,Slavia Prague,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+1104,2019-09-17,Tue,2019,Lyon,Zenit,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+1105,2019-09-17,Tue,2019,Napoli,Liverpool,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+1106,2019-09-17,Tue,2019,RB Salzburg,Genk,6,2,H,6-2,UEFA Champions League,kaggle_ucl
+1107,2019-09-18,Wed,2019,Atlético Madrid,Juventus,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+1108,2019-09-18,Wed,2019,Bayern Munich,Red Star,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+1109,2019-09-18,Wed,2019,Club Brugge,Galatasaray,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+1110,2019-09-18,Wed,2019,Dinamo Zagreb,Atalanta,4,0,H,4-0,UEFA Champions League,kaggle_ucl
+1111,2019-09-18,Wed,2019,Leverkusen,Loko Moscow,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+1112,2019-09-18,Wed,2019,Olympiacos,Tottenham,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+1113,2019-09-18,Wed,2019,Paris S-G,Real Madrid,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+1114,2019-09-18,Wed,2019,Shakhtar,Manchester City,0,3,A,0-3,UEFA Champions League,kaggle_ucl
+1115,2019-10-01,Tue,2019,Atalanta,Shakhtar,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+1116,2019-10-01,Tue,2019,Galatasaray,Paris S-G,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+1117,2019-10-01,Tue,2019,Juventus,Leverkusen,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+1118,2019-10-01,Tue,2019,Loko Moscow,Atlético Madrid,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+1119,2019-10-01,Tue,2019,Manchester City,Dinamo Zagreb,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+1120,2019-10-01,Tue,2019,Real Madrid,Club Brugge,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+1121,2019-10-01,Tue,2019,Red Star,Olympiacos,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+1122,2019-10-01,Tue,2019,Tottenham,Bayern Munich,2,7,A,2-7,UEFA Champions League,kaggle_ucl
+1123,2019-10-02,Wed,2019,Barcelona,Inter,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+1124,2019-10-02,Wed,2019,Genk,Napoli,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+1125,2019-10-02,Wed,2019,Lille,Chelsea,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+1126,2019-10-02,Wed,2019,Liverpool,RB Salzburg,4,3,H,4-3,UEFA Champions League,kaggle_ucl
+1127,2019-10-02,Wed,2019,RB Leipzig,Lyon,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+1128,2019-10-02,Wed,2019,Slavia Prague,Dortmund,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+1129,2019-10-02,Wed,2019,Valencia,Ajax,0,3,A,0-3,UEFA Champions League,kaggle_ucl
+1130,2019-10-02,Wed,2019,Zenit,Benfica,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+1131,2019-10-22,Tue,2019,Atlético Madrid,Leverkusen,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+1132,2019-10-22,Tue,2019,Club Brugge,Paris S-G,0,5,A,0-5,UEFA Champions League,kaggle_ucl
+1133,2019-10-22,Tue,2019,Galatasaray,Real Madrid,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+1134,2019-10-22,Tue,2019,Juventus,Loko Moscow,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+1135,2019-10-22,Tue,2019,Manchester City,Atalanta,5,1,H,5-1,UEFA Champions League,kaggle_ucl
+1136,2019-10-22,Tue,2019,Olympiacos,Bayern Munich,2,3,A,2-3,UEFA Champions League,kaggle_ucl
+1137,2019-10-22,Tue,2019,Shakhtar,Dinamo Zagreb,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+1138,2019-10-22,Tue,2019,Tottenham,Red Star,5,0,H,5-0,UEFA Champions League,kaggle_ucl
+1139,2019-10-23,Wed,2019,Ajax,Chelsea,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+1140,2019-10-23,Wed,2019,Benfica,Lyon,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+1141,2019-10-23,Wed,2019,Genk,Liverpool,1,4,A,1-4,UEFA Champions League,kaggle_ucl
+1142,2019-10-23,Wed,2019,Inter,Dortmund,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+1143,2019-10-23,Wed,2019,Lille,Valencia,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+1144,2019-10-23,Wed,2019,RB Leipzig,Zenit,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+1145,2019-10-23,Wed,2019,RB Salzburg,Napoli,2,3,A,2-3,UEFA Champions League,kaggle_ucl
+1146,2019-10-23,Wed,2019,Slavia Prague,Barcelona,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+1147,2019-11-05,Tue,2019,Barcelona,Slavia Prague,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+1148,2019-11-05,Tue,2019,Chelsea,Ajax,4,4,D,4-4,UEFA Champions League,kaggle_ucl
+1149,2019-11-05,Tue,2019,Dortmund,Inter,3,2,H,3-2,UEFA Champions League,kaggle_ucl
+1150,2019-11-05,Tue,2019,Liverpool,Genk,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+1151,2019-11-05,Tue,2019,Lyon,Benfica,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+1152,2019-11-05,Tue,2019,Napoli,RB Salzburg,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+1153,2019-11-05,Tue,2019,Valencia,Lille,4,1,H,4-1,UEFA Champions League,kaggle_ucl
+1154,2019-11-05,Tue,2019,Zenit,RB Leipzig,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+1155,2019-11-06,Wed,2019,Atalanta,Manchester City,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+1156,2019-11-06,Wed,2019,Bayern Munich,Olympiacos,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+1157,2019-11-06,Wed,2019,Dinamo Zagreb,Shakhtar,3,3,D,3-3,UEFA Champions League,kaggle_ucl
+1158,2019-11-06,Wed,2019,Leverkusen,Atlético Madrid,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+1159,2019-11-06,Wed,2019,Loko Moscow,Juventus,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+1160,2019-11-06,Wed,2019,Paris S-G,Club Brugge,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+1161,2019-11-06,Wed,2019,Real Madrid,Galatasaray,6,0,H,6-0,UEFA Champions League,kaggle_ucl
+1162,2019-11-06,Wed,2019,Red Star,Tottenham,0,4,A,0-4,UEFA Champions League,kaggle_ucl
+1163,2019-11-26,Tue,2019,Atalanta,Dinamo Zagreb,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+1164,2019-11-26,Tue,2019,Galatasaray,Club Brugge,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+1165,2019-11-26,Tue,2019,Juventus,Atlético Madrid,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+1166,2019-11-26,Tue,2019,Loko Moscow,Leverkusen,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+1167,2019-11-26,Tue,2019,Manchester City,Shakhtar,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+1168,2019-11-26,Tue,2019,Real Madrid,Paris S-G,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+1169,2019-11-26,Tue,2019,Red Star,Bayern Munich,0,6,A,0-6,UEFA Champions League,kaggle_ucl
+1170,2019-11-26,Tue,2019,Tottenham,Olympiacos,4,2,H,4-2,UEFA Champions League,kaggle_ucl
+1171,2019-11-27,Wed,2019,Barcelona,Dortmund,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+1172,2019-11-27,Wed,2019,Genk,RB Salzburg,1,4,A,1-4,UEFA Champions League,kaggle_ucl
+1173,2019-11-27,Wed,2019,Lille,Ajax,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+1174,2019-11-27,Wed,2019,Liverpool,Napoli,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+1175,2019-11-27,Wed,2019,RB Leipzig,Benfica,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+1176,2019-11-27,Wed,2019,Slavia Prague,Inter,1,3,A,1-3,UEFA Champions League,kaggle_ucl
+1177,2019-11-27,Wed,2019,Valencia,Chelsea,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+1178,2019-11-27,Wed,2019,Zenit,Lyon,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+1179,2019-12-10,Tue,2019,Ajax,Valencia,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+1180,2019-12-10,Tue,2019,Benfica,Zenit,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+1181,2019-12-10,Tue,2019,Chelsea,Lille,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+1182,2019-12-10,Tue,2019,Dortmund,Slavia Prague,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+1183,2019-12-10,Tue,2019,Inter,Barcelona,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+1184,2019-12-10,Tue,2019,Lyon,RB Leipzig,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+1185,2019-12-10,Tue,2019,Napoli,Genk,4,0,H,4-0,UEFA Champions League,kaggle_ucl
+1186,2019-12-10,Tue,2019,RB Salzburg,Liverpool,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+1187,2019-12-11,Wed,2019,Atlético Madrid,Loko Moscow,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+1188,2019-12-11,Wed,2019,Bayern Munich,Tottenham,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+1189,2019-12-11,Wed,2019,Club Brugge,Real Madrid,1,3,A,1-3,UEFA Champions League,kaggle_ucl
+1190,2019-12-11,Wed,2019,Dinamo Zagreb,Manchester City,1,4,A,1-4,UEFA Champions League,kaggle_ucl
+1191,2019-12-11,Wed,2019,Leverkusen,Juventus,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+1192,2019-12-11,Wed,2019,Olympiacos,Red Star,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+1193,2019-12-11,Wed,2019,Paris S-G,Galatasaray,5,0,H,5-0,UEFA Champions League,kaggle_ucl
+1194,2019-12-11,Wed,2019,Shakhtar,Atalanta,0,3,A,0-3,UEFA Champions League,kaggle_ucl
+1195,2020-02-18,Tue,2019,Atlético Madrid,Liverpool,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+1196,2020-02-18,Tue,2019,Dortmund,Paris S-G,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+1197,2020-02-19,Wed,2019,Atalanta,Valencia,4,1,H,4-1,UEFA Champions League,kaggle_ucl
+1198,2020-02-19,Wed,2019,Tottenham,RB Leipzig,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+1199,2020-02-25,Tue,2019,Chelsea,Bayern Munich,0,3,A,0-3,UEFA Champions League,kaggle_ucl
+1200,2020-02-25,Tue,2019,Napoli,Barcelona,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+1201,2020-02-26,Wed,2019,Lyon,Juventus,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+1202,2020-02-26,Wed,2019,Real Madrid,Manchester City,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+1203,2020-03-10,Tue,2019,RB Leipzig,Tottenham,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+1204,2020-03-10,Tue,2019,Valencia,Atalanta,3,4,A,3-4,UEFA Champions League,kaggle_ucl
+1205,2020-03-11,Wed,2019,Liverpool,Atlético Madrid,2,3,A,2-3,UEFA Champions League,kaggle_ucl
+1206,2020-03-11,Wed,2019,Paris S-G,Dortmund,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+1207,2020-08-07,Fri,2019,Juventus,Lyon,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+1208,2020-08-07,Fri,2019,Manchester City,Real Madrid,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+1209,2020-08-08,Sat,2019,Barcelona,Napoli,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+1210,2020-08-08,Sat,2019,Bayern Munich,Chelsea,4,1,H,4-1,UEFA Champions League,kaggle_ucl
+1211,2020-08-12,Wed,2019,Atalanta,Paris S-G,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+1212,2020-08-13,Thu,2019,RB Leipzig,Atlético Madrid,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+1213,2020-08-14,Fri,2019,Barcelona,Bayern Munich,2,8,A,2-8,UEFA Champions League,kaggle_ucl
+1214,2020-08-15,Sat,2019,Manchester City,Lyon,1,3,A,1-3,UEFA Champions League,kaggle_ucl
+1215,2020-08-18,Tue,2019,RB Leipzig,Paris S-G,0,3,A,0-3,UEFA Champions League,kaggle_ucl
+1216,2020-08-19,Wed,2019,Lyon,Bayern Munich,0,3,A,0-3,UEFA Champions League,kaggle_ucl
+1217,2020-08-23,Sun,2019,Paris S-G,Bayern Munich,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+1218,2020-10-20,Tue,2020,Barcelona,Ferencváros,5,1,H,5-1,UEFA Champions League,kaggle_ucl
+1219,2020-10-20,Tue,2020,Chelsea,Sevilla,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+1220,2020-10-20,Tue,2020,Dynamo Kyiv,Juventus,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+1221,2020-10-20,Tue,2020,Lazio,Dortmund,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+1222,2020-10-20,Tue,2020,Paris S-G,Manchester Utd,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+1223,2020-10-20,Tue,2020,RB Leipzig,BaÅakÅehir,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+1224,2020-10-20,Tue,2020,Rennes,Krasnodar,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+1225,2020-10-20,Tue,2020,Zenit,Club Brugge,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+1226,2020-10-21,Wed,2020,Ajax,Liverpool,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+1227,2020-10-21,Wed,2020,Bayern Munich,Atlético Madrid,4,0,H,4-0,UEFA Champions League,kaggle_ucl
+1228,2020-10-21,Wed,2020,Inter,M'Gladbach,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+1229,2020-10-21,Wed,2020,Manchester City,Porto,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+1230,2020-10-21,Wed,2020,Midtjylland,Atalanta,0,4,A,0-4,UEFA Champions League,kaggle_ucl
+1231,2020-10-21,Wed,2020,Olympiacos,Marseille,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+1232,2020-10-21,Wed,2020,RB Salzburg,Loko Moscow,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+1233,2020-10-21,Wed,2020,Real Madrid,Shakhtar,2,3,A,2-3,UEFA Champions League,kaggle_ucl
+1234,2020-10-27,Tue,2020,Atalanta,Ajax,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+1235,2020-10-27,Tue,2020,Atlético Madrid,RB Salzburg,3,2,H,3-2,UEFA Champions League,kaggle_ucl
+1236,2020-10-27,Tue,2020,Liverpool,Midtjylland,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+1237,2020-10-27,Tue,2020,Loko Moscow,Bayern Munich,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+1238,2020-10-27,Tue,2020,M'Gladbach,Real Madrid,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+1239,2020-10-27,Tue,2020,Marseille,Manchester City,0,3,A,0-3,UEFA Champions League,kaggle_ucl
+1240,2020-10-27,Tue,2020,Porto,Olympiacos,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+1241,2020-10-27,Tue,2020,Shakhtar,Inter,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+1242,2020-10-28,Wed,2020,BaÅakÅehir,Paris S-G,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+1243,2020-10-28,Wed,2020,Club Brugge,Lazio,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+1244,2020-10-28,Wed,2020,Dortmund,Zenit,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+1245,2020-10-28,Wed,2020,Ferencváros,Dynamo Kyiv,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+1246,2020-10-28,Wed,2020,Juventus,Barcelona,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+1247,2020-10-28,Wed,2020,Krasnodar,Chelsea,0,4,A,0-4,UEFA Champions League,kaggle_ucl
+1248,2020-10-28,Wed,2020,Manchester Utd,RB Leipzig,5,0,H,5-0,UEFA Champions League,kaggle_ucl
+1249,2020-10-28,Wed,2020,Sevilla,Rennes,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+1250,2020-11-03,Tue,2020,Atalanta,Liverpool,0,5,A,0-5,UEFA Champions League,kaggle_ucl
+1251,2020-11-03,Tue,2020,Loko Moscow,Atlético Madrid,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+1252,2020-11-03,Tue,2020,Manchester City,Olympiacos,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+1253,2020-11-03,Tue,2020,Midtjylland,Ajax,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+1254,2020-11-03,Tue,2020,Porto,Marseille,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+1255,2020-11-03,Tue,2020,RB Salzburg,Bayern Munich,2,6,A,2-6,UEFA Champions League,kaggle_ucl
+1256,2020-11-03,Tue,2020,Real Madrid,Inter,3,2,H,3-2,UEFA Champions League,kaggle_ucl
+1257,2020-11-03,Tue,2020,Shakhtar,M'Gladbach,0,6,A,0-6,UEFA Champions League,kaggle_ucl
+1258,2020-11-04,Wed,2020,Barcelona,Dynamo Kyiv,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+1259,2020-11-04,Wed,2020,BaÅakÅehir,Manchester Utd,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+1260,2020-11-04,Wed,2020,Chelsea,Rennes,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+1261,2020-11-04,Wed,2020,Club Brugge,Dortmund,0,3,A,0-3,UEFA Champions League,kaggle_ucl
+1262,2020-11-04,Wed,2020,Ferencváros,Juventus,1,4,A,1-4,UEFA Champions League,kaggle_ucl
+1263,2020-11-04,Wed,2020,RB Leipzig,Paris S-G,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+1264,2020-11-04,Wed,2020,Sevilla,Krasnodar,3,2,H,3-2,UEFA Champions League,kaggle_ucl
+1265,2020-11-04,Wed,2020,Zenit,Lazio,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+1266,2020-11-24,Tue,2020,Dortmund,Club Brugge,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+1267,2020-11-24,Tue,2020,Dynamo Kyiv,Barcelona,0,4,A,0-4,UEFA Champions League,kaggle_ucl
+1268,2020-11-24,Tue,2020,Juventus,Ferencváros,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+1269,2020-11-24,Tue,2020,Krasnodar,Sevilla,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+1270,2020-11-24,Tue,2020,Lazio,Zenit,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+1271,2020-11-24,Tue,2020,Manchester Utd,BaÅakÅehir,4,1,H,4-1,UEFA Champions League,kaggle_ucl
+1272,2020-11-24,Tue,2020,Paris S-G,RB Leipzig,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+1273,2020-11-25,Wed,2020,Ajax,Midtjylland,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+1274,2020-11-25,Wed,2020,Atlético Madrid,Loko Moscow,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+1275,2020-11-25,Wed,2020,Bayern Munich,RB Salzburg,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+1276,2020-11-25,Wed,2020,Inter,Real Madrid,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+1277,2020-11-25,Wed,2020,Liverpool,Atalanta,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+1278,2020-11-25,Wed,2020,M'Gladbach,Shakhtar,4,0,H,4-0,UEFA Champions League,kaggle_ucl
+1279,2020-11-25,Wed,2020,Marseille,Porto,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+1280,2020-11-25,Wed,2020,Olympiacos,Manchester City,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+1281,2020-12-01,Tue,2020,Atalanta,Midtjylland,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+1282,2020-12-01,Tue,2020,Atlético Madrid,Bayern Munich,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+1283,2020-12-01,Tue,2020,Liverpool,Ajax,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+1284,2020-12-01,Tue,2020,Loko Moscow,RB Salzburg,1,3,A,1-3,UEFA Champions League,kaggle_ucl
+1285,2020-12-01,Tue,2020,M'Gladbach,Inter,2,3,A,2-3,UEFA Champions League,kaggle_ucl
+1286,2020-12-01,Tue,2020,Marseille,Olympiacos,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+1287,2020-12-01,Tue,2020,Porto,Manchester City,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+1288,2020-12-01,Tue,2020,Shakhtar,Real Madrid,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+1289,2020-12-02,Wed,2020,BaÅakÅehir,RB Leipzig,3,4,A,3-4,UEFA Champions League,kaggle_ucl
+1290,2020-12-02,Wed,2020,Club Brugge,Zenit,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+1291,2020-12-02,Wed,2020,Dortmund,Lazio,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+1292,2020-12-02,Wed,2020,Ferencváros,Barcelona,0,3,A,0-3,UEFA Champions League,kaggle_ucl
+1293,2020-12-02,Wed,2020,Juventus,Dynamo Kyiv,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+1294,2020-12-02,Wed,2020,Krasnodar,Rennes,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+1295,2020-12-02,Wed,2020,Sevilla,Chelsea,0,4,A,0-4,UEFA Champions League,kaggle_ucl
+1296,2020-12-08,Tue,2020,Barcelona,Juventus,0,3,A,0-3,UEFA Champions League,kaggle_ucl
+1297,2020-12-08,Tue,2020,Chelsea,Krasnodar,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+1298,2020-12-08,Tue,2020,Dynamo Kyiv,Ferencváros,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+1299,2020-12-08,Tue,2020,Lazio,Club Brugge,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+1300,2020-12-08,Tue,2020,RB Leipzig,Manchester Utd,3,2,H,3-2,UEFA Champions League,kaggle_ucl
+1301,2020-12-08,Tue,2020,Rennes,Sevilla,1,3,A,1-3,UEFA Champions League,kaggle_ucl
+1302,2020-12-08,Tue,2020,Zenit,Dortmund,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+1303,2020-12-09,Wed,2020,Ajax,Atalanta,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+1304,2020-12-09,Wed,2020,Bayern Munich,Loko Moscow,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+1305,2020-12-09,Wed,2020,Inter,Shakhtar,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+1306,2020-12-09,Wed,2020,Manchester City,Marseille,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+1307,2020-12-09,Wed,2020,Midtjylland,Liverpool,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+1308,2020-12-09,Wed,2020,Olympiacos,Porto,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+1309,2020-12-09,Wed,2020,Paris S-G,BaÅakÅehir,5,1,H,5-1,UEFA Champions League,kaggle_ucl
+1310,2020-12-09,Wed,2020,RB Salzburg,Atlético Madrid,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+1311,2020-12-09,Wed,2020,Real Madrid,M'Gladbach,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+1312,2021-02-16,Tue,2020,Barcelona,Paris S-G,1,4,A,1-4,UEFA Champions League,kaggle_ucl
+1313,2021-02-17,Wed,2020,Porto,Juventus,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+1314,2021-02-17,Wed,2020,Sevilla,Dortmund,2,3,A,2-3,UEFA Champions League,kaggle_ucl
+1315,2021-02-23,Tue,2020,Atlético Madrid,Chelsea,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+1316,2021-02-23,Tue,2020,Lazio,Bayern Munich,1,4,A,1-4,UEFA Champions League,kaggle_ucl
+1317,2021-02-24,Wed,2020,Atalanta,Real Madrid,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+1318,2021-02-24,Wed,2020,M'Gladbach,Manchester City,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+1319,2021-03-09,Tue,2020,Dortmund,Sevilla,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+1320,2021-03-09,Tue,2020,Juventus,Porto,3,2,H,3-2,UEFA Champions League,kaggle_ucl
+1321,2021-03-10,Wed,2020,Liverpool,RB Leipzig,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+1322,2021-03-10,Wed,2020,Paris S-G,Barcelona,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+1323,2021-03-16,Tue,2020,Manchester City,M'Gladbach,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+1324,2021-03-16,Tue,2020,Real Madrid,Atalanta,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+1325,2021-03-17,Wed,2020,Bayern Munich,Lazio,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+1326,2021-03-17,Wed,2020,Chelsea,Atlético Madrid,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+1327,2021-04-06,Tue,2020,Manchester City,Dortmund,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+1328,2021-04-06,Tue,2020,Real Madrid,Liverpool,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+1329,2021-04-07,Wed,2020,Bayern Munich,Paris S-G,2,3,A,2-3,UEFA Champions League,kaggle_ucl
+1330,2021-04-07,Wed,2020,Porto,Chelsea,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+1331,2021-04-13,Tue,2020,Chelsea,Porto,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+1332,2021-04-13,Tue,2020,Paris S-G,Bayern Munich,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+1333,2021-04-14,Wed,2020,Dortmund,Manchester City,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+1334,2021-04-14,Wed,2020,Liverpool,Real Madrid,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+1335,2021-04-27,Tue,2020,Real Madrid,Chelsea,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+1336,2021-04-28,Wed,2020,Paris S-G,Manchester City,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+1337,2021-05-04,Tue,2020,Manchester City,Paris S-G,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+1338,2021-05-05,Wed,2020,Chelsea,Real Madrid,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+1339,2021-05-29,Sat,2020,Manchester City,Chelsea,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+1340,2021-09-14,Tue,2021,Barcelona,Bayern Munich,0,3,A,0-3,UEFA Champions League,kaggle_ucl
+1341,2021-09-14,Tue,2021,Chelsea,Zenit,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+1342,2021-09-14,Tue,2021,Dynamo Kyiv,Benfica,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+1343,2021-09-14,Tue,2021,Lille,Wolfsburg,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+1344,2021-09-14,Tue,2021,Malmö,Juventus,0,3,A,0-3,UEFA Champions League,kaggle_ucl
+1345,2021-09-14,Tue,2021,Sevilla,RB Salzburg,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+1346,2021-09-14,Tue,2021,Villarreal,Atalanta,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+1347,2021-09-14,Tue,2021,Young Boys,Manchester Utd,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+1348,2021-09-15,Wed,2021,Atlético Madrid,Porto,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+1349,2021-09-15,Wed,2021,BeÅiktaÅ,Dortmund,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+1350,2021-09-15,Wed,2021,Club Brugge,Paris S-G,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+1351,2021-09-15,Wed,2021,Inter,Real Madrid,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+1352,2021-09-15,Wed,2021,Liverpool,Milan,3,2,H,3-2,UEFA Champions League,kaggle_ucl
+1353,2021-09-15,Wed,2021,Manchester City,RB Leipzig,6,3,H,6-3,UEFA Champions League,kaggle_ucl
+1354,2021-09-15,Wed,2021,Sheriff Tiraspol,Shakhtar,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+1355,2021-09-15,Wed,2021,Sporting CP,Ajax,1,5,A,1-5,UEFA Champions League,kaggle_ucl
+1356,2021-09-28,Tue,2021,Ajax,BeÅiktaÅ,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+1357,2021-09-28,Tue,2021,Dortmund,Sporting CP,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+1358,2021-09-28,Tue,2021,Milan,Atlético Madrid,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+1359,2021-09-28,Tue,2021,Paris S-G,Manchester City,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+1360,2021-09-28,Tue,2021,Porto,Liverpool,1,5,A,1-5,UEFA Champions League,kaggle_ucl
+1361,2021-09-28,Tue,2021,RB Leipzig,Club Brugge,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+1362,2021-09-28,Tue,2021,Real Madrid,Sheriff Tiraspol,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+1363,2021-09-28,Tue,2021,Shakhtar,Inter,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+1364,2021-09-29,Wed,2021,Atalanta,Young Boys,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+1365,2021-09-29,Wed,2021,Bayern Munich,Dynamo Kyiv,5,0,H,5-0,UEFA Champions League,kaggle_ucl
+1366,2021-09-29,Wed,2021,Benfica,Barcelona,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+1367,2021-09-29,Wed,2021,Juventus,Chelsea,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+1368,2021-09-29,Wed,2021,Manchester Utd,Villarreal,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+1369,2021-09-29,Wed,2021,RB Salzburg,Lille,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+1370,2021-09-29,Wed,2021,Wolfsburg,Sevilla,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+1371,2021-09-29,Wed,2021,Zenit,Malmö,4,0,H,4-0,UEFA Champions League,kaggle_ucl
+1372,2021-10-19,Tue,2021,Ajax,Dortmund,4,0,H,4-0,UEFA Champions League,kaggle_ucl
+1373,2021-10-19,Tue,2021,Atlético Madrid,Liverpool,2,3,A,2-3,UEFA Champions League,kaggle_ucl
+1374,2021-10-19,Tue,2021,BeÅiktaÅ,Sporting CP,1,4,A,1-4,UEFA Champions League,kaggle_ucl
+1375,2021-10-19,Tue,2021,Club Brugge,Manchester City,1,5,A,1-5,UEFA Champions League,kaggle_ucl
+1376,2021-10-19,Tue,2021,Inter,Sheriff Tiraspol,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+1377,2021-10-19,Tue,2021,Paris S-G,RB Leipzig,3,2,H,3-2,UEFA Champions League,kaggle_ucl
+1378,2021-10-19,Tue,2021,Porto,Milan,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+1379,2021-10-19,Tue,2021,Shakhtar,Real Madrid,0,5,A,0-5,UEFA Champions League,kaggle_ucl
+1380,2021-10-20,Wed,2021,Barcelona,Dynamo Kyiv,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+1381,2021-10-20,Wed,2021,Benfica,Bayern Munich,0,4,A,0-4,UEFA Champions League,kaggle_ucl
+1382,2021-10-20,Wed,2021,Chelsea,Malmö,4,0,H,4-0,UEFA Champions League,kaggle_ucl
+1383,2021-10-20,Wed,2021,Lille,Sevilla,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+1384,2021-10-20,Wed,2021,Manchester Utd,Atalanta,3,2,H,3-2,UEFA Champions League,kaggle_ucl
+1385,2021-10-20,Wed,2021,RB Salzburg,Wolfsburg,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+1386,2021-10-20,Wed,2021,Young Boys,Villarreal,1,4,A,1-4,UEFA Champions League,kaggle_ucl
+1387,2021-10-20,Wed,2021,Zenit,Juventus,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+1388,2021-11-02,Tue,2021,Atalanta,Manchester Utd,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+1389,2021-11-02,Tue,2021,Bayern Munich,Benfica,5,2,H,5-2,UEFA Champions League,kaggle_ucl
+1390,2021-11-02,Tue,2021,Dynamo Kyiv,Barcelona,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+1391,2021-11-02,Tue,2021,Juventus,Zenit,4,2,H,4-2,UEFA Champions League,kaggle_ucl
+1392,2021-11-02,Tue,2021,Malmö,Chelsea,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+1393,2021-11-02,Tue,2021,Sevilla,Lille,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+1394,2021-11-02,Tue,2021,Villarreal,Young Boys,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+1395,2021-11-03,Wed,2021,Dortmund,Ajax,1,3,A,1-3,UEFA Champions League,kaggle_ucl
+1396,2021-11-03,Wed,2021,Liverpool,Atlético Madrid,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+1397,2021-11-03,Wed,2021,Manchester City,Club Brugge,4,1,H,4-1,UEFA Champions League,kaggle_ucl
+1398,2021-11-03,Wed,2021,Milan,Porto,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+1399,2021-11-03,Wed,2021,RB Leipzig,Paris S-G,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+1400,2021-11-03,Wed,2021,Real Madrid,Shakhtar,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+1401,2021-11-03,Wed,2021,Sheriff Tiraspol,Inter,1,3,A,1-3,UEFA Champions League,kaggle_ucl
+1402,2021-11-03,Wed,2021,Sporting CP,BeÅiktaÅ,4,0,H,4-0,UEFA Champions League,kaggle_ucl
+1403,2021-11-23,Tue,2021,Barcelona,Benfica,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+1404,2021-11-23,Tue,2021,Chelsea,Juventus,4,0,H,4-0,UEFA Champions League,kaggle_ucl
+1405,2021-11-23,Tue,2021,Dynamo Kyiv,Bayern Munich,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+1406,2021-11-23,Tue,2021,Lille,RB Salzburg,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+1407,2021-11-23,Tue,2021,Malmö,Zenit,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+1408,2021-11-23,Tue,2021,Sevilla,Wolfsburg,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+1409,2021-11-23,Tue,2021,Villarreal,Manchester Utd,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+1410,2021-11-23,Tue,2021,Young Boys,Atalanta,3,3,D,3-3,UEFA Champions League,kaggle_ucl
+1411,2021-11-24,Wed,2021,Atlético Madrid,Milan,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+1412,2021-11-24,Wed,2021,BeÅiktaÅ,Ajax,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+1413,2021-11-24,Wed,2021,Club Brugge,RB Leipzig,0,5,A,0-5,UEFA Champions League,kaggle_ucl
+1414,2021-11-24,Wed,2021,Liverpool,Porto,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+1415,2021-11-24,Wed,2021,Manchester City,Paris S-G,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+1416,2021-11-24,Wed,2021,Sheriff Tiraspol,Real Madrid,0,3,A,0-3,UEFA Champions League,kaggle_ucl
+1417,2021-11-24,Wed,2021,Sporting CP,Dortmund,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+1418,2021-12-07,Tue,2021,Ajax,Sporting CP,4,2,H,4-2,UEFA Champions League,kaggle_ucl
+1419,2021-12-07,Tue,2021,Dortmund,BeÅiktaÅ,5,0,H,5-0,UEFA Champions League,kaggle_ucl
+1420,2021-12-07,Tue,2021,Milan,Liverpool,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+1421,2021-12-07,Tue,2021,Paris S-G,Club Brugge,4,1,H,4-1,UEFA Champions League,kaggle_ucl
+1422,2021-12-07,Tue,2021,Porto,Atlético Madrid,1,3,A,1-3,UEFA Champions League,kaggle_ucl
+1423,2021-12-07,Tue,2021,RB Leipzig,Manchester City,2,1,H,2-1,UEFA Champions League,kaggle_ucl
+1424,2021-12-07,Tue,2021,Real Madrid,Inter,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+1425,2021-12-07,Tue,2021,Shakhtar,Sheriff Tiraspol,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+1426,2021-12-08,Wed,2021,Bayern Munich,Barcelona,3,0,H,3-0,UEFA Champions League,kaggle_ucl
+1427,2021-12-08,Wed,2021,Benfica,Dynamo Kyiv,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+1428,2021-12-08,Wed,2021,Juventus,Malmö,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+1429,2021-12-08,Wed,2021,Manchester Utd,Young Boys,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+1430,2021-12-08,Wed,2021,RB Salzburg,Sevilla,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+1431,2021-12-08,Wed,2021,Wolfsburg,Lille,1,3,A,1-3,UEFA Champions League,kaggle_ucl
+1432,2021-12-08,Wed,2021,Zenit,Chelsea,3,3,D,3-3,UEFA Champions League,kaggle_ucl
+1433,2021-12-09,Thu,2021,Atalanta,Villarreal,2,3,A,2-3,UEFA Champions League,kaggle_ucl
+1434,2022-02-15,Tue,2021,Sporting CP,Manchester City,0,5,A,0-5,UEFA Champions League,kaggle_ucl
+1435,2022-02-16,Wed,2021,Inter,Liverpool,0,2,A,0-2,UEFA Champions League,kaggle_ucl
+1436,2022-02-16,Wed,2021,RB Salzburg,Bayern Munich,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+1437,2022-02-22,Tue,2021,Chelsea,Lille,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+1438,2022-02-22,Tue,2021,Villarreal,Juventus,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+1439,2022-02-23,Wed,2021,Atlético Madrid,Manchester Utd,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+1440,2022-02-23,Wed,2021,Benfica,Ajax,2,2,D,2-2,UEFA Champions League,kaggle_ucl
+1441,2022-03-08,Tue,2021,Bayern Munich,RB Salzburg,7,1,H,7-1,UEFA Champions League,kaggle_ucl
+1442,2022-03-08,Tue,2021,Liverpool,Inter,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+1443,2022-03-09,Wed,2021,Manchester City,Sporting CP,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+1444,2022-03-09,Wed,2021,Real Madrid,Paris S-G,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+1445,2022-03-15,Tue,2021,Ajax,Benfica,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+1446,2022-03-15,Tue,2021,Manchester Utd,Atlético Madrid,0,1,A,0-1,UEFA Champions League,kaggle_ucl
+1447,2022-03-16,Wed,2021,Juventus,Villarreal,0,3,A,0-3,UEFA Champions League,kaggle_ucl
+1448,2022-03-16,Wed,2021,Lille,Chelsea,1,2,A,1-2,UEFA Champions League,kaggle_ucl
+1449,2022-04-05,Tue,2021,Benfica,Liverpool,1,3,A,1-3,UEFA Champions League,kaggle_ucl
+1450,2022-04-05,Tue,2021,Manchester City,Atlético Madrid,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+1451,2022-04-06,Wed,2021,Chelsea,Real Madrid,1,3,A,1-3,UEFA Champions League,kaggle_ucl
+1452,2022-04-06,Wed,2021,Villarreal,Bayern Munich,1,0,H,1-0,UEFA Champions League,kaggle_ucl
+1453,2022-04-12,Tue,2021,Bayern Munich,Villarreal,1,1,D,1-1,UEFA Champions League,kaggle_ucl
+1454,2022-04-12,Tue,2021,Real Madrid,Chelsea,2,3,A,2-3,UEFA Champions League,kaggle_ucl
+1455,2022-04-13,Wed,2021,Atlético Madrid,Manchester City,0,0,D,0-0,UEFA Champions League,kaggle_ucl
+1456,2022-04-13,Wed,2021,Liverpool,Benfica,3,3,D,3-3,UEFA Champions League,kaggle_ucl
+1457,2022-04-26,Tue,2021,Manchester City,Real Madrid,4,3,H,4-3,UEFA Champions League,kaggle_ucl
+1458,2022-04-27,Wed,2021,Liverpool,Villarreal,2,0,H,2-0,UEFA Champions League,kaggle_ucl
+1459,2022-05-03,Tue,2021,Villarreal,Liverpool,2,3,A,2-3,UEFA Champions League,kaggle_ucl
+1460,2022-05-04,Wed,2021,Real Madrid,Manchester City,3,1,H,3-1,UEFA Champions League,kaggle_ucl
+1461,2022-05-28,Sat,2021,Liverpool,Real Madrid,0,1,A,0-1,UEFA Champions League,kaggle_ucl
