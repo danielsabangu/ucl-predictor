@@ -1,0 +1,44 @@
+{
+  "created_at_local": "2026-09-09T10:07:15.430124+02:00",
+  "timezone": "Africa/Johannesburg",
+  "production_model": "ucl_predictor_v1",
+  "production_feature_count": 290,
+  "feature_family_counts": {
+    "elo": 6,
+    "ucl_form": 81,
+    "domestic": 102,
+    "squad": 101,
+    "transfer": 0,
+    "unclassified": 0
+  },
+  "expected_feature_family_counts": {
+    "elo": 6,
+    "ucl_form": 81,
+    "domestic": 102,
+    "squad": 101
+  },
+  "current_fixture_state": {
+    "fixture_rows": 144,
+    "finished_rows": 6,
+    "unfinished_rows": 138,
+    "latest_finished_date": "2026-09-08T19:00:00+00:00",
+    "next_fixture_date": "2026-09-09T16:45:00+00:00"
+  },
+  "current_squad_state": {
+    "player_rows": 964,
+    "clubs": 36,
+    "valued_players": 862,
+    "valuation_coverage": 0.8941908713692946,
+    "fallback_rows": 65
+  },
+  "architecture_locked": true,
+  "transfer_features_excluded": true,
+  "historical_training_data_modified": false,
+  "important_rules": {
+    "exact_290_feature_schema_required": true,
+    "no_post_test_model_tuning": true,
+    "live_features_must_use_only_pre_fixture_information": true,
+    "missing_feature_values_may_be_preserved_for_model_imputation": true,
+    "feature_definitions_must_not_change_for_live_prediction": true
+  }
+}

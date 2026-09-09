@@ -1,0 +1,43 @@
+{
+  "created_at_utc": "2026-09-09T06:53:02.354564+00:00",
+  "model": "CatBoostClassifier",
+  "model_role": "primary H/D/A probability engine",
+  "feature_policy": {
+    "master_features": 411,
+    "final_features": 290,
+    "transfer_features_excluded": true
+  },
+  "model_parameters": {
+    "iterations": 700,
+    "learning_rate": 0.025,
+    "depth": 5,
+    "loss_function": "MultiClass",
+    "l2_leaf_reg": 5.0,
+    "random_seed": 42
+  },
+  "development_decisions": {
+    "ensemble_rejected": true,
+    "temperature_calibration_rejected": true,
+    "dedicated_draw_layer_rejected": true,
+    "raw_catboost_probabilities": true
+  },
+  "training": {
+    "rows": 1900,
+    "first_season": 2010,
+    "last_season": 2024,
+    "first_date": "2010-09-14",
+    "last_date": "2025-05-31"
+  },
+  "final_test": {
+    "season": 2025,
+    "rows": 189,
+    "first_date": "2025-09-16",
+    "last_date": "2026-05-30",
+    "log_loss": 0.9340768001244578,
+    "brier_score": 0.5467669051109361,
+    "accuracy": 0.5978835978835979,
+    "macro_f1": 0.4450250327435395,
+    "draw_recall": 0.030303030303030304
+  },
+  "important_rule": "2025/26 is now consumed as the final held-out test set. Its results must not be used for further feature or hyperparameter tuning."
+}

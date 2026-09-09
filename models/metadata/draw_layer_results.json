@@ -1,0 +1,55 @@
+{
+  "created_at_utc": "2026-09-09T06:47:59.798160+00:00",
+  "base_model": "catboost_without_transfer",
+  "base_model_oof_log_loss": 0.9166,
+  "feature_count": 290,
+  "draw_model_configs": {
+    "draw_catboost_plain": {
+      "class_weights": null
+    },
+    "draw_catboost_1_5x": {
+      "class_weights": [
+        1.0,
+        1.5
+      ]
+    },
+    "draw_catboost_2x": {
+      "class_weights": [
+        1.0,
+        2.0
+      ]
+    },
+    "draw_catboost_2_5x": {
+      "class_weights": [
+        1.0,
+        2.5
+      ]
+    },
+    "draw_catboost_3x": {
+      "class_weights": [
+        1.0,
+        3.0
+      ]
+    }
+  },
+  "fusion_method": "blend binary draw probability with base P(D), then redistribute remaining mass using base H:A ratio",
+  "alpha_step": 0.05,
+  "meta_backtest": {
+    "weighted_log_loss": 0.9165618850100141,
+    "weighted_brier": 0.5389626928208074,
+    "weighted_accuracy": 0.5854978354978355,
+    "weighted_macro_f1": 0.4383423149680827,
+    "weighted_draw_recall": 0.01640207618468488,
+    "weighted_draw_f1": 0.029476475905047334
+  },
+  "final_oof_choice": {
+    "draw_model": "draw_catboost_plain",
+    "alpha": 0.0,
+    "log_loss": 0.9165618850100142,
+    "brier": 0.5389626928208074,
+    "draw_recall": 0.016853932584269662,
+    "draw_f1": 0.031413612565445025
+  },
+  "final_test_season": 2025,
+  "final_test_evaluated": false
+}

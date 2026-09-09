@@ -1,0 +1,60 @@
+{
+  "created_at_utc": "2026-09-09T06:36:00.593681+00:00",
+  "candidate_models": [
+    "catboost",
+    "random_forest",
+    "elo_plus_ucl_form",
+    "xgboost"
+  ],
+  "weight_step": 0.05,
+  "weight_combinations": 1771,
+  "oof_matches": 924,
+  "oof_seasons": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "xgboost_probability_normalization": true,
+  "meta_backtest": {
+    "weighted_log_loss": 0.9185390400015429,
+    "weighted_brier": 0.5399298532020258,
+    "weighted_accuracy": 0.5844155844155844,
+    "weighted_macro_f1": 0.4388381523130088,
+    "weighted_draw_recall": 0.01640207618468488
+  },
+  "final_weights": {
+    "catboost": 0.65,
+    "random_forest": 0.15000000000000002,
+    "elo_plus_ucl_form": 0.15000000000000002,
+    "xgboost": 0.05
+  },
+  "final_oof_metrics": {
+    "accuracy": 0.5898268398268398,
+    "macro_f1": 0.44235504083189486,
+    "weighted_f1": 0.5334370344097025,
+    "log_loss": 0.9141795704425101,
+    "brier_score": 0.5374035857945828,
+    "home_precision": 0.6204933586337761,
+    "home_recall": 0.7676056338028169,
+    "home_f1": 0.6862539349422875,
+    "draw_precision": 0.2727272727272727,
+    "draw_recall": 0.016853932584269662,
+    "draw_f1": 0.031746031746031744,
+    "away_precision": 0.5569948186528497,
+    "away_recall": 0.671875,
+    "away_f1": 0.6090651558073654,
+    "predicted_home": 527,
+    "predicted_draw": 11,
+    "predicted_away": 386,
+    "actual_home": 426,
+    "actual_draw": 178,
+    "actual_away": 320
+  },
+  "final_test_season": 2025,
+  "final_test_evaluated": false,
+  "selection_metric": "multiclass log loss"
+}

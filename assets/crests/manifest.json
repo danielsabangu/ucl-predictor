@@ -1,0 +1,374 @@
+{
+  "created_at_utc": "2026-09-09T11:30:18.678607+00:00",
+  "source_team_snapshot": "F:\\ucl-predictor\\data\\interim\\players\\current_2026_27\\football_data_ucl_teams.csv",
+  "team_column": "canonical_team",
+  "team_id_column": "football_data_team_id",
+  "expected_teams": 36,
+  "usable_crests": 36,
+  "downloaded_from_cdn": 36,
+  "downloaded_from_api": 0,
+  "cached": 0,
+  "failed": 0,
+  "teams": [
+    {
+      "team": "AEK Athens",
+      "football_data_team_id": 1899,
+      "filename": "aek-athens.png",
+      "status": "DOWNLOADED",
+      "source": "football_data_crest_cdn",
+      "crest_url": "https://crests.football-data.org/1899.png",
+      "content_type": "image/png",
+      "size_bytes": 6622
+    },
+    {
+      "team": "Arsenal",
+      "football_data_team_id": 57,
+      "filename": "arsenal.png",
+      "status": "DOWNLOADED",
+      "source": "football_data_crest_cdn",
+      "crest_url": "https://crests.football-data.org/57.png",
+      "content_type": "image/png",
+      "size_bytes": 10279
+    },
+    {
+      "team": "Aston Villa",
+      "football_data_team_id": 58,
+      "filename": "aston-villa.png",
+      "status": "DOWNLOADED",
+      "source": "football_data_crest_cdn",
+      "crest_url": "https://crests.football-data.org/58.png",
+      "content_type": "image/png",
+      "size_bytes": 5924
+    },
+    {
+      "team": "Atlético Madrid",
+      "football_data_team_id": 78,
+      "filename": "atletico-madrid.png",
+      "status": "DOWNLOADED",
+      "source": "football_data_crest_cdn",
+      "crest_url": "https://crests.football-data.org/78.png",
+      "content_type": "image/png",
+      "size_bytes": 11310
+    },
+    {
+      "team": "Barcelona",
+      "football_data_team_id": 81,
+      "filename": "barcelona.png",
+      "status": "DOWNLOADED",
+      "source": "football_data_crest_cdn",
+      "crest_url": "https://crests.football-data.org/81.png",
+      "content_type": "image/png",
+      "size_bytes": 8316
+    },
+    {
+      "team": "Bayern Munich",
+      "football_data_team_id": 5,
+      "filename": "bayern-munich.png",
+      "status": "DOWNLOADED",
+      "source": "football_data_crest_cdn",
+      "crest_url": "https://crests.football-data.org/5.png",
+      "content_type": "image/png",
+      "size_bytes": 11466
+    },
+    {
+      "team": "Bodø/Glimt",
+      "football_data_team_id": 5721,
+      "filename": "bodo-glimt.png",
+      "status": "DOWNLOADED",
+      "source": "football_data_crest_cdn",
+      "crest_url": "https://crests.football-data.org/5721.png",
+      "content_type": "image/png",
+      "size_bytes": 10632
+    },
+    {
+      "team": "Borussia Dortmund",
+      "football_data_team_id": 4,
+      "filename": "borussia-dortmund.png",
+      "status": "DOWNLOADED",
+      "source": "football_data_crest_cdn",
+      "crest_url": "https://crests.football-data.org/4.png",
+      "content_type": "image/png",
+      "size_bytes": 5833
+    },
+    {
+      "team": "Club Brugge",
+      "football_data_team_id": 851,
+      "filename": "club-brugge.png",
+      "status": "DOWNLOADED",
+      "source": "football_data_crest_cdn",
+      "crest_url": "https://crests.football-data.org/851.png",
+      "content_type": "image/png",
+      "size_bytes": 8538
+    },
+    {
+      "team": "Como 1907",
+      "football_data_team_id": 7397,
+      "filename": "como-1907.png",
+      "status": "DOWNLOADED",
+      "source": "football_data_crest_cdn",
+      "crest_url": "https://crests.football-data.org/7397.png",
+      "content_type": "image/png",
+      "size_bytes": 5891
+    },
+    {
+      "team": "Fenerbahçe",
+      "football_data_team_id": 613,
+      "filename": "fenerbahce.png",
+      "status": "DOWNLOADED",
+      "source": "football_data_crest_cdn",
+      "crest_url": "https://crests.football-data.org/613.png",
+      "content_type": "image/png",
+      "size_bytes": 11493
+    },
+    {
+      "team": "Feyenoord",
+      "football_data_team_id": 675,
+      "filename": "feyenoord.png",
+      "status": "DOWNLOADED",
+      "source": "football_data_crest_cdn",
+      "crest_url": "https://crests.football-data.org/675.png",
+      "content_type": "image/png",
+      "size_bytes": 7632
+    },
+    {
+      "team": "Galatasaray",
+      "football_data_team_id": 610,
+      "filename": "galatasaray.png",
+      "status": "DOWNLOADED",
+      "source": "football_data_crest_cdn",
+      "crest_url": "https://crests.football-data.org/610.png",
+      "content_type": "image/png",
+      "size_bytes": 4236
+    },
+    {
+      "team": "Inter Milan",
+      "football_data_team_id": 108,
+      "filename": "inter-milan.png",
+      "status": "DOWNLOADED",
+      "source": "football_data_crest_cdn",
+      "crest_url": "https://crests.football-data.org/108.png",
+      "content_type": "image/png",
+      "size_bytes": 12312
+    },
+    {
+      "team": "LASK Linz",
+      "football_data_team_id": 2016,
+      "filename": "lask-linz.png",
+      "status": "DOWNLOADED",
+      "source": "football_data_crest_cdn",
+      "crest_url": "https://crests.football-data.org/2016.png",
+      "content_type": "image/png",
+      "size_bytes": 3257
+    },
+    {
+      "team": "Lens",
+      "football_data_team_id": 546,
+      "filename": "lens.png",
+      "status": "DOWNLOADED",
+      "source": "football_data_crest_cdn",
+      "crest_url": "https://crests.football-data.org/546.png",
+      "content_type": "image/png",
+      "size_bytes": 7867
+    },
+    {
+      "team": "Lille",
+      "football_data_team_id": 521,
+      "filename": "lille.png",
+      "status": "DOWNLOADED",
+      "source": "football_data_crest_cdn",
+      "crest_url": "https://crests.football-data.org/521.png",
+      "content_type": "image/png",
+      "size_bytes": 10449
+    },
+    {
+      "team": "Liverpool",
+      "football_data_team_id": 64,
+      "filename": "liverpool.png",
+      "status": "DOWNLOADED",
+      "source": "football_data_crest_cdn",
+      "crest_url": "https://crests.football-data.org/64.png",
+      "content_type": "image/png",
+      "size_bytes": 15035
+    },
+    {
+      "team": "Manchester City",
+      "football_data_team_id": 65,
+      "filename": "manchester-city.png",
+      "status": "DOWNLOADED",
+      "source": "football_data_crest_cdn",
+      "crest_url": "https://crests.football-data.org/65.png",
+      "content_type": "image/png",
+      "size_bytes": 14815
+    },
+    {
+      "team": "Manchester United",
+      "football_data_team_id": 66,
+      "filename": "manchester-united.png",
+      "status": "DOWNLOADED",
+      "source": "football_data_crest_cdn",
+      "crest_url": "https://crests.football-data.org/66.png",
+      "content_type": "image/png",
+      "size_bytes": 16317
+    },
+    {
+      "team": "Napoli",
+      "football_data_team_id": 113,
+      "filename": "napoli.png",
+      "status": "DOWNLOADED",
+      "source": "football_data_crest_cdn",
+      "crest_url": "https://crests.football-data.org/113.png",
+      "content_type": "image/png",
+      "size_bytes": 15716
+    },
+    {
+      "team": "PSV Eindhoven",
+      "football_data_team_id": 674,
+      "filename": "psv-eindhoven.png",
+      "status": "DOWNLOADED",
+      "source": "football_data_crest_cdn",
+      "crest_url": "https://crests.football-data.org/674.png",
+      "content_type": "image/png",
+      "size_bytes": 9527
+    },
+    {
+      "team": "Paris Saint-Germain",
+      "football_data_team_id": 524,
+      "filename": "paris-saint-germain.png",
+      "status": "DOWNLOADED",
+      "source": "football_data_crest_cdn",
+      "crest_url": "https://crests.football-data.org/524.png",
+      "content_type": "image/png",
+      "size_bytes": 18208
+    },
+    {
+      "team": "Porto",
+      "football_data_team_id": 503,
+      "filename": "porto.png",
+      "status": "DOWNLOADED",
+      "source": "football_data_crest_cdn",
+      "crest_url": "https://crests.football-data.org/503.png",
+      "content_type": "image/png",
+      "size_bytes": 13466
+    },
+    {
+      "team": "RB Leipzig",
+      "football_data_team_id": 721,
+      "filename": "rb-leipzig.png",
+      "status": "DOWNLOADED",
+      "source": "football_data_crest_cdn",
+      "crest_url": "https://crests.football-data.org/721.png",
+      "content_type": "image/png",
+      "size_bytes": 8601
+    },
+    {
+      "team": "Real Betis Balompié",
+      "football_data_team_id": 90,
+      "filename": "real-betis-balompie.png",
+      "status": "DOWNLOADED",
+      "source": "football_data_crest_cdn",
+      "crest_url": "https://crests.football-data.org/90.png",
+      "content_type": "image/png",
+      "size_bytes": 5210
+    },
+    {
+      "team": "Real Madrid",
+      "football_data_team_id": 86,
+      "filename": "real-madrid.png",
+      "status": "DOWNLOADED",
+      "source": "football_data_crest_cdn",
+      "crest_url": "https://crests.football-data.org/86.png",
+      "content_type": "image/png",
+      "size_bytes": 10954
+    },
+    {
+      "team": "Roma",
+      "football_data_team_id": 100,
+      "filename": "roma.png",
+      "status": "DOWNLOADED",
+      "source": "football_data_crest_cdn",
+      "crest_url": "https://crests.football-data.org/100.png",
+      "content_type": "image/png",
+      "size_bytes": 9777
+    },
+    {
+      "team": "Sabah FK",
+      "football_data_team_id": 10233,
+      "filename": "sabah-fk.png",
+      "status": "DOWNLOADED",
+      "source": "football_data_crest_cdn",
+      "crest_url": "https://crests.football-data.org/10233.png",
+      "content_type": "image/png",
+      "size_bytes": 18053
+    },
+    {
+      "team": "Shakhtar Donetsk",
+      "football_data_team_id": 1887,
+      "filename": "shakhtar-donetsk.png",
+      "status": "DOWNLOADED",
+      "source": "football_data_crest_cdn",
+      "crest_url": "https://crests.football-data.org/1887.png",
+      "content_type": "image/png",
+      "size_bytes": 11417
+    },
+    {
+      "team": "Slavia Prague",
+      "football_data_team_id": 930,
+      "filename": "slavia-prague.png",
+      "status": "DOWNLOADED",
+      "source": "football_data_crest_cdn",
+      "crest_url": "https://crests.football-data.org/930.png",
+      "content_type": "image/png",
+      "size_bytes": 3562
+    },
+    {
+      "team": "Sporting CP",
+      "football_data_team_id": 498,
+      "filename": "sporting-cp.png",
+      "status": "DOWNLOADED",
+      "source": "football_data_crest_cdn",
+      "crest_url": "https://crests.football-data.org/498.png",
+      "content_type": "image/png",
+      "size_bytes": 12802
+    },
+    {
+      "team": "VfB Stuttgart",
+      "football_data_team_id": 10,
+      "filename": "vfb-stuttgart.png",
+      "status": "DOWNLOADED",
+      "source": "football_data_crest_cdn",
+      "crest_url": "https://crests.football-data.org/10.png",
+      "content_type": "image/png",
+      "size_bytes": 9012
+    },
+    {
+      "team": "Viking FK",
+      "football_data_team_id": 5720,
+      "filename": "viking-fk.png",
+      "status": "DOWNLOADED",
+      "source": "football_data_crest_cdn",
+      "crest_url": "https://crests.football-data.org/5720.png",
+      "content_type": "image/png",
+      "size_bytes": 9993
+    },
+    {
+      "team": "Villarreal",
+      "football_data_team_id": 94,
+      "filename": "villarreal.png",
+      "status": "DOWNLOADED",
+      "source": "football_data_crest_cdn",
+      "crest_url": "https://crests.football-data.org/94.png",
+      "content_type": "image/png",
+      "size_bytes": 9336
+    },
+    {
+      "team": "ŠK Slovan Bratislava",
+      "football_data_team_id": 7509,
+      "filename": "sk-slovan-bratislava.png",
+      "status": "DOWNLOADED",
+      "source": "football_data_crest_cdn",
+      "crest_url": "https://crests.football-data.org/7509.png",
+      "content_type": "image/png",
+      "size_bytes": 9218
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 .venv/
 .env
+
 __pycache__/
 *.pyc
 *.pyo
@@ -8,15 +9,41 @@ __pycache__/
 .vscode/
 .DS_Store
 
+# ============================================================
+# RAW / INTERMEDIATE DATA
+# ============================================================
+
 data/raw/*
 data/interim/*
 data/predictions/*
+data/processed/*
+
+# ============================================================
+# PUBLIC DEPLOYMENT SNAPSHOT
+# ============================================================
+# This small sanitized directory is intentionally committed.
+!data/app/
+!data/app/**
+
+# ============================================================
+# MODELS
+# ============================================================
 
 models/trained/*
 models/preprocessing/*
 
+# ============================================================
+# GENERATED REPORT OUTPUTS
+# ============================================================
+
 reports/figures/*
 reports/metrics/*
 reports/model_reports/*
+reports/exports/*
+reports/pipeline/*
+
+# ============================================================
+# KEEP PLACEHOLDERS
+# ============================================================
 
 !.gitkeep

@@ -1,0 +1,68 @@
+{
+  "created_at_utc": "2026-09-09T06:29:31.090302+00:00",
+  "feature_set": "without_transfer",
+  "feature_count": 290,
+  "excluded_transfer_features": 121,
+  "first_validation_season": 2018,
+  "last_validation_season": 2024,
+  "final_test_season": 2025,
+  "final_test_evaluated": false,
+  "models": [
+    "xgboost",
+    "catboost",
+    "hist_gradient_boosting"
+  ],
+  "summary": [
+    {
+      "model": "catboost",
+      "feature_count": 290,
+      "folds": 7,
+      "validation_matches": 924,
+      "weighted_accuracy": 0.5854978354978355,
+      "weighted_macro_f1": 0.4383423149680827,
+      "weighted_log_loss": 0.9165618850100141,
+      "log_loss_std": 0.026663896644338502,
+      "weighted_brier": 0.5389626928208074,
+      "weighted_draw_recall": 0.01640207618468488,
+      "weighted_draw_f1": 0.029476475905047334,
+      "best_fold_log_loss": 0.8917476643775768,
+      "worst_fold_log_loss": 0.9586150086416989,
+      "rank": 1
+    },
+    {
+      "model": "xgboost",
+      "feature_count": 290,
+      "folds": 7,
+      "validation_matches": 924,
+      "weighted_accuracy": 0.5541125541125541,
+      "weighted_macro_f1": 0.4343648795073184,
+      "weighted_log_loss": 0.9661989131184564,
+      "log_loss_std": 0.04798771153908548,
+      "weighted_brier": 0.5644816936225739,
+      "weighted_draw_recall": 0.05707758425149729,
+      "weighted_draw_f1": 0.08346727120600307,
+      "best_fold_log_loss": 0.8958920671325818,
+      "worst_fold_log_loss": 1.0334369017328744,
+      "rank": 2
+    },
+    {
+      "model": "hist_gradient_boosting",
+      "feature_count": 290,
+      "folds": 7,
+      "validation_matches": 924,
+      "weighted_accuracy": 0.551948051948052,
+      "weighted_macro_f1": 0.44869368030574874,
+      "weighted_log_loss": 1.1967987140269818,
+      "log_loss_std": 0.08780613545622123,
+      "weighted_brier": 0.6390187297682539,
+      "weighted_draw_recall": 0.10375956571608745,
+      "weighted_draw_f1": 0.13816035912777047,
+      "best_fold_log_loss": 1.0839835124976545,
+      "worst_fold_log_loss": 1.3563475710723303,
+      "rank": 3
+    }
+  ],
+  "best_model": "catboost",
+  "best_weighted_log_loss": 0.9165618850100141,
+  "best_weighted_brier": 0.5389626928208074
+}

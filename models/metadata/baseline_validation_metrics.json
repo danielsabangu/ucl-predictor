@@ -1,0 +1,87 @@
+{
+  "created_at_utc": "2026-09-09T06:12:06.576170+00:00",
+  "feature_count": 411,
+  "split_policy": {
+    "train_max_season": 2023,
+    "validation_season": 2024,
+    "final_test_season": 2025,
+    "final_test_evaluated": false
+  },
+  "selection_metric": "validation log loss",
+  "secondary_metrics": [
+    "multiclass Brier score",
+    "macro F1",
+    "accuracy"
+  ],
+  "validation_results": [
+    {
+      "model": "random_forest",
+      "accuracy": 0.5873015873015873,
+      "macro_f1": 0.4459788213990474,
+      "weighted_f1": 0.5615138152869916,
+      "log_loss": 0.9146235355621376,
+      "brier_score": 0.5365838601328617,
+      "predicted_home": 95,
+      "predicted_draw": 9,
+      "predicted_away": 85,
+      "validation_rank": 1
+    },
+    {
+      "model": "extra_trees",
+      "accuracy": 0.5661375661375662,
+      "macro_f1": 0.41419188365001175,
+      "weighted_f1": 0.5422606481016052,
+      "log_loss": 0.9288825430215457,
+      "brier_score": 0.5446940537571286,
+      "predicted_home": 100,
+      "predicted_draw": 11,
+      "predicted_away": 78,
+      "validation_rank": 2
+    },
+    {
+      "model": "dummy_prior",
+      "accuracy": 0.5079365079365079,
+      "macro_f1": 0.22456140350877193,
+      "weighted_f1": 0.3421888053467001,
+      "log_loss": 1.002408813829889,
+      "brier_score": 0.6053689656840582,
+      "predicted_home": 189,
+      "predicted_draw": 0,
+      "predicted_away": 0,
+      "validation_rank": 3
+    },
+    {
+      "model": "logistic_regression",
+      "accuracy": 0.4603174603174603,
+      "macro_f1": 0.39807196290271,
+      "weighted_f1": 0.4715490939211375,
+      "log_loss": 1.3144925272965462,
+      "brier_score": 0.7121592314231128,
+      "predicted_home": 87,
+      "predicted_draw": 38,
+      "predicted_away": 64,
+      "validation_rank": 4
+    },
+    {
+      "model": "logistic_regression_balanced",
+      "accuracy": 0.43915343915343913,
+      "macro_f1": 0.40368732264865814,
+      "weighted_f1": 0.4686350605407057,
+      "log_loss": 1.442685228231027,
+      "brier_score": 0.7733693690868116,
+      "predicted_home": 67,
+      "predicted_draw": 60,
+      "predicted_away": 62,
+      "validation_rank": 5
+    }
+  ],
+  "best_validation_model": "random_forest",
+  "best_validation_log_loss": 0.9146235355621376,
+  "modeling_rules": {
+    "imputation_fit_on_training_only": true,
+    "scaling_fit_on_training_only": true,
+    "validation_used_for_model_selection": true,
+    "final_test_used_for_model_selection": false,
+    "final_test_remains_untouched": true
+  }
+}

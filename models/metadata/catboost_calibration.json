@@ -1,0 +1,26 @@
+{
+  "created_at_utc": "2026-09-09T06:41:06.002579+00:00",
+  "model": "catboost",
+  "calibration_method": "multiclass_temperature_scaling",
+  "meta_validation_method": "leave_one_oof_season_out",
+  "oof_matches": 924,
+  "oof_seasons": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "raw_weighted_log_loss": 0.9165618850100141,
+  "calibrated_weighted_log_loss": 0.9168668042786348,
+  "raw_weighted_brier": 0.5389626928208074,
+  "calibrated_weighted_brier": 0.5390775310895666,
+  "mean_meta_temperature": 1.0454807229994425,
+  "meta_temperature_std": 0.018418258903560983,
+  "deployment_temperature": 1.045068086252016,
+  "final_test_season": 2025,
+  "final_test_evaluated": false,
+  "important_note": "The deployment temperature is fitted using all historical rolling OOF predictions only. The 2025/26 final test remains untouched."
+}

@@ -1,0 +1,12 @@
+{
+  "created_at_utc": "2026-09-09T11:55:25.881504+00:00",
+  "model_version": "ucl_predictor_v1",
+  "fixture_count": 6,
+  "first_kickoff_utc": "2026-09-09T16:45:00+00:00",
+  "last_kickoff_utc": "2026-09-09T19:00:00+00:00",
+  "prediction_columns": 32,
+  "source_run_id": "20260909T103745Z",
+  "probability_model": "Frozen CatBoost",
+  "scoreline_layer": "Auxiliary Poisson bridge",
+  "confidence_layer": "Independent evidence-quality score"
+}
