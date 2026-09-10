@@ -279,7 +279,6 @@ def verify_frozen_squad_architecture() -> None:
 
 
 def determine_reference_timestamp() -> pd.Timestamp:
-
     require_file(
         CURRENT_FIXTURES_FILE,
         "Resolved current UCL fixtures",
@@ -295,7 +294,6 @@ def determine_reference_timestamp() -> pd.Timestamp:
         not in
         fixtures.columns
     ):
-
         raise RuntimeError(
             "Current fixture file has no date_utc column."
         )
@@ -315,40 +313,58 @@ def determine_reference_timestamp() -> pd.Timestamp:
         not in
         fixtures.columns
     ):
-
         raise RuntimeError(
             "Current fixture file has no status column."
         )
 
-    upcoming = fixtures[
+    now_utc = pd.Timestamp.now(
+        tz="UTC"
+    )
+
+    status = (
         fixtures[
             "status"
-        ].astype(
+        ]
+        .astype(
             str
         )
-        !=
-        "FINISHED"
+        .str.strip()
+        .str.upper()
+    )
+
+    upcoming = fixtures[
+        (
+            fixtures[
+                "date_utc"
+            ]
+            >
+            now_utc
+        )
+        &
+        (
+            status
+            !=
+            "FINISHED"
+        )
     ].copy()
 
     if upcoming.empty:
-
         raise RuntimeError(
-            "No upcoming UCL fixtures found."
+            "No future UCL fixtures found. "
+            f"Current UTC time: {now_utc.isoformat()}"
         )
 
-    reference = upcoming[
-        "date_utc"
-    ].min()
+    reference = (
+        upcoming[
+            "date_utc"
+        ]
+        .sort_values()
+        .iloc[0]
+    )
 
     return pd.Timestamp(
         reference
     )
-
-
-# ============================================================
-# CURRENT TEAM UNIVERSE
-# ============================================================
-
 
 def load_current_teams() -> pd.DataFrame:
 

@@ -1,6 +1,5 @@
 {
   "created_at_utc": "2026-09-09T11:30:18.678607+00:00",
-  "source_team_snapshot": "F:\\ucl-predictor\\data\\interim\\players\\current_2026_27\\football_data_ucl_teams.csv",
   "team_column": "canonical_team",
   "team_id_column": "football_data_team_id",
   "expected_teams": 36,
