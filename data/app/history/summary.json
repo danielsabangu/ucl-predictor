@@ -1,0 +1,41 @@
+{
+  "all_published_revision_count": 6,
+  "correct_result_picks": 3,
+  "evaluation_schema_version": 1,
+  "exact_score_accuracy": 0.0,
+  "exact_score_eligible": 6,
+  "exact_scores_correct": 0,
+  "headline_population": "LATEST_PREMATCH_REVISION_PER_FIXTURE",
+  "mean_actual_result_probability": 0.42233834133139936,
+  "mean_log_loss": 0.9437427768206528,
+  "mean_multiclass_brier": 0.5502023306583009,
+  "metric_definitions": {
+    "exact_score_accuracy": "Predicted regulation/final scoreline exactly equals the stored final scoreline.",
+    "log_loss": "Negative natural logarithm of the probability assigned to the actual H/D/A result. Lower is better.",
+    "multiclass_brier": "Sum of squared probability errors across H/D/A. Range 0 to 2. Lower is better.",
+    "result_pick_accuracy": "Highest-probability H/D/A selection equals the verified final match result."
+  },
+  "model_versions": [
+    "ucl_predictor_v1"
+  ],
+  "performance_by_actual_result": {
+    "A": {
+      "accuracy": 0.0,
+      "correct_picks": 0,
+      "sample_size": 1
+    },
+    "D": {
+      "accuracy": 0.0,
+      "correct_picks": 0,
+      "sample_size": 2
+    },
+    "H": {
+      "accuracy": 1.0,
+      "correct_picks": 3,
+      "sample_size": 3
+    }
+  },
+  "resolved_fixture_count": 6,
+  "result_pick_accuracy": 0.5,
+  "sample_warning": "INSUFFICIENT_SAMPLE_FOR_RELIABLE_PERFORMANCE_CLAIMS"
+}
