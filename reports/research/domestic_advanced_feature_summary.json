@@ -1,0 +1,43 @@
+{
+  "experiment": "candidate_c_domestic_advanced_features",
+  "status": "research_only",
+  "ucl_matches": 2089,
+  "raw_domestic_matches": 28893,
+  "candidate_feature_count": 12,
+  "candidate_features": [
+    "shots_for_diff_last5",
+    "shots_against_diff_last5",
+    "sot_for_diff_last5",
+    "sot_against_diff_last5",
+    "corners_for_diff_last5",
+    "corners_against_diff_last5",
+    "shots_for_diff_last10",
+    "shots_against_diff_last10",
+    "sot_for_diff_last10",
+    "sot_against_diff_last10",
+    "corners_for_diff_last10",
+    "corners_against_diff_last10"
+  ],
+  "both_supported_matches": 807,
+  "both_supported_rate": 0.38630923887027285,
+  "development_2018_2024_matches": 924,
+  "development_2018_2024_both_supported": 383,
+  "confirmation_2025_matches": 189,
+  "confirmation_2025_both_supported": 78,
+  "rolling_windows": [
+    5,
+    10
+  ],
+  "metrics": [
+    "shots_for",
+    "shots_against",
+    "sot_for",
+    "sot_against",
+    "corners_for",
+    "corners_against"
+  ],
+  "raw_incomplete_fixture_policy": "skip_fixture_from_advanced_history",
+  "leakage_rule": "domestic_fixture_date_strictly_before_target_ucl_date",
+  "fuzzy_matching": false,
+  "production_modified": false
+}

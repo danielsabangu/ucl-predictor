@@ -1,0 +1,29 @@
+{
+  "experiment": "candidate_c_domestic_advanced_stats_audit",
+  "status": "research_only",
+  "expected_files": 80,
+  "existing_files": 80,
+  "files_with_all_stat_columns": 80,
+  "files_with_complete_core_stats": 77,
+  "total_match_rows": 28893,
+  "core_performance_columns": [
+    "HS",
+    "AS",
+    "HST",
+    "AST",
+    "HC",
+    "AC"
+  ],
+  "discipline_columns": [
+    "HF",
+    "AF",
+    "HY",
+    "AY",
+    "HR",
+    "AR"
+  ],
+  "flagged_cells": 0,
+  "raw_data_modified": false,
+  "production_modified": false,
+  "plausibility_policy": "flag_only_no_automatic_correction"
+}

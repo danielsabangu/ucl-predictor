@@ -1,0 +1,80 @@
+{
+  "experiment": "candidate_e_tournament_context_ablation",
+  "status": "research_only",
+  "comparison_type": "common_coverage_signal_experiment",
+  "common_coverage_first_season": 2012,
+  "selection_window": "2018_2024",
+  "confirmation_2025_used": false,
+  "confirmation_2025_outcomes_inspected": false,
+  "locked_confirmation_matches": 189,
+  "development_matches": 924,
+  "eligible_rows": 1845,
+  "excluded_for_context_coverage": {
+    "2010": 122,
+    "2011": 122
+  },
+  "control_feature_count": 290,
+  "candidate_feature_family": "tournament_context",
+  "scenarios": {
+    "CONTROL": {
+      "added_features": [],
+      "total_feature_count": 290,
+      "passes_signal_screen": false
+    },
+    "STAGE_CONTEXT": {
+      "added_features": [
+        "tournament_is_knockout",
+        "tournament_is_final",
+        "tournament_round_depth"
+      ],
+      "total_feature_count": 293,
+      "passes_signal_screen": true
+    },
+    "LEG_CONTEXT": {
+      "added_features": [
+        "tournament_is_first_leg",
+        "tournament_is_second_leg"
+      ],
+      "total_feature_count": 292,
+      "passes_signal_screen": true
+    },
+    "TIE_STATE": {
+      "added_features": [
+        "tournament_is_second_leg",
+        "aggregate_goal_diff_home_pre",
+        "aggregate_abs_goal_diff_pre",
+        "aggregate_state_home_pre"
+      ],
+      "total_feature_count": 294,
+      "passes_signal_screen": false
+    },
+    "ALL_CONTEXT": {
+      "added_features": [
+        "tournament_is_knockout",
+        "tournament_is_final",
+        "tournament_is_first_leg",
+        "tournament_is_second_leg",
+        "tournament_round_depth",
+        "aggregate_goal_diff_home_pre",
+        "aggregate_abs_goal_diff_pre",
+        "aggregate_state_home_pre"
+      ],
+      "total_feature_count": 298,
+      "passes_signal_screen": true
+    }
+  },
+  "signal_screen": {
+    "weighted_log_loss_improves": true,
+    "weighted_brier_not_worse": true,
+    "minimum_log_loss_better_folds": 4
+  },
+  "selection_ranking": "log_loss_improvement_then_brier_improvement",
+  "selected_scenario": "ALL_CONTEXT",
+  "raw_transfermarkt_aggregate_used": false,
+  "current_match_score_used_as_candidate_feature": false,
+  "second_leg_context_from_strictly_prior_first_leg": true,
+  "fuzzy_matching_used": false,
+  "production_modified": false,
+  "hyperparameters_tuned": false,
+  "additional_posthoc_feature_search": false
+}

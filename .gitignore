@@ -1,3 +1,4 @@
+cat > .gitignore <<'EOF'
 .venv/
 .env
 
@@ -22,8 +23,26 @@ data/processed/*
 # PUBLIC DEPLOYMENT SNAPSHOT
 # ============================================================
 # This small sanitized directory is intentionally committed.
+
 !data/app/
 !data/app/**
+
+# ============================================================
+# RESEARCH DATA
+# ============================================================
+#
+# Most research feature matrices and API caches are generated
+# locally and can be rebuilt from the committed research code.
+#
+# Candidate A (UEFA strength) survived the research process,
+# so its source tables and historical feature layer are kept.
+# ============================================================
+
+data/research/*
+
+!data/research/uefa_club_coefficients_2010_2026.csv
+!data/research/uefa_country_floors_2010_2026.csv
+!data/research/ucl_uefa_strength_features.csv
 
 # ============================================================
 # MODELS
@@ -43,7 +62,28 @@ reports/exports/*
 reports/pipeline/*
 
 # ============================================================
+# RESEARCH REPORT HYGIENE
+# ============================================================
+#
+# Small summaries, coverage reports, calibration summaries,
+# ablation results and decision evidence remain available for
+# auditability.
+#
+# Large row-level outputs, prediction dumps and raw API probe
+# records stay local because they are reproducible artifacts.
+# ============================================================
+
+reports/research/*_oof_predictions.csv
+reports/research/*_test_predictions.csv
+reports/research/*_confirmation_predictions.csv
+
+reports/research/api_football_injury_probe_records.csv
+reports/research/schedule_rest_team_side_audit.csv
+reports/research/uefa_coefficient_match_coverage.csv
+
+# ============================================================
 # KEEP PLACEHOLDERS
 # ============================================================
 
 !.gitkeep
+EOF

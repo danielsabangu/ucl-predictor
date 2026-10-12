@@ -1,0 +1,41 @@
+{
+  "candidate": "E_tournament_context",
+  "status": "research_feature_layer_built",
+  "production_modified": false,
+  "model_trained": false,
+  "confirmation_2025_model_evaluated": false,
+  "fuzzy_matching_used": false,
+  "raw_transfermarkt_aggregate_loaded": false,
+  "raw_transfermarkt_aggregate_used": false,
+  "current_match_result_used_as_candidate_feature": false,
+  "prior_first_leg_score_used_for_second_leg_context": true,
+  "prior_first_leg_must_be_strictly_before_second_leg": true,
+  "master_rows": 2089,
+  "transfermarkt_rows": 1871,
+  "candidate_feature_columns": [
+    "tournament_is_knockout",
+    "tournament_is_final",
+    "tournament_is_first_leg",
+    "tournament_is_second_leg",
+    "tournament_round_depth",
+    "aggregate_goal_diff_home_pre",
+    "aggregate_abs_goal_diff_pre",
+    "aggregate_state_home_pre"
+  ],
+  "explicit_date_bridges": {
+    "886": 2917382
+  },
+  "supported_training_2012_2024_rows": 1656,
+  "supported_training_2012_2024_context_rows": 1656,
+  "development_2018_2024_rows": 924,
+  "development_2018_2024_context_rows": 924,
+  "confirmation_2025_rows": 189,
+  "confirmation_2025_context_rows": 189,
+  "verified_second_leg_pairs": 206,
+  "context_source_counts": {
+    "transfermarkt_exact": 1843,
+    "UNAVAILABLE": 244,
+    "transfermarkt_explicit_date_bridge": 1,
+    "master_final_stage_fallback": 1
+  }
+}

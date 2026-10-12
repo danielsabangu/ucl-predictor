@@ -1,0 +1,207 @@
+season,round_family,second_leg_game_id,second_leg_date,second_leg_home_team,second_leg_away_team,first_leg_game_id,first_leg_date,first_leg_home_team,first_leg_away_team,first_leg_home_goals,first_leg_away_goals,aggregate_goal_diff_home_pre,aggregate_state_home_pre,strictly_prior_first_leg
+2012,ROUND_OF_16,2284441,2013-03-12,Schalke 04,Galatasaray,2284440,2013-02-20,Galatasaray,Schalke 04,1.0,1.0,0.0,0.0,True
+2012,ROUND_OF_16,2284443,2013-03-06,Juventus,Celtic,2284442,2013-02-12,Celtic,Juventus,0.0,3.0,3.0,1.0,True
+2012,ROUND_OF_16,2284445,2013-03-13,Bayern Munich,Arsenal,2284444,2013-02-19,Arsenal,Bayern Munich,1.0,3.0,2.0,1.0,True
+2012,ROUND_OF_16,2284447,2013-03-05,Borussia Dortmund,Shakhtar Donetsk,2284446,2013-02-13,Shakhtar Donetsk,Borussia Dortmund,2.0,2.0,0.0,0.0,True
+2012,ROUND_OF_16,2284449,2013-03-12,Barcelona,AC Milan,2284448,2013-02-20,AC Milan,Barcelona,2.0,0.0,-2.0,-1.0,True
+2012,ROUND_OF_16,2284451,2013-03-05,Manchester United,Real Madrid,2284450,2013-02-13,Real Madrid,Manchester United,1.0,1.0,0.0,0.0,True
+2012,ROUND_OF_16,2284453,2013-03-06,Paris Saint-Germain,Valencia,2284452,2013-02-12,Valencia,Paris Saint-Germain,1.0,2.0,1.0,1.0,True
+2012,ROUND_OF_16,2284456,2013-03-13,Málaga,Porto,2284454,2013-02-19,Porto,Málaga,1.0,0.0,-1.0,-1.0,True
+2012,QUARTER_FINAL,2301901,2013-04-09,Borussia Dortmund,Málaga,2301897,2013-04-03,Málaga,Borussia Dortmund,0.0,0.0,0.0,0.0,True
+2012,QUARTER_FINAL,2301902,2013-04-09,Galatasaray,Real Madrid,2301898,2013-04-03,Real Madrid,Galatasaray,3.0,0.0,-3.0,-1.0,True
+2012,QUARTER_FINAL,2301903,2013-04-10,Barcelona,Paris Saint-Germain,2301899,2013-04-02,Paris Saint-Germain,Barcelona,2.0,2.0,0.0,0.0,True
+2012,QUARTER_FINAL,2301904,2013-04-10,Juventus,Bayern Munich,2301900,2013-04-02,Bayern Munich,Juventus,2.0,0.0,-2.0,-1.0,True
+2012,SEMI_FINAL,2312110,2013-04-30,Real Madrid,Borussia Dortmund,2312109,2013-04-24,Borussia Dortmund,Real Madrid,4.0,1.0,-3.0,-1.0,True
+2012,SEMI_FINAL,2312111,2013-05-01,Barcelona,Bayern Munich,2312108,2013-04-23,Bayern Munich,Barcelona,4.0,0.0,-4.0,-1.0,True
+2013,ROUND_OF_16,2385045,2014-03-12,Barcelona,Manchester City,2385037,2014-02-18,Manchester City,Barcelona,0.0,2.0,2.0,1.0,True
+2013,ROUND_OF_16,2385046,2014-03-19,Manchester United,Olympiacos,2385038,2014-02-25,Olympiacos,Manchester United,2.0,0.0,-2.0,-1.0,True
+2013,ROUND_OF_16,2385047,2014-03-11,Atlético Madrid,AC Milan,2385039,2014-02-19,AC Milan,Atlético Madrid,0.0,1.0,1.0,1.0,True
+2013,ROUND_OF_16,2385048,2014-03-12,Paris Saint-Germain,Bayer Leverkusen,2385040,2014-02-18,Bayer Leverkusen,Paris Saint-Germain,0.0,4.0,4.0,1.0,True
+2013,ROUND_OF_16,2385049,2014-03-18,Chelsea,Galatasaray,2385041,2014-02-26,Galatasaray,Chelsea,1.0,1.0,0.0,0.0,True
+2013,ROUND_OF_16,2385050,2014-03-18,Real Madrid,Schalke 04,2385042,2014-02-26,Schalke 04,Real Madrid,1.0,6.0,5.0,1.0,True
+2013,ROUND_OF_16,2385051,2014-03-19,Borussia Dortmund,Zenit,2385043,2014-02-25,Zenit,Borussia Dortmund,2.0,4.0,2.0,1.0,True
+2013,ROUND_OF_16,2385052,2014-03-11,Bayern Munich,Arsenal,2385044,2014-02-19,Arsenal,Bayern Munich,0.0,2.0,2.0,1.0,True
+2013,QUARTER_FINAL,2449282,2014-04-09,Atlético Madrid,Barcelona,2449278,2014-04-01,Barcelona,Atlético Madrid,1.0,1.0,0.0,0.0,True
+2013,QUARTER_FINAL,2449283,2014-04-08,Borussia Dortmund,Real Madrid,2449279,2014-04-02,Real Madrid,Borussia Dortmund,3.0,0.0,-3.0,-1.0,True
+2013,QUARTER_FINAL,2449284,2014-04-08,Chelsea,Paris Saint-Germain,2449280,2014-04-02,Paris Saint-Germain,Chelsea,3.0,1.0,-2.0,-1.0,True
+2013,QUARTER_FINAL,2449285,2014-04-09,Bayern Munich,Manchester United,2449281,2014-04-01,Manchester United,Bayern Munich,1.0,1.0,0.0,0.0,True
+2013,SEMI_FINAL,2452864,2014-04-29,Bayern Munich,Real Madrid,2452862,2014-04-23,Real Madrid,Bayern Munich,1.0,0.0,-1.0,-1.0,True
+2013,SEMI_FINAL,2452865,2014-04-30,Chelsea,Atlético Madrid,2452863,2014-04-22,Atlético Madrid,Chelsea,0.0,0.0,0.0,0.0,True
+2014,ROUND_OF_16,2517520,2015-03-11,Chelsea,Paris Saint-Germain,2517512,2015-02-17,Paris Saint-Germain,Chelsea,1.0,1.0,0.0,0.0,True
+2014,ROUND_OF_16,2517521,2015-03-18,Barcelona,Manchester City,2517513,2015-02-24,Manchester City,Barcelona,1.0,2.0,1.0,1.0,True
+2014,ROUND_OF_16,2517522,2015-03-17,Atlético Madrid,Bayer Leverkusen,2517514,2015-02-25,Bayer Leverkusen,Atlético Madrid,1.0,0.0,-1.0,-1.0,True
+2014,ROUND_OF_16,2517523,2015-03-18,Borussia Dortmund,Juventus,2517515,2015-02-24,Juventus,Borussia Dortmund,2.0,1.0,-1.0,-1.0,True
+2014,ROUND_OF_16,2517524,2015-03-10,Real Madrid,Schalke 04,2517516,2015-02-18,Schalke 04,Real Madrid,0.0,2.0,2.0,1.0,True
+2014,ROUND_OF_16,2517525,2015-03-11,Bayern Munich,Shakhtar Donetsk,2517517,2015-02-17,Shakhtar Donetsk,Bayern Munich,0.0,0.0,0.0,0.0,True
+2014,ROUND_OF_16,2517526,2015-03-17,Monaco,Arsenal,2517518,2015-02-25,Arsenal,Monaco,1.0,3.0,2.0,1.0,True
+2014,ROUND_OF_16,2517527,2015-03-10,Porto,Basel,2517519,2015-02-18,Basel,Porto,1.0,1.0,0.0,0.0,True
+2014,QUARTER_FINAL,2547382,2015-04-21,Bayern Munich,Porto,2547351,2015-04-15,Porto,Bayern Munich,3.0,1.0,-2.0,-1.0,True
+2014,QUARTER_FINAL,2547383,2015-04-21,Barcelona,Paris Saint-Germain,2547349,2015-04-15,Paris Saint-Germain,Barcelona,1.0,3.0,2.0,1.0,True
+2014,QUARTER_FINAL,2547384,2015-04-22,Real Madrid,Atlético Madrid,2547350,2015-04-14,Atlético Madrid,Real Madrid,0.0,0.0,0.0,0.0,True
+2014,QUARTER_FINAL,2549774,2015-04-22,Monaco,Juventus,2547352,2015-04-14,Juventus,Monaco,1.0,0.0,-1.0,-1.0,True
+2014,SEMI_FINAL,2560717,2015-05-12,Bayern Munich,Barcelona,2560716,2015-05-06,Barcelona,Bayern Munich,3.0,0.0,-3.0,-1.0,True
+2014,SEMI_FINAL,2560718,2015-05-13,Real Madrid,Juventus,2560715,2015-05-05,Juventus,Real Madrid,2.0,1.0,-1.0,-1.0,True
+2015,ROUND_OF_16,2645814,2016-03-08,Wolfsburg,Gent,2645806,2016-02-17,Gent,Wolfsburg,2.0,3.0,1.0,1.0,True
+2015,ROUND_OF_16,2645815,2016-03-08,Real Madrid,Roma,2645807,2016-02-17,Roma,Real Madrid,0.0,2.0,2.0,1.0,True
+2015,ROUND_OF_16,2645816,2016-03-09,Chelsea,Paris Saint-Germain,2645808,2016-02-16,Paris Saint-Germain,Chelsea,2.0,1.0,-1.0,-1.0,True
+2015,ROUND_OF_16,2645817,2016-03-16,Barcelona,Arsenal,2645809,2016-02-23,Arsenal,Barcelona,0.0,2.0,2.0,1.0,True
+2015,ROUND_OF_16,2645818,2016-03-16,Bayern Munich,Juventus,2645810,2016-02-23,Juventus,Bayern Munich,2.0,2.0,0.0,0.0,True
+2015,ROUND_OF_16,2645819,2016-03-15,Atlético Madrid,PSV Eindhoven,2645811,2016-02-24,PSV Eindhoven,Atlético Madrid,0.0,0.0,0.0,0.0,True
+2015,ROUND_OF_16,2645820,2016-03-09,Zenit,Benfica,2645812,2016-02-16,Benfica,Zenit,1.0,0.0,-1.0,-1.0,True
+2015,ROUND_OF_16,2645821,2016-03-15,Manchester City,Dynamo Kyiv,2645813,2016-02-24,Dynamo Kyiv,Manchester City,1.0,3.0,2.0,1.0,True
+2015,QUARTER_FINAL,2675297,2016-04-12,Real Madrid,Wolfsburg,2675293,2016-04-06,Wolfsburg,Real Madrid,2.0,0.0,-2.0,-1.0,True
+2015,QUARTER_FINAL,2675298,2016-04-13,Benfica,Bayern Munich,2675294,2016-04-05,Bayern Munich,Benfica,1.0,0.0,-1.0,-1.0,True
+2015,QUARTER_FINAL,2675299,2016-04-13,Atlético Madrid,Barcelona,2675295,2016-04-05,Barcelona,Atlético Madrid,2.0,1.0,-1.0,-1.0,True
+2015,QUARTER_FINAL,2675300,2016-04-12,Manchester City,Paris Saint-Germain,2675296,2016-04-06,Paris Saint-Germain,Manchester City,2.0,2.0,0.0,0.0,True
+2015,SEMI_FINAL,2682241,2016-05-04,Real Madrid,Manchester City,2682239,2016-04-26,Manchester City,Real Madrid,0.0,0.0,0.0,0.0,True
+2015,SEMI_FINAL,2682242,2016-05-03,Bayern Munich,Atlético Madrid,2682240,2016-04-27,Atlético Madrid,Bayern Munich,1.0,0.0,-1.0,-1.0,True
+2016,ROUND_OF_16,2805645,2017-03-15,Monaco,Manchester City,2805637,2017-02-21,Manchester City,Monaco,5.0,3.0,-2.0,-1.0,True
+2016,ROUND_OF_16,2805646,2017-03-07,Napoli,Real Madrid,2805638,2017-02-15,Real Madrid,Napoli,3.0,1.0,-2.0,-1.0,True
+2016,ROUND_OF_16,2805647,2017-03-08,Borussia Dortmund,Benfica,2805639,2017-02-14,Benfica,Borussia Dortmund,1.0,0.0,-1.0,-1.0,True
+2016,ROUND_OF_16,2805648,2017-03-07,Arsenal,Bayern Munich,2805640,2017-02-15,Bayern Munich,Arsenal,5.0,1.0,-4.0,-1.0,True
+2016,ROUND_OF_16,2805649,2017-03-14,Juventus,Porto,2805641,2017-02-22,Porto,Juventus,0.0,2.0,2.0,1.0,True
+2016,ROUND_OF_16,2805650,2017-03-15,Atlético Madrid,Bayer Leverkusen,2805642,2017-02-21,Bayer Leverkusen,Atlético Madrid,2.0,4.0,2.0,1.0,True
+2016,ROUND_OF_16,2805651,2017-03-08,Barcelona,Paris Saint-Germain,2805643,2017-02-14,Paris Saint-Germain,Barcelona,4.0,0.0,-4.0,-1.0,True
+2016,ROUND_OF_16,2805652,2017-03-14,Leicester City,Sevilla,2805644,2017-02-22,Sevilla,Leicester City,2.0,1.0,-1.0,-1.0,True
+2016,QUARTER_FINAL,2840939,2017-04-18,Leicester City,Atlético Madrid,2840935,2017-04-12,Atlético Madrid,Leicester City,1.0,0.0,-1.0,-1.0,True
+2016,QUARTER_FINAL,2840940,2017-04-19,Monaco,Borussia Dortmund,2840936,2017-04-12,Borussia Dortmund,Monaco,2.0,3.0,1.0,1.0,True
+2016,QUARTER_FINAL,2840941,2017-04-18,Real Madrid,Bayern Munich,2840937,2017-04-12,Bayern Munich,Real Madrid,1.0,2.0,1.0,1.0,True
+2016,QUARTER_FINAL,2840942,2017-04-19,Barcelona,Juventus,2840938,2017-04-11,Juventus,Barcelona,3.0,0.0,-3.0,-1.0,True
+2016,SEMI_FINAL,2849344,2017-05-10,Atlético Madrid,Real Madrid,2849342,2017-05-02,Real Madrid,Atlético Madrid,3.0,0.0,-3.0,-1.0,True
+2016,SEMI_FINAL,2849345,2017-05-09,Juventus,Monaco,2849343,2017-05-03,Monaco,Juventus,0.0,2.0,2.0,1.0,True
+2017,ROUND_OF_16,2982001,2018-03-07,Tottenham Hotspur,Juventus,2981993,2018-02-13,Juventus,Tottenham Hotspur,2.0,2.0,0.0,0.0,True
+2017,ROUND_OF_16,2982002,2018-03-07,Manchester City,Basel,2981994,2018-02-13,Basel,Manchester City,0.0,4.0,4.0,1.0,True
+2017,ROUND_OF_16,2982003,2018-03-06,Liverpool,Porto,2981995,2018-02-14,Porto,Liverpool,0.0,5.0,5.0,1.0,True
+2017,ROUND_OF_16,2982004,2018-03-13,Manchester United,Sevilla,2981996,2018-02-21,Sevilla,Manchester United,0.0,0.0,0.0,0.0,True
+2017,ROUND_OF_16,2982005,2018-03-06,Paris Saint-Germain,Real Madrid,2981997,2018-02-14,Real Madrid,Paris Saint-Germain,3.0,1.0,-2.0,-1.0,True
+2017,ROUND_OF_16,2982006,2018-03-13,Roma,Shakhtar Donetsk,2981998,2018-02-21,Shakhtar Donetsk,Roma,2.0,1.0,-1.0,-1.0,True
+2017,ROUND_OF_16,2982007,2018-03-14,Barcelona,Chelsea,2981999,2018-02-20,Chelsea,Barcelona,1.0,1.0,0.0,0.0,True
+2017,ROUND_OF_16,2982008,2018-03-14,Beşiktaş,Bayern Munich,2982000,2018-02-20,Bayern Munich,Beşiktaş,5.0,0.0,-5.0,-1.0,True
+2017,QUARTER_FINAL,3018933,2018-04-10,Roma,Barcelona,3018929,2018-04-04,Barcelona,Roma,4.0,1.0,-3.0,-1.0,True
+2017,QUARTER_FINAL,3018934,2018-04-11,Bayern Munich,Sevilla,3018930,2018-04-03,Sevilla,Bayern Munich,1.0,2.0,1.0,1.0,True
+2017,QUARTER_FINAL,3018935,2018-04-11,Real Madrid,Juventus,3018931,2018-04-03,Juventus,Real Madrid,0.0,3.0,3.0,1.0,True
+2017,QUARTER_FINAL,3018936,2018-04-10,Manchester City,Liverpool,3018932,2018-04-04,Liverpool,Manchester City,3.0,0.0,-3.0,-1.0,True
+2017,SEMI_FINAL,3030594,2018-05-01,Real Madrid,Bayern Munich,3030592,2018-04-25,Bayern Munich,Real Madrid,1.0,2.0,1.0,1.0,True
+2017,SEMI_FINAL,3030595,2018-05-02,Roma,Liverpool,3030593,2018-04-24,Liverpool,Roma,5.0,2.0,-3.0,-1.0,True
+2018,ROUND_OF_16,3135807,2019-03-12,Manchester City,Schalke 04,3135806,2019-02-20,Schalke 04,Manchester City,2.0,3.0,1.0,1.0,True
+2018,ROUND_OF_16,3135808,2019-03-06,Paris Saint-Germain,Manchester United,3135801,2019-02-12,Manchester United,Paris Saint-Germain,0.0,2.0,2.0,1.0,True
+2018,ROUND_OF_16,3135809,2019-03-05,Borussia Dortmund,Tottenham Hotspur,3135803,2019-02-13,Tottenham Hotspur,Borussia Dortmund,3.0,0.0,-3.0,-1.0,True
+2018,ROUND_OF_16,3135810,2019-03-13,Barcelona,Lyon,3135805,2019-02-19,Lyon,Barcelona,0.0,0.0,0.0,0.0,True
+2018,ROUND_OF_16,3135811,2019-03-06,Porto,Roma,3135800,2019-02-12,Roma,Porto,2.0,1.0,-1.0,-1.0,True
+2018,ROUND_OF_16,3135812,2019-03-05,Real Madrid,Ajax,3135802,2019-02-13,Ajax,Real Madrid,1.0,2.0,1.0,1.0,True
+2018,ROUND_OF_16,3135813,2019-03-13,Bayern Munich,Liverpool,3135804,2019-02-19,Liverpool,Bayern Munich,0.0,0.0,0.0,0.0,True
+2018,ROUND_OF_16,3135814,2019-03-12,Juventus,Atlético Madrid,3135799,2019-02-20,Atlético Madrid,Juventus,2.0,0.0,-2.0,-1.0,True
+2018,QUARTER_FINAL,3167762,2019-04-16,Juventus,Ajax,3167761,2019-04-10,Ajax,Juventus,1.0,1.0,0.0,0.0,True
+2018,QUARTER_FINAL,3167764,2019-04-17,Porto,Liverpool,3167763,2019-04-09,Liverpool,Porto,2.0,0.0,-2.0,-1.0,True
+2018,QUARTER_FINAL,3167766,2019-04-17,Manchester City,Tottenham Hotspur,3167765,2019-04-09,Tottenham Hotspur,Manchester City,1.0,0.0,-1.0,-1.0,True
+2018,QUARTER_FINAL,3167768,2019-04-16,Barcelona,Manchester United,3167767,2019-04-10,Manchester United,Barcelona,0.0,1.0,1.0,1.0,True
+2018,SEMI_FINAL,3177024,2019-05-08,Ajax,Tottenham Hotspur,3177023,2019-04-30,Tottenham Hotspur,Ajax,0.0,1.0,1.0,1.0,True
+2018,SEMI_FINAL,3177025,2019-05-07,Liverpool,Barcelona,3177022,2019-05-01,Barcelona,Liverpool,3.0,0.0,-3.0,-1.0,True
+2019,ROUND_OF_16,3291935,2020-03-11,Paris Saint-Germain,Borussia Dortmund,3291927,2020-02-18,Borussia Dortmund,Paris Saint-Germain,2.0,1.0,-1.0,-1.0,True
+2019,ROUND_OF_16,3291936,2020-08-07,Manchester City,Real Madrid,3291928,2020-02-26,Real Madrid,Manchester City,1.0,2.0,1.0,1.0,True
+2019,ROUND_OF_16,3291937,2020-03-10,Valencia,Atalanta,3291929,2020-02-19,Atalanta,Valencia,4.0,1.0,-3.0,-1.0,True
+2019,ROUND_OF_16,3291938,2020-03-11,Liverpool,Atlético Madrid,3291930,2020-02-18,Atlético Madrid,Liverpool,1.0,0.0,-1.0,-1.0,True
+2019,ROUND_OF_16,3291939,2020-08-08,Bayern Munich,Chelsea,3291931,2020-02-25,Chelsea,Bayern Munich,0.0,3.0,3.0,1.0,True
+2019,ROUND_OF_16,3291940,2020-08-07,Juventus,Lyon,3291932,2020-02-26,Lyon,Juventus,1.0,0.0,-1.0,-1.0,True
+2019,ROUND_OF_16,3291941,2020-03-10,RB Leipzig,Tottenham Hotspur,3291933,2020-02-19,Tottenham Hotspur,RB Leipzig,0.0,1.0,1.0,1.0,True
+2019,ROUND_OF_16,3291942,2020-08-08,Barcelona,Napoli,3291934,2020-02-25,Napoli,Barcelona,1.0,1.0,0.0,0.0,True
+2020,ROUND_OF_16,3496456,2021-03-16,Manchester City,Borussia Mönchengladbach,3496448,2021-02-24,Borussia Mönchengladbach,Manchester City,0.0,2.0,2.0,1.0,True
+2020,ROUND_OF_16,3496457,2021-03-17,Bayern Munich,Lazio,3496449,2021-02-23,Lazio,Bayern Munich,1.0,4.0,3.0,1.0,True
+2020,ROUND_OF_16,3496458,2021-03-17,Chelsea,Atlético Madrid,3496450,2021-02-23,Atlético Madrid,Chelsea,0.0,1.0,1.0,1.0,True
+2020,ROUND_OF_16,3496459,2021-03-10,Liverpool,RB Leipzig,3496451,2021-02-16,RB Leipzig,Liverpool,0.0,2.0,2.0,1.0,True
+2020,ROUND_OF_16,3496460,2021-03-09,Juventus,Porto,3496452,2021-02-17,Porto,Juventus,2.0,1.0,-1.0,-1.0,True
+2020,ROUND_OF_16,3496461,2021-03-10,Paris Saint-Germain,Barcelona,3496453,2021-02-16,Barcelona,Paris Saint-Germain,1.0,4.0,3.0,1.0,True
+2020,ROUND_OF_16,3496462,2021-03-09,Borussia Dortmund,Sevilla,3496454,2021-02-17,Sevilla,Borussia Dortmund,2.0,3.0,1.0,1.0,True
+2020,ROUND_OF_16,3496463,2021-03-16,Real Madrid,Atalanta,3496455,2021-02-24,Atalanta,Real Madrid,0.0,1.0,1.0,1.0,True
+2020,QUARTER_FINAL,3537803,2021-04-14,Borussia Dortmund,Manchester City,3537799,2021-04-06,Manchester City,Borussia Dortmund,2.0,1.0,-1.0,-1.0,True
+2020,QUARTER_FINAL,3537804,2021-04-13,Chelsea,Porto,3537800,2021-04-07,Porto,Chelsea,0.0,2.0,2.0,1.0,True
+2020,QUARTER_FINAL,3537805,2021-04-13,Paris Saint-Germain,Bayern Munich,3537801,2021-04-07,Bayern Munich,Paris Saint-Germain,2.0,3.0,1.0,1.0,True
+2020,QUARTER_FINAL,3537806,2021-04-14,Liverpool,Real Madrid,3537802,2021-04-06,Real Madrid,Liverpool,3.0,1.0,-2.0,-1.0,True
+2020,SEMI_FINAL,3552989,2021-05-04,Manchester City,Paris Saint-Germain,3552988,2021-04-28,Paris Saint-Germain,Manchester City,1.0,2.0,1.0,1.0,True
+2020,SEMI_FINAL,3552990,2021-05-05,Chelsea,Real Madrid,3552987,2021-04-27,Real Madrid,Chelsea,1.0,1.0,0.0,0.0,True
+2021,ROUND_OF_16,3714222,2022-03-08,Bayern Munich,RB Salzburg,3714214,2022-02-16,RB Salzburg,Bayern Munich,1.0,1.0,0.0,0.0,True
+2021,ROUND_OF_16,3714223,2022-03-09,Manchester City,Sporting CP,3714215,2022-02-15,Sporting CP,Manchester City,0.0,5.0,5.0,1.0,True
+2021,ROUND_OF_16,3714224,2022-03-15,Ajax,Benfica,3714216,2022-02-23,Benfica,Ajax,2.0,2.0,0.0,0.0,True
+2021,ROUND_OF_16,3714225,2022-03-16,Lille,Chelsea,3714217,2022-02-22,Chelsea,Lille,2.0,0.0,-2.0,-1.0,True
+2021,ROUND_OF_16,3714226,2022-03-15,Manchester United,Atlético Madrid,3714218,2022-02-23,Atlético Madrid,Manchester United,1.0,1.0,0.0,0.0,True
+2021,ROUND_OF_16,3714227,2022-03-16,Juventus,Villarreal,3714219,2022-02-22,Villarreal,Juventus,1.0,1.0,0.0,0.0,True
+2021,ROUND_OF_16,3714228,2022-03-08,Liverpool,Inter Milan,3714220,2022-02-16,Inter Milan,Liverpool,0.0,2.0,2.0,1.0,True
+2021,ROUND_OF_16,3714229,2022-03-09,Real Madrid,Paris Saint-Germain,3714221,2022-02-15,Paris Saint-Germain,Real Madrid,1.0,0.0,-1.0,-1.0,True
+2021,QUARTER_FINAL,3773448,2022-04-12,Real Madrid,Chelsea,3773444,2022-04-06,Chelsea,Real Madrid,1.0,3.0,2.0,1.0,True
+2021,QUARTER_FINAL,3773449,2022-04-13,Atlético Madrid,Manchester City,3773445,2022-04-05,Manchester City,Atlético Madrid,1.0,0.0,-1.0,-1.0,True
+2021,QUARTER_FINAL,3773450,2022-04-12,Bayern Munich,Villarreal,3773446,2022-04-06,Villarreal,Bayern Munich,1.0,0.0,-1.0,-1.0,True
+2021,QUARTER_FINAL,3773451,2022-04-13,Liverpool,Benfica,3773447,2022-04-05,Benfica,Liverpool,1.0,3.0,2.0,1.0,True
+2021,SEMI_FINAL,3796968,2022-05-04,Real Madrid,Manchester City,3796966,2022-04-26,Manchester City,Real Madrid,4.0,3.0,-1.0,-1.0,True
+2021,SEMI_FINAL,3796969,2022-05-03,Villarreal,Liverpool,3796967,2022-04-27,Liverpool,Villarreal,2.0,0.0,-2.0,-1.0,True
+2022,ROUND_OF_16,3956684,2023-03-14,Manchester City,RB Leipzig,3956692,2023-02-22,RB Leipzig,Manchester City,1.0,1.0,0.0,0.0,True
+2022,ROUND_OF_16,3956685,2023-03-07,Benfica,Club Brugge,3956693,2023-02-15,Club Brugge,Benfica,0.0,2.0,2.0,1.0,True
+2022,ROUND_OF_16,3956686,2023-03-15,Real Madrid,Liverpool,3956694,2023-02-21,Liverpool,Real Madrid,2.0,5.0,3.0,1.0,True
+2022,ROUND_OF_16,3956687,2023-03-08,Tottenham Hotspur,AC Milan,3956695,2023-02-14,AC Milan,Tottenham Hotspur,1.0,0.0,-1.0,-1.0,True
+2022,ROUND_OF_16,3956688,2023-03-15,Napoli,Eintracht Frankfurt,3956696,2023-02-21,Eintracht Frankfurt,Napoli,0.0,2.0,2.0,1.0,True
+2022,ROUND_OF_16,3956689,2023-03-07,Chelsea,Borussia Dortmund,3956697,2023-02-15,Borussia Dortmund,Chelsea,1.0,0.0,-1.0,-1.0,True
+2022,ROUND_OF_16,3956690,2023-03-14,Porto,Inter Milan,3956698,2023-02-22,Inter Milan,Porto,1.0,0.0,-1.0,-1.0,True
+2022,ROUND_OF_16,3956691,2023-03-08,Bayern Munich,Paris Saint-Germain,3956699,2023-02-14,Paris Saint-Germain,Bayern Munich,0.0,1.0,1.0,1.0,True
+2022,QUARTER_FINAL,4041604,2023-04-19,Inter Milan,Benfica,4041601,2023-04-11,Benfica,Inter Milan,0.0,2.0,2.0,1.0,True
+2022,QUARTER_FINAL,4041605,2023-04-19,Bayern Munich,Manchester City,4041602,2023-04-11,Manchester City,Bayern Munich,3.0,0.0,-3.0,-1.0,True
+2022,QUARTER_FINAL,4041606,2023-04-18,Napoli,AC Milan,4041603,2023-04-12,AC Milan,Napoli,1.0,0.0,-1.0,-1.0,True
+2022,QUARTER_FINAL,4041607,2023-04-18,Chelsea,Real Madrid,4041600,2023-04-12,Real Madrid,Chelsea,2.0,0.0,-2.0,-1.0,True
+2022,SEMI_FINAL,4060796,2023-05-16,Inter Milan,AC Milan,4060795,2023-05-10,AC Milan,Inter Milan,0.0,2.0,2.0,1.0,True
+2022,SEMI_FINAL,4060797,2023-05-17,Manchester City,Real Madrid,4060794,2023-05-09,Real Madrid,Manchester City,1.0,1.0,0.0,0.0,True
+2023,ROUND_OF_16,4243696,2024-03-12,Arsenal,Porto,4243688,2024-02-21,Porto,Arsenal,1.0,0.0,-1.0,-1.0,True
+2023,ROUND_OF_16,4243697,2024-03-12,Barcelona,Napoli,4243689,2024-02-21,Napoli,Barcelona,1.0,1.0,0.0,0.0,True
+2023,ROUND_OF_16,4243698,2024-03-05,Real Sociedad,Paris Saint-Germain,4243690,2024-02-14,Paris Saint-Germain,Real Sociedad,2.0,0.0,-2.0,-1.0,True
+2023,ROUND_OF_16,4243699,2024-03-13,Atlético Madrid,Inter Milan,4243691,2024-02-20,Inter Milan,Atlético Madrid,1.0,0.0,-1.0,-1.0,True
+2023,ROUND_OF_16,4243700,2024-03-13,Borussia Dortmund,PSV Eindhoven,4243692,2024-02-20,PSV Eindhoven,Borussia Dortmund,1.0,1.0,0.0,0.0,True
+2023,ROUND_OF_16,4243701,2024-03-05,Bayern Munich,Lazio,4243693,2024-02-14,Lazio,Bayern Munich,1.0,0.0,-1.0,-1.0,True
+2023,ROUND_OF_16,4243702,2024-03-06,Manchester City,Copenhagen,4243694,2024-02-13,Copenhagen,Manchester City,1.0,3.0,2.0,1.0,True
+2023,ROUND_OF_16,4243703,2024-03-06,Real Madrid,RB Leipzig,4243695,2024-02-13,RB Leipzig,Real Madrid,0.0,1.0,1.0,1.0,True
+2023,QUARTER_FINAL,4312025,2024-04-17,Bayern Munich,Arsenal,4312021,2024-04-09,Arsenal,Bayern Munich,2.0,2.0,0.0,0.0,True
+2023,QUARTER_FINAL,4312026,2024-04-16,Borussia Dortmund,Atlético Madrid,4312022,2024-04-10,Atlético Madrid,Borussia Dortmund,2.0,1.0,-1.0,-1.0,True
+2023,QUARTER_FINAL,4312027,2024-04-17,Manchester City,Real Madrid,4312023,2024-04-09,Real Madrid,Manchester City,3.0,3.0,0.0,0.0,True
+2023,QUARTER_FINAL,4312028,2024-04-16,Barcelona,Paris Saint-Germain,4312024,2024-04-10,Paris Saint-Germain,Barcelona,2.0,3.0,1.0,1.0,True
+2023,SEMI_FINAL,4329888,2024-05-07,Paris Saint-Germain,Borussia Dortmund,4329887,2024-05-01,Borussia Dortmund,Paris Saint-Germain,1.0,0.0,-1.0,-1.0,True
+2023,SEMI_FINAL,4331177,2024-05-08,Real Madrid,Bayern Munich,4331178,2024-04-30,Bayern Munich,Real Madrid,2.0,2.0,0.0,0.0,True
+2024,KNOCKOUT_PLAYOFF,4547601,2025-02-19,Paris Saint-Germain,Brest,4547599,2025-02-11,Brest,Paris Saint-Germain,0.0,3.0,3.0,1.0,True
+2024,KNOCKOUT_PLAYOFF,4547602,2025-02-18,Atalanta,Club Brugge,4547600,2025-02-12,Club Brugge,Atalanta,2.0,1.0,-1.0,-1.0,True
+2024,ROUND_OF_16,4547604,2025-03-11,Liverpool,Paris Saint-Germain,4547603,2025-03-05,Paris Saint-Germain,Liverpool,0.0,1.0,1.0,1.0,True
+2024,KNOCKOUT_PLAYOFF,4547623,2025-02-19,Real Madrid,Manchester City,4547617,2025-02-11,Manchester City,Real Madrid,2.0,3.0,1.0,1.0,True
+2024,KNOCKOUT_PLAYOFF,4547624,2025-02-19,PSV Eindhoven,Juventus,4547618,2025-02-11,Juventus,PSV Eindhoven,2.0,1.0,-1.0,-1.0,True
+2024,KNOCKOUT_PLAYOFF,4547625,2025-02-18,Benfica,Monaco,4547619,2025-02-12,Monaco,Benfica,0.0,1.0,1.0,1.0,True
+2024,KNOCKOUT_PLAYOFF,4547626,2025-02-19,Borussia Dortmund,Sporting CP,4547620,2025-02-11,Sporting CP,Borussia Dortmund,0.0,3.0,3.0,1.0,True
+2024,KNOCKOUT_PLAYOFF,4547627,2025-02-18,Bayern Munich,Celtic,4547621,2025-02-12,Celtic,Bayern Munich,1.0,2.0,1.0,1.0,True
+2024,KNOCKOUT_PLAYOFF,4547628,2025-02-18,AC Milan,Feyenoord,4547622,2025-02-12,Feyenoord,AC Milan,1.0,0.0,-1.0,-1.0,True
+2024,ROUND_OF_16,4547636,2025-03-12,Aston Villa,Club Brugge,4547629,2025-03-04,Club Brugge,Aston Villa,1.0,3.0,2.0,1.0,True
+2024,ROUND_OF_16,4547637,2025-03-12,Atlético Madrid,Real Madrid,4547630,2025-03-04,Real Madrid,Atlético Madrid,2.0,1.0,-1.0,-1.0,True
+2024,ROUND_OF_16,4547638,2025-03-12,Arsenal,PSV Eindhoven,4547631,2025-03-04,PSV Eindhoven,Arsenal,1.0,7.0,6.0,1.0,True
+2024,ROUND_OF_16,4547639,2025-03-11,Barcelona,Benfica,4547632,2025-03-05,Benfica,Barcelona,0.0,1.0,1.0,1.0,True
+2024,ROUND_OF_16,4547640,2025-03-12,Lille,Borussia Dortmund,4547633,2025-03-04,Borussia Dortmund,Lille,1.0,1.0,0.0,0.0,True
+2024,ROUND_OF_16,4547641,2025-03-11,Bayer Leverkusen,Bayern Munich,4547634,2025-03-05,Bayern Munich,Bayer Leverkusen,3.0,0.0,-3.0,-1.0,True
+2024,ROUND_OF_16,4547642,2025-03-11,Inter Milan,Feyenoord,4547635,2025-03-05,Feyenoord,Inter Milan,0.0,2.0,2.0,1.0,True
+2024,QUARTER_FINAL,4547647,2025-04-15,Aston Villa,Paris Saint-Germain,4547643,2025-04-09,Paris Saint-Germain,Aston Villa,3.0,1.0,-2.0,-1.0,True
+2024,QUARTER_FINAL,4547648,2025-04-16,Real Madrid,Arsenal,4547644,2025-04-08,Arsenal,Real Madrid,3.0,0.0,-3.0,-1.0,True
+2024,QUARTER_FINAL,4547649,2025-04-15,Borussia Dortmund,Barcelona,4547645,2025-04-09,Barcelona,Borussia Dortmund,4.0,0.0,-4.0,-1.0,True
+2024,QUARTER_FINAL,4547650,2025-04-16,Inter Milan,Bayern Munich,4547646,2025-04-08,Bayern Munich,Inter Milan,1.0,2.0,1.0,1.0,True
+2024,SEMI_FINAL,4547653,2025-05-07,Paris Saint-Germain,Arsenal,4547651,2025-04-29,Arsenal,Paris Saint-Germain,0.0,1.0,1.0,1.0,True
+2024,SEMI_FINAL,4547654,2025-05-06,Inter Milan,Barcelona,4547652,2025-04-30,Barcelona,Inter Milan,3.0,3.0,0.0,0.0,True
+2025,KNOCKOUT_PLAYOFF,4814103,2026-02-25,Paris Saint-Germain,Monaco,4814095,2026-02-17,Monaco,Paris Saint-Germain,2.0,3.0,1.0,1.0,True
+2025,KNOCKOUT_PLAYOFF,4814104,2026-02-25,Juventus,Galatasaray,4814096,2026-02-17,Galatasaray,Juventus,5.0,2.0,-3.0,-1.0,True
+2025,KNOCKOUT_PLAYOFF,4814105,2026-02-25,Real Madrid,Benfica,4814097,2026-02-17,Benfica,Real Madrid,0.0,1.0,1.0,1.0,True
+2025,KNOCKOUT_PLAYOFF,4814106,2026-02-25,Atalanta,Borussia Dortmund,4814098,2026-02-17,Borussia Dortmund,Atalanta,2.0,0.0,-2.0,-1.0,True
+2025,KNOCKOUT_PLAYOFF,4814107,2026-02-24,Newcastle United,Qarabağ,4814099,2026-02-18,Qarabağ,Newcastle United,1.0,6.0,5.0,1.0,True
+2025,KNOCKOUT_PLAYOFF,4814108,2026-02-24,Atlético Madrid,Club Brugge,4814100,2026-02-18,Club Brugge,Atlético Madrid,3.0,3.0,0.0,0.0,True
+2025,KNOCKOUT_PLAYOFF,4814109,2026-02-24,Inter Milan,Bodø/Glimt,4814101,2026-02-18,Bodø/Glimt,Inter Milan,3.0,1.0,-2.0,-1.0,True
+2025,KNOCKOUT_PLAYOFF,4814110,2026-02-24,Bayer Leverkusen,Olympiacos,4814102,2026-02-18,Olympiacos,Bayer Leverkusen,0.0,2.0,2.0,1.0,True
+2025,ROUND_OF_16,4814362,2026-03-17,Chelsea,Paris Saint-Germain,4814354,2026-03-11,Paris Saint-Germain,Chelsea,5.0,2.0,-3.0,-1.0,True
+2025,ROUND_OF_16,4814363,2026-03-18,Liverpool,Galatasaray,4814355,2026-03-10,Galatasaray,Liverpool,1.0,0.0,-1.0,-1.0,True
+2025,ROUND_OF_16,4814364,2026-03-17,Manchester City,Real Madrid,4814356,2026-03-11,Real Madrid,Manchester City,3.0,0.0,-3.0,-1.0,True
+2025,ROUND_OF_16,4814365,2026-03-18,Bayern Munich,Atalanta,4814357,2026-03-10,Atalanta,Bayern Munich,1.0,6.0,5.0,1.0,True
+2025,ROUND_OF_16,4814366,2026-03-18,Barcelona,Newcastle United,4814358,2026-03-10,Newcastle United,Barcelona,1.0,1.0,0.0,0.0,True
+2025,ROUND_OF_16,4814367,2026-03-18,Tottenham Hotspur,Atlético Madrid,4814359,2026-03-10,Atlético Madrid,Tottenham Hotspur,5.0,2.0,-3.0,-1.0,True
+2025,ROUND_OF_16,4814368,2026-03-17,Sporting CP,Bodø/Glimt,4814360,2026-03-11,Bodø/Glimt,Sporting CP,3.0,0.0,-3.0,-1.0,True
+2025,ROUND_OF_16,4814369,2026-03-17,Arsenal,Bayer Leverkusen,4814361,2026-03-11,Bayer Leverkusen,Arsenal,1.0,1.0,0.0,0.0,True
+2025,QUARTER_FINAL,4814374,2026-04-14,Liverpool,Paris Saint-Germain,4814370,2026-04-08,Paris Saint-Germain,Liverpool,2.0,0.0,-2.0,-1.0,True
+2025,QUARTER_FINAL,4814375,2026-04-15,Bayern Munich,Real Madrid,4814371,2026-04-07,Real Madrid,Bayern Munich,1.0,2.0,1.0,1.0,True
+2025,QUARTER_FINAL,4814376,2026-04-14,Atlético Madrid,Barcelona,4814372,2026-04-08,Barcelona,Atlético Madrid,0.0,2.0,2.0,1.0,True
+2025,QUARTER_FINAL,4814377,2026-04-15,Arsenal,Sporting CP,4814373,2026-04-07,Sporting CP,Arsenal,0.0,1.0,1.0,1.0,True
+2025,SEMI_FINAL,4814380,2026-05-06,Bayern Munich,Paris Saint-Germain,4814378,2026-04-28,Paris Saint-Germain,Bayern Munich,5.0,4.0,-1.0,-1.0,True
+2025,SEMI_FINAL,4814381,2026-05-05,Arsenal,Atlético Madrid,4814379,2026-04-29,Atlético Madrid,Arsenal,1.0,1.0,0.0,0.0,True

@@ -1,0 +1,59 @@
+{
+  "experiment": "candidate_c1_domestic_advanced_common_coverage",
+  "status": "research_only",
+  "selection_window": "2018_2024",
+  "locked_confirmation_season": 2025,
+  "confirmation_2025_used": false,
+  "production_modified": false,
+  "coverage_policy": "both_teams_advanced_history_and_minimum_10_prior_matches",
+  "eligible_historical_matches": 795,
+  "development_oof_matches": 383,
+  "locked_2025_matches": 78,
+  "control_feature_count": 290,
+  "candidate_feature_count": 302,
+  "candidate_features": [
+    "shots_for_diff_last5",
+    "shots_against_diff_last5",
+    "sot_for_diff_last5",
+    "sot_against_diff_last5",
+    "corners_for_diff_last5",
+    "corners_against_diff_last5",
+    "shots_for_diff_last10",
+    "shots_against_diff_last10",
+    "sot_for_diff_last10",
+    "sot_against_diff_last10",
+    "corners_for_diff_last10",
+    "corners_against_diff_last10"
+  ],
+  "advanced_stats_source": "historical_big_five_domestic_league_files",
+  "advanced_stats": [
+    "shots",
+    "shots_on_target",
+    "corners"
+  ],
+  "rolling_windows": [
+    5,
+    10
+  ],
+  "current_ucl_match_stats_used": false,
+  "future_matches_used": false,
+  "fuzzy_matching": false,
+  "missing_candidate_values_used": false,
+  "minimum_history_matches_per_team": 10,
+  "locked_model": {
+    "imputer": "SimpleImputer(strategy=median, add_indicator=True)",
+    "model": "CatBoostClassifier",
+    "iterations": 700,
+    "learning_rate": 0.025,
+    "depth": 5,
+    "loss_function": "MultiClass",
+    "l2_leaf_reg": 5.0,
+    "random_seed": 42
+  },
+  "passes_signal_screen": false,
+  "signal_screen": {
+    "weighted_log_loss_improves": true,
+    "weighted_brier_not_worse": true,
+    "minimum_log_loss_better_folds": 4
+  }
+}

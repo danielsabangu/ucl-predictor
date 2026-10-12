@@ -1,0 +1,18 @@
+season,available,access_status,access_message,start,end,events,lineups,fixture_statistics,player_statistics,standings,players,injuries,predictions,odds
+2010,False,PLAN_RESTRICTED,"Free plans do not have access to this season, try from 2022 to 2024.",,,,,,,,,,,
+2011,False,PLAN_RESTRICTED,"Free plans do not have access to this season, try from 2022 to 2024.",,,,,,,,,,,
+2012,False,PLAN_RESTRICTED,"Free plans do not have access to this season, try from 2022 to 2024.",,,,,,,,,,,
+2013,False,PLAN_RESTRICTED,"Free plans do not have access to this season, try from 2022 to 2024.",,,,,,,,,,,
+2014,False,PLAN_RESTRICTED,"Free plans do not have access to this season, try from 2022 to 2024.",,,,,,,,,,,
+2015,False,PLAN_RESTRICTED,"Free plans do not have access to this season, try from 2022 to 2024.",,,,,,,,,,,
+2016,False,PLAN_RESTRICTED,"Free plans do not have access to this season, try from 2022 to 2024.",,,,,,,,,,,
+2017,False,PLAN_RESTRICTED,"Free plans do not have access to this season, try from 2022 to 2024.",,,,,,,,,,,
+2018,False,PLAN_RESTRICTED,"Free plans do not have access to this season, try from 2022 to 2024.",,,,,,,,,,,
+2019,False,PLAN_RESTRICTED,"Free plans do not have access to this season, try from 2022 to 2024.",,,,,,,,,,,
+2020,False,PLAN_RESTRICTED,"Free plans do not have access to this season, try from 2022 to 2024.",,,,,,,,,,,
+2021,False,PLAN_RESTRICTED,"Free plans do not have access to this season, try from 2022 to 2024.",,,,,,,,,,,
+2022,True,AVAILABLE,,2022-06-21,2023-06-10,True,True,True,True,True,True,True,True,False
+2023,True,AVAILABLE,,2023-06-27,2024-06-01,True,True,True,True,True,True,True,True,False
+2024,True,AVAILABLE,,2024-07-09,2025-05-31,True,True,True,True,True,True,True,True,False
+2025,False,PLAN_RESTRICTED,"Free plans do not have access to this season, try from 2022 to 2024.",,,,,,,,,,,
+2026,False,PLAN_RESTRICTED,"Free plans do not have access to this season, try from 2022 to 2024.",,,,,,,,,,,

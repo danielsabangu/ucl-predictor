@@ -1,0 +1,10 @@
+season_name,season_id,available,match_count,unique_teams,earliest_match,latest_match,stage_counts,event_file_available,event_count_sample,shot_count_sample,statsbomb_xg_present,lineup_file_available,lineup_team_count_sample,error
+2010/2011,22,True,1,2,2011-05-28,2011-05-28,"{""Final"": 1}",True,4326,26,True,True,2,
+2011/2012,23,True,1,2,2012-05-19,2012-05-19,"{""Final"": 1}",True,4695,59,True,True,2,
+2012/2013,24,True,1,2,2013-05-25,2013-05-25,"{""Final"": 1}",True,3338,30,True,True,2,
+2013/2014,25,True,1,2,2014-05-24,2014-05-24,"{""Final"": 1}",True,4263,32,True,True,2,
+2014/2015,26,True,1,2,2015-06-06,2015-06-06,"{""Final"": 1}",True,3433,32,True,True,2,
+2015/2016,27,True,1,2,2016-05-28,2016-05-28,"{""Final"": 1}",True,4708,53,True,True,2,
+2016/2017,2,True,1,2,2017-06-03,2017-06-03,"{""Final"": 1}",True,3400,27,True,True,2,
+2017/2018,1,True,1,2,2018-05-26,2018-05-26,"{""Final"": 1}",True,3497,28,True,True,2,
+2018/2019,4,True,1,2,2019-06-01,2019-06-01,"{""Final"": 1}",True,3165,30,True,True,2,

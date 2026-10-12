@@ -1,0 +1,230 @@
+season,ucl_team,team_sides,ucl_matches,prior_ucl_available_sides
+2010,Shakhtar Donetsk,10,10,9
+2010,Copenhagen,8,8,7
+2010,Ajax,6,6,5
+2010,Basel,6,6,5
+2010,Benfica,6,6,5
+2010,Braga,6,6,5
+2010,CFR Cluj,6,6,5
+2010,Hapoel Tel Aviv,6,6,5
+2010,MŠK Žilina,6,6,5
+2010,Panathinaikos,6,6,5
+2010,Partizan,6,6,5
+2010,Rangers,6,6,5
+2010,Rubin Kazan,6,6,5
+2010,Spartak Moscow,6,6,5
+2010,Twente,6,6,5
+2010,Bursaspor,4,4,3
+2011,Benfica,10,10,10
+2011,APOEL,9,9,8
+2011,Basel,8,8,8
+2011,CSKA Moscow,8,8,7
+2011,Zenit,8,8,7
+2011,Ajax,6,6,6
+2011,BATE Borisov,6,6,5
+2011,Dinamo Zagreb,6,6,5
+2011,Genk,6,6,5
+2011,Olympiacos,6,6,5
+2011,Oțelul Galați,6,6,5
+2011,Porto,6,6,5
+2011,Shakhtar Donetsk,6,6,6
+2011,Trabzonspor,6,6,5
+2011,Viktoria Plzeň,6,6,5
+2012,Galatasaray,10,10,9
+2012,Celtic,8,8,7
+2012,Porto,8,8,8
+2012,Shakhtar Donetsk,8,8,8
+2012,Anderlecht,6,6,5
+2012,BATE Borisov,6,6,6
+2012,Benfica,6,6,6
+2012,Braga,6,6,6
+2012,CFR Cluj,6,6,6
+2012,Dinamo Zagreb,6,6,6
+2012,Dynamo Kyiv,6,6,5
+2012,Nordsjælland,6,6,5
+2012,Spartak Moscow,6,6,6
+2012,Zenit,6,6,6
+2012,Ajax,5,5,5
+2012,Olympiacos,5,5,5
+2013,Galatasaray,8,8,8
+2013,Olympiacos,8,8,8
+2013,Zenit,8,8,8
+2013,Ajax,6,6,6
+2013,Anderlecht,6,6,6
+2013,Austria Wien,6,6,5
+2013,Basel,6,6,6
+2013,Benfica,6,6,6
+2013,Celtic,6,6,6
+2013,Copenhagen,6,6,6
+2013,Porto,6,6,6
+2013,Shakhtar Donetsk,6,6,6
+2013,Steaua,6,6,5
+2013,Viktoria Plzeň,6,6,6
+2013,CSKA Moscow,5,5,5
+2014,Porto,10,10,10
+2014,Basel,8,8,8
+2014,Shakhtar Donetsk,7,7,7
+2014,APOEL,6,6,6
+2014,Ajax,6,6,6
+2014,BATE Borisov,6,6,6
+2014,Benfica,6,6,6
+2014,CSKA Moscow,6,6,6
+2014,Galatasaray,6,6,6
+2014,Ludogorets,6,6,5
+2014,Malmö,6,6,5
+2014,NK Maribor,6,6,5
+2014,Olympiacos,6,6,6
+2014,Sporting CP,6,6,5
+2014,Zenit,6,6,6
+2014,Anderlecht,5,5,5
+2015,Benfica,9,9,9
+2015,Dynamo Kyiv,8,8,8
+2015,Gent,8,8,7
+2015,Zenit,8,8,8
+2015,PSV Eindhoven,7,7,6
+2015,Astana,6,6,5
+2015,BATE Borisov,6,6,6
+2015,CSKA Moscow,6,6,6
+2015,Dinamo Zagreb,6,6,6
+2015,Maccabi Tel Aviv,6,6,5
+2015,Malmö,6,6,6
+2015,Olympiacos,6,6,6
+2015,Porto,6,6,6
+2015,Shakhtar Donetsk,6,6,6
+2015,Galatasaray,5,5,5
+2016,Benfica,8,8,8
+2016,Porto,8,8,8
+2016,Basel,6,6,6
+2016,Beşiktaş,6,6,5
+2016,CSKA Moscow,6,6,6
+2016,Celtic,6,6,6
+2016,Club Brugge,6,6,5
+2016,Copenhagen,6,6,6
+2016,Dinamo Zagreb,6,6,6
+2016,Dynamo Kyiv,6,6,6
+2016,Legia Warsaw,6,6,5
+2016,Ludogorets,6,6,6
+2016,PSV Eindhoven,6,6,6
+2016,Rostov,6,6,5
+2016,Sporting CP,6,6,6
+2017,Basel,8,8,8
+2017,Beşiktaş,8,8,8
+2017,Porto,8,8,8
+2017,Shakhtar Donetsk,8,8,8
+2017,APOEL,6,6,6
+2017,Anderlecht,6,6,6
+2017,Benfica,6,6,6
+2017,CSKA Moscow,6,6,6
+2017,Feyenoord,6,6,5
+2017,NK Maribor,6,6,6
+2017,Qarabağ,6,6,5
+2017,Spartak Moscow,6,6,6
+2017,Celtic,5,5,5
+2017,Olympiacos,5,5,5
+2017,Sporting CP,5,5,5
+2018,Ajax,12,12,12
+2018,Porto,9,9,9
+2018,AEK Athens,6,6,5
+2018,Benfica,6,6,6
+2018,CSKA Moscow,6,6,6
+2018,Club Brugge,6,6,6
+2018,Galatasaray,6,6,6
+2018,Lokomotiv Moscow,6,6,5
+2018,PSV Eindhoven,6,6,6
+2018,Shakhtar Donetsk,6,6,6
+2018,Viktoria Plzeň,6,6,6
+2018,Young Boys,6,6,5
+2018,Red Star Belgrade,5,5,4
+2019,Ajax,6,6,6
+2019,Benfica,6,6,6
+2019,Club Brugge,6,6,6
+2019,Dinamo Zagreb,6,6,6
+2019,Galatasaray,6,6,6
+2019,Genk,6,6,6
+2019,Lokomotiv Moscow,6,6,6
+2019,Olympiacos,6,6,6
+2019,RB Salzburg,6,6,5
+2019,Red Star Belgrade,6,6,6
+2019,Shakhtar Donetsk,6,6,6
+2019,Slavia Prague,6,6,5
+2019,Zenit,6,6,6
+2020,Porto,10,10,10
+2020,Ajax,6,6,6
+2020,Club Brugge,6,6,6
+2020,Dynamo Kyiv,6,6,6
+2020,Ferencváros,6,6,5
+2020,Krasnodar,6,6,5
+2020,Lokomotiv Moscow,6,6,6
+2020,Midtjylland,6,6,5
+2020,Olympiacos,6,6,6
+2020,RB Salzburg,6,6,6
+2020,Shakhtar Donetsk,6,6,6
+2020,Zenit,6,6,6
+2020,İstanbul Başakşehir,6,6,5
+2021,Benfica,10,10,10
+2021,Ajax,8,8,8
+2021,Sporting CP,8,8,8
+2021,RB Salzburg,7,7,7
+2021,Beşiktaş,6,6,6
+2021,Club Brugge,6,6,6
+2021,Dynamo Kyiv,6,6,6
+2021,Malmö,6,6,6
+2021,Porto,6,6,6
+2021,Sheriff Tiraspol,6,6,5
+2021,Young Boys,6,6,6
+2021,Zenit,6,6,6
+2021,Shakhtar Donetsk,5,5,5
+2022,Benfica,10,10,10
+2022,Club Brugge,8,8,8
+2022,Porto,8,8,8
+2022,Ajax,6,6,6
+2022,Celtic,6,6,6
+2022,Copenhagen,6,6,6
+2022,Dinamo Zagreb,6,6,6
+2022,Maccabi Haifa,6,6,5
+2022,RB Salzburg,6,6,6
+2022,Rangers,6,6,6
+2022,Shakhtar Donetsk,6,6,6
+2022,Sporting CP,6,6,6
+2022,Viktoria Plzeň,6,6,6
+2023,Copenhagen,8,8,8
+2023,PSV Eindhoven,8,8,8
+2023,Porto,8,8,8
+2023,Benfica,6,6,6
+2023,Braga,6,6,6
+2023,Celtic,6,6,6
+2023,Feyenoord,6,6,6
+2023,Galatasaray,6,6,6
+2023,RB Salzburg,6,6,6
+2023,Red Star Belgrade,6,6,6
+2023,Royal Antwerp,6,6,5
+2023,Shakhtar Donetsk,6,6,6
+2023,Young Boys,6,6,6
+2024,Benfica,12,12,12
+2024,Club Brugge,12,12,12
+2024,Feyenoord,12,12,12
+2024,PSV Eindhoven,12,12,12
+2024,Celtic,10,10,10
+2024,Sporting CP,10,10,10
+2024,Dinamo Zagreb,8,8,8
+2024,RB Salzburg,8,8,8
+2024,Red Star Belgrade,8,8,8
+2024,Shakhtar Donetsk,8,8,8
+2024,Sparta Prague,8,8,7
+2024,Sturm Graz,8,8,7
+2024,Young Boys,8,8,8
+2024,ŠK Slovan Bratislava,8,8,7
+2025,Bodø/Glimt,12,12,11
+2025,Galatasaray,12,12,12
+2025,Sporting CP,12,12,12
+2025,Benfica,10,10,10
+2025,Club Brugge,10,10,10
+2025,Olympiacos,10,10,10
+2025,Qarabağ,10,10,10
+2025,Ajax,8,8,8
+2025,Copenhagen,8,8,8
+2025,FK Kairat,8,8,7
+2025,PSV Eindhoven,8,8,8
+2025,Paphos FC,8,8,7
+2025,Slavia Prague,8,8,8
+2025,Union Saint-Gilloise,8,8,7

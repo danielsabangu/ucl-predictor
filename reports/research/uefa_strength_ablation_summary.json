@@ -1,0 +1,49 @@
+{
+  "experiment": "uefa_strength_feature_ablation",
+  "status": "research_only",
+  "production_modified": false,
+  "final_2025_used": false,
+  "validation_seasons": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "scenarios": {
+    "CONTROL_V1": [],
+    "UEFA_RAW_TRIO": [
+      "home_uefa_coefficient",
+      "away_uefa_coefficient",
+      "uefa_coefficient_diff"
+    ],
+    "UEFA_PERCENTILE_TRIO": [
+      "home_uefa_strength_percentile",
+      "away_uefa_strength_percentile",
+      "uefa_strength_percentile_diff"
+    ],
+    "UEFA_DIFFS_ONLY": [
+      "uefa_coefficient_diff",
+      "uefa_strength_percentile_diff"
+    ],
+    "UEFA_ALL_SIX": [
+      "home_uefa_coefficient",
+      "away_uefa_coefficient",
+      "uefa_coefficient_diff",
+      "home_uefa_strength_percentile",
+      "away_uefa_strength_percentile",
+      "uefa_strength_percentile_diff"
+    ]
+  },
+  "primary_metric": "weighted_log_loss",
+  "secondary_metric": "weighted_brier_score",
+  "screening_rule": {
+    "log_loss_improvement_gt": 0,
+    "brier_improvement_gte": 0,
+    "minimum_log_loss_better_folds": 4
+  },
+  "decision": "KEEP_UEFA_SUBSET_FOR_FURTHER_RESEARCH",
+  "selected_scenario": "UEFA_DIFFS_ONLY"
+}

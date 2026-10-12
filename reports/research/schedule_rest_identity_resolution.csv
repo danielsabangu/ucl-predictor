@@ -1,0 +1,1563 @@
+season,league_code,country,league,raw_team_name,canonical_team,name_changed
+2010,ENG1,England,Premier League,Arsenal,Arsenal,False
+2010,ENG1,England,Premier League,Aston Villa,Aston Villa,False
+2010,ENG1,England,Premier League,Birmingham,Birmingham,False
+2010,ENG1,England,Premier League,Blackburn,Blackburn,False
+2010,ENG1,England,Premier League,Blackpool,Blackpool,False
+2010,ENG1,England,Premier League,Bolton,Bolton,False
+2010,ENG1,England,Premier League,Chelsea,Chelsea,False
+2010,ENG1,England,Premier League,Everton,Everton,False
+2010,ENG1,England,Premier League,Fulham,Fulham,False
+2010,ENG1,England,Premier League,Liverpool,Liverpool,False
+2010,ENG1,England,Premier League,Man City,Manchester City,True
+2010,ENG1,England,Premier League,Man United,Manchester United,True
+2010,ENG1,England,Premier League,Newcastle,Newcastle United,True
+2010,ENG1,England,Premier League,Stoke,Stoke,False
+2010,ENG1,England,Premier League,Sunderland,Sunderland,False
+2010,ENG1,England,Premier League,Tottenham,Tottenham Hotspur,True
+2010,ENG1,England,Premier League,West Brom,West Brom,False
+2010,ENG1,England,Premier League,West Ham,West Ham,False
+2010,ENG1,England,Premier League,Wigan,Wigan,False
+2010,ENG1,England,Premier League,Wolves,Wolves,False
+2010,ESP1,Spain,La Liga,Almeria,Almeria,False
+2010,ESP1,Spain,La Liga,Ath Bilbao,Athletic Bilbao,True
+2010,ESP1,Spain,La Liga,Ath Madrid,Atlético Madrid,True
+2010,ESP1,Spain,La Liga,Barcelona,Barcelona,False
+2010,ESP1,Spain,La Liga,Espanol,Espanol,False
+2010,ESP1,Spain,La Liga,Getafe,Getafe,False
+2010,ESP1,Spain,La Liga,Hercules,Hercules,False
+2010,ESP1,Spain,La Liga,La Coruna,La Coruna,False
+2010,ESP1,Spain,La Liga,Levante,Levante,False
+2010,ESP1,Spain,La Liga,Mallorca,Mallorca,False
+2010,ESP1,Spain,La Liga,Malaga,Málaga,True
+2010,ESP1,Spain,La Liga,Osasuna,Osasuna,False
+2010,ESP1,Spain,La Liga,Real Madrid,Real Madrid,False
+2010,ESP1,Spain,La Liga,Sociedad,Real Sociedad,True
+2010,ESP1,Spain,La Liga,Santander,Santander,False
+2010,ESP1,Spain,La Liga,Sevilla,Sevilla,False
+2010,ESP1,Spain,La Liga,Sp Gijon,Sp Gijon,False
+2010,ESP1,Spain,La Liga,Valencia,Valencia,False
+2010,ESP1,Spain,La Liga,Villarreal,Villarreal,False
+2010,ESP1,Spain,La Liga,Zaragoza,Zaragoza,False
+2010,FRA1,France,Ligue 1,Arles,Arles,False
+2010,FRA1,France,Ligue 1,Auxerre,Auxerre,False
+2010,FRA1,France,Ligue 1,Bordeaux,Bordeaux,False
+2010,FRA1,France,Ligue 1,Brest,Brest,False
+2010,FRA1,France,Ligue 1,Caen,Caen,False
+2010,FRA1,France,Ligue 1,Lens,Lens,False
+2010,FRA1,France,Ligue 1,Lille,Lille,False
+2010,FRA1,France,Ligue 1,Lorient,Lorient,False
+2010,FRA1,France,Ligue 1,Lyon,Lyon,False
+2010,FRA1,France,Ligue 1,Marseille,Marseille,False
+2010,FRA1,France,Ligue 1,Monaco,Monaco,False
+2010,FRA1,France,Ligue 1,Montpellier,Montpellier,False
+2010,FRA1,France,Ligue 1,Nancy,Nancy,False
+2010,FRA1,France,Ligue 1,Nice,Nice,False
+2010,FRA1,France,Ligue 1,Paris SG,Paris Saint-Germain,True
+2010,FRA1,France,Ligue 1,Rennes,Rennes,False
+2010,FRA1,France,Ligue 1,Sochaux,Sochaux,False
+2010,FRA1,France,Ligue 1,St Etienne,St Etienne,False
+2010,FRA1,France,Ligue 1,Toulouse,Toulouse,False
+2010,FRA1,France,Ligue 1,Valenciennes,Valenciennes,False
+2010,GER1,Germany,Bundesliga,Leverkusen,Bayer Leverkusen,True
+2010,GER1,Germany,Bundesliga,Bayern Munich,Bayern Munich,False
+2010,GER1,Germany,Bundesliga,Dortmund,Borussia Dortmund,True
+2010,GER1,Germany,Bundesliga,M'gladbach,Borussia Mönchengladbach,True
+2010,GER1,Germany,Bundesliga,Ein Frankfurt,Eintracht Frankfurt,True
+2010,GER1,Germany,Bundesliga,FC Koln,FC Koln,False
+2010,GER1,Germany,Bundesliga,Freiburg,Freiburg,False
+2010,GER1,Germany,Bundesliga,Hamburg,Hamburg,False
+2010,GER1,Germany,Bundesliga,Hannover,Hannover,False
+2010,GER1,Germany,Bundesliga,Hoffenheim,Hoffenheim,False
+2010,GER1,Germany,Bundesliga,Kaiserslautern,Kaiserslautern,False
+2010,GER1,Germany,Bundesliga,Mainz,Mainz,False
+2010,GER1,Germany,Bundesliga,Nurnberg,Nurnberg,False
+2010,GER1,Germany,Bundesliga,Schalke 04,Schalke 04,False
+2010,GER1,Germany,Bundesliga,St Pauli,St Pauli,False
+2010,GER1,Germany,Bundesliga,Stuttgart,VfB Stuttgart,True
+2010,GER1,Germany,Bundesliga,Werder Bremen,Werder Bremen,False
+2010,GER1,Germany,Bundesliga,Wolfsburg,Wolfsburg,False
+2010,ITA1,Italy,Serie A,Milan,AC Milan,True
+2010,ITA1,Italy,Serie A,Bari,Bari,False
+2010,ITA1,Italy,Serie A,Bologna,Bologna,False
+2010,ITA1,Italy,Serie A,Brescia,Brescia,False
+2010,ITA1,Italy,Serie A,Cagliari,Cagliari,False
+2010,ITA1,Italy,Serie A,Catania,Catania,False
+2010,ITA1,Italy,Serie A,Cesena,Cesena,False
+2010,ITA1,Italy,Serie A,Chievo,Chievo,False
+2010,ITA1,Italy,Serie A,Fiorentina,Fiorentina,False
+2010,ITA1,Italy,Serie A,Genoa,Genoa,False
+2010,ITA1,Italy,Serie A,Inter,Inter Milan,True
+2010,ITA1,Italy,Serie A,Juventus,Juventus,False
+2010,ITA1,Italy,Serie A,Lazio,Lazio,False
+2010,ITA1,Italy,Serie A,Lecce,Lecce,False
+2010,ITA1,Italy,Serie A,Napoli,Napoli,False
+2010,ITA1,Italy,Serie A,Palermo,Palermo,False
+2010,ITA1,Italy,Serie A,Parma,Parma,False
+2010,ITA1,Italy,Serie A,Roma,Roma,False
+2010,ITA1,Italy,Serie A,Sampdoria,Sampdoria,False
+2010,ITA1,Italy,Serie A,Udinese,Udinese,False
+2011,ENG1,England,Premier League,Arsenal,Arsenal,False
+2011,ENG1,England,Premier League,Aston Villa,Aston Villa,False
+2011,ENG1,England,Premier League,Blackburn,Blackburn,False
+2011,ENG1,England,Premier League,Bolton,Bolton,False
+2011,ENG1,England,Premier League,Chelsea,Chelsea,False
+2011,ENG1,England,Premier League,Everton,Everton,False
+2011,ENG1,England,Premier League,Fulham,Fulham,False
+2011,ENG1,England,Premier League,Liverpool,Liverpool,False
+2011,ENG1,England,Premier League,Man City,Manchester City,True
+2011,ENG1,England,Premier League,Man United,Manchester United,True
+2011,ENG1,England,Premier League,Newcastle,Newcastle United,True
+2011,ENG1,England,Premier League,Norwich,Norwich,False
+2011,ENG1,England,Premier League,QPR,QPR,False
+2011,ENG1,England,Premier League,Stoke,Stoke,False
+2011,ENG1,England,Premier League,Sunderland,Sunderland,False
+2011,ENG1,England,Premier League,Swansea,Swansea,False
+2011,ENG1,England,Premier League,Tottenham,Tottenham Hotspur,True
+2011,ENG1,England,Premier League,West Brom,West Brom,False
+2011,ENG1,England,Premier League,Wigan,Wigan,False
+2011,ENG1,England,Premier League,Wolves,Wolves,False
+2011,ESP1,Spain,La Liga,Ath Bilbao,Athletic Bilbao,True
+2011,ESP1,Spain,La Liga,Ath Madrid,Atlético Madrid,True
+2011,ESP1,Spain,La Liga,Barcelona,Barcelona,False
+2011,ESP1,Spain,La Liga,Betis,Betis,False
+2011,ESP1,Spain,La Liga,Espanol,Espanol,False
+2011,ESP1,Spain,La Liga,Getafe,Getafe,False
+2011,ESP1,Spain,La Liga,Granada,Granada,False
+2011,ESP1,Spain,La Liga,Levante,Levante,False
+2011,ESP1,Spain,La Liga,Mallorca,Mallorca,False
+2011,ESP1,Spain,La Liga,Malaga,Málaga,True
+2011,ESP1,Spain,La Liga,Osasuna,Osasuna,False
+2011,ESP1,Spain,La Liga,Real Madrid,Real Madrid,False
+2011,ESP1,Spain,La Liga,Sociedad,Real Sociedad,True
+2011,ESP1,Spain,La Liga,Santander,Santander,False
+2011,ESP1,Spain,La Liga,Sevilla,Sevilla,False
+2011,ESP1,Spain,La Liga,Sp Gijon,Sp Gijon,False
+2011,ESP1,Spain,La Liga,Valencia,Valencia,False
+2011,ESP1,Spain,La Liga,Vallecano,Vallecano,False
+2011,ESP1,Spain,La Liga,Villarreal,Villarreal,False
+2011,ESP1,Spain,La Liga,Zaragoza,Zaragoza,False
+2011,FRA1,France,Ligue 1,Ajaccio,Ajaccio,False
+2011,FRA1,France,Ligue 1,Auxerre,Auxerre,False
+2011,FRA1,France,Ligue 1,Bordeaux,Bordeaux,False
+2011,FRA1,France,Ligue 1,Brest,Brest,False
+2011,FRA1,France,Ligue 1,Caen,Caen,False
+2011,FRA1,France,Ligue 1,Dijon,Dijon,False
+2011,FRA1,France,Ligue 1,Evian Thonon Gaillard,Evian Thonon Gaillard,False
+2011,FRA1,France,Ligue 1,Lille,Lille,False
+2011,FRA1,France,Ligue 1,Lorient,Lorient,False
+2011,FRA1,France,Ligue 1,Lyon,Lyon,False
+2011,FRA1,France,Ligue 1,Marseille,Marseille,False
+2011,FRA1,France,Ligue 1,Montpellier,Montpellier,False
+2011,FRA1,France,Ligue 1,Nancy,Nancy,False
+2011,FRA1,France,Ligue 1,Nice,Nice,False
+2011,FRA1,France,Ligue 1,Paris SG,Paris Saint-Germain,True
+2011,FRA1,France,Ligue 1,Rennes,Rennes,False
+2011,FRA1,France,Ligue 1,Sochaux,Sochaux,False
+2011,FRA1,France,Ligue 1,St Etienne,St Etienne,False
+2011,FRA1,France,Ligue 1,Toulouse,Toulouse,False
+2011,FRA1,France,Ligue 1,Valenciennes,Valenciennes,False
+2011,GER1,Germany,Bundesliga,Augsburg,Augsburg,False
+2011,GER1,Germany,Bundesliga,Leverkusen,Bayer Leverkusen,True
+2011,GER1,Germany,Bundesliga,Bayern Munich,Bayern Munich,False
+2011,GER1,Germany,Bundesliga,Dortmund,Borussia Dortmund,True
+2011,GER1,Germany,Bundesliga,M'gladbach,Borussia Mönchengladbach,True
+2011,GER1,Germany,Bundesliga,FC Koln,FC Koln,False
+2011,GER1,Germany,Bundesliga,Freiburg,Freiburg,False
+2011,GER1,Germany,Bundesliga,Hamburg,Hamburg,False
+2011,GER1,Germany,Bundesliga,Hannover,Hannover,False
+2011,GER1,Germany,Bundesliga,Hertha,Hertha,False
+2011,GER1,Germany,Bundesliga,Hoffenheim,Hoffenheim,False
+2011,GER1,Germany,Bundesliga,Kaiserslautern,Kaiserslautern,False
+2011,GER1,Germany,Bundesliga,Mainz,Mainz,False
+2011,GER1,Germany,Bundesliga,Nurnberg,Nurnberg,False
+2011,GER1,Germany,Bundesliga,Schalke 04,Schalke 04,False
+2011,GER1,Germany,Bundesliga,Stuttgart,VfB Stuttgart,True
+2011,GER1,Germany,Bundesliga,Werder Bremen,Werder Bremen,False
+2011,GER1,Germany,Bundesliga,Wolfsburg,Wolfsburg,False
+2011,ITA1,Italy,Serie A,Milan,AC Milan,True
+2011,ITA1,Italy,Serie A,Atalanta,Atalanta,False
+2011,ITA1,Italy,Serie A,Bologna,Bologna,False
+2011,ITA1,Italy,Serie A,Cagliari,Cagliari,False
+2011,ITA1,Italy,Serie A,Catania,Catania,False
+2011,ITA1,Italy,Serie A,Cesena,Cesena,False
+2011,ITA1,Italy,Serie A,Chievo,Chievo,False
+2011,ITA1,Italy,Serie A,Fiorentina,Fiorentina,False
+2011,ITA1,Italy,Serie A,Genoa,Genoa,False
+2011,ITA1,Italy,Serie A,Inter,Inter Milan,True
+2011,ITA1,Italy,Serie A,Juventus,Juventus,False
+2011,ITA1,Italy,Serie A,Lazio,Lazio,False
+2011,ITA1,Italy,Serie A,Lecce,Lecce,False
+2011,ITA1,Italy,Serie A,Napoli,Napoli,False
+2011,ITA1,Italy,Serie A,Novara,Novara,False
+2011,ITA1,Italy,Serie A,Palermo,Palermo,False
+2011,ITA1,Italy,Serie A,Parma,Parma,False
+2011,ITA1,Italy,Serie A,Roma,Roma,False
+2011,ITA1,Italy,Serie A,Siena,Siena,False
+2011,ITA1,Italy,Serie A,Udinese,Udinese,False
+2012,ENG1,England,Premier League,Arsenal,Arsenal,False
+2012,ENG1,England,Premier League,Aston Villa,Aston Villa,False
+2012,ENG1,England,Premier League,Chelsea,Chelsea,False
+2012,ENG1,England,Premier League,Everton,Everton,False
+2012,ENG1,England,Premier League,Fulham,Fulham,False
+2012,ENG1,England,Premier League,Liverpool,Liverpool,False
+2012,ENG1,England,Premier League,Man City,Manchester City,True
+2012,ENG1,England,Premier League,Man United,Manchester United,True
+2012,ENG1,England,Premier League,Newcastle,Newcastle United,True
+2012,ENG1,England,Premier League,Norwich,Norwich,False
+2012,ENG1,England,Premier League,QPR,QPR,False
+2012,ENG1,England,Premier League,Reading,Reading,False
+2012,ENG1,England,Premier League,Southampton,Southampton,False
+2012,ENG1,England,Premier League,Stoke,Stoke,False
+2012,ENG1,England,Premier League,Sunderland,Sunderland,False
+2012,ENG1,England,Premier League,Swansea,Swansea,False
+2012,ENG1,England,Premier League,Tottenham,Tottenham Hotspur,True
+2012,ENG1,England,Premier League,West Brom,West Brom,False
+2012,ENG1,England,Premier League,West Ham,West Ham,False
+2012,ENG1,England,Premier League,Wigan,Wigan,False
+2012,ESP1,Spain,La Liga,Ath Bilbao,Athletic Bilbao,True
+2012,ESP1,Spain,La Liga,Ath Madrid,Atlético Madrid,True
+2012,ESP1,Spain,La Liga,Barcelona,Barcelona,False
+2012,ESP1,Spain,La Liga,Betis,Betis,False
+2012,ESP1,Spain,La Liga,Celta,Celta,False
+2012,ESP1,Spain,La Liga,Espanol,Espanol,False
+2012,ESP1,Spain,La Liga,Getafe,Getafe,False
+2012,ESP1,Spain,La Liga,Granada,Granada,False
+2012,ESP1,Spain,La Liga,La Coruna,La Coruna,False
+2012,ESP1,Spain,La Liga,Levante,Levante,False
+2012,ESP1,Spain,La Liga,Mallorca,Mallorca,False
+2012,ESP1,Spain,La Liga,Malaga,Málaga,True
+2012,ESP1,Spain,La Liga,Osasuna,Osasuna,False
+2012,ESP1,Spain,La Liga,Real Madrid,Real Madrid,False
+2012,ESP1,Spain,La Liga,Sociedad,Real Sociedad,True
+2012,ESP1,Spain,La Liga,Sevilla,Sevilla,False
+2012,ESP1,Spain,La Liga,Valencia,Valencia,False
+2012,ESP1,Spain,La Liga,Valladolid,Valladolid,False
+2012,ESP1,Spain,La Liga,Vallecano,Vallecano,False
+2012,ESP1,Spain,La Liga,Zaragoza,Zaragoza,False
+2012,FRA1,France,Ligue 1,Ajaccio,Ajaccio,False
+2012,FRA1,France,Ligue 1,Bastia,Bastia,False
+2012,FRA1,France,Ligue 1,Bordeaux,Bordeaux,False
+2012,FRA1,France,Ligue 1,Brest,Brest,False
+2012,FRA1,France,Ligue 1,Evian Thonon Gaillard,Evian Thonon Gaillard,False
+2012,FRA1,France,Ligue 1,Lille,Lille,False
+2012,FRA1,France,Ligue 1,Lorient,Lorient,False
+2012,FRA1,France,Ligue 1,Lyon,Lyon,False
+2012,FRA1,France,Ligue 1,Marseille,Marseille,False
+2012,FRA1,France,Ligue 1,Montpellier,Montpellier,False
+2012,FRA1,France,Ligue 1,Nancy,Nancy,False
+2012,FRA1,France,Ligue 1,Nice,Nice,False
+2012,FRA1,France,Ligue 1,Paris SG,Paris Saint-Germain,True
+2012,FRA1,France,Ligue 1,Reims,Reims,False
+2012,FRA1,France,Ligue 1,Rennes,Rennes,False
+2012,FRA1,France,Ligue 1,Sochaux,Sochaux,False
+2012,FRA1,France,Ligue 1,St Etienne,St Etienne,False
+2012,FRA1,France,Ligue 1,Toulouse,Toulouse,False
+2012,FRA1,France,Ligue 1,Troyes,Troyes,False
+2012,FRA1,France,Ligue 1,Valenciennes,Valenciennes,False
+2012,GER1,Germany,Bundesliga,Augsburg,Augsburg,False
+2012,GER1,Germany,Bundesliga,Leverkusen,Bayer Leverkusen,True
+2012,GER1,Germany,Bundesliga,Bayern Munich,Bayern Munich,False
+2012,GER1,Germany,Bundesliga,Dortmund,Borussia Dortmund,True
+2012,GER1,Germany,Bundesliga,M'gladbach,Borussia Mönchengladbach,True
+2012,GER1,Germany,Bundesliga,Ein Frankfurt,Eintracht Frankfurt,True
+2012,GER1,Germany,Bundesliga,Fortuna Dusseldorf,Fortuna Dusseldorf,False
+2012,GER1,Germany,Bundesliga,Freiburg,Freiburg,False
+2012,GER1,Germany,Bundesliga,Greuther Furth,Greuther Furth,False
+2012,GER1,Germany,Bundesliga,Hamburg,Hamburg,False
+2012,GER1,Germany,Bundesliga,Hannover,Hannover,False
+2012,GER1,Germany,Bundesliga,Hoffenheim,Hoffenheim,False
+2012,GER1,Germany,Bundesliga,Mainz,Mainz,False
+2012,GER1,Germany,Bundesliga,Nurnberg,Nurnberg,False
+2012,GER1,Germany,Bundesliga,Schalke 04,Schalke 04,False
+2012,GER1,Germany,Bundesliga,Stuttgart,VfB Stuttgart,True
+2012,GER1,Germany,Bundesliga,Werder Bremen,Werder Bremen,False
+2012,GER1,Germany,Bundesliga,Wolfsburg,Wolfsburg,False
+2012,ITA1,Italy,Serie A,Milan,AC Milan,True
+2012,ITA1,Italy,Serie A,Atalanta,Atalanta,False
+2012,ITA1,Italy,Serie A,Bologna,Bologna,False
+2012,ITA1,Italy,Serie A,Cagliari,Cagliari,False
+2012,ITA1,Italy,Serie A,Catania,Catania,False
+2012,ITA1,Italy,Serie A,Chievo,Chievo,False
+2012,ITA1,Italy,Serie A,Fiorentina,Fiorentina,False
+2012,ITA1,Italy,Serie A,Genoa,Genoa,False
+2012,ITA1,Italy,Serie A,Inter,Inter Milan,True
+2012,ITA1,Italy,Serie A,Juventus,Juventus,False
+2012,ITA1,Italy,Serie A,Lazio,Lazio,False
+2012,ITA1,Italy,Serie A,Napoli,Napoli,False
+2012,ITA1,Italy,Serie A,Palermo,Palermo,False
+2012,ITA1,Italy,Serie A,Parma,Parma,False
+2012,ITA1,Italy,Serie A,Pescara,Pescara,False
+2012,ITA1,Italy,Serie A,Roma,Roma,False
+2012,ITA1,Italy,Serie A,Sampdoria,Sampdoria,False
+2012,ITA1,Italy,Serie A,Siena,Siena,False
+2012,ITA1,Italy,Serie A,Torino,Torino,False
+2012,ITA1,Italy,Serie A,Udinese,Udinese,False
+2013,ENG1,England,Premier League,Arsenal,Arsenal,False
+2013,ENG1,England,Premier League,Aston Villa,Aston Villa,False
+2013,ENG1,England,Premier League,Cardiff,Cardiff,False
+2013,ENG1,England,Premier League,Chelsea,Chelsea,False
+2013,ENG1,England,Premier League,Crystal Palace,Crystal Palace,False
+2013,ENG1,England,Premier League,Everton,Everton,False
+2013,ENG1,England,Premier League,Fulham,Fulham,False
+2013,ENG1,England,Premier League,Hull,Hull,False
+2013,ENG1,England,Premier League,Liverpool,Liverpool,False
+2013,ENG1,England,Premier League,Man City,Manchester City,True
+2013,ENG1,England,Premier League,Man United,Manchester United,True
+2013,ENG1,England,Premier League,Newcastle,Newcastle United,True
+2013,ENG1,England,Premier League,Norwich,Norwich,False
+2013,ENG1,England,Premier League,Southampton,Southampton,False
+2013,ENG1,England,Premier League,Stoke,Stoke,False
+2013,ENG1,England,Premier League,Sunderland,Sunderland,False
+2013,ENG1,England,Premier League,Swansea,Swansea,False
+2013,ENG1,England,Premier League,Tottenham,Tottenham Hotspur,True
+2013,ENG1,England,Premier League,West Brom,West Brom,False
+2013,ENG1,England,Premier League,West Ham,West Ham,False
+2013,ESP1,Spain,La Liga,Almeria,Almeria,False
+2013,ESP1,Spain,La Liga,Ath Bilbao,Athletic Bilbao,True
+2013,ESP1,Spain,La Liga,Ath Madrid,Atlético Madrid,True
+2013,ESP1,Spain,La Liga,Barcelona,Barcelona,False
+2013,ESP1,Spain,La Liga,Betis,Betis,False
+2013,ESP1,Spain,La Liga,Celta,Celta,False
+2013,ESP1,Spain,La Liga,Elche,Elche,False
+2013,ESP1,Spain,La Liga,Espanol,Espanol,False
+2013,ESP1,Spain,La Liga,Getafe,Getafe,False
+2013,ESP1,Spain,La Liga,Granada,Granada,False
+2013,ESP1,Spain,La Liga,Levante,Levante,False
+2013,ESP1,Spain,La Liga,Malaga,Málaga,True
+2013,ESP1,Spain,La Liga,Osasuna,Osasuna,False
+2013,ESP1,Spain,La Liga,Real Madrid,Real Madrid,False
+2013,ESP1,Spain,La Liga,Sociedad,Real Sociedad,True
+2013,ESP1,Spain,La Liga,Sevilla,Sevilla,False
+2013,ESP1,Spain,La Liga,Valencia,Valencia,False
+2013,ESP1,Spain,La Liga,Valladolid,Valladolid,False
+2013,ESP1,Spain,La Liga,Vallecano,Vallecano,False
+2013,ESP1,Spain,La Liga,Villarreal,Villarreal,False
+2013,FRA1,France,Ligue 1,Ajaccio,Ajaccio,False
+2013,FRA1,France,Ligue 1,Bastia,Bastia,False
+2013,FRA1,France,Ligue 1,Bordeaux,Bordeaux,False
+2013,FRA1,France,Ligue 1,Evian Thonon Gaillard,Evian Thonon Gaillard,False
+2013,FRA1,France,Ligue 1,Guingamp,Guingamp,False
+2013,FRA1,France,Ligue 1,Lille,Lille,False
+2013,FRA1,France,Ligue 1,Lorient,Lorient,False
+2013,FRA1,France,Ligue 1,Lyon,Lyon,False
+2013,FRA1,France,Ligue 1,Marseille,Marseille,False
+2013,FRA1,France,Ligue 1,Monaco,Monaco,False
+2013,FRA1,France,Ligue 1,Montpellier,Montpellier,False
+2013,FRA1,France,Ligue 1,Nantes,Nantes,False
+2013,FRA1,France,Ligue 1,Nice,Nice,False
+2013,FRA1,France,Ligue 1,Paris SG,Paris Saint-Germain,True
+2013,FRA1,France,Ligue 1,Reims,Reims,False
+2013,FRA1,France,Ligue 1,Rennes,Rennes,False
+2013,FRA1,France,Ligue 1,Sochaux,Sochaux,False
+2013,FRA1,France,Ligue 1,St Etienne,St Etienne,False
+2013,FRA1,France,Ligue 1,Toulouse,Toulouse,False
+2013,FRA1,France,Ligue 1,Valenciennes,Valenciennes,False
+2013,GER1,Germany,Bundesliga,Augsburg,Augsburg,False
+2013,GER1,Germany,Bundesliga,Leverkusen,Bayer Leverkusen,True
+2013,GER1,Germany,Bundesliga,Bayern Munich,Bayern Munich,False
+2013,GER1,Germany,Bundesliga,Dortmund,Borussia Dortmund,True
+2013,GER1,Germany,Bundesliga,M'gladbach,Borussia Mönchengladbach,True
+2013,GER1,Germany,Bundesliga,Braunschweig,Braunschweig,False
+2013,GER1,Germany,Bundesliga,Ein Frankfurt,Eintracht Frankfurt,True
+2013,GER1,Germany,Bundesliga,Freiburg,Freiburg,False
+2013,GER1,Germany,Bundesliga,Hamburg,Hamburg,False
+2013,GER1,Germany,Bundesliga,Hannover,Hannover,False
+2013,GER1,Germany,Bundesliga,Hertha,Hertha,False
+2013,GER1,Germany,Bundesliga,Hoffenheim,Hoffenheim,False
+2013,GER1,Germany,Bundesliga,Mainz,Mainz,False
+2013,GER1,Germany,Bundesliga,Nurnberg,Nurnberg,False
+2013,GER1,Germany,Bundesliga,Schalke 04,Schalke 04,False
+2013,GER1,Germany,Bundesliga,Stuttgart,VfB Stuttgart,True
+2013,GER1,Germany,Bundesliga,Werder Bremen,Werder Bremen,False
+2013,GER1,Germany,Bundesliga,Wolfsburg,Wolfsburg,False
+2013,ITA1,Italy,Serie A,Milan,AC Milan,True
+2013,ITA1,Italy,Serie A,Atalanta,Atalanta,False
+2013,ITA1,Italy,Serie A,Bologna,Bologna,False
+2013,ITA1,Italy,Serie A,Cagliari,Cagliari,False
+2013,ITA1,Italy,Serie A,Catania,Catania,False
+2013,ITA1,Italy,Serie A,Chievo,Chievo,False
+2013,ITA1,Italy,Serie A,Fiorentina,Fiorentina,False
+2013,ITA1,Italy,Serie A,Genoa,Genoa,False
+2013,ITA1,Italy,Serie A,Inter,Inter Milan,True
+2013,ITA1,Italy,Serie A,Juventus,Juventus,False
+2013,ITA1,Italy,Serie A,Lazio,Lazio,False
+2013,ITA1,Italy,Serie A,Livorno,Livorno,False
+2013,ITA1,Italy,Serie A,Napoli,Napoli,False
+2013,ITA1,Italy,Serie A,Parma,Parma,False
+2013,ITA1,Italy,Serie A,Roma,Roma,False
+2013,ITA1,Italy,Serie A,Sampdoria,Sampdoria,False
+2013,ITA1,Italy,Serie A,Sassuolo,Sassuolo,False
+2013,ITA1,Italy,Serie A,Torino,Torino,False
+2013,ITA1,Italy,Serie A,Udinese,Udinese,False
+2013,ITA1,Italy,Serie A,Verona,Verona,False
+2014,ENG1,England,Premier League,Arsenal,Arsenal,False
+2014,ENG1,England,Premier League,Aston Villa,Aston Villa,False
+2014,ENG1,England,Premier League,Burnley,Burnley,False
+2014,ENG1,England,Premier League,Chelsea,Chelsea,False
+2014,ENG1,England,Premier League,Crystal Palace,Crystal Palace,False
+2014,ENG1,England,Premier League,Everton,Everton,False
+2014,ENG1,England,Premier League,Hull,Hull,False
+2014,ENG1,England,Premier League,Leicester,Leicester City,True
+2014,ENG1,England,Premier League,Liverpool,Liverpool,False
+2014,ENG1,England,Premier League,Man City,Manchester City,True
+2014,ENG1,England,Premier League,Man United,Manchester United,True
+2014,ENG1,England,Premier League,Newcastle,Newcastle United,True
+2014,ENG1,England,Premier League,QPR,QPR,False
+2014,ENG1,England,Premier League,Southampton,Southampton,False
+2014,ENG1,England,Premier League,Stoke,Stoke,False
+2014,ENG1,England,Premier League,Sunderland,Sunderland,False
+2014,ENG1,England,Premier League,Swansea,Swansea,False
+2014,ENG1,England,Premier League,Tottenham,Tottenham Hotspur,True
+2014,ENG1,England,Premier League,West Brom,West Brom,False
+2014,ENG1,England,Premier League,West Ham,West Ham,False
+2014,ESP1,Spain,La Liga,Almeria,Almeria,False
+2014,ESP1,Spain,La Liga,Ath Bilbao,Athletic Bilbao,True
+2014,ESP1,Spain,La Liga,Ath Madrid,Atlético Madrid,True
+2014,ESP1,Spain,La Liga,Barcelona,Barcelona,False
+2014,ESP1,Spain,La Liga,Celta,Celta,False
+2014,ESP1,Spain,La Liga,Cordoba,Cordoba,False
+2014,ESP1,Spain,La Liga,Eibar,Eibar,False
+2014,ESP1,Spain,La Liga,Elche,Elche,False
+2014,ESP1,Spain,La Liga,Espanol,Espanol,False
+2014,ESP1,Spain,La Liga,Getafe,Getafe,False
+2014,ESP1,Spain,La Liga,Granada,Granada,False
+2014,ESP1,Spain,La Liga,La Coruna,La Coruna,False
+2014,ESP1,Spain,La Liga,Levante,Levante,False
+2014,ESP1,Spain,La Liga,Malaga,Málaga,True
+2014,ESP1,Spain,La Liga,Real Madrid,Real Madrid,False
+2014,ESP1,Spain,La Liga,Sociedad,Real Sociedad,True
+2014,ESP1,Spain,La Liga,Sevilla,Sevilla,False
+2014,ESP1,Spain,La Liga,Valencia,Valencia,False
+2014,ESP1,Spain,La Liga,Vallecano,Vallecano,False
+2014,ESP1,Spain,La Liga,Villarreal,Villarreal,False
+2014,FRA1,France,Ligue 1,Bastia,Bastia,False
+2014,FRA1,France,Ligue 1,Bordeaux,Bordeaux,False
+2014,FRA1,France,Ligue 1,Caen,Caen,False
+2014,FRA1,France,Ligue 1,Evian Thonon Gaillard,Evian Thonon Gaillard,False
+2014,FRA1,France,Ligue 1,Guingamp,Guingamp,False
+2014,FRA1,France,Ligue 1,Lens,Lens,False
+2014,FRA1,France,Ligue 1,Lille,Lille,False
+2014,FRA1,France,Ligue 1,Lorient,Lorient,False
+2014,FRA1,France,Ligue 1,Lyon,Lyon,False
+2014,FRA1,France,Ligue 1,Marseille,Marseille,False
+2014,FRA1,France,Ligue 1,Metz,Metz,False
+2014,FRA1,France,Ligue 1,Monaco,Monaco,False
+2014,FRA1,France,Ligue 1,Montpellier,Montpellier,False
+2014,FRA1,France,Ligue 1,Nantes,Nantes,False
+2014,FRA1,France,Ligue 1,Nice,Nice,False
+2014,FRA1,France,Ligue 1,Paris SG,Paris Saint-Germain,True
+2014,FRA1,France,Ligue 1,Reims,Reims,False
+2014,FRA1,France,Ligue 1,Rennes,Rennes,False
+2014,FRA1,France,Ligue 1,St Etienne,St Etienne,False
+2014,FRA1,France,Ligue 1,Toulouse,Toulouse,False
+2014,GER1,Germany,Bundesliga,Augsburg,Augsburg,False
+2014,GER1,Germany,Bundesliga,Leverkusen,Bayer Leverkusen,True
+2014,GER1,Germany,Bundesliga,Bayern Munich,Bayern Munich,False
+2014,GER1,Germany,Bundesliga,Dortmund,Borussia Dortmund,True
+2014,GER1,Germany,Bundesliga,M'gladbach,Borussia Mönchengladbach,True
+2014,GER1,Germany,Bundesliga,Ein Frankfurt,Eintracht Frankfurt,True
+2014,GER1,Germany,Bundesliga,FC Koln,FC Koln,False
+2014,GER1,Germany,Bundesliga,Freiburg,Freiburg,False
+2014,GER1,Germany,Bundesliga,Hamburg,Hamburg,False
+2014,GER1,Germany,Bundesliga,Hannover,Hannover,False
+2014,GER1,Germany,Bundesliga,Hertha,Hertha,False
+2014,GER1,Germany,Bundesliga,Hoffenheim,Hoffenheim,False
+2014,GER1,Germany,Bundesliga,Mainz,Mainz,False
+2014,GER1,Germany,Bundesliga,Paderborn,Paderborn,False
+2014,GER1,Germany,Bundesliga,Schalke 04,Schalke 04,False
+2014,GER1,Germany,Bundesliga,Stuttgart,VfB Stuttgart,True
+2014,GER1,Germany,Bundesliga,Werder Bremen,Werder Bremen,False
+2014,GER1,Germany,Bundesliga,Wolfsburg,Wolfsburg,False
+2014,ITA1,Italy,Serie A,Milan,AC Milan,True
+2014,ITA1,Italy,Serie A,Atalanta,Atalanta,False
+2014,ITA1,Italy,Serie A,Cagliari,Cagliari,False
+2014,ITA1,Italy,Serie A,Cesena,Cesena,False
+2014,ITA1,Italy,Serie A,Chievo,Chievo,False
+2014,ITA1,Italy,Serie A,Empoli,Empoli,False
+2014,ITA1,Italy,Serie A,Fiorentina,Fiorentina,False
+2014,ITA1,Italy,Serie A,Genoa,Genoa,False
+2014,ITA1,Italy,Serie A,Inter,Inter Milan,True
+2014,ITA1,Italy,Serie A,Juventus,Juventus,False
+2014,ITA1,Italy,Serie A,Lazio,Lazio,False
+2014,ITA1,Italy,Serie A,Napoli,Napoli,False
+2014,ITA1,Italy,Serie A,Palermo,Palermo,False
+2014,ITA1,Italy,Serie A,Parma,Parma,False
+2014,ITA1,Italy,Serie A,Roma,Roma,False
+2014,ITA1,Italy,Serie A,Sampdoria,Sampdoria,False
+2014,ITA1,Italy,Serie A,Sassuolo,Sassuolo,False
+2014,ITA1,Italy,Serie A,Torino,Torino,False
+2014,ITA1,Italy,Serie A,Udinese,Udinese,False
+2014,ITA1,Italy,Serie A,Verona,Verona,False
+2015,ENG1,England,Premier League,Arsenal,Arsenal,False
+2015,ENG1,England,Premier League,Aston Villa,Aston Villa,False
+2015,ENG1,England,Premier League,Bournemouth,Bournemouth,False
+2015,ENG1,England,Premier League,Chelsea,Chelsea,False
+2015,ENG1,England,Premier League,Crystal Palace,Crystal Palace,False
+2015,ENG1,England,Premier League,Everton,Everton,False
+2015,ENG1,England,Premier League,Leicester,Leicester City,True
+2015,ENG1,England,Premier League,Liverpool,Liverpool,False
+2015,ENG1,England,Premier League,Man City,Manchester City,True
+2015,ENG1,England,Premier League,Man United,Manchester United,True
+2015,ENG1,England,Premier League,Newcastle,Newcastle United,True
+2015,ENG1,England,Premier League,Norwich,Norwich,False
+2015,ENG1,England,Premier League,Southampton,Southampton,False
+2015,ENG1,England,Premier League,Stoke,Stoke,False
+2015,ENG1,England,Premier League,Sunderland,Sunderland,False
+2015,ENG1,England,Premier League,Swansea,Swansea,False
+2015,ENG1,England,Premier League,Tottenham,Tottenham Hotspur,True
+2015,ENG1,England,Premier League,Watford,Watford,False
+2015,ENG1,England,Premier League,West Brom,West Brom,False
+2015,ENG1,England,Premier League,West Ham,West Ham,False
+2015,ESP1,Spain,La Liga,Ath Bilbao,Athletic Bilbao,True
+2015,ESP1,Spain,La Liga,Ath Madrid,Atlético Madrid,True
+2015,ESP1,Spain,La Liga,Barcelona,Barcelona,False
+2015,ESP1,Spain,La Liga,Betis,Betis,False
+2015,ESP1,Spain,La Liga,Celta,Celta,False
+2015,ESP1,Spain,La Liga,Eibar,Eibar,False
+2015,ESP1,Spain,La Liga,Espanol,Espanol,False
+2015,ESP1,Spain,La Liga,Getafe,Getafe,False
+2015,ESP1,Spain,La Liga,Granada,Granada,False
+2015,ESP1,Spain,La Liga,La Coruna,La Coruna,False
+2015,ESP1,Spain,La Liga,Las Palmas,Las Palmas,False
+2015,ESP1,Spain,La Liga,Levante,Levante,False
+2015,ESP1,Spain,La Liga,Malaga,Málaga,True
+2015,ESP1,Spain,La Liga,Real Madrid,Real Madrid,False
+2015,ESP1,Spain,La Liga,Sociedad,Real Sociedad,True
+2015,ESP1,Spain,La Liga,Sevilla,Sevilla,False
+2015,ESP1,Spain,La Liga,Sp Gijon,Sp Gijon,False
+2015,ESP1,Spain,La Liga,Valencia,Valencia,False
+2015,ESP1,Spain,La Liga,Vallecano,Vallecano,False
+2015,ESP1,Spain,La Liga,Villarreal,Villarreal,False
+2015,FRA1,France,Ligue 1,Ajaccio GFCO,Ajaccio GFCO,False
+2015,FRA1,France,Ligue 1,Angers,Angers,False
+2015,FRA1,France,Ligue 1,Bastia,Bastia,False
+2015,FRA1,France,Ligue 1,Bordeaux,Bordeaux,False
+2015,FRA1,France,Ligue 1,Caen,Caen,False
+2015,FRA1,France,Ligue 1,Guingamp,Guingamp,False
+2015,FRA1,France,Ligue 1,Lille,Lille,False
+2015,FRA1,France,Ligue 1,Lorient,Lorient,False
+2015,FRA1,France,Ligue 1,Lyon,Lyon,False
+2015,FRA1,France,Ligue 1,Marseille,Marseille,False
+2015,FRA1,France,Ligue 1,Monaco,Monaco,False
+2015,FRA1,France,Ligue 1,Montpellier,Montpellier,False
+2015,FRA1,France,Ligue 1,Nantes,Nantes,False
+2015,FRA1,France,Ligue 1,Nice,Nice,False
+2015,FRA1,France,Ligue 1,Paris SG,Paris Saint-Germain,True
+2015,FRA1,France,Ligue 1,Reims,Reims,False
+2015,FRA1,France,Ligue 1,Rennes,Rennes,False
+2015,FRA1,France,Ligue 1,St Etienne,St Etienne,False
+2015,FRA1,France,Ligue 1,Toulouse,Toulouse,False
+2015,FRA1,France,Ligue 1,Troyes,Troyes,False
+2015,GER1,Germany,Bundesliga,Augsburg,Augsburg,False
+2015,GER1,Germany,Bundesliga,Leverkusen,Bayer Leverkusen,True
+2015,GER1,Germany,Bundesliga,Bayern Munich,Bayern Munich,False
+2015,GER1,Germany,Bundesliga,Dortmund,Borussia Dortmund,True
+2015,GER1,Germany,Bundesliga,M'gladbach,Borussia Mönchengladbach,True
+2015,GER1,Germany,Bundesliga,Darmstadt,Darmstadt,False
+2015,GER1,Germany,Bundesliga,Ein Frankfurt,Eintracht Frankfurt,True
+2015,GER1,Germany,Bundesliga,FC Koln,FC Koln,False
+2015,GER1,Germany,Bundesliga,Hamburg,Hamburg,False
+2015,GER1,Germany,Bundesliga,Hannover,Hannover,False
+2015,GER1,Germany,Bundesliga,Hertha,Hertha,False
+2015,GER1,Germany,Bundesliga,Hoffenheim,Hoffenheim,False
+2015,GER1,Germany,Bundesliga,Ingolstadt,Ingolstadt,False
+2015,GER1,Germany,Bundesliga,Mainz,Mainz,False
+2015,GER1,Germany,Bundesliga,Schalke 04,Schalke 04,False
+2015,GER1,Germany,Bundesliga,Stuttgart,VfB Stuttgart,True
+2015,GER1,Germany,Bundesliga,Werder Bremen,Werder Bremen,False
+2015,GER1,Germany,Bundesliga,Wolfsburg,Wolfsburg,False
+2015,ITA1,Italy,Serie A,Milan,AC Milan,True
+2015,ITA1,Italy,Serie A,Atalanta,Atalanta,False
+2015,ITA1,Italy,Serie A,Bologna,Bologna,False
+2015,ITA1,Italy,Serie A,Carpi,Carpi,False
+2015,ITA1,Italy,Serie A,Chievo,Chievo,False
+2015,ITA1,Italy,Serie A,Empoli,Empoli,False
+2015,ITA1,Italy,Serie A,Fiorentina,Fiorentina,False
+2015,ITA1,Italy,Serie A,Frosinone,Frosinone,False
+2015,ITA1,Italy,Serie A,Genoa,Genoa,False
+2015,ITA1,Italy,Serie A,Inter,Inter Milan,True
+2015,ITA1,Italy,Serie A,Juventus,Juventus,False
+2015,ITA1,Italy,Serie A,Lazio,Lazio,False
+2015,ITA1,Italy,Serie A,Napoli,Napoli,False
+2015,ITA1,Italy,Serie A,Palermo,Palermo,False
+2015,ITA1,Italy,Serie A,Roma,Roma,False
+2015,ITA1,Italy,Serie A,Sampdoria,Sampdoria,False
+2015,ITA1,Italy,Serie A,Sassuolo,Sassuolo,False
+2015,ITA1,Italy,Serie A,Torino,Torino,False
+2015,ITA1,Italy,Serie A,Udinese,Udinese,False
+2015,ITA1,Italy,Serie A,Verona,Verona,False
+2016,ENG1,England,Premier League,Arsenal,Arsenal,False
+2016,ENG1,England,Premier League,Bournemouth,Bournemouth,False
+2016,ENG1,England,Premier League,Burnley,Burnley,False
+2016,ENG1,England,Premier League,Chelsea,Chelsea,False
+2016,ENG1,England,Premier League,Crystal Palace,Crystal Palace,False
+2016,ENG1,England,Premier League,Everton,Everton,False
+2016,ENG1,England,Premier League,Hull,Hull,False
+2016,ENG1,England,Premier League,Leicester,Leicester City,True
+2016,ENG1,England,Premier League,Liverpool,Liverpool,False
+2016,ENG1,England,Premier League,Man City,Manchester City,True
+2016,ENG1,England,Premier League,Man United,Manchester United,True
+2016,ENG1,England,Premier League,Middlesbrough,Middlesbrough,False
+2016,ENG1,England,Premier League,Southampton,Southampton,False
+2016,ENG1,England,Premier League,Stoke,Stoke,False
+2016,ENG1,England,Premier League,Sunderland,Sunderland,False
+2016,ENG1,England,Premier League,Swansea,Swansea,False
+2016,ENG1,England,Premier League,Tottenham,Tottenham Hotspur,True
+2016,ENG1,England,Premier League,Watford,Watford,False
+2016,ENG1,England,Premier League,West Brom,West Brom,False
+2016,ENG1,England,Premier League,West Ham,West Ham,False
+2016,ESP1,Spain,La Liga,Alaves,Alaves,False
+2016,ESP1,Spain,La Liga,Ath Bilbao,Athletic Bilbao,True
+2016,ESP1,Spain,La Liga,Ath Madrid,Atlético Madrid,True
+2016,ESP1,Spain,La Liga,Barcelona,Barcelona,False
+2016,ESP1,Spain,La Liga,Betis,Betis,False
+2016,ESP1,Spain,La Liga,Celta,Celta,False
+2016,ESP1,Spain,La Liga,Eibar,Eibar,False
+2016,ESP1,Spain,La Liga,Espanol,Espanol,False
+2016,ESP1,Spain,La Liga,Granada,Granada,False
+2016,ESP1,Spain,La Liga,La Coruna,La Coruna,False
+2016,ESP1,Spain,La Liga,Las Palmas,Las Palmas,False
+2016,ESP1,Spain,La Liga,Leganes,Leganes,False
+2016,ESP1,Spain,La Liga,Malaga,Málaga,True
+2016,ESP1,Spain,La Liga,Osasuna,Osasuna,False
+2016,ESP1,Spain,La Liga,Real Madrid,Real Madrid,False
+2016,ESP1,Spain,La Liga,Sociedad,Real Sociedad,True
+2016,ESP1,Spain,La Liga,Sevilla,Sevilla,False
+2016,ESP1,Spain,La Liga,Sp Gijon,Sp Gijon,False
+2016,ESP1,Spain,La Liga,Valencia,Valencia,False
+2016,ESP1,Spain,La Liga,Villarreal,Villarreal,False
+2016,FRA1,France,Ligue 1,Angers,Angers,False
+2016,FRA1,France,Ligue 1,Bastia,Bastia,False
+2016,FRA1,France,Ligue 1,Bordeaux,Bordeaux,False
+2016,FRA1,France,Ligue 1,Caen,Caen,False
+2016,FRA1,France,Ligue 1,Dijon,Dijon,False
+2016,FRA1,France,Ligue 1,Guingamp,Guingamp,False
+2016,FRA1,France,Ligue 1,Lille,Lille,False
+2016,FRA1,France,Ligue 1,Lorient,Lorient,False
+2016,FRA1,France,Ligue 1,Lyon,Lyon,False
+2016,FRA1,France,Ligue 1,Marseille,Marseille,False
+2016,FRA1,France,Ligue 1,Metz,Metz,False
+2016,FRA1,France,Ligue 1,Monaco,Monaco,False
+2016,FRA1,France,Ligue 1,Montpellier,Montpellier,False
+2016,FRA1,France,Ligue 1,Nancy,Nancy,False
+2016,FRA1,France,Ligue 1,Nantes,Nantes,False
+2016,FRA1,France,Ligue 1,Nice,Nice,False
+2016,FRA1,France,Ligue 1,Paris SG,Paris Saint-Germain,True
+2016,FRA1,France,Ligue 1,Rennes,Rennes,False
+2016,FRA1,France,Ligue 1,St Etienne,St Etienne,False
+2016,FRA1,France,Ligue 1,Toulouse,Toulouse,False
+2016,GER1,Germany,Bundesliga,Augsburg,Augsburg,False
+2016,GER1,Germany,Bundesliga,Leverkusen,Bayer Leverkusen,True
+2016,GER1,Germany,Bundesliga,Bayern Munich,Bayern Munich,False
+2016,GER1,Germany,Bundesliga,Dortmund,Borussia Dortmund,True
+2016,GER1,Germany,Bundesliga,M'gladbach,Borussia Mönchengladbach,True
+2016,GER1,Germany,Bundesliga,Darmstadt,Darmstadt,False
+2016,GER1,Germany,Bundesliga,Ein Frankfurt,Eintracht Frankfurt,True
+2016,GER1,Germany,Bundesliga,FC Koln,FC Koln,False
+2016,GER1,Germany,Bundesliga,Freiburg,Freiburg,False
+2016,GER1,Germany,Bundesliga,Hamburg,Hamburg,False
+2016,GER1,Germany,Bundesliga,Hertha,Hertha,False
+2016,GER1,Germany,Bundesliga,Hoffenheim,Hoffenheim,False
+2016,GER1,Germany,Bundesliga,Ingolstadt,Ingolstadt,False
+2016,GER1,Germany,Bundesliga,Mainz,Mainz,False
+2016,GER1,Germany,Bundesliga,RB Leipzig,RB Leipzig,False
+2016,GER1,Germany,Bundesliga,Schalke 04,Schalke 04,False
+2016,GER1,Germany,Bundesliga,Werder Bremen,Werder Bremen,False
+2016,GER1,Germany,Bundesliga,Wolfsburg,Wolfsburg,False
+2016,ITA1,Italy,Serie A,Milan,AC Milan,True
+2016,ITA1,Italy,Serie A,Atalanta,Atalanta,False
+2016,ITA1,Italy,Serie A,Bologna,Bologna,False
+2016,ITA1,Italy,Serie A,Cagliari,Cagliari,False
+2016,ITA1,Italy,Serie A,Chievo,Chievo,False
+2016,ITA1,Italy,Serie A,Crotone,Crotone,False
+2016,ITA1,Italy,Serie A,Empoli,Empoli,False
+2016,ITA1,Italy,Serie A,Fiorentina,Fiorentina,False
+2016,ITA1,Italy,Serie A,Genoa,Genoa,False
+2016,ITA1,Italy,Serie A,Inter,Inter Milan,True
+2016,ITA1,Italy,Serie A,Juventus,Juventus,False
+2016,ITA1,Italy,Serie A,Lazio,Lazio,False
+2016,ITA1,Italy,Serie A,Napoli,Napoli,False
+2016,ITA1,Italy,Serie A,Palermo,Palermo,False
+2016,ITA1,Italy,Serie A,Pescara,Pescara,False
+2016,ITA1,Italy,Serie A,Roma,Roma,False
+2016,ITA1,Italy,Serie A,Sampdoria,Sampdoria,False
+2016,ITA1,Italy,Serie A,Sassuolo,Sassuolo,False
+2016,ITA1,Italy,Serie A,Torino,Torino,False
+2016,ITA1,Italy,Serie A,Udinese,Udinese,False
+2017,ENG1,England,Premier League,Arsenal,Arsenal,False
+2017,ENG1,England,Premier League,Bournemouth,Bournemouth,False
+2017,ENG1,England,Premier League,Brighton,Brighton,False
+2017,ENG1,England,Premier League,Burnley,Burnley,False
+2017,ENG1,England,Premier League,Chelsea,Chelsea,False
+2017,ENG1,England,Premier League,Crystal Palace,Crystal Palace,False
+2017,ENG1,England,Premier League,Everton,Everton,False
+2017,ENG1,England,Premier League,Huddersfield,Huddersfield,False
+2017,ENG1,England,Premier League,Leicester,Leicester City,True
+2017,ENG1,England,Premier League,Liverpool,Liverpool,False
+2017,ENG1,England,Premier League,Man City,Manchester City,True
+2017,ENG1,England,Premier League,Man United,Manchester United,True
+2017,ENG1,England,Premier League,Newcastle,Newcastle United,True
+2017,ENG1,England,Premier League,Southampton,Southampton,False
+2017,ENG1,England,Premier League,Stoke,Stoke,False
+2017,ENG1,England,Premier League,Swansea,Swansea,False
+2017,ENG1,England,Premier League,Tottenham,Tottenham Hotspur,True
+2017,ENG1,England,Premier League,Watford,Watford,False
+2017,ENG1,England,Premier League,West Brom,West Brom,False
+2017,ENG1,England,Premier League,West Ham,West Ham,False
+2017,ESP1,Spain,La Liga,Alaves,Alaves,False
+2017,ESP1,Spain,La Liga,Ath Bilbao,Athletic Bilbao,True
+2017,ESP1,Spain,La Liga,Ath Madrid,Atlético Madrid,True
+2017,ESP1,Spain,La Liga,Barcelona,Barcelona,False
+2017,ESP1,Spain,La Liga,Betis,Betis,False
+2017,ESP1,Spain,La Liga,Celta,Celta,False
+2017,ESP1,Spain,La Liga,Eibar,Eibar,False
+2017,ESP1,Spain,La Liga,Espanol,Espanol,False
+2017,ESP1,Spain,La Liga,Getafe,Getafe,False
+2017,ESP1,Spain,La Liga,Girona,Girona,False
+2017,ESP1,Spain,La Liga,La Coruna,La Coruna,False
+2017,ESP1,Spain,La Liga,Las Palmas,Las Palmas,False
+2017,ESP1,Spain,La Liga,Leganes,Leganes,False
+2017,ESP1,Spain,La Liga,Levante,Levante,False
+2017,ESP1,Spain,La Liga,Malaga,Málaga,True
+2017,ESP1,Spain,La Liga,Real Madrid,Real Madrid,False
+2017,ESP1,Spain,La Liga,Sociedad,Real Sociedad,True
+2017,ESP1,Spain,La Liga,Sevilla,Sevilla,False
+2017,ESP1,Spain,La Liga,Valencia,Valencia,False
+2017,ESP1,Spain,La Liga,Villarreal,Villarreal,False
+2017,FRA1,France,Ligue 1,Amiens,Amiens,False
+2017,FRA1,France,Ligue 1,Angers,Angers,False
+2017,FRA1,France,Ligue 1,Bordeaux,Bordeaux,False
+2017,FRA1,France,Ligue 1,Caen,Caen,False
+2017,FRA1,France,Ligue 1,Dijon,Dijon,False
+2017,FRA1,France,Ligue 1,Guingamp,Guingamp,False
+2017,FRA1,France,Ligue 1,Lille,Lille,False
+2017,FRA1,France,Ligue 1,Lyon,Lyon,False
+2017,FRA1,France,Ligue 1,Marseille,Marseille,False
+2017,FRA1,France,Ligue 1,Metz,Metz,False
+2017,FRA1,France,Ligue 1,Monaco,Monaco,False
+2017,FRA1,France,Ligue 1,Montpellier,Montpellier,False
+2017,FRA1,France,Ligue 1,Nantes,Nantes,False
+2017,FRA1,France,Ligue 1,Nice,Nice,False
+2017,FRA1,France,Ligue 1,Paris SG,Paris Saint-Germain,True
+2017,FRA1,France,Ligue 1,Rennes,Rennes,False
+2017,FRA1,France,Ligue 1,St Etienne,St Etienne,False
+2017,FRA1,France,Ligue 1,Strasbourg,Strasbourg,False
+2017,FRA1,France,Ligue 1,Toulouse,Toulouse,False
+2017,FRA1,France,Ligue 1,Troyes,Troyes,False
+2017,GER1,Germany,Bundesliga,Augsburg,Augsburg,False
+2017,GER1,Germany,Bundesliga,Leverkusen,Bayer Leverkusen,True
+2017,GER1,Germany,Bundesliga,Bayern Munich,Bayern Munich,False
+2017,GER1,Germany,Bundesliga,Dortmund,Borussia Dortmund,True
+2017,GER1,Germany,Bundesliga,M'gladbach,Borussia Mönchengladbach,True
+2017,GER1,Germany,Bundesliga,Ein Frankfurt,Eintracht Frankfurt,True
+2017,GER1,Germany,Bundesliga,FC Koln,FC Koln,False
+2017,GER1,Germany,Bundesliga,Freiburg,Freiburg,False
+2017,GER1,Germany,Bundesliga,Hamburg,Hamburg,False
+2017,GER1,Germany,Bundesliga,Hannover,Hannover,False
+2017,GER1,Germany,Bundesliga,Hertha,Hertha,False
+2017,GER1,Germany,Bundesliga,Hoffenheim,Hoffenheim,False
+2017,GER1,Germany,Bundesliga,Mainz,Mainz,False
+2017,GER1,Germany,Bundesliga,RB Leipzig,RB Leipzig,False
+2017,GER1,Germany,Bundesliga,Schalke 04,Schalke 04,False
+2017,GER1,Germany,Bundesliga,Stuttgart,VfB Stuttgart,True
+2017,GER1,Germany,Bundesliga,Werder Bremen,Werder Bremen,False
+2017,GER1,Germany,Bundesliga,Wolfsburg,Wolfsburg,False
+2017,ITA1,Italy,Serie A,Milan,AC Milan,True
+2017,ITA1,Italy,Serie A,Atalanta,Atalanta,False
+2017,ITA1,Italy,Serie A,Benevento,Benevento,False
+2017,ITA1,Italy,Serie A,Bologna,Bologna,False
+2017,ITA1,Italy,Serie A,Cagliari,Cagliari,False
+2017,ITA1,Italy,Serie A,Chievo,Chievo,False
+2017,ITA1,Italy,Serie A,Crotone,Crotone,False
+2017,ITA1,Italy,Serie A,Fiorentina,Fiorentina,False
+2017,ITA1,Italy,Serie A,Genoa,Genoa,False
+2017,ITA1,Italy,Serie A,Inter,Inter Milan,True
+2017,ITA1,Italy,Serie A,Juventus,Juventus,False
+2017,ITA1,Italy,Serie A,Lazio,Lazio,False
+2017,ITA1,Italy,Serie A,Napoli,Napoli,False
+2017,ITA1,Italy,Serie A,Roma,Roma,False
+2017,ITA1,Italy,Serie A,Sampdoria,Sampdoria,False
+2017,ITA1,Italy,Serie A,Sassuolo,Sassuolo,False
+2017,ITA1,Italy,Serie A,Spal,Spal,False
+2017,ITA1,Italy,Serie A,Torino,Torino,False
+2017,ITA1,Italy,Serie A,Udinese,Udinese,False
+2017,ITA1,Italy,Serie A,Verona,Verona,False
+2018,ENG1,England,Premier League,Arsenal,Arsenal,False
+2018,ENG1,England,Premier League,Bournemouth,Bournemouth,False
+2018,ENG1,England,Premier League,Brighton,Brighton,False
+2018,ENG1,England,Premier League,Burnley,Burnley,False
+2018,ENG1,England,Premier League,Cardiff,Cardiff,False
+2018,ENG1,England,Premier League,Chelsea,Chelsea,False
+2018,ENG1,England,Premier League,Crystal Palace,Crystal Palace,False
+2018,ENG1,England,Premier League,Everton,Everton,False
+2018,ENG1,England,Premier League,Fulham,Fulham,False
+2018,ENG1,England,Premier League,Huddersfield,Huddersfield,False
+2018,ENG1,England,Premier League,Leicester,Leicester City,True
+2018,ENG1,England,Premier League,Liverpool,Liverpool,False
+2018,ENG1,England,Premier League,Man City,Manchester City,True
+2018,ENG1,England,Premier League,Man United,Manchester United,True
+2018,ENG1,England,Premier League,Newcastle,Newcastle United,True
+2018,ENG1,England,Premier League,Southampton,Southampton,False
+2018,ENG1,England,Premier League,Tottenham,Tottenham Hotspur,True
+2018,ENG1,England,Premier League,Watford,Watford,False
+2018,ENG1,England,Premier League,West Ham,West Ham,False
+2018,ENG1,England,Premier League,Wolves,Wolves,False
+2018,ESP1,Spain,La Liga,Alaves,Alaves,False
+2018,ESP1,Spain,La Liga,Ath Bilbao,Athletic Bilbao,True
+2018,ESP1,Spain,La Liga,Ath Madrid,Atlético Madrid,True
+2018,ESP1,Spain,La Liga,Barcelona,Barcelona,False
+2018,ESP1,Spain,La Liga,Betis,Betis,False
+2018,ESP1,Spain,La Liga,Celta,Celta,False
+2018,ESP1,Spain,La Liga,Eibar,Eibar,False
+2018,ESP1,Spain,La Liga,Espanol,Espanol,False
+2018,ESP1,Spain,La Liga,Getafe,Getafe,False
+2018,ESP1,Spain,La Liga,Girona,Girona,False
+2018,ESP1,Spain,La Liga,Huesca,Huesca,False
+2018,ESP1,Spain,La Liga,Leganes,Leganes,False
+2018,ESP1,Spain,La Liga,Levante,Levante,False
+2018,ESP1,Spain,La Liga,Real Madrid,Real Madrid,False
+2018,ESP1,Spain,La Liga,Sociedad,Real Sociedad,True
+2018,ESP1,Spain,La Liga,Sevilla,Sevilla,False
+2018,ESP1,Spain,La Liga,Valencia,Valencia,False
+2018,ESP1,Spain,La Liga,Valladolid,Valladolid,False
+2018,ESP1,Spain,La Liga,Vallecano,Vallecano,False
+2018,ESP1,Spain,La Liga,Villarreal,Villarreal,False
+2018,FRA1,France,Ligue 1,Amiens,Amiens,False
+2018,FRA1,France,Ligue 1,Angers,Angers,False
+2018,FRA1,France,Ligue 1,Bordeaux,Bordeaux,False
+2018,FRA1,France,Ligue 1,Caen,Caen,False
+2018,FRA1,France,Ligue 1,Dijon,Dijon,False
+2018,FRA1,France,Ligue 1,Guingamp,Guingamp,False
+2018,FRA1,France,Ligue 1,Lille,Lille,False
+2018,FRA1,France,Ligue 1,Lyon,Lyon,False
+2018,FRA1,France,Ligue 1,Marseille,Marseille,False
+2018,FRA1,France,Ligue 1,Monaco,Monaco,False
+2018,FRA1,France,Ligue 1,Montpellier,Montpellier,False
+2018,FRA1,France,Ligue 1,Nantes,Nantes,False
+2018,FRA1,France,Ligue 1,Nice,Nice,False
+2018,FRA1,France,Ligue 1,Nimes,Nimes,False
+2018,FRA1,France,Ligue 1,Paris SG,Paris Saint-Germain,True
+2018,FRA1,France,Ligue 1,Reims,Reims,False
+2018,FRA1,France,Ligue 1,Rennes,Rennes,False
+2018,FRA1,France,Ligue 1,St Etienne,St Etienne,False
+2018,FRA1,France,Ligue 1,Strasbourg,Strasbourg,False
+2018,FRA1,France,Ligue 1,Toulouse,Toulouse,False
+2018,GER1,Germany,Bundesliga,Augsburg,Augsburg,False
+2018,GER1,Germany,Bundesliga,Leverkusen,Bayer Leverkusen,True
+2018,GER1,Germany,Bundesliga,Bayern Munich,Bayern Munich,False
+2018,GER1,Germany,Bundesliga,Dortmund,Borussia Dortmund,True
+2018,GER1,Germany,Bundesliga,M'gladbach,Borussia Mönchengladbach,True
+2018,GER1,Germany,Bundesliga,Ein Frankfurt,Eintracht Frankfurt,True
+2018,GER1,Germany,Bundesliga,Fortuna Dusseldorf,Fortuna Dusseldorf,False
+2018,GER1,Germany,Bundesliga,Freiburg,Freiburg,False
+2018,GER1,Germany,Bundesliga,Hannover,Hannover,False
+2018,GER1,Germany,Bundesliga,Hertha,Hertha,False
+2018,GER1,Germany,Bundesliga,Hoffenheim,Hoffenheim,False
+2018,GER1,Germany,Bundesliga,Mainz,Mainz,False
+2018,GER1,Germany,Bundesliga,Nurnberg,Nurnberg,False
+2018,GER1,Germany,Bundesliga,RB Leipzig,RB Leipzig,False
+2018,GER1,Germany,Bundesliga,Schalke 04,Schalke 04,False
+2018,GER1,Germany,Bundesliga,Stuttgart,VfB Stuttgart,True
+2018,GER1,Germany,Bundesliga,Werder Bremen,Werder Bremen,False
+2018,GER1,Germany,Bundesliga,Wolfsburg,Wolfsburg,False
+2018,ITA1,Italy,Serie A,Milan,AC Milan,True
+2018,ITA1,Italy,Serie A,Atalanta,Atalanta,False
+2018,ITA1,Italy,Serie A,Bologna,Bologna,False
+2018,ITA1,Italy,Serie A,Cagliari,Cagliari,False
+2018,ITA1,Italy,Serie A,Chievo,Chievo,False
+2018,ITA1,Italy,Serie A,Empoli,Empoli,False
+2018,ITA1,Italy,Serie A,Fiorentina,Fiorentina,False
+2018,ITA1,Italy,Serie A,Frosinone,Frosinone,False
+2018,ITA1,Italy,Serie A,Genoa,Genoa,False
+2018,ITA1,Italy,Serie A,Inter,Inter Milan,True
+2018,ITA1,Italy,Serie A,Juventus,Juventus,False
+2018,ITA1,Italy,Serie A,Lazio,Lazio,False
+2018,ITA1,Italy,Serie A,Napoli,Napoli,False
+2018,ITA1,Italy,Serie A,Parma,Parma,False
+2018,ITA1,Italy,Serie A,Roma,Roma,False
+2018,ITA1,Italy,Serie A,Sampdoria,Sampdoria,False
+2018,ITA1,Italy,Serie A,Sassuolo,Sassuolo,False
+2018,ITA1,Italy,Serie A,Spal,Spal,False
+2018,ITA1,Italy,Serie A,Torino,Torino,False
+2018,ITA1,Italy,Serie A,Udinese,Udinese,False
+2019,ENG1,England,Premier League,Arsenal,Arsenal,False
+2019,ENG1,England,Premier League,Aston Villa,Aston Villa,False
+2019,ENG1,England,Premier League,Bournemouth,Bournemouth,False
+2019,ENG1,England,Premier League,Brighton,Brighton,False
+2019,ENG1,England,Premier League,Burnley,Burnley,False
+2019,ENG1,England,Premier League,Chelsea,Chelsea,False
+2019,ENG1,England,Premier League,Crystal Palace,Crystal Palace,False
+2019,ENG1,England,Premier League,Everton,Everton,False
+2019,ENG1,England,Premier League,Leicester,Leicester City,True
+2019,ENG1,England,Premier League,Liverpool,Liverpool,False
+2019,ENG1,England,Premier League,Man City,Manchester City,True
+2019,ENG1,England,Premier League,Man United,Manchester United,True
+2019,ENG1,England,Premier League,Newcastle,Newcastle United,True
+2019,ENG1,England,Premier League,Norwich,Norwich,False
+2019,ENG1,England,Premier League,Sheffield United,Sheffield United,False
+2019,ENG1,England,Premier League,Southampton,Southampton,False
+2019,ENG1,England,Premier League,Tottenham,Tottenham Hotspur,True
+2019,ENG1,England,Premier League,Watford,Watford,False
+2019,ENG1,England,Premier League,West Ham,West Ham,False
+2019,ENG1,England,Premier League,Wolves,Wolves,False
+2019,ESP1,Spain,La Liga,Alaves,Alaves,False
+2019,ESP1,Spain,La Liga,Ath Bilbao,Athletic Bilbao,True
+2019,ESP1,Spain,La Liga,Ath Madrid,Atlético Madrid,True
+2019,ESP1,Spain,La Liga,Barcelona,Barcelona,False
+2019,ESP1,Spain,La Liga,Betis,Betis,False
+2019,ESP1,Spain,La Liga,Celta,Celta,False
+2019,ESP1,Spain,La Liga,Eibar,Eibar,False
+2019,ESP1,Spain,La Liga,Espanol,Espanol,False
+2019,ESP1,Spain,La Liga,Getafe,Getafe,False
+2019,ESP1,Spain,La Liga,Granada,Granada,False
+2019,ESP1,Spain,La Liga,Leganes,Leganes,False
+2019,ESP1,Spain,La Liga,Levante,Levante,False
+2019,ESP1,Spain,La Liga,Mallorca,Mallorca,False
+2019,ESP1,Spain,La Liga,Osasuna,Osasuna,False
+2019,ESP1,Spain,La Liga,Real Madrid,Real Madrid,False
+2019,ESP1,Spain,La Liga,Sociedad,Real Sociedad,True
+2019,ESP1,Spain,La Liga,Sevilla,Sevilla,False
+2019,ESP1,Spain,La Liga,Valencia,Valencia,False
+2019,ESP1,Spain,La Liga,Valladolid,Valladolid,False
+2019,ESP1,Spain,La Liga,Villarreal,Villarreal,False
+2019,FRA1,France,Ligue 1,Amiens,Amiens,False
+2019,FRA1,France,Ligue 1,Angers,Angers,False
+2019,FRA1,France,Ligue 1,Bordeaux,Bordeaux,False
+2019,FRA1,France,Ligue 1,Brest,Brest,False
+2019,FRA1,France,Ligue 1,Dijon,Dijon,False
+2019,FRA1,France,Ligue 1,Lille,Lille,False
+2019,FRA1,France,Ligue 1,Lyon,Lyon,False
+2019,FRA1,France,Ligue 1,Marseille,Marseille,False
+2019,FRA1,France,Ligue 1,Metz,Metz,False
+2019,FRA1,France,Ligue 1,Monaco,Monaco,False
+2019,FRA1,France,Ligue 1,Montpellier,Montpellier,False
+2019,FRA1,France,Ligue 1,Nantes,Nantes,False
+2019,FRA1,France,Ligue 1,Nice,Nice,False
+2019,FRA1,France,Ligue 1,Nimes,Nimes,False
+2019,FRA1,France,Ligue 1,Paris SG,Paris Saint-Germain,True
+2019,FRA1,France,Ligue 1,Reims,Reims,False
+2019,FRA1,France,Ligue 1,Rennes,Rennes,False
+2019,FRA1,France,Ligue 1,St Etienne,St Etienne,False
+2019,FRA1,France,Ligue 1,Strasbourg,Strasbourg,False
+2019,FRA1,France,Ligue 1,Toulouse,Toulouse,False
+2019,GER1,Germany,Bundesliga,Augsburg,Augsburg,False
+2019,GER1,Germany,Bundesliga,Leverkusen,Bayer Leverkusen,True
+2019,GER1,Germany,Bundesliga,Bayern Munich,Bayern Munich,False
+2019,GER1,Germany,Bundesliga,Dortmund,Borussia Dortmund,True
+2019,GER1,Germany,Bundesliga,M'gladbach,Borussia Mönchengladbach,True
+2019,GER1,Germany,Bundesliga,Ein Frankfurt,Eintracht Frankfurt,True
+2019,GER1,Germany,Bundesliga,FC Koln,FC Koln,False
+2019,GER1,Germany,Bundesliga,Fortuna Dusseldorf,Fortuna Dusseldorf,False
+2019,GER1,Germany,Bundesliga,Freiburg,Freiburg,False
+2019,GER1,Germany,Bundesliga,Hertha,Hertha,False
+2019,GER1,Germany,Bundesliga,Hoffenheim,Hoffenheim,False
+2019,GER1,Germany,Bundesliga,Mainz,Mainz,False
+2019,GER1,Germany,Bundesliga,Paderborn,Paderborn,False
+2019,GER1,Germany,Bundesliga,RB Leipzig,RB Leipzig,False
+2019,GER1,Germany,Bundesliga,Schalke 04,Schalke 04,False
+2019,GER1,Germany,Bundesliga,Union Berlin,Union Berlin,False
+2019,GER1,Germany,Bundesliga,Werder Bremen,Werder Bremen,False
+2019,GER1,Germany,Bundesliga,Wolfsburg,Wolfsburg,False
+2019,ITA1,Italy,Serie A,Milan,AC Milan,True
+2019,ITA1,Italy,Serie A,Atalanta,Atalanta,False
+2019,ITA1,Italy,Serie A,Bologna,Bologna,False
+2019,ITA1,Italy,Serie A,Brescia,Brescia,False
+2019,ITA1,Italy,Serie A,Cagliari,Cagliari,False
+2019,ITA1,Italy,Serie A,Fiorentina,Fiorentina,False
+2019,ITA1,Italy,Serie A,Genoa,Genoa,False
+2019,ITA1,Italy,Serie A,Inter,Inter Milan,True
+2019,ITA1,Italy,Serie A,Juventus,Juventus,False
+2019,ITA1,Italy,Serie A,Lazio,Lazio,False
+2019,ITA1,Italy,Serie A,Lecce,Lecce,False
+2019,ITA1,Italy,Serie A,Napoli,Napoli,False
+2019,ITA1,Italy,Serie A,Parma,Parma,False
+2019,ITA1,Italy,Serie A,Roma,Roma,False
+2019,ITA1,Italy,Serie A,Sampdoria,Sampdoria,False
+2019,ITA1,Italy,Serie A,Sassuolo,Sassuolo,False
+2019,ITA1,Italy,Serie A,Spal,Spal,False
+2019,ITA1,Italy,Serie A,Torino,Torino,False
+2019,ITA1,Italy,Serie A,Udinese,Udinese,False
+2019,ITA1,Italy,Serie A,Verona,Verona,False
+2020,ENG1,England,Premier League,Arsenal,Arsenal,False
+2020,ENG1,England,Premier League,Aston Villa,Aston Villa,False
+2020,ENG1,England,Premier League,Brighton,Brighton,False
+2020,ENG1,England,Premier League,Burnley,Burnley,False
+2020,ENG1,England,Premier League,Chelsea,Chelsea,False
+2020,ENG1,England,Premier League,Crystal Palace,Crystal Palace,False
+2020,ENG1,England,Premier League,Everton,Everton,False
+2020,ENG1,England,Premier League,Fulham,Fulham,False
+2020,ENG1,England,Premier League,Leeds,Leeds,False
+2020,ENG1,England,Premier League,Leicester,Leicester City,True
+2020,ENG1,England,Premier League,Liverpool,Liverpool,False
+2020,ENG1,England,Premier League,Man City,Manchester City,True
+2020,ENG1,England,Premier League,Man United,Manchester United,True
+2020,ENG1,England,Premier League,Newcastle,Newcastle United,True
+2020,ENG1,England,Premier League,Sheffield United,Sheffield United,False
+2020,ENG1,England,Premier League,Southampton,Southampton,False
+2020,ENG1,England,Premier League,Tottenham,Tottenham Hotspur,True
+2020,ENG1,England,Premier League,West Brom,West Brom,False
+2020,ENG1,England,Premier League,West Ham,West Ham,False
+2020,ENG1,England,Premier League,Wolves,Wolves,False
+2020,ESP1,Spain,La Liga,Alaves,Alaves,False
+2020,ESP1,Spain,La Liga,Ath Bilbao,Athletic Bilbao,True
+2020,ESP1,Spain,La Liga,Ath Madrid,Atlético Madrid,True
+2020,ESP1,Spain,La Liga,Barcelona,Barcelona,False
+2020,ESP1,Spain,La Liga,Betis,Betis,False
+2020,ESP1,Spain,La Liga,Cadiz,Cadiz,False
+2020,ESP1,Spain,La Liga,Celta,Celta,False
+2020,ESP1,Spain,La Liga,Eibar,Eibar,False
+2020,ESP1,Spain,La Liga,Elche,Elche,False
+2020,ESP1,Spain,La Liga,Getafe,Getafe,False
+2020,ESP1,Spain,La Liga,Granada,Granada,False
+2020,ESP1,Spain,La Liga,Huesca,Huesca,False
+2020,ESP1,Spain,La Liga,Levante,Levante,False
+2020,ESP1,Spain,La Liga,Osasuna,Osasuna,False
+2020,ESP1,Spain,La Liga,Real Madrid,Real Madrid,False
+2020,ESP1,Spain,La Liga,Sociedad,Real Sociedad,True
+2020,ESP1,Spain,La Liga,Sevilla,Sevilla,False
+2020,ESP1,Spain,La Liga,Valencia,Valencia,False
+2020,ESP1,Spain,La Liga,Valladolid,Valladolid,False
+2020,ESP1,Spain,La Liga,Villarreal,Villarreal,False
+2020,FRA1,France,Ligue 1,Angers,Angers,False
+2020,FRA1,France,Ligue 1,Bordeaux,Bordeaux,False
+2020,FRA1,France,Ligue 1,Brest,Brest,False
+2020,FRA1,France,Ligue 1,Dijon,Dijon,False
+2020,FRA1,France,Ligue 1,Lens,Lens,False
+2020,FRA1,France,Ligue 1,Lille,Lille,False
+2020,FRA1,France,Ligue 1,Lorient,Lorient,False
+2020,FRA1,France,Ligue 1,Lyon,Lyon,False
+2020,FRA1,France,Ligue 1,Marseille,Marseille,False
+2020,FRA1,France,Ligue 1,Metz,Metz,False
+2020,FRA1,France,Ligue 1,Monaco,Monaco,False
+2020,FRA1,France,Ligue 1,Montpellier,Montpellier,False
+2020,FRA1,France,Ligue 1,Nantes,Nantes,False
+2020,FRA1,France,Ligue 1,Nice,Nice,False
+2020,FRA1,France,Ligue 1,Nimes,Nimes,False
+2020,FRA1,France,Ligue 1,Paris SG,Paris Saint-Germain,True
+2020,FRA1,France,Ligue 1,Reims,Reims,False
+2020,FRA1,France,Ligue 1,Rennes,Rennes,False
+2020,FRA1,France,Ligue 1,St Etienne,St Etienne,False
+2020,FRA1,France,Ligue 1,Strasbourg,Strasbourg,False
+2020,GER1,Germany,Bundesliga,Augsburg,Augsburg,False
+2020,GER1,Germany,Bundesliga,Leverkusen,Bayer Leverkusen,True
+2020,GER1,Germany,Bundesliga,Bayern Munich,Bayern Munich,False
+2020,GER1,Germany,Bundesliga,Bielefeld,Bielefeld,False
+2020,GER1,Germany,Bundesliga,Dortmund,Borussia Dortmund,True
+2020,GER1,Germany,Bundesliga,M'gladbach,Borussia Mönchengladbach,True
+2020,GER1,Germany,Bundesliga,Ein Frankfurt,Eintracht Frankfurt,True
+2020,GER1,Germany,Bundesliga,FC Koln,FC Koln,False
+2020,GER1,Germany,Bundesliga,Freiburg,Freiburg,False
+2020,GER1,Germany,Bundesliga,Hertha,Hertha,False
+2020,GER1,Germany,Bundesliga,Hoffenheim,Hoffenheim,False
+2020,GER1,Germany,Bundesliga,Mainz,Mainz,False
+2020,GER1,Germany,Bundesliga,RB Leipzig,RB Leipzig,False
+2020,GER1,Germany,Bundesliga,Schalke 04,Schalke 04,False
+2020,GER1,Germany,Bundesliga,Union Berlin,Union Berlin,False
+2020,GER1,Germany,Bundesliga,Stuttgart,VfB Stuttgart,True
+2020,GER1,Germany,Bundesliga,Werder Bremen,Werder Bremen,False
+2020,GER1,Germany,Bundesliga,Wolfsburg,Wolfsburg,False
+2020,ITA1,Italy,Serie A,Milan,AC Milan,True
+2020,ITA1,Italy,Serie A,Atalanta,Atalanta,False
+2020,ITA1,Italy,Serie A,Benevento,Benevento,False
+2020,ITA1,Italy,Serie A,Bologna,Bologna,False
+2020,ITA1,Italy,Serie A,Cagliari,Cagliari,False
+2020,ITA1,Italy,Serie A,Crotone,Crotone,False
+2020,ITA1,Italy,Serie A,Fiorentina,Fiorentina,False
+2020,ITA1,Italy,Serie A,Genoa,Genoa,False
+2020,ITA1,Italy,Serie A,Inter,Inter Milan,True
+2020,ITA1,Italy,Serie A,Juventus,Juventus,False
+2020,ITA1,Italy,Serie A,Lazio,Lazio,False
+2020,ITA1,Italy,Serie A,Napoli,Napoli,False
+2020,ITA1,Italy,Serie A,Parma,Parma,False
+2020,ITA1,Italy,Serie A,Roma,Roma,False
+2020,ITA1,Italy,Serie A,Sampdoria,Sampdoria,False
+2020,ITA1,Italy,Serie A,Sassuolo,Sassuolo,False
+2020,ITA1,Italy,Serie A,Spezia,Spezia,False
+2020,ITA1,Italy,Serie A,Torino,Torino,False
+2020,ITA1,Italy,Serie A,Udinese,Udinese,False
+2020,ITA1,Italy,Serie A,Verona,Verona,False
+2021,ENG1,England,Premier League,Arsenal,Arsenal,False
+2021,ENG1,England,Premier League,Aston Villa,Aston Villa,False
+2021,ENG1,England,Premier League,Brentford,Brentford,False
+2021,ENG1,England,Premier League,Brighton,Brighton,False
+2021,ENG1,England,Premier League,Burnley,Burnley,False
+2021,ENG1,England,Premier League,Chelsea,Chelsea,False
+2021,ENG1,England,Premier League,Crystal Palace,Crystal Palace,False
+2021,ENG1,England,Premier League,Everton,Everton,False
+2021,ENG1,England,Premier League,Leeds,Leeds,False
+2021,ENG1,England,Premier League,Leicester,Leicester City,True
+2021,ENG1,England,Premier League,Liverpool,Liverpool,False
+2021,ENG1,England,Premier League,Man City,Manchester City,True
+2021,ENG1,England,Premier League,Man United,Manchester United,True
+2021,ENG1,England,Premier League,Newcastle,Newcastle United,True
+2021,ENG1,England,Premier League,Norwich,Norwich,False
+2021,ENG1,England,Premier League,Southampton,Southampton,False
+2021,ENG1,England,Premier League,Tottenham,Tottenham Hotspur,True
+2021,ENG1,England,Premier League,Watford,Watford,False
+2021,ENG1,England,Premier League,West Ham,West Ham,False
+2021,ENG1,England,Premier League,Wolves,Wolves,False
+2021,ESP1,Spain,La Liga,Alaves,Alaves,False
+2021,ESP1,Spain,La Liga,Ath Bilbao,Athletic Bilbao,True
+2021,ESP1,Spain,La Liga,Ath Madrid,Atlético Madrid,True
+2021,ESP1,Spain,La Liga,Barcelona,Barcelona,False
+2021,ESP1,Spain,La Liga,Betis,Betis,False
+2021,ESP1,Spain,La Liga,Cadiz,Cadiz,False
+2021,ESP1,Spain,La Liga,Celta,Celta,False
+2021,ESP1,Spain,La Liga,Elche,Elche,False
+2021,ESP1,Spain,La Liga,Espanol,Espanol,False
+2021,ESP1,Spain,La Liga,Getafe,Getafe,False
+2021,ESP1,Spain,La Liga,Granada,Granada,False
+2021,ESP1,Spain,La Liga,Levante,Levante,False
+2021,ESP1,Spain,La Liga,Mallorca,Mallorca,False
+2021,ESP1,Spain,La Liga,Osasuna,Osasuna,False
+2021,ESP1,Spain,La Liga,Real Madrid,Real Madrid,False
+2021,ESP1,Spain,La Liga,Sociedad,Real Sociedad,True
+2021,ESP1,Spain,La Liga,Sevilla,Sevilla,False
+2021,ESP1,Spain,La Liga,Valencia,Valencia,False
+2021,ESP1,Spain,La Liga,Vallecano,Vallecano,False
+2021,ESP1,Spain,La Liga,Villarreal,Villarreal,False
+2021,FRA1,France,Ligue 1,Angers,Angers,False
+2021,FRA1,France,Ligue 1,Bordeaux,Bordeaux,False
+2021,FRA1,France,Ligue 1,Brest,Brest,False
+2021,FRA1,France,Ligue 1,Clermont,Clermont,False
+2021,FRA1,France,Ligue 1,Lens,Lens,False
+2021,FRA1,France,Ligue 1,Lille,Lille,False
+2021,FRA1,France,Ligue 1,Lorient,Lorient,False
+2021,FRA1,France,Ligue 1,Lyon,Lyon,False
+2021,FRA1,France,Ligue 1,Marseille,Marseille,False
+2021,FRA1,France,Ligue 1,Metz,Metz,False
+2021,FRA1,France,Ligue 1,Monaco,Monaco,False
+2021,FRA1,France,Ligue 1,Montpellier,Montpellier,False
+2021,FRA1,France,Ligue 1,Nantes,Nantes,False
+2021,FRA1,France,Ligue 1,Nice,Nice,False
+2021,FRA1,France,Ligue 1,Paris SG,Paris Saint-Germain,True
+2021,FRA1,France,Ligue 1,Reims,Reims,False
+2021,FRA1,France,Ligue 1,Rennes,Rennes,False
+2021,FRA1,France,Ligue 1,St Etienne,St Etienne,False
+2021,FRA1,France,Ligue 1,Strasbourg,Strasbourg,False
+2021,FRA1,France,Ligue 1,Troyes,Troyes,False
+2021,GER1,Germany,Bundesliga,Augsburg,Augsburg,False
+2021,GER1,Germany,Bundesliga,Leverkusen,Bayer Leverkusen,True
+2021,GER1,Germany,Bundesliga,Bayern Munich,Bayern Munich,False
+2021,GER1,Germany,Bundesliga,Bielefeld,Bielefeld,False
+2021,GER1,Germany,Bundesliga,Bochum,Bochum,False
+2021,GER1,Germany,Bundesliga,Dortmund,Borussia Dortmund,True
+2021,GER1,Germany,Bundesliga,M'gladbach,Borussia Mönchengladbach,True
+2021,GER1,Germany,Bundesliga,Ein Frankfurt,Eintracht Frankfurt,True
+2021,GER1,Germany,Bundesliga,FC Koln,FC Koln,False
+2021,GER1,Germany,Bundesliga,Freiburg,Freiburg,False
+2021,GER1,Germany,Bundesliga,Greuther Furth,Greuther Furth,False
+2021,GER1,Germany,Bundesliga,Hertha,Hertha,False
+2021,GER1,Germany,Bundesliga,Hoffenheim,Hoffenheim,False
+2021,GER1,Germany,Bundesliga,Mainz,Mainz,False
+2021,GER1,Germany,Bundesliga,RB Leipzig,RB Leipzig,False
+2021,GER1,Germany,Bundesliga,Union Berlin,Union Berlin,False
+2021,GER1,Germany,Bundesliga,Stuttgart,VfB Stuttgart,True
+2021,GER1,Germany,Bundesliga,Wolfsburg,Wolfsburg,False
+2021,ITA1,Italy,Serie A,Milan,AC Milan,True
+2021,ITA1,Italy,Serie A,Atalanta,Atalanta,False
+2021,ITA1,Italy,Serie A,Bologna,Bologna,False
+2021,ITA1,Italy,Serie A,Cagliari,Cagliari,False
+2021,ITA1,Italy,Serie A,Empoli,Empoli,False
+2021,ITA1,Italy,Serie A,Fiorentina,Fiorentina,False
+2021,ITA1,Italy,Serie A,Genoa,Genoa,False
+2021,ITA1,Italy,Serie A,Inter,Inter Milan,True
+2021,ITA1,Italy,Serie A,Juventus,Juventus,False
+2021,ITA1,Italy,Serie A,Lazio,Lazio,False
+2021,ITA1,Italy,Serie A,Napoli,Napoli,False
+2021,ITA1,Italy,Serie A,Roma,Roma,False
+2021,ITA1,Italy,Serie A,Salernitana,Salernitana,False
+2021,ITA1,Italy,Serie A,Sampdoria,Sampdoria,False
+2021,ITA1,Italy,Serie A,Sassuolo,Sassuolo,False
+2021,ITA1,Italy,Serie A,Spezia,Spezia,False
+2021,ITA1,Italy,Serie A,Torino,Torino,False
+2021,ITA1,Italy,Serie A,Udinese,Udinese,False
+2021,ITA1,Italy,Serie A,Venezia,Venezia,False
+2021,ITA1,Italy,Serie A,Verona,Verona,False
+2022,ENG1,England,Premier League,Arsenal,Arsenal,False
+2022,ENG1,England,Premier League,Aston Villa,Aston Villa,False
+2022,ENG1,England,Premier League,Bournemouth,Bournemouth,False
+2022,ENG1,England,Premier League,Brentford,Brentford,False
+2022,ENG1,England,Premier League,Brighton,Brighton,False
+2022,ENG1,England,Premier League,Chelsea,Chelsea,False
+2022,ENG1,England,Premier League,Crystal Palace,Crystal Palace,False
+2022,ENG1,England,Premier League,Everton,Everton,False
+2022,ENG1,England,Premier League,Fulham,Fulham,False
+2022,ENG1,England,Premier League,Leeds,Leeds,False
+2022,ENG1,England,Premier League,Leicester,Leicester City,True
+2022,ENG1,England,Premier League,Liverpool,Liverpool,False
+2022,ENG1,England,Premier League,Man City,Manchester City,True
+2022,ENG1,England,Premier League,Man United,Manchester United,True
+2022,ENG1,England,Premier League,Newcastle,Newcastle United,True
+2022,ENG1,England,Premier League,Nott'm Forest,Nott'm Forest,False
+2022,ENG1,England,Premier League,Southampton,Southampton,False
+2022,ENG1,England,Premier League,Tottenham,Tottenham Hotspur,True
+2022,ENG1,England,Premier League,West Ham,West Ham,False
+2022,ENG1,England,Premier League,Wolves,Wolves,False
+2022,ESP1,Spain,La Liga,Almeria,Almeria,False
+2022,ESP1,Spain,La Liga,Ath Bilbao,Athletic Bilbao,True
+2022,ESP1,Spain,La Liga,Ath Madrid,Atlético Madrid,True
+2022,ESP1,Spain,La Liga,Barcelona,Barcelona,False
+2022,ESP1,Spain,La Liga,Betis,Betis,False
+2022,ESP1,Spain,La Liga,Cadiz,Cadiz,False
+2022,ESP1,Spain,La Liga,Celta,Celta,False
+2022,ESP1,Spain,La Liga,Elche,Elche,False
+2022,ESP1,Spain,La Liga,Espanol,Espanol,False
+2022,ESP1,Spain,La Liga,Getafe,Getafe,False
+2022,ESP1,Spain,La Liga,Girona,Girona,False
+2022,ESP1,Spain,La Liga,Mallorca,Mallorca,False
+2022,ESP1,Spain,La Liga,Osasuna,Osasuna,False
+2022,ESP1,Spain,La Liga,Real Madrid,Real Madrid,False
+2022,ESP1,Spain,La Liga,Sociedad,Real Sociedad,True
+2022,ESP1,Spain,La Liga,Sevilla,Sevilla,False
+2022,ESP1,Spain,La Liga,Valencia,Valencia,False
+2022,ESP1,Spain,La Liga,Valladolid,Valladolid,False
+2022,ESP1,Spain,La Liga,Vallecano,Vallecano,False
+2022,ESP1,Spain,La Liga,Villarreal,Villarreal,False
+2022,FRA1,France,Ligue 1,Ajaccio,Ajaccio,False
+2022,FRA1,France,Ligue 1,Angers,Angers,False
+2022,FRA1,France,Ligue 1,Auxerre,Auxerre,False
+2022,FRA1,France,Ligue 1,Brest,Brest,False
+2022,FRA1,France,Ligue 1,Clermont,Clermont,False
+2022,FRA1,France,Ligue 1,Lens,Lens,False
+2022,FRA1,France,Ligue 1,Lille,Lille,False
+2022,FRA1,France,Ligue 1,Lorient,Lorient,False
+2022,FRA1,France,Ligue 1,Lyon,Lyon,False
+2022,FRA1,France,Ligue 1,Marseille,Marseille,False
+2022,FRA1,France,Ligue 1,Monaco,Monaco,False
+2022,FRA1,France,Ligue 1,Montpellier,Montpellier,False
+2022,FRA1,France,Ligue 1,Nantes,Nantes,False
+2022,FRA1,France,Ligue 1,Nice,Nice,False
+2022,FRA1,France,Ligue 1,Paris SG,Paris Saint-Germain,True
+2022,FRA1,France,Ligue 1,Reims,Reims,False
+2022,FRA1,France,Ligue 1,Rennes,Rennes,False
+2022,FRA1,France,Ligue 1,Strasbourg,Strasbourg,False
+2022,FRA1,France,Ligue 1,Toulouse,Toulouse,False
+2022,FRA1,France,Ligue 1,Troyes,Troyes,False
+2022,GER1,Germany,Bundesliga,Augsburg,Augsburg,False
+2022,GER1,Germany,Bundesliga,Leverkusen,Bayer Leverkusen,True
+2022,GER1,Germany,Bundesliga,Bayern Munich,Bayern Munich,False
+2022,GER1,Germany,Bundesliga,Bochum,Bochum,False
+2022,GER1,Germany,Bundesliga,Dortmund,Borussia Dortmund,True
+2022,GER1,Germany,Bundesliga,M'gladbach,Borussia Mönchengladbach,True
+2022,GER1,Germany,Bundesliga,Ein Frankfurt,Eintracht Frankfurt,True
+2022,GER1,Germany,Bundesliga,FC Koln,FC Koln,False
+2022,GER1,Germany,Bundesliga,Freiburg,Freiburg,False
+2022,GER1,Germany,Bundesliga,Hertha,Hertha,False
+2022,GER1,Germany,Bundesliga,Hoffenheim,Hoffenheim,False
+2022,GER1,Germany,Bundesliga,Mainz,Mainz,False
+2022,GER1,Germany,Bundesliga,RB Leipzig,RB Leipzig,False
+2022,GER1,Germany,Bundesliga,Schalke 04,Schalke 04,False
+2022,GER1,Germany,Bundesliga,Union Berlin,Union Berlin,False
+2022,GER1,Germany,Bundesliga,Stuttgart,VfB Stuttgart,True
+2022,GER1,Germany,Bundesliga,Werder Bremen,Werder Bremen,False
+2022,GER1,Germany,Bundesliga,Wolfsburg,Wolfsburg,False
+2022,ITA1,Italy,Serie A,Milan,AC Milan,True
+2022,ITA1,Italy,Serie A,Atalanta,Atalanta,False
+2022,ITA1,Italy,Serie A,Bologna,Bologna,False
+2022,ITA1,Italy,Serie A,Cremonese,Cremonese,False
+2022,ITA1,Italy,Serie A,Empoli,Empoli,False
+2022,ITA1,Italy,Serie A,Fiorentina,Fiorentina,False
+2022,ITA1,Italy,Serie A,Inter,Inter Milan,True
+2022,ITA1,Italy,Serie A,Juventus,Juventus,False
+2022,ITA1,Italy,Serie A,Lazio,Lazio,False
+2022,ITA1,Italy,Serie A,Lecce,Lecce,False
+2022,ITA1,Italy,Serie A,Monza,Monza,False
+2022,ITA1,Italy,Serie A,Napoli,Napoli,False
+2022,ITA1,Italy,Serie A,Roma,Roma,False
+2022,ITA1,Italy,Serie A,Salernitana,Salernitana,False
+2022,ITA1,Italy,Serie A,Sampdoria,Sampdoria,False
+2022,ITA1,Italy,Serie A,Sassuolo,Sassuolo,False
+2022,ITA1,Italy,Serie A,Spezia,Spezia,False
+2022,ITA1,Italy,Serie A,Torino,Torino,False
+2022,ITA1,Italy,Serie A,Udinese,Udinese,False
+2022,ITA1,Italy,Serie A,Verona,Verona,False
+2023,ENG1,England,Premier League,Arsenal,Arsenal,False
+2023,ENG1,England,Premier League,Aston Villa,Aston Villa,False
+2023,ENG1,England,Premier League,Bournemouth,Bournemouth,False
+2023,ENG1,England,Premier League,Brentford,Brentford,False
+2023,ENG1,England,Premier League,Brighton,Brighton,False
+2023,ENG1,England,Premier League,Burnley,Burnley,False
+2023,ENG1,England,Premier League,Chelsea,Chelsea,False
+2023,ENG1,England,Premier League,Crystal Palace,Crystal Palace,False
+2023,ENG1,England,Premier League,Everton,Everton,False
+2023,ENG1,England,Premier League,Fulham,Fulham,False
+2023,ENG1,England,Premier League,Liverpool,Liverpool,False
+2023,ENG1,England,Premier League,Luton,Luton,False
+2023,ENG1,England,Premier League,Man City,Manchester City,True
+2023,ENG1,England,Premier League,Man United,Manchester United,True
+2023,ENG1,England,Premier League,Newcastle,Newcastle United,True
+2023,ENG1,England,Premier League,Nott'm Forest,Nott'm Forest,False
+2023,ENG1,England,Premier League,Sheffield United,Sheffield United,False
+2023,ENG1,England,Premier League,Tottenham,Tottenham Hotspur,True
+2023,ENG1,England,Premier League,West Ham,West Ham,False
+2023,ENG1,England,Premier League,Wolves,Wolves,False
+2023,ESP1,Spain,La Liga,Alaves,Alaves,False
+2023,ESP1,Spain,La Liga,Almeria,Almeria,False
+2023,ESP1,Spain,La Liga,Ath Bilbao,Athletic Bilbao,True
+2023,ESP1,Spain,La Liga,Ath Madrid,Atlético Madrid,True
+2023,ESP1,Spain,La Liga,Barcelona,Barcelona,False
+2023,ESP1,Spain,La Liga,Betis,Betis,False
+2023,ESP1,Spain,La Liga,Cadiz,Cadiz,False
+2023,ESP1,Spain,La Liga,Celta,Celta,False
+2023,ESP1,Spain,La Liga,Getafe,Getafe,False
+2023,ESP1,Spain,La Liga,Girona,Girona,False
+2023,ESP1,Spain,La Liga,Granada,Granada,False
+2023,ESP1,Spain,La Liga,Las Palmas,Las Palmas,False
+2023,ESP1,Spain,La Liga,Mallorca,Mallorca,False
+2023,ESP1,Spain,La Liga,Osasuna,Osasuna,False
+2023,ESP1,Spain,La Liga,Real Madrid,Real Madrid,False
+2023,ESP1,Spain,La Liga,Sociedad,Real Sociedad,True
+2023,ESP1,Spain,La Liga,Sevilla,Sevilla,False
+2023,ESP1,Spain,La Liga,Valencia,Valencia,False
+2023,ESP1,Spain,La Liga,Vallecano,Vallecano,False
+2023,ESP1,Spain,La Liga,Villarreal,Villarreal,False
+2023,FRA1,France,Ligue 1,Brest,Brest,False
+2023,FRA1,France,Ligue 1,Clermont,Clermont,False
+2023,FRA1,France,Ligue 1,Le Havre,Le Havre,False
+2023,FRA1,France,Ligue 1,Lens,Lens,False
+2023,FRA1,France,Ligue 1,Lille,Lille,False
+2023,FRA1,France,Ligue 1,Lorient,Lorient,False
+2023,FRA1,France,Ligue 1,Lyon,Lyon,False
+2023,FRA1,France,Ligue 1,Marseille,Marseille,False
+2023,FRA1,France,Ligue 1,Metz,Metz,False
+2023,FRA1,France,Ligue 1,Monaco,Monaco,False
+2023,FRA1,France,Ligue 1,Montpellier,Montpellier,False
+2023,FRA1,France,Ligue 1,Nantes,Nantes,False
+2023,FRA1,France,Ligue 1,Nice,Nice,False
+2023,FRA1,France,Ligue 1,Paris SG,Paris Saint-Germain,True
+2023,FRA1,France,Ligue 1,Reims,Reims,False
+2023,FRA1,France,Ligue 1,Rennes,Rennes,False
+2023,FRA1,France,Ligue 1,Strasbourg,Strasbourg,False
+2023,FRA1,France,Ligue 1,Toulouse,Toulouse,False
+2023,GER1,Germany,Bundesliga,Augsburg,Augsburg,False
+2023,GER1,Germany,Bundesliga,Leverkusen,Bayer Leverkusen,True
+2023,GER1,Germany,Bundesliga,Bayern Munich,Bayern Munich,False
+2023,GER1,Germany,Bundesliga,Bochum,Bochum,False
+2023,GER1,Germany,Bundesliga,Dortmund,Borussia Dortmund,True
+2023,GER1,Germany,Bundesliga,M'gladbach,Borussia Mönchengladbach,True
+2023,GER1,Germany,Bundesliga,Darmstadt,Darmstadt,False
+2023,GER1,Germany,Bundesliga,Ein Frankfurt,Eintracht Frankfurt,True
+2023,GER1,Germany,Bundesliga,FC Koln,FC Koln,False
+2023,GER1,Germany,Bundesliga,Freiburg,Freiburg,False
+2023,GER1,Germany,Bundesliga,Heidenheim,Heidenheim,False
+2023,GER1,Germany,Bundesliga,Hoffenheim,Hoffenheim,False
+2023,GER1,Germany,Bundesliga,Mainz,Mainz,False
+2023,GER1,Germany,Bundesliga,RB Leipzig,RB Leipzig,False
+2023,GER1,Germany,Bundesliga,Union Berlin,Union Berlin,False
+2023,GER1,Germany,Bundesliga,Stuttgart,VfB Stuttgart,True
+2023,GER1,Germany,Bundesliga,Werder Bremen,Werder Bremen,False
+2023,GER1,Germany,Bundesliga,Wolfsburg,Wolfsburg,False
+2023,ITA1,Italy,Serie A,Milan,AC Milan,True
+2023,ITA1,Italy,Serie A,Atalanta,Atalanta,False
+2023,ITA1,Italy,Serie A,Bologna,Bologna,False
+2023,ITA1,Italy,Serie A,Cagliari,Cagliari,False
+2023,ITA1,Italy,Serie A,Empoli,Empoli,False
+2023,ITA1,Italy,Serie A,Fiorentina,Fiorentina,False
+2023,ITA1,Italy,Serie A,Frosinone,Frosinone,False
+2023,ITA1,Italy,Serie A,Genoa,Genoa,False
+2023,ITA1,Italy,Serie A,Inter,Inter Milan,True
+2023,ITA1,Italy,Serie A,Juventus,Juventus,False
+2023,ITA1,Italy,Serie A,Lazio,Lazio,False
+2023,ITA1,Italy,Serie A,Lecce,Lecce,False
+2023,ITA1,Italy,Serie A,Monza,Monza,False
+2023,ITA1,Italy,Serie A,Napoli,Napoli,False
+2023,ITA1,Italy,Serie A,Roma,Roma,False
+2023,ITA1,Italy,Serie A,Salernitana,Salernitana,False
+2023,ITA1,Italy,Serie A,Sassuolo,Sassuolo,False
+2023,ITA1,Italy,Serie A,Torino,Torino,False
+2023,ITA1,Italy,Serie A,Udinese,Udinese,False
+2023,ITA1,Italy,Serie A,Verona,Verona,False
+2024,ENG1,England,Premier League,Arsenal,Arsenal,False
+2024,ENG1,England,Premier League,Aston Villa,Aston Villa,False
+2024,ENG1,England,Premier League,Bournemouth,Bournemouth,False
+2024,ENG1,England,Premier League,Brentford,Brentford,False
+2024,ENG1,England,Premier League,Brighton,Brighton,False
+2024,ENG1,England,Premier League,Chelsea,Chelsea,False
+2024,ENG1,England,Premier League,Crystal Palace,Crystal Palace,False
+2024,ENG1,England,Premier League,Everton,Everton,False
+2024,ENG1,England,Premier League,Fulham,Fulham,False
+2024,ENG1,England,Premier League,Ipswich,Ipswich,False
+2024,ENG1,England,Premier League,Leicester,Leicester City,True
+2024,ENG1,England,Premier League,Liverpool,Liverpool,False
+2024,ENG1,England,Premier League,Man City,Manchester City,True
+2024,ENG1,England,Premier League,Man United,Manchester United,True
+2024,ENG1,England,Premier League,Newcastle,Newcastle United,True
+2024,ENG1,England,Premier League,Nott'm Forest,Nott'm Forest,False
+2024,ENG1,England,Premier League,Southampton,Southampton,False
+2024,ENG1,England,Premier League,Tottenham,Tottenham Hotspur,True
+2024,ENG1,England,Premier League,West Ham,West Ham,False
+2024,ENG1,England,Premier League,Wolves,Wolves,False
+2024,ESP1,Spain,La Liga,Alaves,Alaves,False
+2024,ESP1,Spain,La Liga,Ath Bilbao,Athletic Bilbao,True
+2024,ESP1,Spain,La Liga,Ath Madrid,Atlético Madrid,True
+2024,ESP1,Spain,La Liga,Barcelona,Barcelona,False
+2024,ESP1,Spain,La Liga,Betis,Betis,False
+2024,ESP1,Spain,La Liga,Celta,Celta,False
+2024,ESP1,Spain,La Liga,Espanol,Espanol,False
+2024,ESP1,Spain,La Liga,Getafe,Getafe,False
+2024,ESP1,Spain,La Liga,Girona,Girona,False
+2024,ESP1,Spain,La Liga,Las Palmas,Las Palmas,False
+2024,ESP1,Spain,La Liga,Leganes,Leganes,False
+2024,ESP1,Spain,La Liga,Mallorca,Mallorca,False
+2024,ESP1,Spain,La Liga,Osasuna,Osasuna,False
+2024,ESP1,Spain,La Liga,Real Madrid,Real Madrid,False
+2024,ESP1,Spain,La Liga,Sociedad,Real Sociedad,True
+2024,ESP1,Spain,La Liga,Sevilla,Sevilla,False
+2024,ESP1,Spain,La Liga,Valencia,Valencia,False
+2024,ESP1,Spain,La Liga,Valladolid,Valladolid,False
+2024,ESP1,Spain,La Liga,Vallecano,Vallecano,False
+2024,ESP1,Spain,La Liga,Villarreal,Villarreal,False
+2024,FRA1,France,Ligue 1,Angers,Angers,False
+2024,FRA1,France,Ligue 1,Auxerre,Auxerre,False
+2024,FRA1,France,Ligue 1,Brest,Brest,False
+2024,FRA1,France,Ligue 1,Le Havre,Le Havre,False
+2024,FRA1,France,Ligue 1,Lens,Lens,False
+2024,FRA1,France,Ligue 1,Lille,Lille,False
+2024,FRA1,France,Ligue 1,Lyon,Lyon,False
+2024,FRA1,France,Ligue 1,Marseille,Marseille,False
+2024,FRA1,France,Ligue 1,Monaco,Monaco,False
+2024,FRA1,France,Ligue 1,Montpellier,Montpellier,False
+2024,FRA1,France,Ligue 1,Nantes,Nantes,False
+2024,FRA1,France,Ligue 1,Nice,Nice,False
+2024,FRA1,France,Ligue 1,Paris SG,Paris Saint-Germain,True
+2024,FRA1,France,Ligue 1,Reims,Reims,False
+2024,FRA1,France,Ligue 1,Rennes,Rennes,False
+2024,FRA1,France,Ligue 1,St Etienne,St Etienne,False
+2024,FRA1,France,Ligue 1,Strasbourg,Strasbourg,False
+2024,FRA1,France,Ligue 1,Toulouse,Toulouse,False
+2024,GER1,Germany,Bundesliga,Augsburg,Augsburg,False
+2024,GER1,Germany,Bundesliga,Leverkusen,Bayer Leverkusen,True
+2024,GER1,Germany,Bundesliga,Bayern Munich,Bayern Munich,False
+2024,GER1,Germany,Bundesliga,Bochum,Bochum,False
+2024,GER1,Germany,Bundesliga,Dortmund,Borussia Dortmund,True
+2024,GER1,Germany,Bundesliga,M'gladbach,Borussia Mönchengladbach,True
+2024,GER1,Germany,Bundesliga,Ein Frankfurt,Eintracht Frankfurt,True
+2024,GER1,Germany,Bundesliga,Freiburg,Freiburg,False
+2024,GER1,Germany,Bundesliga,Heidenheim,Heidenheim,False
+2024,GER1,Germany,Bundesliga,Hoffenheim,Hoffenheim,False
+2024,GER1,Germany,Bundesliga,Holstein Kiel,Holstein Kiel,False
+2024,GER1,Germany,Bundesliga,Mainz,Mainz,False
+2024,GER1,Germany,Bundesliga,RB Leipzig,RB Leipzig,False
+2024,GER1,Germany,Bundesliga,St Pauli,St Pauli,False
+2024,GER1,Germany,Bundesliga,Union Berlin,Union Berlin,False
+2024,GER1,Germany,Bundesliga,Stuttgart,VfB Stuttgart,True
+2024,GER1,Germany,Bundesliga,Werder Bremen,Werder Bremen,False
+2024,GER1,Germany,Bundesliga,Wolfsburg,Wolfsburg,False
+2024,ITA1,Italy,Serie A,Milan,AC Milan,True
+2024,ITA1,Italy,Serie A,Atalanta,Atalanta,False
+2024,ITA1,Italy,Serie A,Bologna,Bologna,False
+2024,ITA1,Italy,Serie A,Cagliari,Cagliari,False
+2024,ITA1,Italy,Serie A,Como,Como,False
+2024,ITA1,Italy,Serie A,Empoli,Empoli,False
+2024,ITA1,Italy,Serie A,Fiorentina,Fiorentina,False
+2024,ITA1,Italy,Serie A,Genoa,Genoa,False
+2024,ITA1,Italy,Serie A,Inter,Inter Milan,True
+2024,ITA1,Italy,Serie A,Juventus,Juventus,False
+2024,ITA1,Italy,Serie A,Lazio,Lazio,False
+2024,ITA1,Italy,Serie A,Lecce,Lecce,False
+2024,ITA1,Italy,Serie A,Monza,Monza,False
+2024,ITA1,Italy,Serie A,Napoli,Napoli,False
+2024,ITA1,Italy,Serie A,Parma,Parma,False
+2024,ITA1,Italy,Serie A,Roma,Roma,False
+2024,ITA1,Italy,Serie A,Torino,Torino,False
+2024,ITA1,Italy,Serie A,Udinese,Udinese,False
+2024,ITA1,Italy,Serie A,Venezia,Venezia,False
+2024,ITA1,Italy,Serie A,Verona,Verona,False
+2025,ENG1,England,Premier League,Arsenal,Arsenal,False
+2025,ENG1,England,Premier League,Aston Villa,Aston Villa,False
+2025,ENG1,England,Premier League,Bournemouth,Bournemouth,False
+2025,ENG1,England,Premier League,Brentford,Brentford,False
+2025,ENG1,England,Premier League,Brighton,Brighton,False
+2025,ENG1,England,Premier League,Burnley,Burnley,False
+2025,ENG1,England,Premier League,Chelsea,Chelsea,False
+2025,ENG1,England,Premier League,Crystal Palace,Crystal Palace,False
+2025,ENG1,England,Premier League,Everton,Everton,False
+2025,ENG1,England,Premier League,Fulham,Fulham,False
+2025,ENG1,England,Premier League,Leeds,Leeds,False
+2025,ENG1,England,Premier League,Liverpool,Liverpool,False
+2025,ENG1,England,Premier League,Man City,Manchester City,True
+2025,ENG1,England,Premier League,Man United,Manchester United,True
+2025,ENG1,England,Premier League,Newcastle,Newcastle United,True
+2025,ENG1,England,Premier League,Nott'm Forest,Nott'm Forest,False
+2025,ENG1,England,Premier League,Sunderland,Sunderland,False
+2025,ENG1,England,Premier League,Tottenham,Tottenham Hotspur,True
+2025,ENG1,England,Premier League,West Ham,West Ham,False
+2025,ENG1,England,Premier League,Wolves,Wolves,False
+2025,ESP1,Spain,La Liga,Alaves,Alaves,False
+2025,ESP1,Spain,La Liga,Ath Bilbao,Athletic Bilbao,True
+2025,ESP1,Spain,La Liga,Ath Madrid,Atlético Madrid,True
+2025,ESP1,Spain,La Liga,Barcelona,Barcelona,False
+2025,ESP1,Spain,La Liga,Betis,Betis,False
+2025,ESP1,Spain,La Liga,Celta,Celta,False
+2025,ESP1,Spain,La Liga,Elche,Elche,False
+2025,ESP1,Spain,La Liga,Espanol,Espanol,False
+2025,ESP1,Spain,La Liga,Getafe,Getafe,False
+2025,ESP1,Spain,La Liga,Girona,Girona,False
+2025,ESP1,Spain,La Liga,Levante,Levante,False
+2025,ESP1,Spain,La Liga,Mallorca,Mallorca,False
+2025,ESP1,Spain,La Liga,Osasuna,Osasuna,False
+2025,ESP1,Spain,La Liga,Oviedo,Oviedo,False
+2025,ESP1,Spain,La Liga,Real Madrid,Real Madrid,False
+2025,ESP1,Spain,La Liga,Sociedad,Real Sociedad,True
+2025,ESP1,Spain,La Liga,Sevilla,Sevilla,False
+2025,ESP1,Spain,La Liga,Valencia,Valencia,False
+2025,ESP1,Spain,La Liga,Vallecano,Vallecano,False
+2025,ESP1,Spain,La Liga,Villarreal,Villarreal,False
+2025,FRA1,France,Ligue 1,Angers,Angers,False
+2025,FRA1,France,Ligue 1,Auxerre,Auxerre,False
+2025,FRA1,France,Ligue 1,Brest,Brest,False
+2025,FRA1,France,Ligue 1,Le Havre,Le Havre,False
+2025,FRA1,France,Ligue 1,Lens,Lens,False
+2025,FRA1,France,Ligue 1,Lille,Lille,False
+2025,FRA1,France,Ligue 1,Lorient,Lorient,False
+2025,FRA1,France,Ligue 1,Lyon,Lyon,False
+2025,FRA1,France,Ligue 1,Marseille,Marseille,False
+2025,FRA1,France,Ligue 1,Metz,Metz,False
+2025,FRA1,France,Ligue 1,Monaco,Monaco,False
+2025,FRA1,France,Ligue 1,Nantes,Nantes,False
+2025,FRA1,France,Ligue 1,Nice,Nice,False
+2025,FRA1,France,Ligue 1,Paris FC,Paris FC,False
+2025,FRA1,France,Ligue 1,Paris SG,Paris Saint-Germain,True
+2025,FRA1,France,Ligue 1,Rennes,Rennes,False
+2025,FRA1,France,Ligue 1,Strasbourg,Strasbourg,False
+2025,FRA1,France,Ligue 1,Toulouse,Toulouse,False
+2025,GER1,Germany,Bundesliga,Augsburg,Augsburg,False
+2025,GER1,Germany,Bundesliga,Leverkusen,Bayer Leverkusen,True
+2025,GER1,Germany,Bundesliga,Bayern Munich,Bayern Munich,False
+2025,GER1,Germany,Bundesliga,Dortmund,Borussia Dortmund,True
+2025,GER1,Germany,Bundesliga,M'gladbach,Borussia Mönchengladbach,True
+2025,GER1,Germany,Bundesliga,Ein Frankfurt,Eintracht Frankfurt,True
+2025,GER1,Germany,Bundesliga,FC Koln,FC Koln,False
+2025,GER1,Germany,Bundesliga,Freiburg,Freiburg,False
+2025,GER1,Germany,Bundesliga,Hamburg,Hamburg,False
+2025,GER1,Germany,Bundesliga,Heidenheim,Heidenheim,False
+2025,GER1,Germany,Bundesliga,Hoffenheim,Hoffenheim,False
+2025,GER1,Germany,Bundesliga,Mainz,Mainz,False
+2025,GER1,Germany,Bundesliga,RB Leipzig,RB Leipzig,False
+2025,GER1,Germany,Bundesliga,St Pauli,St Pauli,False
+2025,GER1,Germany,Bundesliga,Union Berlin,Union Berlin,False
+2025,GER1,Germany,Bundesliga,Stuttgart,VfB Stuttgart,True
+2025,GER1,Germany,Bundesliga,Werder Bremen,Werder Bremen,False
+2025,GER1,Germany,Bundesliga,Wolfsburg,Wolfsburg,False
+2025,ITA1,Italy,Serie A,Milan,AC Milan,True
+2025,ITA1,Italy,Serie A,Atalanta,Atalanta,False
+2025,ITA1,Italy,Serie A,Bologna,Bologna,False
+2025,ITA1,Italy,Serie A,Cagliari,Cagliari,False
+2025,ITA1,Italy,Serie A,Como,Como,False
+2025,ITA1,Italy,Serie A,Cremonese,Cremonese,False
+2025,ITA1,Italy,Serie A,Fiorentina,Fiorentina,False
+2025,ITA1,Italy,Serie A,Genoa,Genoa,False
+2025,ITA1,Italy,Serie A,Inter,Inter Milan,True
+2025,ITA1,Italy,Serie A,Juventus,Juventus,False
+2025,ITA1,Italy,Serie A,Lazio,Lazio,False
+2025,ITA1,Italy,Serie A,Lecce,Lecce,False
+2025,ITA1,Italy,Serie A,Napoli,Napoli,False
+2025,ITA1,Italy,Serie A,Parma,Parma,False
+2025,ITA1,Italy,Serie A,Pisa,Pisa,False
+2025,ITA1,Italy,Serie A,Roma,Roma,False
+2025,ITA1,Italy,Serie A,Sassuolo,Sassuolo,False
+2025,ITA1,Italy,Serie A,Torino,Torino,False
+2025,ITA1,Italy,Serie A,Udinese,Udinese,False
+2025,ITA1,Italy,Serie A,Verona,Verona,False

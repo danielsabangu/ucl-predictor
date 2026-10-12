@@ -1,0 +1,81 @@
+season,country,league,league_code,matches,clubs,first_date,last_date,source
+2010,England,Premier League,ENG1,380,20,2010-08-14,2011-05-22,github_football_datasets
+2010,Spain,La Liga,ESP1,380,20,2010-08-28,2011-05-21,github_football_datasets
+2010,France,Ligue 1,FRA1,380,20,2010-08-07,2011-05-29,github_football_datasets
+2010,Germany,Bundesliga,GER1,306,18,2010-08-20,2011-05-14,github_football_datasets
+2010,Italy,Serie A,ITA1,380,20,2010-08-28,2011-05-22,github_football_datasets
+2011,England,Premier League,ENG1,380,20,2011-08-13,2012-05-13,github_football_datasets
+2011,Spain,La Liga,ESP1,380,20,2011-08-27,2012-05-13,github_football_datasets
+2011,France,Ligue 1,FRA1,380,20,2011-08-06,2012-05-20,github_football_datasets
+2011,Germany,Bundesliga,GER1,306,18,2011-08-05,2012-05-05,github_football_datasets
+2011,Italy,Serie A,ITA1,380,20,2011-09-09,2012-05-13,github_football_datasets
+2012,England,Premier League,ENG1,380,20,2012-08-18,2013-05-19,github_football_datasets
+2012,Spain,La Liga,ESP1,380,20,2012-08-18,2013-06-01,github_football_datasets
+2012,France,Ligue 1,FRA1,380,20,2012-08-10,2013-05-26,github_football_datasets
+2012,Germany,Bundesliga,GER1,306,18,2012-08-24,2013-05-18,github_football_datasets
+2012,Italy,Serie A,ITA1,380,20,2012-08-25,2013-05-19,github_football_datasets
+2013,England,Premier League,ENG1,380,20,2013-08-17,2014-05-11,github_football_datasets
+2013,Spain,La Liga,ESP1,380,20,2013-08-17,2014-05-18,github_football_datasets
+2013,France,Ligue 1,FRA1,380,20,2013-08-09,2014-05-17,github_football_datasets
+2013,Germany,Bundesliga,GER1,306,18,2013-08-09,2014-05-10,github_football_datasets
+2013,Italy,Serie A,ITA1,380,20,2013-08-24,2014-05-18,github_football_datasets
+2014,England,Premier League,ENG1,380,20,2014-08-16,2015-05-24,github_football_datasets
+2014,Spain,La Liga,ESP1,380,20,2014-08-23,2015-05-23,github_football_datasets
+2014,France,Ligue 1,FRA1,380,20,2014-08-08,2015-05-23,github_football_datasets
+2014,Germany,Bundesliga,GER1,306,18,2014-08-22,2015-05-23,github_football_datasets
+2014,Italy,Serie A,ITA1,380,20,2014-08-30,2015-05-31,github_football_datasets
+2015,England,Premier League,ENG1,380,20,2015-08-08,2016-05-17,github_football_datasets
+2015,Spain,La Liga,ESP1,380,20,2015-08-21,2016-05-15,github_football_datasets
+2015,France,Ligue 1,FRA1,380,20,2015-08-07,2016-05-14,github_football_datasets
+2015,Germany,Bundesliga,GER1,306,18,2015-08-14,2016-05-14,github_football_datasets
+2015,Italy,Serie A,ITA1,380,20,2015-08-22,2016-05-15,github_football_datasets
+2016,England,Premier League,ENG1,380,20,2016-08-13,2017-05-21,github_football_datasets
+2016,Spain,La Liga,ESP1,380,20,2016-08-19,2017-05-21,github_football_datasets
+2016,France,Ligue 1,FRA1,380,20,2016-08-12,2017-05-20,github_football_datasets
+2016,Germany,Bundesliga,GER1,306,18,2016-08-26,2017-05-20,github_football_datasets
+2016,Italy,Serie A,ITA1,380,20,2016-08-20,2017-05-28,github_football_datasets
+2017,England,Premier League,ENG1,380,20,2017-08-11,2018-05-13,github_football_datasets
+2017,Spain,La Liga,ESP1,380,20,2017-08-18,2018-05-20,github_football_datasets
+2017,France,Ligue 1,FRA1,380,20,2017-08-04,2018-05-19,github_football_datasets
+2017,Germany,Bundesliga,GER1,306,18,2017-08-18,2018-05-12,github_football_datasets
+2017,Italy,Serie A,ITA1,380,20,2017-08-19,2018-05-20,github_football_datasets
+2018,England,Premier League,ENG1,380,20,2018-08-10,2019-05-12,github_football_datasets
+2018,Spain,La Liga,ESP1,380,20,2018-08-17,2019-05-19,github_football_datasets
+2018,France,Ligue 1,FRA1,380,20,2018-08-10,2019-05-24,github_football_datasets
+2018,Germany,Bundesliga,GER1,306,18,2018-08-24,2019-05-18,github_football_datasets
+2018,Italy,Serie A,ITA1,380,20,2018-08-18,2019-05-26,github_football_datasets
+2019,England,Premier League,ENG1,380,20,2019-08-09,2020-07-26,github_football_datasets
+2019,Spain,La Liga,ESP1,380,20,2019-08-16,2020-07-19,github_football_datasets
+2019,France,Ligue 1,FRA1,279,20,2019-08-09,2020-03-08,github_football_datasets
+2019,Germany,Bundesliga,GER1,306,18,2019-08-16,2020-06-27,github_football_datasets
+2019,Italy,Serie A,ITA1,380,20,2019-08-24,2020-08-02,github_football_datasets
+2020,England,Premier League,ENG1,380,20,2020-09-12,2021-05-23,github_football_datasets
+2020,Spain,La Liga,ESP1,380,20,2020-09-12,2021-05-23,github_football_datasets
+2020,France,Ligue 1,FRA1,380,20,2020-08-21,2021-05-23,github_football_datasets
+2020,Germany,Bundesliga,GER1,306,18,2020-09-18,2021-05-22,github_football_datasets
+2020,Italy,Serie A,ITA1,380,20,2020-09-19,2021-05-23,github_football_datasets
+2021,England,Premier League,ENG1,380,20,2021-08-13,2022-05-22,github_football_datasets
+2021,Spain,La Liga,ESP1,380,20,2021-08-13,2022-05-22,github_football_datasets
+2021,France,Ligue 1,FRA1,380,20,2021-08-06,2022-05-21,github_football_datasets
+2021,Germany,Bundesliga,GER1,306,18,2021-08-13,2022-05-14,github_football_datasets
+2021,Italy,Serie A,ITA1,380,20,2021-08-21,2022-05-22,github_football_datasets
+2022,England,Premier League,ENG1,380,20,2022-08-05,2023-05-28,github_football_datasets
+2022,Spain,La Liga,ESP1,380,20,2022-08-12,2023-06-04,github_football_datasets
+2022,France,Ligue 1,FRA1,380,20,2022-08-05,2023-06-03,github_football_datasets
+2022,Germany,Bundesliga,GER1,306,18,2022-08-05,2023-05-27,github_football_datasets
+2022,Italy,Serie A,ITA1,380,20,2022-08-13,2023-06-04,github_football_datasets
+2023,England,Premier League,ENG1,380,20,2023-08-11,2024-05-19,github_football_datasets
+2023,Spain,La Liga,ESP1,380,20,2023-08-11,2024-05-26,github_football_datasets
+2023,France,Ligue 1,FRA1,306,18,2023-08-11,2024-05-19,github_football_datasets
+2023,Germany,Bundesliga,GER1,306,18,2023-08-18,2024-05-18,github_football_datasets
+2023,Italy,Serie A,ITA1,380,20,2023-08-19,2024-06-02,github_football_datasets
+2024,England,Premier League,ENG1,380,20,2024-08-16,2025-05-25,github_football_datasets
+2024,Spain,La Liga,ESP1,380,20,2024-08-15,2025-05-25,github_football_datasets
+2024,France,Ligue 1,FRA1,306,18,2024-08-16,2025-05-17,github_football_datasets
+2024,Germany,Bundesliga,GER1,306,18,2024-08-23,2025-05-17,github_football_datasets
+2024,Italy,Serie A,ITA1,380,20,2024-08-17,2025-05-25,github_football_datasets
+2025,England,Premier League,ENG1,380,20,2025-08-15,2026-05-24,github_football_datasets
+2025,Spain,La Liga,ESP1,380,20,2025-08-15,2026-05-24,github_football_datasets
+2025,France,Ligue 1,FRA1,306,18,2025-08-15,2026-05-17,github_football_datasets
+2025,Germany,Bundesliga,GER1,306,18,2025-08-22,2026-05-16,github_football_datasets
+2025,Italy,Serie A,ITA1,380,20,2025-08-23,2026-05-24,github_football_datasets
