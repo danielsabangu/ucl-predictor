@@ -22,6 +22,12 @@ class ResultArchiveWriteResult:
     total: int
 
 
+OBSERVATION_PROVENANCE_FIELDS = {
+    "provider_last_updated_utc",
+    "source_row_hash",
+}
+
+
 def _canonical_json(payload: dict) -> str:
     return json.dumps(
         payload,
@@ -29,6 +35,40 @@ def _canonical_json(payload: dict) -> str:
         sort_keys=True,
         separators=(",", ":"),
         allow_nan=False,
+    )
+
+
+def _immutable_result_payload(
+    payload: dict,
+) -> dict:
+    """
+    Return the fields that define the immutable football result.
+
+    Provider refresh metadata may legitimately change between API
+    observations even when the verified match result is identical.
+    Those provenance-only fields must not create a false immutable
+    result conflict.
+    """
+
+    return {
+        key: value
+        for key, value in payload.items()
+        if key not in OBSERVATION_PROVENANCE_FIELDS
+    }
+
+
+def _same_immutable_result(
+    left: dict,
+    right: dict,
+) -> bool:
+    return (
+        _canonical_json(
+            _immutable_result_payload(left)
+        )
+        ==
+        _canonical_json(
+            _immutable_result_payload(right)
+        )
     )
 
 
@@ -117,11 +157,9 @@ def append_results(
         )
 
         if existing_result is not None:
-            if (
-                _canonical_json(
-                    existing_result.to_dict()
-                )
-                != _canonical_json(payload)
+            if not _same_immutable_result(
+                existing_result.to_dict(),
+                payload,
             ):
                 raise ImmutableResultConflict(
                     "Result ID already exists with "
@@ -139,11 +177,9 @@ def append_results(
         )
 
         if existing_source is not None:
-            if (
-                _canonical_json(
-                    existing_source.to_dict()
-                )
-                != _canonical_json(payload)
+            if not _same_immutable_result(
+                existing_source.to_dict(),
+                payload,
             ):
                 raise ImmutableResultConflict(
                     "Provider match ID already exists with "

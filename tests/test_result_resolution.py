@@ -146,6 +146,9 @@ class ResultResolutionTests(
         kickoff_utc: str = (
             "2026-10-20T19:00:00Z"
         ),
+        last_updated: str = (
+            "2026-10-20T21:00:00Z"
+        ),
     ):
         fields = [
             "source_match_id",
@@ -180,7 +183,7 @@ class ResultResolutionTests(
             "result": result,
             "venue": "Test Stadium",
             "last_updated": (
-                "2026-10-20T21:00:00Z"
+                last_updated
             ),
             "source": "test_provider",
         }
@@ -512,6 +515,91 @@ class ResultResolutionTests(
                     self.results_path
                 ),
             )
+
+
+
+    def test_08_provider_metadata_refresh_is_idempotent(
+        self,
+    ):
+        append_records(
+            self.predictions_path,
+            [self._prediction()],
+        )
+
+        self._write_fixture(
+            home_goals="2",
+            away_goals="1",
+            result="H",
+            last_updated=(
+                "2026-10-20T21:00:00Z"
+            ),
+        )
+
+        first = resolve_finished_results(
+            prediction_archive=(
+                self.predictions_path
+            ),
+            fixture_source=(
+                self.fixtures_path
+            ),
+            result_archive=(
+                self.results_path
+            ),
+        )
+
+        self.assertEqual(
+            first.imported,
+            1,
+        )
+
+        stored_before = load_results(
+            self.results_path
+        )[0]
+
+        self._write_fixture(
+            home_goals="2",
+            away_goals="1",
+            result="H",
+            last_updated=(
+                "2026-10-21T09:30:00Z"
+            ),
+        )
+
+        second = resolve_finished_results(
+            prediction_archive=(
+                self.predictions_path
+            ),
+            fixture_source=(
+                self.fixtures_path
+            ),
+            result_archive=(
+                self.results_path
+            ),
+        )
+
+        self.assertEqual(
+            second.imported,
+            0,
+        )
+
+        self.assertEqual(
+            second.skipped,
+            1,
+        )
+
+        stored_after = load_results(
+            self.results_path
+        )[0]
+
+        self.assertEqual(
+            stored_after,
+            stored_before,
+        )
+
+        self.assertEqual(
+            stored_after.provider_last_updated_utc,
+            "2026-10-20T21:00:00Z",
+        )
 
 
 if __name__ == "__main__":
