@@ -88,6 +88,8 @@ EXPECTED_UCL_CLUBS = 36
 
 EXPECTED_FOOTBALL_DATA_SQUAD_CLUBS = 33
 
+MIN_TRUSTED_FOOTBALL_DATA_SQUAD_SIZE = 20
+
 EXPECTED_FALLBACK_CLUBS = {
     "Sabah FK",
     "Slavia Prague",
@@ -766,33 +768,137 @@ def load_latest_valuations(
 def identify_fallback_clubs(
     team_snapshot: pd.DataFrame,
 ) -> set[str]:
+    """
+    Identify clubs whose football-data squad response is too
+    incomplete to be trusted as the primary current-squad source.
 
-    missing = set(
-        team_snapshot.loc[
-            team_snapshot[
+    A tiny partial squad is treated the same as a missing squad.
+    The expected fallback set remains explicit so a new provider
+    degradation cannot silently enter production.
+    """
+
+    required_columns = {
+        "canonical_team",
+        "squad_size",
+    }
+
+    missing_columns = (
+        required_columns
+        -
+        set(team_snapshot.columns)
+    )
+
+    if missing_columns:
+        raise RuntimeError(
+            "Team snapshot is missing required fallback columns: "
+            f"{sorted(missing_columns)}"
+        )
+
+    snapshot = team_snapshot[
+        [
+            "canonical_team",
+            "squad_size",
+        ]
+    ].copy()
+
+    snapshot[
+        "squad_size"
+    ] = pd.to_numeric(
+        snapshot[
+            "squad_size"
+        ],
+        errors="coerce",
+    )
+
+    if snapshot[
+        "squad_size"
+    ].isna().any():
+        invalid = snapshot.loc[
+            snapshot[
+                "squad_size"
+            ].isna(),
+            "canonical_team",
+        ].tolist()
+
+        raise RuntimeError(
+            "Invalid football-data squad_size values for: "
+            f"{sorted(invalid)}"
+        )
+
+    if (
+        snapshot[
+            "canonical_team"
+        ].duplicated()
+        .any()
+    ):
+        duplicates = sorted(
+            snapshot.loc[
+                snapshot[
+                    "canonical_team"
+                ].duplicated(
+                    keep=False
+                ),
+                "canonical_team",
+            ]
+            .astype(str)
+            .unique()
+            .tolist()
+        )
+
+        raise RuntimeError(
+            "Duplicate team rows in current team snapshot: "
+            f"{duplicates}"
+        )
+
+    fallback = set(
+        snapshot.loc[
+            snapshot[
                 "squad_size"
             ]
-            ==
-            0,
+            <
+            MIN_TRUSTED_FOOTBALL_DATA_SQUAD_SIZE,
             "canonical_team",
         ]
     )
 
     if (
-        missing
+        fallback
         !=
         EXPECTED_FALLBACK_CLUBS
     ):
+        details = (
+            snapshot.loc[
+                snapshot[
+                    "squad_size"
+                ]
+                <
+                MIN_TRUSTED_FOOTBALL_DATA_SQUAD_SIZE,
+                [
+                    "canonical_team",
+                    "squad_size",
+                ],
+            ]
+            .sort_values(
+                "canonical_team"
+            )
+            .to_dict(
+                orient="records"
+            )
+        )
 
         raise RuntimeError(
-            "\nUnexpected football-data missing-squad set.\n"
+            "\nUnexpected football-data incomplete-squad set.\n"
+            f"Minimum trusted squad size: "
+            f"{MIN_TRUSTED_FOOTBALL_DATA_SQUAD_SIZE}\n"
             f"Expected: "
             f"{sorted(EXPECTED_FALLBACK_CLUBS)}\n"
             f"Found:    "
-            f"{sorted(missing)}"
+            f"{sorted(fallback)}\n"
+            f"Observed incomplete squads: "
+            f"{details}"
         )
 
-    return missing
+    return fallback
 
 
 # ============================================================
@@ -1066,15 +1172,143 @@ def build_unified_pool(
     *,
     football_data_pool: pd.DataFrame,
     fallback_pool: pd.DataFrame,
+    fallback_clubs: set[str],
 ) -> pd.DataFrame:
+    """
+    Build one current-player pool.
+
+    Clubs classified as fallback-only must not retain partial
+    football-data squad rows. This prevents duplicate/mixed squad
+    sources when football-data returns an incomplete response.
+    """
+
+    required_columns = {
+        "canonical_team",
+        "squad_source",
+        "player_name",
+    }
+
+    for (
+        dataframe_name,
+        dataframe,
+    ) in [
+        (
+            "football_data_pool",
+            football_data_pool,
+        ),
+        (
+            "fallback_pool",
+            fallback_pool,
+        ),
+    ]:
+        missing_columns = (
+            required_columns
+            -
+            set(dataframe.columns)
+        )
+
+        if missing_columns:
+            raise RuntimeError(
+                f"{dataframe_name} is missing required columns: "
+                f"{sorted(missing_columns)}"
+            )
+
+    primary_pool = (
+        football_data_pool.loc[
+            ~football_data_pool[
+                "canonical_team"
+            ].isin(
+                fallback_clubs
+            )
+        ]
+        .copy()
+    )
+
+    excluded_partial_rows = (
+        len(football_data_pool)
+        -
+        len(primary_pool)
+    )
+
+    if excluded_partial_rows:
+        print(
+            "\nExcluded partial football-data rows "
+            "for fallback-only clubs: "
+            f"{excluded_partial_rows}"
+        )
+
+        excluded_counts = (
+            football_data_pool.loc[
+                football_data_pool[
+                    "canonical_team"
+                ].isin(
+                    fallback_clubs
+                )
+            ]
+            .groupby(
+                "canonical_team"
+            )
+            .size()
+            .sort_index()
+        )
+
+        for (
+            canonical_team,
+            row_count,
+        ) in excluded_counts.items():
+            print(
+                f"  {canonical_team}: "
+                f"{int(row_count)}"
+            )
+
+    primary_fallback_overlap = (
+        set(
+            primary_pool[
+                "canonical_team"
+            ]
+        )
+        &
+        fallback_clubs
+    )
+
+    if primary_fallback_overlap:
+        raise RuntimeError(
+            "Fallback-only clubs remain in the "
+            "football-data primary pool: "
+            f"{sorted(primary_fallback_overlap)}"
+        )
 
     unified = pd.concat(
         [
-            football_data_pool,
+            primary_pool,
             fallback_pool,
         ],
         ignore_index=True,
     )
+
+    mixed_source_clubs = (
+        unified.groupby(
+            "canonical_team"
+        )[
+            "squad_source"
+        ]
+        .nunique()
+    )
+
+    mixed_source_clubs = set(
+        mixed_source_clubs[
+            mixed_source_clubs
+            >
+            1
+        ].index
+    )
+
+    if mixed_source_clubs:
+        raise RuntimeError(
+            "A club is represented by multiple current "
+            "squad source types: "
+            f"{sorted(mixed_source_clubs)}"
+        )
 
     unified = unified.sort_values(
         by=[
@@ -1499,6 +1733,14 @@ def save_outputs(
         "rules": {
             "football_data_squad_is_primary": True,
 
+            "minimum_trusted_football_data_squad_size": (
+                MIN_TRUSTED_FOOTBALL_DATA_SQUAD_SIZE
+            ),
+
+            "incomplete_football_data_squads_use_fallback": True,
+
+            "partial_fallback_club_rows_excluded_from_primary_pool": True,
+
             "transfermarkt_current_club_is_fallback_only": True,
 
             "fallback_pool_does_not_imply_ucl_registration": True,
@@ -1726,9 +1968,10 @@ def build_current_squad_pool() -> None:
     )
 
     unified = build_unified_pool(
-        football_data_pool=football_data_pool,
-        fallback_pool=fallback_pool,
-    )
+            football_data_pool=football_data_pool,
+            fallback_pool=fallback_pool,
+            fallback_clubs=fallback_clubs,
+        )
 
     audit = run_quality_checks(
         unified=unified,
