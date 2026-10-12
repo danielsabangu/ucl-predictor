@@ -1017,9 +1017,16 @@ def validate_staged_patch() -> None:
 
 def print_release_summary(
     staged: list[str],
+    *,
+    stage: bool,
 ) -> None:
     banner(
         "RELEASE READY"
+    )
+
+    status = git_output(
+        "status",
+        "--short",
     )
 
     if staged:
@@ -1031,11 +1038,26 @@ def print_release_summary(
             print(
                 f"  - {path}"
             )
+
+    elif stage:
+        print(
+            "No approved release artifacts changed."
+        )
+
     else:
         print(
-            "The refreshed public snapshot is identical to the "
-            "currently committed version."
+            "Dry run completed successfully."
         )
+        print(
+            "No files were staged because --no-stage "
+            "was supplied."
+        )
+
+        if status:
+            print(
+                "The working tree contains unstaged changes. "
+                "Review them before deciding what to commit."
+            )
 
     print()
 
@@ -1044,7 +1066,12 @@ def print_release_summary(
         "--show-current",
     )
 
-    commit_date = datetime.now().astimezone().date().isoformat()
+    commit_date = (
+        datetime.now()
+        .astimezone()
+        .date()
+        .isoformat()
+    )
 
     if staged:
         print(
@@ -1062,17 +1089,26 @@ def print_release_summary(
             "Streamlit Community Cloud should then redeploy "
             "from the updated GitHub branch automatically."
         )
+
+    elif stage:
+        print(
+            "There are no approved release changes "
+            "to commit from this run."
+        )
+
+    elif status:
+        print(
+            "Review the unstaged changes below before "
+            "deciding what to commit."
+        )
+
     else:
         print(
-            "There is nothing new to commit or push."
+            "Git working tree is clean; there are no "
+            "release changes to commit."
         )
 
     print()
-
-    status = git_output(
-        "status",
-        "--short",
-    )
 
     if status:
         print(
@@ -1085,6 +1121,7 @@ def print_release_summary(
         print(
             "Git working tree is clean."
         )
+
 
 
 def execute_release(
@@ -1200,6 +1237,7 @@ def execute_release(
 
     print_release_summary(
         staged,
+        stage=stage,
     )
 
 
