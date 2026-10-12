@@ -178,6 +178,26 @@ class PredictionHistoryTests(unittest.TestCase):
             "LIVE_FORWARD_TEST",
         )
 
+        self.assertEqual(
+            records[0].prediction_status,
+            "RECORDED_PREMATCH",
+        )
+
+        self.assertEqual(
+            records[0].record_origin,
+            "PREMATCH_SNAPSHOT_IMPORT",
+        )
+
+        self.assertEqual(
+            records[0].published_at_utc,
+            None,
+        )
+
+        self.assertEqual(
+            records[0].recorded_at_utc,
+            "2026-10-20T18:00:00Z",
+        )
+
     def test_02_same_run_is_idempotent(self):
         first = import_public_snapshot(
             self.app_dir,

@@ -16,6 +16,7 @@ VALID_PREDICTION_TYPES = {
 }
 
 VALID_PREDICTION_STATUSES = {
+    "RECORDED_PREMATCH",
     "PUBLISHED",
 }
 
@@ -90,7 +91,7 @@ class PredictionRecord:
     home_team: str
     away_team: str
     kickoff_utc: str
-    published_at_utc: str
+    published_at_utc: str | None
 
     model_version: str
     source_run_id: str
@@ -139,6 +140,10 @@ class PredictionRecord:
 
     source_snapshot_hash: str
 
+    # Added later as a backward-compatible field.
+    # Legacy PUBLISHED records may omit it on disk.
+    recorded_at_utc: str | None = None
+
     def validate(self) -> "PredictionRecord":
         if self.schema_version != SCHEMA_VERSION:
             raise ValueError(
@@ -185,17 +190,55 @@ class PredictionRecord:
             )
 
         kickoff = parse_utc(self.kickoff_utc)
-        published = parse_utc(self.published_at_utc)
+
+        recorded_raw = (
+            self.recorded_at_utc
+            or self.published_at_utc
+        )
+
+        if recorded_raw is None:
+            raise ValueError(
+                "Prediction must have a prematch recording timestamp."
+            )
+
+        recorded = parse_utc(recorded_raw)
+
+        published = (
+            parse_utc(self.published_at_utc)
+            if self.published_at_utc is not None
+            else None
+        )
 
         if self.data_cutoff_utc is not None:
             parse_utc(self.data_cutoff_utc)
 
         if self.prediction_type == "LIVE_FORWARD_TEST":
-            if published >= kickoff:
+            if recorded >= kickoff:
                 raise ValueError(
-                    "LIVE_FORWARD_TEST predictions must be published "
+                    "LIVE_FORWARD_TEST predictions must be recorded "
                     "strictly before kickoff."
                 )
+
+        if self.prediction_status == "PUBLISHED":
+            if published is None:
+                raise ValueError(
+                    "PUBLISHED predictions require published_at_utc."
+                )
+
+            if published >= kickoff:
+                raise ValueError(
+                    "PUBLISHED live predictions must be published "
+                    "strictly before kickoff."
+                )
+
+        if (
+            self.prediction_status == "RECORDED_PREMATCH"
+            and self.published_at_utc is not None
+        ):
+            raise ValueError(
+                "RECORDED_PREMATCH predictions cannot claim "
+                "a publication timestamp."
+            )
 
         probabilities = {
             "H": float(self.home_probability),
@@ -294,7 +337,19 @@ class PredictionRecord:
 
     def to_dict(self) -> dict[str, Any]:
         self.validate()
-        return asdict(self)
+
+        payload = asdict(self)
+
+        # Preserve the exact legacy schema shape for old records.
+        # This keeps existing immutable PUBLISHED JSONL entries
+        # byte/field compatible when they are loaded and compared.
+        if self.recorded_at_utc is None:
+            payload.pop(
+                "recorded_at_utc",
+                None,
+            )
+
+        return payload
 
     @classmethod
     def from_dict(

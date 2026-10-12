@@ -553,7 +553,7 @@ def build_summary(
             "LATEST_PREMATCH_REVISION_PER_FIXTURE"
         ),
 
-        "all_published_revision_count": (
+        "all_prematch_revision_count": (
             len(evaluations)
         ),
 
@@ -804,7 +804,7 @@ def main() -> None:
     )
 
     print(
-        f"Published revisions evaluated: "
+        f"Prematch revisions evaluated: "
         f"{len(evaluations)}"
     )
 

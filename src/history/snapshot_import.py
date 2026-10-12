@@ -205,6 +205,8 @@ def _snapshot_row_hash(
 def import_public_snapshot(
     app_dir: str | Path = DEFAULT_APP_DIR,
     archive_path: str | Path | None = None,
+    *,
+    prediction_status: str = "RECORDED_PREMATCH",
 ):
     app_dir = Path(app_dir)
 
@@ -378,7 +380,7 @@ def import_public_snapshot(
             kickoff_utc
         ):
             raise ValueError(
-                "Cannot archive a public snapshot as a "
+                "Cannot archive a prediction snapshot as a "
                 "LIVE_FORWARD_TEST because it was generated "
                 "at or after kickoff: "
                 f"{home_team} vs {away_team}"
@@ -404,6 +406,24 @@ def import_public_snapshot(
 
         if existing_prediction is not None:
             revision = existing_prediction.revision
+
+            record_status = (
+                existing_prediction.prediction_status
+            )
+
+            record_origin = (
+                existing_prediction.record_origin
+            )
+
+            recorded_at_utc = (
+                existing_prediction.recorded_at_utc
+                or existing_prediction.published_at_utc
+            )
+
+            published_at_utc = (
+                existing_prediction.published_at_utc
+            )
+
         else:
             revision = (
                 max_revision_by_fixture.get(
@@ -417,6 +437,26 @@ def import_public_snapshot(
                 fixture_id
             ] = revision
 
+            record_status = prediction_status
+
+            if record_status == "PUBLISHED":
+                record_origin = (
+                    "PUBLIC_SNAPSHOT_IMPORT"
+                )
+                published_at_utc = created_at_utc
+            elif record_status == "RECORDED_PREMATCH":
+                record_origin = (
+                    "PREMATCH_SNAPSHOT_IMPORT"
+                )
+                published_at_utc = None
+            else:
+                raise ValueError(
+                    "Unsupported snapshot prediction_status: "
+                    f"{record_status}"
+                )
+
+            recorded_at_utc = created_at_utc
+
         record = PredictionRecord(
             schema_version=SCHEMA_VERSION,
 
@@ -429,13 +469,13 @@ def import_public_snapshot(
 
             revision=revision,
             prediction_type="LIVE_FORWARD_TEST",
-            prediction_status="PUBLISHED",
-            record_origin="PUBLIC_SNAPSHOT_IMPORT",
+            prediction_status=record_status,
+            record_origin=record_origin,
 
             home_team=home_team,
             away_team=away_team,
             kickoff_utc=kickoff_utc,
-            published_at_utc=created_at_utc,
+            published_at_utc=published_at_utc,
 
             model_version=model_version,
             source_run_id=source_run_id,
@@ -572,6 +612,8 @@ def import_public_snapshot(
                 created_at_utc=created_at_utc,
                 model_version=model_version,
             ),
+
+            recorded_at_utc=recorded_at_utc,
         )
 
         record.validate()
@@ -586,8 +628,8 @@ def import_public_snapshot(
 def main() -> None:
     parser = argparse.ArgumentParser(
         description=(
-            "Import the sanitized public prediction snapshot "
-            "into the immutable prediction-history ledger."
+            "Import a sanitized prediction snapshot into the "
+            "immutable prematch prediction-history ledger."
         )
     )
 
@@ -606,11 +648,26 @@ def main() -> None:
         ),
     )
 
+    parser.add_argument(
+        "--published",
+        action="store_true",
+        help=(
+            "Explicitly mark newly imported predictions as "
+            "PUBLISHED. Use only when public publication has "
+            "actually been verified."
+        ),
+    )
+
     args = parser.parse_args()
 
     result = import_public_snapshot(
         app_dir=args.app_dir,
         archive_path=args.archive,
+        prediction_status=(
+            "PUBLISHED"
+            if args.published
+            else "RECORDED_PREMATCH"
+        ),
     )
 
     print("Prediction history import complete.")

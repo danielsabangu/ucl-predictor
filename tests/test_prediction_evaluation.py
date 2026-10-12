@@ -225,7 +225,7 @@ class PredictionEvaluationTests(
 
         self.assertEqual(
             summary[
-                "all_published_revision_count"
+                "all_prematch_revision_count"
             ],
             3,
         )

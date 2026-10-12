@@ -228,8 +228,11 @@ def verify_current_public_snapshot_is_committed() -> None:
     Protect prediction-history integrity.
 
     The snapshot imported into the immutable prediction ledger must already
-    be the committed public snapshot, not an uncommitted local release
+    be the committed app snapshot, not an uncommitted local release
     candidate from a failed or abandoned run.
+
+    A Git commit proves the snapshot was frozen. It does not prove that the
+    snapshot was publicly deployed.
     """
 
     snapshot_paths = [
@@ -254,8 +257,8 @@ def verify_current_public_snapshot_is_committed() -> None:
     if dirty:
         raise ReleaseError(
             "The existing public prediction snapshot has local Git changes.\n\n"
-            "Refusing to record it as a published prediction because it may "
-            "be an uncommitted release candidate.\n\n"
+            "Refusing to record it as prematch prediction evidence because "
+            "it may be an uncommitted release candidate.\n\n"
             f"Dirty public snapshot files:\n{dirty}"
         )
 
@@ -1150,7 +1153,7 @@ def execute_release(
     verify_current_public_snapshot_is_committed()
 
     banner(
-        "STEP 2/10 - PRESERVE CURRENT PUBLIC PREDICTIONS"
+        "STEP 2/10 - PRESERVE COMMITTED PREMATCH SNAPSHOT"
     )
 
     run_python_module(
