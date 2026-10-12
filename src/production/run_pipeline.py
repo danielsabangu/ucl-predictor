@@ -127,7 +127,16 @@ PIPELINE_STEPS = [
         module="src.data.collect_fixtures",
         description=(
             "Refresh current UEFA Champions League "
-            "fixtures, results and team identities."
+            "fixtures and verified results."
+        ),
+    ),
+
+    PipelineStep(
+        name="fixture_identity",
+        module="src.utils.resolve_current_ucl_clubs",
+        description=(
+            "Resolve current UEFA Champions League "
+            "club identities into the canonical fixture snapshot."
         ),
     ),
 

@@ -17,14 +17,32 @@ PUBLIC_PREDICTIONS = PUBLIC_DIR / "current_predictions.csv"
 PUBLIC_STATUS = PUBLIC_DIR / "pipeline_status.json"
 PUBLIC_METADATA = PUBLIC_DIR / "snapshot_metadata.json"
 
+HISTORY_DIR = PUBLIC_DIR / "history"
+HISTORY_PREDICTIONS = HISTORY_DIR / "predictions.jsonl"
+HISTORY_RESULTS = HISTORY_DIR / "results.jsonl"
+HISTORY_EVALUATIONS = HISTORY_DIR / "evaluations.jsonl"
+HISTORY_SUMMARY = HISTORY_DIR / "summary.json"
+
 CREST_MANIFEST = ROOT / "assets" / "crests" / "manifest.json"
 
 RELEASE_SCRIPT = ROOT / "src" / "production" / "release.py"
 
-PUBLIC_FILES = (
+PUBLIC_SNAPSHOT_FILES = (
     PUBLIC_PREDICTIONS,
     PUBLIC_STATUS,
     PUBLIC_METADATA,
+)
+
+HISTORY_FILES = (
+    HISTORY_PREDICTIONS,
+    HISTORY_RESULTS,
+    HISTORY_EVALUATIONS,
+    HISTORY_SUMMARY,
+)
+
+PUBLIC_FILES = (
+    *PUBLIC_SNAPSHOT_FILES,
+    *HISTORY_FILES,
 )
 
 STAGE_CANDIDATES = (
@@ -32,6 +50,10 @@ STAGE_CANDIDATES = (
     PUBLIC_PREDICTIONS,
     PUBLIC_STATUS,
     PUBLIC_METADATA,
+    HISTORY_PREDICTIONS,
+    HISTORY_RESULTS,
+    HISTORY_EVALUATIONS,
+    HISTORY_SUMMARY,
     CREST_MANIFEST,
 )
 
@@ -40,6 +62,10 @@ ALLOWED_STAGED_PATHS = {
     "data/app/current_predictions.csv",
     "data/app/pipeline_status.json",
     "data/app/snapshot_metadata.json",
+    "data/app/history/predictions.jsonl",
+    "data/app/history/results.jsonl",
+    "data/app/history/evaluations.jsonl",
+    "data/app/history/summary.json",
     "assets/crests/manifest.json",
 }
 
@@ -194,6 +220,61 @@ def print_unstaged_warning() -> None:
         "Existing unstaged/untracked files detected. "
         "They will NOT be staged automatically unless they are one of the "
         "approved release artifacts."
+    )
+
+
+def verify_current_public_snapshot_is_committed() -> None:
+    """
+    Protect prediction-history integrity.
+
+    The snapshot imported into the immutable prediction ledger must already
+    be the committed public snapshot, not an uncommitted local release
+    candidate from a failed or abandoned run.
+    """
+
+    snapshot_paths = [
+        relative_path(path)
+        for path in PUBLIC_SNAPSHOT_FILES
+    ]
+
+    for snapshot_path in PUBLIC_SNAPSHOT_FILES:
+        if not snapshot_path.exists():
+            raise ReleaseError(
+                "Cannot preserve the current public prediction snapshot "
+                f"because this file is missing: {relative_path(snapshot_path)}"
+            )
+
+    dirty = git_output(
+        "status",
+        "--porcelain",
+        "--",
+        *snapshot_paths,
+    )
+
+    if dirty:
+        raise ReleaseError(
+            "The existing public prediction snapshot has local Git changes.\n\n"
+            "Refusing to record it as a published prediction because it may "
+            "be an uncommitted release candidate.\n\n"
+            f"Dirty public snapshot files:\n{dirty}"
+        )
+
+    for snapshot_path in snapshot_paths:
+        tracked = git_output(
+            "ls-files",
+            "--",
+            snapshot_path,
+        )
+
+        if not tracked:
+            raise ReleaseError(
+                "The current public prediction snapshot is not tracked by Git: "
+                f"{snapshot_path}"
+            )
+
+    print(
+        "Current public prediction snapshot is committed and safe "
+        "to preserve in prediction history."
     )
 
 
@@ -615,6 +696,134 @@ def validate_public_metadata(
     return metadata
 
 
+def load_jsonl(path: Path) -> list[dict[str, Any]]:
+    if not path.exists():
+        raise ReleaseError(
+            f"Required JSONL file does not exist: {path}"
+        )
+
+    records: list[dict[str, Any]] = []
+
+    with path.open(
+        "r",
+        encoding="utf-8",
+    ) as file:
+        for line_number, line in enumerate(
+            file,
+            start=1,
+        ):
+            stripped = line.strip()
+
+            if not stripped:
+                continue
+
+            try:
+                payload = json.loads(stripped)
+            except json.JSONDecodeError as exc:
+                raise ReleaseError(
+                    f"Invalid JSONL record at {path}:{line_number}"
+                ) from exc
+
+            if not isinstance(payload, dict):
+                raise ReleaseError(
+                    f"Expected JSON object at {path}:{line_number}"
+                )
+
+            records.append(payload)
+
+    return records
+
+
+def validate_history_artifacts() -> None:
+    """
+    Rebuild the expected evaluation state from the immutable prediction and
+    result ledgers and verify the public Evidence Vault artifacts match it.
+    """
+
+    from src.history.archive import load_records
+    from src.history.evaluation import (
+        build_evaluations,
+        build_summary,
+    )
+    from src.history.results_archive import load_results
+
+    predictions = load_records(
+        HISTORY_PREDICTIONS
+    )
+
+    if not predictions:
+        raise ReleaseError(
+            "Prediction history contains zero archived predictions."
+        )
+
+    results = load_results(
+        HISTORY_RESULTS
+    )
+
+    prediction_ids = [
+        record.prediction_id
+        for record in predictions
+    ]
+
+    if len(prediction_ids) != len(set(prediction_ids)):
+        raise ReleaseError(
+            "Prediction history contains duplicate prediction IDs."
+        )
+
+    prediction_fixture_ids = {
+        record.fixture_id
+        for record in predictions
+    }
+
+    for result in results:
+        if result.fixture_id not in prediction_fixture_ids:
+            raise ReleaseError(
+                "Result history contains a fixture that has no archived "
+                f"prediction: {result.fixture_id}"
+            )
+
+    expected_evaluations = build_evaluations(
+        predictions_path=HISTORY_PREDICTIONS,
+        results_path=HISTORY_RESULTS,
+    )
+
+    expected_evaluation_payloads = [
+        evaluation.to_dict()
+        for evaluation in expected_evaluations
+    ]
+
+    stored_evaluations = load_jsonl(
+        HISTORY_EVALUATIONS
+    )
+
+    if stored_evaluations != expected_evaluation_payloads:
+        raise ReleaseError(
+            "Stored Evidence Vault evaluations do not match the immutable "
+            "prediction/result ledgers. Re-run src.history.evaluation."
+        )
+
+    expected_summary = build_summary(
+        expected_evaluations
+    )
+
+    stored_summary = load_json(
+        HISTORY_SUMMARY
+    )
+
+    if stored_summary != expected_summary:
+        raise ReleaseError(
+            "Stored Evidence Vault summary does not match the evaluation "
+            "engine output. Re-run src.history.evaluation."
+        )
+
+    print(
+        "Evidence Vault validated: "
+        f"{len(predictions)} prediction revisions, "
+        f"{len(results)} verified results, "
+        f"{len(expected_evaluations)} evaluations."
+    )
+
+
 def scan_public_files_for_private_content() -> None:
     files_to_scan = [
         *PUBLIC_FILES,
@@ -894,15 +1103,25 @@ def execute_release(
     )
 
     banner(
-        "STEP 1/8 - PREFLIGHT"
+        "STEP 1/10 - PREFLIGHT"
     )
 
     verify_git_repository()
     verify_no_existing_staged_changes()
     print_unstaged_warning()
 
+    verify_current_public_snapshot_is_committed()
+
     banner(
-        "STEP 2/8 - REFRESH PRODUCTION PIPELINE"
+        "STEP 2/10 - PRESERVE CURRENT PUBLIC PREDICTIONS"
+    )
+
+    run_python_module(
+        "src.history.snapshot_import"
+    )
+
+    banner(
+        "STEP 3/10 - REFRESH PRODUCTION PIPELINE"
     )
 
     run_python_module(
@@ -910,7 +1129,19 @@ def execute_release(
     )
 
     banner(
-        "STEP 3/8 - PACKAGE PUBLIC SNAPSHOT"
+        "STEP 4/10 - RESOLVE EVIDENCE VAULT"
+    )
+
+    run_python_module(
+        "src.history.resolver"
+    )
+
+    run_python_module(
+        "src.history.evaluation"
+    )
+
+    banner(
+        "STEP 5/10 - PACKAGE NEW PUBLIC SNAPSHOT"
     )
 
     run_python_module(
@@ -918,13 +1149,13 @@ def execute_release(
     )
 
     banner(
-        "STEP 4/8 - SANITIZE PUBLIC METADATA"
+        "STEP 6/10 - SANITIZE PUBLIC METADATA"
     )
 
     sanitize_crest_manifest()
 
     banner(
-        "STEP 5/8 - VALIDATE PUBLIC RELEASE"
+        "STEP 7/10 - VALIDATE PUBLIC RELEASE"
     )
 
     validate_public_files_exist()
@@ -937,16 +1168,18 @@ def execute_release(
         fixture_count,
     )
 
+    validate_history_artifacts()
+
     scan_public_files_for_private_content()
 
     banner(
-        "STEP 6/8 - RUN DEPLOYMENT TESTS"
+        "STEP 8/10 - RUN DEPLOYMENT TESTS"
     )
 
     run_deployment_tests()
 
     banner(
-        "STEP 7/8 - GIT RELEASE SAFETY"
+        "STEP 9/10 - GIT RELEASE SAFETY"
     )
 
     if stage:
@@ -962,7 +1195,7 @@ def execute_release(
         staged = []
 
     banner(
-        "STEP 8/8 - FINAL SUMMARY"
+        "STEP 10/10 - FINAL SUMMARY"
     )
 
     print_release_summary(
@@ -973,9 +1206,11 @@ def execute_release(
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description=(
-            "Refresh the complete UCL Predictor production pipeline, "
-            "package the sanitized Streamlit snapshot, validate it, "
-            "run deployment tests, and safely stage the public release."
+            "Preserve the committed prediction snapshot, refresh the "
+            "complete UCL Predictor production pipeline, resolve and "
+            "evaluate prediction history, package the sanitized Streamlit "
+            "snapshot, validate it, run deployment tests, and safely stage "
+            "the public release."
         )
     )
 
