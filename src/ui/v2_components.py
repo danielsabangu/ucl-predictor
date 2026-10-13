@@ -15,30 +15,27 @@ from src.production.receipt_exports import (
 
 from src.ui.formatters import (
     display_confidence_label,
-    display_profile,
     escape,
     winning_cell_class,
 )
 
 
 # ============================================================
-# UCL PREDICTOR V2 — PRESENTATION COMPONENTS
+# UCL PREDICTOR V2 — INTERACTIVE PRESENTATION COMPONENTS
 # ============================================================
 #
 # Presentation only.
 #
-# This module intentionally does not:
+# This module does not:
 # - load prediction artifacts
 # - call Streamlit
 # - change CatBoost probabilities
 # - change confidence calculations
 # - change scoreline calculations
-# - perform routing
+# - perform application routing
 #
-# It converts an already-computed forecast row into reusable
-# presentation state and HTML. That separation is what lets V2
-# later introduce machine states and progressive reveal without
-# coupling animation to prediction logic.
+# Consumer-facing presentation lives here so the prediction
+# engine and the product experience stay cleanly separated.
 # ============================================================
 
 
@@ -86,6 +83,219 @@ class ForecastPresentation:
     away_class: str
     score_distribution: ScoreDistributionView
     receipt_html: str
+    share_text: str
+
+
+def build_fixture_choice_html(
+    *,
+    row: pd.Series,
+    kickoff_local: pd.Timestamp,
+    selected: bool,
+) -> str:
+
+    selected_class = (
+        " selected"
+        if selected
+        else
+        ""
+    )
+
+    selected_label = (
+        "SELECTED // READY TO REPRINT"
+        if selected
+        else
+        "CHOOSE MATCH"
+    )
+
+    return f"""
+    <div class="fixture-choice-card{selected_class}">
+
+        <div class="fixture-choice-topline">
+
+            <span>
+                {escape(
+                    kickoff_local.strftime(
+                        "%H:%M"
+                    )
+                )}
+                SAST
+            </span>
+
+            <span>
+                {selected_label}
+            </span>
+
+        </div>
+
+        <div class="fixture-choice-teams">
+
+            <div class="fixture-choice-team">
+
+                {crest_html(
+                    row["home_team"],
+                    side="home",
+                )}
+
+                <div class="fixture-choice-name">
+                    {escape(row["home_team"])}
+                </div>
+
+            </div>
+
+            <div class="fixture-choice-vs">
+                VS
+            </div>
+
+            <div class="fixture-choice-team">
+
+                {crest_html(
+                    row["away_team"],
+                    side="away",
+                )}
+
+                <div class="fixture-choice-name">
+                    {escape(row["away_team"])}
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    """
+
+
+def build_idle_machine_html() -> str:
+
+    return """
+    <div class="printer-hero printer-hero-idle">
+
+        <div class="printer-3d-scene">
+
+            <div class="printer-floor-shadow"></div>
+
+            <div class="printer-3d-unit">
+
+                <div class="printer-3d-top">
+                    <div class="printer-top-ridge"></div>
+                </div>
+
+                <div class="printer-3d-side">
+                    <div class="printer-side-vent"></div>
+                    <div class="printer-side-vent"></div>
+                    <div class="printer-side-vent"></div>
+                    <div class="printer-side-vent"></div>
+                </div>
+
+                <div class="printer-3d-front">
+
+                    <div class="printer-front-header">
+
+                        <div class="printer-engraving">
+                            UCL//FORECAST
+                            <span>POS-290</span>
+                        </div>
+
+                        <div class="printer-led-bank">
+                            <span class="printer-led led-off"></span>
+                            <span class="printer-led led-off"></span>
+                            <span class="printer-led led-off"></span>
+                        </div>
+
+                    </div>
+
+                    <div class="printer-control-deck">
+
+                        <div class="printer-control-screen">
+
+                            <div class="printer-control-label">
+                                STATUS
+                            </div>
+
+                            <div class="printer-control-value idle">
+                                STANDBY
+                            </div>
+
+                            <div class="printer-control-sub">
+                                AWAITING MATCH
+                            </div>
+
+                        </div>
+
+                        <div class="printer-control-buttons">
+
+                            <div class="printer-control-button">
+                                <span></span>
+                            </div>
+
+                            <div class="printer-power-button">
+                                <span></span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="printer-mouth-wrap">
+
+                        <div class="printer-mouth-bezel">
+
+                            <div class="printer-mouth">
+                                <div class="printer-mouth-line"></div>
+                            </div>
+
+                        </div>
+
+                        <div class="printer-mouth-label">
+                            FORECAST OUTPUT
+                        </div>
+
+                    </div>
+
+                    <div class="printer-lower-panel">
+
+                        <div class="printer-vent-grid">
+
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+
+                        </div>
+
+                        <div class="printer-serial">
+                            UCLP // V2
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="machine-idle-screen">
+
+            <div class="machine-idle-kicker">
+                AWAITING MATCH
+            </div>
+
+            <div class="machine-idle-title">
+                PICK A FIXTURE TO WAKE THE PRINTER
+            </div>
+
+            <div class="machine-idle-note">
+                Select a match above. The machine will power up,
+                print the forecast, then reveal the receipt.
+            </div>
+
+        </div>
+
+    </div>
+    """
 
 
 def build_score_distribution_view(
@@ -211,7 +421,7 @@ def build_score_distribution_view(
 
             tags.append(
                 '<span class="score-distribution-tag">'
-                'MODE'
+                'MOST LIKELY'
                 '</span>'
             )
 
@@ -275,20 +485,18 @@ def build_score_distribution_view(
     ):
 
         modal_note = (
-            "PROJECTED SCORE IS ALSO THE GLOBAL "
-            "MODAL EXACT SCORE."
+            "THIS IS ALSO THE SINGLE MOST LIKELY "
+            "EXACT SCORE OVERALL."
         )
 
     else:
 
         modal_note = (
-            "MODE "
-            f"{global_modal_scoreline} "
-            "IS THE HIGHEST-PROBABILITY EXACT SCORE OVERALL. "
-            "PROJECTED "
-            f"{projected_scoreline} "
-            "IS THE HIGHEST-PROBABILITY SCORE CONSISTENT "
-            "WITH THE CATBOOST RESULT PICK."
+            f"{global_modal_scoreline} IS THE SINGLE MOST LIKELY "
+            "EXACT SCORE OVERALL. "
+            f"{projected_scoreline} IS SHOWN AS THE PROJECTED SCORE "
+            f"BECAUSE {row['predicted_selection']} IS THE "
+            "PREDICTED WINNER."
         )
 
     distribution_html = f"""
@@ -297,11 +505,11 @@ def build_score_distribution_view(
         <div class="score-distribution-head">
 
             <div class="score-distribution-title">
-                // SCORE RANGE
+                MOST LIKELY SCORELINES
             </div>
 
             <div class="score-distribution-subtitle">
-                TOP 5 EXACT-SCORE CELLS
+                BAR LENGTHS SHOW RELATIVE LIKELIHOOD
             </div>
 
         </div>
@@ -314,7 +522,7 @@ def build_score_distribution_view(
 
                 <div class="goal-range-label">
                     {escape(row["home_team"])}
-                    3+ GOALS
+                    TO SCORE 3+
                 </div>
 
                 <div class="goal-range-value">
@@ -327,7 +535,7 @@ def build_score_distribution_view(
 
                 <div class="goal-range-label">
                     {escape(row["away_team"])}
-                    3+ GOALS
+                    TO SCORE 3+
                 </div>
 
                 <div class="goal-range-value">
@@ -438,32 +646,152 @@ def build_forecast_presentation(
         )
     )
 
+    confidence_label = (
+        display_confidence_label(
+            row[
+                "confidence_label"
+            ]
+        )
+    )
+
+    data_coverage = (
+        float(
+            row[
+                "overall_feature_availability"
+            ]
+        )
+        *
+        100.0
+    )
+
+    predicted_win_chance = (
+        float(
+            row[
+                "max_probability"
+            ]
+        )
+        *
+        100.0
+    )
+
     receipt_html = f"""
-<div class="terminal-shell">
+<div class="printer-hero printer-hero-active">
 
-    <div class="terminal-label-row">
+    <div class="printer-3d-scene">
 
-        <div class="terminal-machine-label">
-            UCL//POS-290
-        </div>
+        <div class="printer-floor-shadow"></div>
 
+        <div class="printer-3d-unit machine-active">
 
-        <div class="terminal-led printer-state">
-
-            <div class="printer-state-printing">
-
-                <span class="printer-dot-printing"></span>
-
-                PRINTING...
-
+            <div class="printer-3d-top">
+                <div class="printer-top-ridge"></div>
             </div>
 
+            <div class="printer-3d-side">
+                <div class="printer-side-vent"></div>
+                <div class="printer-side-vent"></div>
+                <div class="printer-side-vent"></div>
+                <div class="printer-side-vent"></div>
+            </div>
 
-            <div class="printer-state-ready">
+            <div class="printer-3d-front">
 
-                <span class="printer-dot-ready"></span>
+                <div class="printer-front-header">
 
-                READY
+                    <div class="printer-engraving">
+                        UCL//FORECAST
+                        <span>POS-290</span>
+                    </div>
+
+                    <div class="printer-led-bank">
+                        <span class="printer-led led-active"></span>
+                        <span class="printer-led led-active delay-1"></span>
+                        <span class="printer-led led-ready"></span>
+                    </div>
+
+                </div>
+
+                <div class="printer-control-deck">
+
+                    <div class="printer-control-screen">
+
+                        <div class="printer-control-label">
+                            STATUS
+                        </div>
+
+                        <div class="printer-state">
+
+                            <div class="printer-state-waking">
+                                <span class="printer-dot-printing"></span>
+                                WAKING
+                            </div>
+
+                            <div class="printer-state-printing">
+                                <span class="printer-dot-printing"></span>
+                                PRINTING
+                            </div>
+
+                            <div class="printer-state-ready">
+                                <span class="printer-dot-ready"></span>
+                                PRINTED
+                            </div>
+
+                        </div>
+
+                        <div class="printer-control-sub">
+                            FORECAST RECEIPT
+                        </div>
+
+                    </div>
+
+                    <div class="printer-control-buttons">
+
+                        <div class="printer-control-button active">
+                            <span></span>
+                        </div>
+
+                        <div class="printer-power-button on">
+                            <span></span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="printer-mouth-wrap">
+
+                    <div class="printer-mouth-bezel">
+
+                        <div class="printer-mouth active">
+                            <div class="printer-mouth-line"></div>
+                        </div>
+
+                    </div>
+
+                    <div class="printer-mouth-label">
+                        FORECAST OUTPUT
+                    </div>
+
+                </div>
+
+                <div class="printer-lower-panel">
+
+                    <div class="printer-vent-grid">
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </div>
+
+                    <div class="printer-serial">
+                        UCLP // V2
+                    </div>
+
+                </div>
 
             </div>
 
@@ -471,34 +799,25 @@ def build_forecast_presentation(
 
     </div>
 
-
-    <div class="terminal-slot"></div>
-
-
-    <div class="print-stage">
+    <div class="print-stage printer-output-stage">
 
         <div class="print-feed">
 
             <div class="receipt print-paper">
 
-
                 <div class="receipt-brand">
                     UCL//FORECAST
                 </div>
 
-
                 <div class="receipt-brand-sub">
-                    Production prediction receipt
+                    MATCH FORECAST RECEIPT
                 </div>
-
 
                 <div class="receipt-id">
                     TXN {escape(receipt_id)}
                 </div>
 
-
                 <div class="receipt-rule"></div>
-
 
                 <div class="fixture-meta">
 
@@ -524,7 +843,6 @@ def build_forecast_presentation(
 
                 </div>
 
-
                 <div class="club-lockup">
 
                     <div class="club-side">
@@ -535,22 +853,14 @@ def build_forecast_presentation(
                         )}
 
                         <div class="club-side-name">
-
-                            {escape(
-                                row[
-                                    "home_team"
-                                ]
-                            )}
-
+                            {escape(row["home_team"])}
                         </div>
 
                     </div>
 
-
                     <div class="club-vs">
                         VS
                     </div>
-
 
                     <div class="club-side">
 
@@ -560,19 +870,12 @@ def build_forecast_presentation(
                         )}
 
                         <div class="club-side-name">
-
-                            {escape(
-                                row[
-                                    "away_team"
-                                ]
-                            )}
-
+                            {escape(row["away_team"])}
                         </div>
 
                     </div>
 
                 </div>
-
 
                 <div class="score-lockup">
 
@@ -592,11 +895,9 @@ def build_forecast_presentation(
 
                 </div>
 
-
                 <div class="score-caption">
-                    projected score // result-consistent poisson
+                    PROJECTED SCORE
                 </div>
-
 
                 <div class="score-probability-line">
 
@@ -604,39 +905,35 @@ def build_forecast_presentation(
                         {score_distribution.exact_score_probability * 100:.1f}%
                     </strong>
 
-                    exact-score probability
+                    CHANCE OF THIS SCORE
 
                 </div>
-
 
                 <div class="model-pick-box">
 
                     <div class="model-pick-label">
-                        CatBoost result pick
+                        PREDICTED WINNER
                     </div>
 
                     <div class="model-pick">
+                        {escape(row["predicted_selection"])}
+                    </div>
 
-                        {escape(
-                            row[
-                                "predicted_selection"
-                            ]
-                        )}
-
+                    <div class="model-pick-probability">
+                        {predicted_win_chance:.1f}%
+                        CHANCE OF THIS RESULT
                     </div>
 
                 </div>
 
-
                 <div class="receipt-rule double"></div>
-
 
                 <div class="hda">
 
                     <div class="{home_class}">
 
                         <div class="hda-label">
-                            Home
+                            HOME
                         </div>
 
                         <div class="hda-value">
@@ -645,11 +942,10 @@ def build_forecast_presentation(
 
                     </div>
 
-
                     <div class="{draw_class}">
 
                         <div class="hda-label">
-                            Draw
+                            DRAW
                         </div>
 
                         <div class="hda-value">
@@ -658,11 +954,10 @@ def build_forecast_presentation(
 
                     </div>
 
-
                     <div class="{away_class}">
 
                         <div class="hda-label">
-                            Away
+                            AWAY
                         </div>
 
                         <div class="hda-value">
@@ -673,27 +968,23 @@ def build_forecast_presentation(
 
                 </div>
 
-
                 {score_distribution.html}
 
-
                 <div class="receipt-rule"></div>
-
 
                 <div class="confidence-wrap">
 
                     <div class="confidence-head">
 
                         <span>
-                            Evidence confidence
+                            EVIDENCE STRENGTH
                         </span>
 
                         <span>
-                            {confidence_percent:.2f}%
+                            {confidence_percent:.0f}%
                         </span>
 
                     </div>
-
 
                     <div class="confidence-track">
 
@@ -708,230 +999,37 @@ def build_forecast_presentation(
 
                     </div>
 
-
                     <div class="confidence-note">
 
-                        {escape(
-                            display_confidence_label(
-                                row[
-                                    "confidence_label"
-                                ]
-                            )
-                        )}
+                        {escape(confidence_label)}
 
                         //
 
-                        {escape(
-                            display_profile(
-                                row[
-                                    "model_decisiveness_profile"
-                                ]
-                            )
-                        )}
-
-                        probability profile
-
-                        //
-
-                        top-two margin
-
-                        {top_two_margin:.2f}
-
-                        pp
+                        HOW COMPLETE AND TRUSTWORTHY
+                        THE MATCH EVIDENCE IS
 
                     </div>
 
                 </div>
-
 
                 <div class="receipt-rule"></div>
 
-
                 <div class="receipt-row">
 
                     <div class="label">
-                        PROJECTED EXACT-SCORE PROB.
+                        DATA COVERAGE
                     </div>
 
                     <div class="value">
-
-                        {float(
-                            row[
-                                "predicted_scoreline_probability"
-                            ]
-                        ) * 100:.2f}%
-
+                        {data_coverage:.0f}%
                     </div>
 
                 </div>
 
-
                 <div class="receipt-row">
 
                     <div class="label">
-                        EXPECTED GOALS
-                    </div>
-
-                    <div class="value">
-
-                        {float(
-                            row[
-                                "score_home_lambda"
-                            ]
-                        ):.2f}
-
-                        -
-
-                        {float(
-                            row[
-                                "score_away_lambda"
-                            ]
-                        ):.2f}
-
-                    </div>
-
-                </div>
-
-
-                <div class="receipt-row">
-
-                    <div class="label">
-                        TOTAL GOAL RATE
-                    </div>
-
-                    <div class="value">
-
-                        {float(
-                            row[
-                                "score_total_lambda"
-                            ]
-                        ):.2f}
-
-                    </div>
-
-                </div>
-
-
-                <div class="receipt-row">
-
-                    <div class="label">
-                        SCORE BRIDGE
-                    </div>
-
-                    <div class="value">
-
-                        {escape(
-                            row[
-                                "score_bridge_quality"
-                            ]
-                        )}
-
-                        //
-
-                        {float(
-                            row[
-                                "score_bridge_max_error_pp"
-                            ]
-                        ):.3f}
-
-                        PP
-
-                    </div>
-
-                </div>
-
-
-                <div class="receipt-rule"></div>
-
-
-                <div class="receipt-row">
-
-                    <div class="label">
-                        ELO
-                    </div>
-
-                    <div class="value">
-
-                        {int(
-                            row[
-                                "elo_features_available"
-                            ]
-                        )}
-
-                        / 6
-
-                    </div>
-
-                </div>
-
-
-                <div class="receipt-row">
-
-                    <div class="label">
-                        UCL FORM
-                    </div>
-
-                    <div class="value">
-
-                        {int(
-                            row[
-                                "ucl_form_features_available"
-                            ]
-                        )}
-
-                        / 81
-
-                    </div>
-
-                </div>
-
-
-                <div class="receipt-row">
-
-                    <div class="label">
-                        DOMESTIC
-                    </div>
-
-                    <div class="value">
-
-                        {int(
-                            row[
-                                "domestic_features_available"
-                            ]
-                        )}
-
-                        / 102
-
-                    </div>
-
-                </div>
-
-
-                <div class="receipt-row">
-
-                    <div class="label">
-                        SQUAD
-                    </div>
-
-                    <div class="value">
-
-                        {int(
-                            row[
-                                "squad_features_available"
-                            ]
-                        )}
-
-                        / 101
-
-                    </div>
-
-                </div>
-
-
-                <div class="receipt-row">
-
-                    <div class="label">
-                        TOTAL DATA
+                        MATCH SIGNALS CHECKED
                     </div>
 
                     <div class="value">
@@ -944,49 +1042,32 @@ def build_forecast_presentation(
 
                         / 290
 
-                        //
-
-                        {float(
-                            row[
-                                "overall_feature_availability"
-                            ]
-                        ) * 100:.2f}%
-
                     </div>
 
                 </div>
 
-
                 <div class="warning-strip"></div>
-
 
                 <div class="receipt-warning">
 
-                    Probability ≠ confidence.
+                    FORECASTS SHOW PROBABILITIES,
+                    NOT CERTAINTIES.
 
-                    Projected score is the highest-probability
-                    exact score consistent with the CatBoost result pick.
-
-                    It is an auxiliary Poisson estimate,
-                    not a separately trained goal model.
+                    THE PROJECTED SCORE IS ONE PLAUSIBLE
+                    OUTCOME, NOT A GUARANTEE.
 
                 </div>
 
-
                 <div class="barcode"></div>
 
-
                 <div class="barcode-number">
-
                     {escape(
                         receipt_id.replace(
                             "-",
                             "",
                         )
                     )}
-
                 </div>
-
 
             </div>
 
@@ -996,6 +1077,18 @@ def build_forecast_presentation(
 
 </div>
 """
+
+    share_text = (
+        "UCL Predictor\n"
+        f"{row['home_team']} vs {row['away_team']}\n"
+        f"Predicted winner: {row['predicted_selection']} "
+        f"({predicted_win_chance:.1f}%)\n"
+        f"Projected score: {row['predicted_scoreline']} "
+        f"({score_distribution.exact_score_probability * 100:.1f}% "
+        "chance of this exact score)\n"
+        f"Evidence strength: {confidence_percent:.0f}%\n"
+        "Forecasts show probabilities, not certainties."
+    )
 
     return ForecastPresentation(
         home_probability=home_probability,
@@ -1009,4 +1102,5 @@ def build_forecast_presentation(
         away_class=away_class,
         score_distribution=score_distribution,
         receipt_html=receipt_html,
+        share_text=share_text,
     )
