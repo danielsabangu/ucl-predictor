@@ -44,7 +44,7 @@ EXPORT_DIR = (
 )
 
 RECEIPT_WIDTH = 900
-RECEIPT_HEIGHT = 1650
+RECEIPT_HEIGHT = 2180
 
 PAPER_RGB = (
     238,
@@ -750,6 +750,48 @@ def build_receipt_image(
         f"{away_team[:3].upper()}"
     )
 
+    projected_scoreline = str(
+        row[
+            "predicted_scoreline"
+        ]
+    )
+
+    exact_score_probability = float(
+        row[
+            "predicted_scoreline_probability"
+        ]
+    )
+
+    global_modal_scoreline = str(
+        row.get(
+            "global_modal_scoreline",
+            projected_scoreline,
+        )
+    )
+
+    distribution_columns = {
+        "score_home_3plus_probability",
+        "score_away_3plus_probability",
+        "score_top_1_scoreline",
+        "score_top_1_probability",
+        "score_top_2_scoreline",
+        "score_top_2_probability",
+        "score_top_3_scoreline",
+        "score_top_3_probability",
+        "score_top_4_scoreline",
+        "score_top_4_probability",
+        "score_top_5_scoreline",
+        "score_top_5_probability",
+    }
+
+    distribution_available = (
+        distribution_columns
+        <=
+        set(
+            row.index
+        )
+    )
+
     # ========================================================
     # TOP TEAR
     # ========================================================
@@ -942,20 +984,26 @@ def build_receipt_image(
     center_text(
         draw,
         xy_y=525,
-        text=str(
-            row[
-                "predicted_scoreline"
-            ]
-        ),
+        text=projected_scoreline,
         font=score_font,
     )
 
     center_text(
         draw,
         xy_y=680,
-        text="ESTIMATED SCORELINE // POISSON BRIDGE",
+        text="PROJECTED SCORE // RESULT-CONSISTENT POISSON",
         font=mono_small,
         fill=MUTED_RGB,
+    )
+
+    center_text(
+        draw,
+        xy_y=714,
+        text=(
+            f"{exact_score_probability * 100:.1f}% "
+            "EXACT-SCORE PROBABILITY"
+        ),
+        font=mono_bold,
     )
 
     # ========================================================
@@ -964,9 +1012,9 @@ def build_receipt_image(
 
     pick_box = (
         95,
-        730,
+        770,
         RECEIPT_WIDTH - 95,
-        840,
+        880,
     )
 
     draw.rectangle(
@@ -977,7 +1025,7 @@ def build_receipt_image(
 
     center_text(
         draw,
-        xy_y=748,
+        xy_y=788,
         text="CATBOOST RESULT PICK",
         font=mono_small,
         fill=MUTED_RGB,
@@ -999,14 +1047,14 @@ def build_receipt_image(
 
     center_text(
         draw,
-        xy_y=785,
+        xy_y=825,
         text=pick,
         font=selected_pick_font,
     )
 
     draw_dashed_line(
         draw,
-        y=880,
+        y=920,
     )
 
     # ========================================================
@@ -1074,9 +1122,9 @@ def build_receipt_image(
 
         box = (
             x,
-            910,
+            950,
             x + cell_width,
-            1015,
+            1055,
         )
 
         if selected:
@@ -1123,7 +1171,7 @@ def build_receipt_image(
                 )
                 /
                 2,
-                927,
+                967,
             ),
             label,
             font=label_font,
@@ -1155,11 +1203,488 @@ def build_receipt_image(
                 )
                 /
                 2,
-                960,
+                1000,
             ),
             probability_text,
             font=probability_font,
             fill=value_fill,
+        )
+
+    # ========================================================
+    # SCORE DISTRIBUTION
+    # ========================================================
+
+    distribution_top = 1105
+
+    draw_dashed_line(
+        draw,
+        y=1085,
+    )
+
+    draw.text(
+        (
+            80,
+            distribution_top,
+        ),
+        "// SCORE RANGE",
+        font=mono_bold,
+        fill=INK_RGB,
+    )
+
+    relative_note = (
+        "TOP 5 EXACT-SCORE CELLS // "
+        "BARS = RELATIVE LIKELIHOOD"
+    )
+
+    relative_font = load_font(
+        size=17,
+        mono=True,
+    )
+
+    relative_bbox = draw.textbbox(
+        (0, 0),
+        relative_note,
+        font=relative_font,
+    )
+
+    draw.text(
+        (
+            RECEIPT_WIDTH
+            -
+            80
+            -
+            (
+                relative_bbox[2]
+                -
+                relative_bbox[0]
+            ),
+            distribution_top + 4,
+        ),
+        relative_note,
+        font=relative_font,
+        fill=MUTED_RGB,
+    )
+
+    if distribution_available:
+
+        top_probability = max(
+            float(
+                row[
+                    "score_top_1_probability"
+                ]
+            ),
+            1e-12,
+        )
+
+        score_y = distribution_top + 48
+
+        for rank in range(
+            1,
+            6,
+        ):
+
+            scoreline = str(
+                row[
+                    f"score_top_{rank}_scoreline"
+                ]
+            )
+
+            probability = float(
+                row[
+                    f"score_top_{rank}_probability"
+                ]
+            )
+
+            relative_width = max(
+                0.0,
+                min(
+                    1.0,
+                    probability
+                    /
+                    top_probability,
+                ),
+            )
+
+            is_mode = (
+                scoreline
+                ==
+                global_modal_scoreline
+            )
+
+            is_projected = (
+                scoreline
+                ==
+                projected_scoreline
+            )
+
+            draw.text(
+                (
+                    82,
+                    score_y,
+                ),
+                scoreline,
+                font=mono_bold,
+                fill=INK_RGB,
+            )
+
+            track_left = 165
+            track_right = 695
+            track_top = score_y + 6
+            track_bottom = track_top + 12
+
+            draw.rectangle(
+                (
+                    track_left,
+                    track_top,
+                    track_right,
+                    track_bottom,
+                ),
+                fill=LIGHT_RGB,
+            )
+
+            fill_right = (
+                track_left
+                +
+                int(
+                    (
+                        track_right
+                        -
+                        track_left
+                    )
+                    *
+                    relative_width
+                )
+            )
+
+            draw.rectangle(
+                (
+                    track_left,
+                    track_top,
+                    max(
+                        track_left + 2,
+                        fill_right,
+                    ),
+                    track_bottom,
+                ),
+                fill=INK_RGB
+                if is_projected
+                else
+                MUTED_RGB,
+            )
+
+            probability_text = (
+                f"{probability * 100:.1f}%"
+            )
+
+            probability_bbox = draw.textbbox(
+                (0, 0),
+                probability_text,
+                font=mono_bold,
+            )
+
+            draw.text(
+                (
+                    RECEIPT_WIDTH
+                    -
+                    82
+                    -
+                    (
+                        probability_bbox[2]
+                        -
+                        probability_bbox[0]
+                    ),
+                    score_y,
+                ),
+                probability_text,
+                font=mono_bold,
+                fill=INK_RGB,
+            )
+
+            tags = []
+
+            if is_mode:
+
+                tags.append(
+                    "MODE"
+                )
+
+            if is_projected:
+
+                tags.append(
+                    "PROJECTED"
+                )
+
+            if tags:
+
+                draw.text(
+                    (
+                        165,
+                        score_y + 23,
+                    ),
+                    " / ".join(
+                        tags
+                    ),
+                    font=load_font(
+                        size=16,
+                        mono=True,
+                    ),
+                    fill=MUTED_RGB,
+                )
+
+                score_y += 20
+
+            score_y += 46
+
+        home_3plus = float(
+            row[
+                "score_home_3plus_probability"
+            ]
+        )
+
+        away_3plus = float(
+            row[
+                "score_away_3plus_probability"
+            ]
+        )
+
+        three_plus_top = 1443
+
+        box_gap = 18
+        box_left = 80
+        box_right = RECEIPT_WIDTH - 80
+        box_width = int(
+            (
+                box_right
+                -
+                box_left
+                -
+                box_gap
+            )
+            /
+            2
+        )
+
+        home_box = (
+            box_left,
+            three_plus_top,
+            box_left + box_width,
+            three_plus_top + 92,
+        )
+
+        away_box = (
+            box_left + box_width + box_gap,
+            three_plus_top,
+            box_right,
+            three_plus_top + 92,
+        )
+
+        draw.rectangle(
+            home_box,
+            outline=LIGHT_RGB,
+            width=2,
+        )
+
+        draw.rectangle(
+            away_box,
+            outline=LIGHT_RGB,
+            width=2,
+        )
+
+        home_label = (
+            f"{home_team.upper()} 3+ GOALS"
+        )
+
+        away_label = (
+            f"{away_team.upper()} 3+ GOALS"
+        )
+
+        home_label_font = fit_font(
+            draw,
+            text=home_label,
+            max_width=box_width - 30,
+            start_size=18,
+            minimum_size=13,
+            bold=False,
+        )
+
+        away_label_font = fit_font(
+            draw,
+            text=away_label,
+            max_width=box_width - 30,
+            start_size=18,
+            minimum_size=13,
+            bold=False,
+        )
+
+        home_label_bbox = draw.textbbox(
+            (0, 0),
+            home_label,
+            font=home_label_font,
+        )
+
+        away_label_bbox = draw.textbbox(
+            (0, 0),
+            away_label,
+            font=away_label_font,
+        )
+
+        draw.text(
+            (
+                home_box[0]
+                +
+                (
+                    box_width
+                    -
+                    (
+                        home_label_bbox[2]
+                        -
+                        home_label_bbox[0]
+                    )
+                )
+                /
+                2,
+                three_plus_top + 16,
+            ),
+            home_label,
+            font=home_label_font,
+            fill=MUTED_RGB,
+        )
+
+        draw.text(
+            (
+                away_box[0]
+                +
+                (
+                    box_width
+                    -
+                    (
+                        away_label_bbox[2]
+                        -
+                        away_label_bbox[0]
+                    )
+                )
+                /
+                2,
+                three_plus_top + 16,
+            ),
+            away_label,
+            font=away_label_font,
+            fill=MUTED_RGB,
+        )
+
+        home_value = (
+            f"{home_3plus * 100:.1f}%"
+        )
+
+        away_value = (
+            f"{away_3plus * 100:.1f}%"
+        )
+
+        home_value_bbox = draw.textbbox(
+            (0, 0),
+            home_value,
+            font=probability_font,
+        )
+
+        away_value_bbox = draw.textbbox(
+            (0, 0),
+            away_value,
+            font=probability_font,
+        )
+
+        draw.text(
+            (
+                home_box[0]
+                +
+                (
+                    box_width
+                    -
+                    (
+                        home_value_bbox[2]
+                        -
+                        home_value_bbox[0]
+                    )
+                )
+                /
+                2,
+                three_plus_top + 45,
+            ),
+            home_value,
+            font=probability_font,
+            fill=INK_RGB,
+        )
+
+        draw.text(
+            (
+                away_box[0]
+                +
+                (
+                    box_width
+                    -
+                    (
+                        away_value_bbox[2]
+                        -
+                        away_value_bbox[0]
+                    )
+                )
+                /
+                2,
+                three_plus_top + 45,
+            ),
+            away_value,
+            font=probability_font,
+            fill=INK_RGB,
+        )
+
+        if (
+            projected_scoreline
+            ==
+            global_modal_scoreline
+        ):
+
+            modal_note = (
+                "PROJECTED SCORE IS ALSO "
+                "THE GLOBAL MODAL EXACT SCORE."
+            )
+
+        else:
+
+            modal_note = (
+                f"MODE {global_modal_scoreline} = "
+                "HIGHEST-PROBABILITY EXACT SCORE OVERALL // "
+                f"PROJECTED {projected_scoreline} = "
+                "HIGHEST-PROBABILITY SCORE CONSISTENT "
+                "WITH RESULT PICK"
+            )
+
+        modal_note_font = fit_font(
+            draw,
+            text=modal_note,
+            max_width=RECEIPT_WIDTH - 160,
+            start_size=17,
+            minimum_size=12,
+            bold=False,
+        )
+
+        center_text(
+            draw,
+            xy_y=1552,
+            text=modal_note,
+            font=modal_note_font,
+            fill=MUTED_RGB,
+        )
+
+    else:
+
+        center_text(
+            draw,
+            xy_y=1195,
+            text=(
+                "SCORE DISTRIBUTION UNAVAILABLE "
+                "IN THIS FORECAST ARTIFACT"
+            ),
+            font=mono_small,
+            fill=MUTED_RGB,
         )
 
     # ========================================================
@@ -1168,7 +1693,7 @@ def build_receipt_image(
 
     draw_dashed_line(
         draw,
-        y=1055,
+        y=1595,
     )
 
     confidence = float(
@@ -1179,7 +1704,7 @@ def build_receipt_image(
 
     draw_row(
         draw,
-        y=1080,
+        y=1620,
         label="EVIDENCE CONFIDENCE",
         value=f"{confidence:.2f}%",
         font=mono_medium,
@@ -1188,8 +1713,8 @@ def build_receipt_image(
 
     track_left = 80
     track_right = RECEIPT_WIDTH - 80
-    track_top = 1125
-    track_bottom = 1142
+    track_top = 1665
+    track_bottom = 1682
 
     draw.rectangle(
         (
@@ -1251,7 +1776,7 @@ def build_receipt_image(
 
     center_text(
         draw,
-        xy_y=1157,
+        xy_y=1697,
         text=(
             f"{confidence_label} // "
             f"{profile} // "
@@ -1267,7 +1792,7 @@ def build_receipt_image(
 
     draw_dashed_line(
         draw,
-        y=1205,
+        y=1745,
     )
 
     exact_score_share = (
@@ -1282,8 +1807,8 @@ def build_receipt_image(
 
     draw_row(
         draw,
-        y=1230,
-        label="EXACT SCORE SHARE",
+        y=1770,
+        label="PROJECTED EXACT-SCORE PROB.",
         value=(
             f"{exact_score_share:.2f}%"
         ),
@@ -1293,7 +1818,7 @@ def build_receipt_image(
 
     draw_row(
         draw,
-        y=1265,
+        y=1805,
         label="EXPECTED GOALS",
         value=(
             f"{float(row['score_home_lambda']):.2f}"
@@ -1306,7 +1831,7 @@ def build_receipt_image(
 
     draw_row(
         draw,
-        y=1300,
+        y=1840,
         label="BRIDGE QUALITY",
         value=(
             f"{row['score_bridge_quality']} // "
@@ -1322,7 +1847,7 @@ def build_receipt_image(
 
     draw_dashed_line(
         draw,
-        y=1345,
+        y=1885,
     )
 
     feature_text = (
@@ -1333,7 +1858,7 @@ def build_receipt_image(
 
     center_text(
         draw,
-        xy_y=1370,
+        xy_y=1910,
         text=feature_text,
         font=mono_small,
     )
@@ -1346,7 +1871,7 @@ def build_receipt_image(
 
     center_text(
         draw,
-        xy_y=1403,
+        xy_y=1943,
         text=feature_text_2,
         font=mono_small,
     )
@@ -1358,25 +1883,25 @@ def build_receipt_image(
     draw.rectangle(
         (
             80,
-            1450,
+            1990,
             RECEIPT_WIDTH - 80,
-            1457,
+            1997,
         ),
         fill=INK_RGB,
     )
 
     center_text(
         draw,
-        xy_y=1475,
+        xy_y=2015,
         text="PROBABILITY != CONFIDENCE",
         font=mono_bold,
     )
 
     center_text(
         draw,
-        xy_y=1507,
+        xy_y=2047,
         text=(
-            "SCORELINE IS AN AUXILIARY POISSON ESTIMATE"
+            "PROJECTED SCORE = RESULT-CONSISTENT POISSON ESTIMATE"
         ),
         font=mono_small,
         fill=MUTED_RGB,
@@ -1388,13 +1913,13 @@ def build_receipt_image(
 
     draw_fake_barcode(
         draw,
-        y=1550,
+        y=2090,
         identifier=receipt_id,
     )
 
     center_text(
         draw,
-        xy_y=1615,
+        xy_y=2155,
         text=receipt_id.replace(
             "-",
             "",

@@ -697,6 +697,103 @@ def select_scoreline(
 
 
 # ============================================================
+# SCORE DISTRIBUTION SUMMARY
+# ============================================================
+
+
+def score_distribution_summary(
+    *,
+    matrix: np.ndarray,
+    top_n: int = 5,
+) -> dict:
+    """
+    Summarize the fitted Poisson score distribution.
+
+    This function does NOT alter:
+    - CatBoost probabilities
+    - Poisson lambdas
+    - displayed score selection
+    - evidence confidence
+
+    It only exposes information already contained
+    in the fitted score matrix.
+    """
+
+    scorelines = []
+
+    for home_goals in range(
+        matrix.shape[0]
+    ):
+
+        for away_goals in range(
+            matrix.shape[1]
+        ):
+
+            probability = float(
+                matrix[
+                    home_goals,
+                    away_goals,
+                ]
+            )
+
+            scorelines.append(
+                {
+                    "home_goals": int(
+                        home_goals
+                    ),
+                    "away_goals": int(
+                        away_goals
+                    ),
+                    "scoreline": (
+                        f"{home_goals}-"
+                        f"{away_goals}"
+                    ),
+                    "probability": (
+                        probability
+                    ),
+                    "result": (
+                        scoreline_outcome(
+                            home_goals,
+                            away_goals,
+                        )
+                    ),
+                }
+            )
+
+    scorelines.sort(
+        key=lambda item: (
+            item["probability"]
+        ),
+        reverse=True,
+    )
+
+    home_3plus_probability = float(
+        matrix[
+            3:,
+            :,
+        ].sum()
+    )
+
+    away_3plus_probability = float(
+        matrix[
+            :,
+            3:,
+        ].sum()
+    )
+
+    return {
+        "top_scorelines": (
+            scorelines[:top_n]
+        ),
+        "home_3plus_probability": (
+            home_3plus_probability
+        ),
+        "away_3plus_probability": (
+            away_3plus_probability
+        ),
+    }
+
+# ============================================================
 # BRIDGE QUALITY
 # ============================================================
 
@@ -985,6 +1082,124 @@ def run_quality_checks(
         "Exact-score probabilities valid ✓"
     )
 
+    distribution_probability_columns = [
+        "score_home_3plus_probability",
+        "score_away_3plus_probability",
+        "score_top_1_probability",
+        "score_top_2_probability",
+        "score_top_3_probability",
+        "score_top_4_probability",
+        "score_top_5_probability",
+    ]
+
+    for column in distribution_probability_columns:
+
+        invalid_distribution_probabilities = int(
+            (
+                (
+                    output[
+                        column
+                    ]
+                    <
+                    0
+                )
+                |
+                (
+                    output[
+                        column
+                    ]
+                    >
+                    1
+                )
+            ).sum()
+        )
+
+        if invalid_distribution_probabilities:
+
+            raise RuntimeError(
+                "Invalid score-distribution probability "
+                f"in {column}."
+            )
+
+    top_mode_mismatch = int(
+        (
+            output[
+                "score_top_1_scoreline"
+            ]
+            !=
+            output[
+                "global_modal_scoreline"
+            ]
+        ).sum()
+    )
+
+    if top_mode_mismatch:
+
+        raise RuntimeError(
+            "Top scoreline does not match "
+            "global modal scoreline."
+        )
+
+    top_probability_mismatch = int(
+        (
+            ~np.isclose(
+                output[
+                    "score_top_1_probability"
+                ].to_numpy(
+                    dtype=float
+                ),
+                output[
+                    "global_modal_scoreline_probability"
+                ].to_numpy(
+                    dtype=float
+                ),
+                atol=1e-12,
+                rtol=0,
+            )
+        ).sum()
+    )
+
+    if top_probability_mismatch:
+
+        raise RuntimeError(
+            "Top scoreline probability does not "
+            "match global modal probability."
+        )
+
+    expected_display_flags = (
+        output[
+            "predicted_scoreline"
+        ]
+        ==
+        output[
+            "global_modal_scoreline"
+        ]
+    )
+
+    stored_display_flags = output[
+        "score_display_is_global_mode"
+    ].astype(
+        bool
+    )
+
+    if not (
+        stored_display_flags.to_numpy()
+        ==
+        expected_display_flags.to_numpy()
+    ).all():
+
+        raise RuntimeError(
+            "Displayed/global-mode flag is inconsistent."
+        )
+
+    print(
+        "Score distribution probabilities valid ✓"
+    )
+
+    print(
+        "Top-score distribution matches global mode ✓"
+    )
+
     print(
         "Score layer remains separate from CatBoost ✓"
     )
@@ -1091,6 +1306,56 @@ def print_report(
         print(
             f"  Exact-score share: "
             f"{row.predicted_scoreline_probability * 100:.2f}%"
+        )
+
+        print(
+            "\nScore distribution:"
+        )
+
+        print(
+            f"  Home 3+ goals: "
+            f"{row.score_home_3plus_probability * 100:.2f}%"
+        )
+
+        print(
+            f"  Away 3+ goals: "
+            f"{row.score_away_3plus_probability * 100:.2f}%"
+        )
+
+        print(
+            "  Top exact scorelines:"
+        )
+
+        for rank in range(
+            1,
+            6,
+        ):
+
+            scoreline = getattr(
+                row,
+                f"score_top_{rank}_scoreline",
+            )
+
+            probability = getattr(
+                row,
+                f"score_top_{rank}_probability",
+            )
+
+            result = getattr(
+                row,
+                f"score_top_{rank}_result",
+            )
+
+            print(
+                f"    {rank}. "
+                f"{scoreline}  "
+                f"{probability * 100:.2f}% "
+                f"({result})"
+            )
+
+        print(
+            f"  Displayed score is global mode: "
+            f"{row.score_display_is_global_mode}"
         )
 
         print(
@@ -1210,6 +1475,62 @@ def build_live_scorelines() -> None:
             ),
         )
 
+        distribution = score_distribution_summary(
+            matrix=bridge[
+                "matrix"
+            ],
+            top_n=5,
+        )
+
+        distribution_fields = {
+            "score_display_is_global_mode": (
+                selected[
+                    "predicted_scoreline"
+                ]
+                ==
+                selected[
+                    "global_modal_scoreline"
+                ]
+            ),
+
+            "score_home_3plus_probability": (
+                distribution[
+                    "home_3plus_probability"
+                ]
+            ),
+
+            "score_away_3plus_probability": (
+                distribution[
+                    "away_3plus_probability"
+                ]
+            ),
+        }
+
+        for rank, score in enumerate(
+            distribution[
+                "top_scorelines"
+            ],
+            start=1,
+        ):
+
+            distribution_fields[
+                f"score_top_{rank}_scoreline"
+            ] = score[
+                "scoreline"
+            ]
+
+            distribution_fields[
+                f"score_top_{rank}_probability"
+            ] = score[
+                "probability"
+            ]
+
+            distribution_fields[
+                f"score_top_{rank}_result"
+            ] = score[
+                "result"
+            ]
+
         rows.append(
             {
                 **prediction.to_dict(),
@@ -1272,6 +1593,8 @@ def build_live_scorelines() -> None:
 
                 **selected,
 
+                **distribution_fields,
+
                 "scoreline_method": (
                     "POISSON_BRIDGE_TO_FROZEN_HDA"
                 ),
@@ -1319,6 +1642,24 @@ def build_live_scorelines() -> None:
         "global_modal_scoreline",
         "global_modal_scoreline_probability",
         "global_modal_result",
+        "score_display_is_global_mode",
+        "score_home_3plus_probability",
+        "score_away_3plus_probability",
+        "score_top_1_scoreline",
+        "score_top_1_probability",
+        "score_top_1_result",
+        "score_top_2_scoreline",
+        "score_top_2_probability",
+        "score_top_2_result",
+        "score_top_3_scoreline",
+        "score_top_3_probability",
+        "score_top_3_result",
+        "score_top_4_scoreline",
+        "score_top_4_probability",
+        "score_top_4_result",
+        "score_top_5_scoreline",
+        "score_top_5_probability",
+        "score_top_5_result",
         "home_probability",
         "draw_probability",
         "away_probability",
@@ -1391,6 +1732,14 @@ def build_live_scorelines() -> None:
             "refine_step": (
                 REFINE_STEP
             ),
+        },
+
+        "score_distribution": {
+            "top_scorelines_reported": 5,
+
+            "three_plus_goal_probabilities_reported": True,
+
+            "displayed_score_global_mode_flag_reported": True,
         },
 
         "rules": {
