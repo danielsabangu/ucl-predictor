@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import shutil
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -128,20 +129,40 @@ SHADOW_OUTPUT_DIR = (
     / "research"
 )
 
-SHADOW_COMPARISON_FILE = (
+# The first V2 shadow snapshot was created before the immutable
+# archive layout existed. These three legacy files are now treated
+# as frozen research evidence and must never be overwritten.
+LEGACY_SHADOW_COMPARISON_FILE = (
     SHADOW_OUTPUT_DIR
     / "v2_shadow_next_matchday_comparison.csv"
 )
 
-SHADOW_FEATURE_MATRIX_FILE = (
+LEGACY_SHADOW_FEATURE_MATRIX_FILE = (
     SHADOW_OUTPUT_DIR
     / "v2_shadow_next_matchday_features.csv"
 )
 
-SHADOW_METADATA_FILE = (
+LEGACY_SHADOW_METADATA_FILE = (
     SHADOW_OUTPUT_DIR
     / "v2_shadow_next_matchday_metadata.json"
 )
+
+FROZEN_LEGACY_SHADOW_FILES = [
+    LEGACY_SHADOW_COMPARISON_FILE,
+    LEGACY_SHADOW_FEATURE_MATRIX_FILE,
+    LEGACY_SHADOW_METADATA_FILE,
+]
+
+# Every new shadow run is written exactly once beneath a UTC fixture
+# date. Existing dates are never replaced or revised in place.
+SHADOW_ARCHIVE_ROOT = (
+    SHADOW_OUTPUT_DIR
+    / "shadow"
+)
+
+SHADOW_COMPARISON_FILENAME = "comparison.csv"
+SHADOW_FEATURE_MATRIX_FILENAME = "features.csv"
+SHADOW_METADATA_FILENAME = "metadata.json"
 
 
 # ============================================================
@@ -228,13 +249,15 @@ def sha256_file(
     return hasher.hexdigest()
 
 
-def snapshot_protected_files() -> dict[
+def snapshot_files(
+    paths: list[Path],
+) -> dict[
     str,
     str | None,
 ]:
     snapshot = {}
 
-    for path in PROTECTED_FILES:
+    for path in paths:
         key = relative_path(
             path
         )
@@ -254,7 +277,25 @@ def snapshot_protected_files() -> dict[
     return snapshot
 
 
-def verify_protected_files_unchanged(
+def snapshot_protected_files() -> dict[
+    str,
+    str | None,
+]:
+    return snapshot_files(
+        PROTECTED_FILES
+    )
+
+
+def snapshot_frozen_legacy_shadow_files() -> dict[
+    str,
+    str | None,
+]:
+    return snapshot_files(
+        FROZEN_LEGACY_SHADOW_FILES
+    )
+
+
+def verify_file_snapshot_unchanged(
     before: dict[
         str,
         str | None,
@@ -263,6 +304,8 @@ def verify_protected_files_unchanged(
         str,
         str | None,
     ],
+    *,
+    description: str,
 ) -> None:
     if before != after:
         changed = []
@@ -292,12 +335,331 @@ def verify_protected_files_unchanged(
                 )
 
         raise RuntimeError(
-            "Protected production files changed "
-            "during shadow inference:\n"
+            f"{description} changed during "
+            "shadow inference:\n"
             + "\n".join(
                 changed
             )
         )
+
+
+def verify_protected_files_unchanged(
+    before: dict[
+        str,
+        str | None,
+    ],
+    after: dict[
+        str,
+        str | None,
+    ],
+) -> None:
+    verify_file_snapshot_unchanged(
+        before,
+        after,
+        description=(
+            "Protected production files"
+        ),
+    )
+
+
+def verify_frozen_legacy_shadow_files_unchanged(
+    before: dict[
+        str,
+        str | None,
+    ],
+    after: dict[
+        str,
+        str | None,
+    ],
+) -> None:
+    verify_file_snapshot_unchanged(
+        before,
+        after,
+        description=(
+            "Frozen legacy shadow files"
+        ),
+    )
+
+
+def normalize_fixture_date_utc(
+    value,
+) -> str:
+    timestamp = pd.Timestamp(
+        value
+    )
+
+    if timestamp.tzinfo is None:
+        timestamp = timestamp.tz_localize(
+            "UTC"
+        )
+
+    else:
+        timestamp = timestamp.tz_convert(
+            "UTC"
+        )
+
+    return timestamp.date().isoformat()
+
+
+def fixture_date_utc_from_frame(
+    dataframe: pd.DataFrame,
+) -> str:
+    if "date_utc" not in dataframe.columns:
+        raise RuntimeError(
+            "Shadow fixtures are missing "
+            "date_utc."
+        )
+
+    if dataframe.empty:
+        raise RuntimeError(
+            "Shadow fixtures are empty."
+        )
+
+    dates = {
+        normalize_fixture_date_utc(
+            value
+        )
+        for value in dataframe[
+            "date_utc"
+        ]
+    }
+
+    if len(
+        dates
+    ) != 1:
+        raise RuntimeError(
+            "A shadow archive must contain "
+            "exactly one UTC fixture date. "
+            f"Found: {sorted(dates)}"
+        )
+
+    return next(
+        iter(
+            dates
+        )
+    )
+
+
+def load_legacy_shadow_fixture_date() -> (
+    str
+    | None
+):
+    existence = [
+        path.exists()
+        for path in (
+            FROZEN_LEGACY_SHADOW_FILES
+        )
+    ]
+
+    if not any(
+        existence
+    ):
+        return None
+
+    if not all(
+        existence
+    ):
+        missing = [
+            relative_path(
+                path
+            )
+            for path in (
+                FROZEN_LEGACY_SHADOW_FILES
+            )
+            if not path.exists()
+        ]
+
+        raise RuntimeError(
+            "The frozen legacy shadow snapshot "
+            "is incomplete. Missing:\n"
+            + "\n".join(
+                missing
+            )
+        )
+
+    with LEGACY_SHADOW_METADATA_FILE.open(
+        "r",
+        encoding="utf-8",
+    ) as file:
+        metadata = json.load(
+            file
+        )
+
+    fixture_date = metadata.get(
+        "fixture_date_utc"
+    )
+
+    if not fixture_date:
+        raise RuntimeError(
+            "The frozen legacy shadow metadata "
+            "does not contain fixture_date_utc."
+        )
+
+    normalized = normalize_fixture_date_utc(
+        fixture_date
+    )
+
+    return normalized
+
+
+def build_shadow_archive_paths(
+    fixture_date_utc: str,
+    *,
+    archive_root: Path | None = None,
+) -> dict[
+    str,
+    Path,
+]:
+    normalized_date = normalize_fixture_date_utc(
+        fixture_date_utc
+    )
+
+    root = (
+        SHADOW_ARCHIVE_ROOT
+        if archive_root is None
+        else Path(
+            archive_root
+        )
+    )
+
+    archive_dir = (
+        root
+        / normalized_date
+    )
+
+    return {
+        "directory": archive_dir,
+        "comparison": (
+            archive_dir
+            / SHADOW_COMPARISON_FILENAME
+        ),
+        "feature_matrix": (
+            archive_dir
+            / SHADOW_FEATURE_MATRIX_FILENAME
+        ),
+        "metadata": (
+            archive_dir
+            / SHADOW_METADATA_FILENAME
+        ),
+    }
+
+
+def shadow_date_frozen_reason(
+    fixture_date_utc: str,
+    *,
+    archive_root: Path | None = None,
+    include_legacy: bool = True,
+) -> str | None:
+    normalized_date = normalize_fixture_date_utc(
+        fixture_date_utc
+    )
+
+    if include_legacy:
+        legacy_date = (
+            load_legacy_shadow_fixture_date()
+        )
+
+        if (
+            legacy_date is not None
+            and
+            legacy_date == normalized_date
+        ):
+            return (
+                "A frozen legacy shadow snapshot "
+                f"already exists for {normalized_date}."
+            )
+
+    paths = build_shadow_archive_paths(
+        normalized_date,
+        archive_root=archive_root,
+    )
+
+    archive_dir = paths[
+        "directory"
+    ]
+
+    if archive_dir.exists():
+        return (
+            "An immutable shadow archive already "
+            f"exists for {normalized_date}:\n"
+            f"{archive_dir}"
+        )
+
+    existing_targets = [
+        path
+        for key, path in paths.items()
+        if (
+            key != "directory"
+            and
+            path.exists()
+        )
+    ]
+
+    if existing_targets:
+        return (
+            "Immutable shadow archive targets "
+            f"already exist for {normalized_date}:\n"
+            + "\n".join(
+                str(
+                    path
+                )
+                for path in existing_targets
+            )
+        )
+
+    return None
+
+
+def ensure_shadow_date_is_not_frozen(
+    fixture_date_utc: str,
+    *,
+    archive_root: Path | None = None,
+    include_legacy: bool = True,
+) -> None:
+    reason = shadow_date_frozen_reason(
+        fixture_date_utc,
+        archive_root=archive_root,
+        include_legacy=include_legacy,
+    )
+
+    if reason is not None:
+        raise RuntimeError(
+            reason
+            + "\nRefusing to overwrite frozen "
+            "pre-match shadow evidence."
+        )
+
+
+def immutable_input_hashes() -> dict[
+    str,
+    str,
+]:
+    files = {
+        "v1_model": V1_MODEL_FILE,
+        "v1_metadata": V1_METADATA_FILE,
+        "v2_model": V2_MODEL_FILE,
+        "v2_metadata": V2_METADATA_FILE,
+        "live_uefa_features": LIVE_UEFA_FILE,
+    }
+
+    hashes = {}
+
+    for key, path in files.items():
+        require_file(
+            path,
+            key.replace(
+                "_",
+                " "
+            ),
+        )
+
+        hashes[
+            key
+        ] = sha256_file(
+            path
+        )
+
+    return hashes
 
 
 def normalize_source_match_id(
@@ -1475,6 +1837,36 @@ def run_validation_only() -> None:
         "fixtures"
     ]
 
+    fixture_date_utc = (
+        fixture_date_utc_from_frame(
+            fixtures
+        )
+    )
+
+    frozen_reason = (
+        shadow_date_frozen_reason(
+            fixture_date_utc
+        )
+    )
+
+    print()
+    print(
+        "Immutable shadow archive:"
+    )
+
+    if frozen_reason is None:
+        print(
+            "  Current fixture date: AVAILABLE"
+        )
+
+    else:
+        print(
+            "  Current fixture date: FROZEN"
+        )
+        print(
+            "  Rerun protection: ACTIVE"
+        )
+
     print()
     print(
         "V1 feature count: "
@@ -1942,6 +2334,10 @@ def run_shadow_inference() -> None:
         snapshot_protected_files()
     )
 
+    frozen_legacy_before = (
+        snapshot_frozen_legacy_shadow_files()
+    )
+
     context = (
         prepare_shadow_context()
     )
@@ -1969,6 +2365,26 @@ def run_shadow_inference() -> None:
     fixtures = context[
         "fixtures"
     ]
+
+    fixture_date_utc = (
+        fixture_date_utc_from_frame(
+            fixtures
+        )
+    )
+
+    ensure_shadow_date_is_not_frozen(
+        fixture_date_utc
+    )
+
+    archive_paths = (
+        build_shadow_archive_paths(
+            fixture_date_utc
+        )
+    )
+
+    input_hashes = (
+        immutable_input_hashes()
+    )
 
     uefa_lookup = context[
         "uefa_lookup"
@@ -2571,210 +2987,313 @@ def run_shadow_inference() -> None:
         ]
     )
 
-    SHADOW_OUTPUT_DIR.mkdir(
+    SHADOW_ARCHIVE_ROOT.mkdir(
         parents=True,
         exist_ok=True,
     )
 
-    comparison.to_csv(
-        SHADOW_COMPARISON_FILE,
-        index=False,
-        encoding="utf-8",
+    archive_dir = archive_paths[
+        "directory"
+    ]
+
+    # This is the hard immutability boundary. The directory is
+    # created with exist_ok=False so an existing shadow date can
+    # never be silently revised.
+    archive_dir.mkdir(
+        parents=False,
+        exist_ok=False,
     )
 
-    feature_matrix.to_csv(
-        SHADOW_FEATURE_MATRIX_FILE,
-        index=False,
-        encoding="utf-8",
-    )
-
-    protected_after = (
-        snapshot_protected_files()
-    )
-
-    verify_protected_files_unchanged(
-        protected_before,
-        protected_after,
-    )
-
-    metadata = {
-        "created_at_utc": (
-            datetime.now(
-                timezone.utc
-            ).isoformat()
-        ),
-
-        "status": (
-            "shadow_research_only"
-        ),
-
-        "production_promoted": (
-            False
-        ),
-
-        "public_predictions_modified": (
-            False
-        ),
-
-        "prediction_history_modified": (
-            False
-        ),
-
-        "comparison_season_re_run": (
-            False
-        ),
-
-        "v1_model_version": (
-            V1_MODEL_VERSION
-        ),
-
-        "v2_model_version": (
-            V2_MODEL_VERSION
-        ),
-
-        "v2_model_status": (
-            V2_REQUIRED_STATUS
-        ),
-
-        "v1_feature_count": (
-            EXPECTED_V1_FEATURES
-        ),
-
-        "v2_feature_count": (
-            EXPECTED_V2_FEATURES
-        ),
-
-        "selected_uefa_features": (
-            LOCKED_UEFA_FEATURES
-        ),
-
-        "live_feature_builder": (
-            "src.ml.predict_live_fixed."
-            "build_fixture_features"
-        ),
-
-        "fixture_identity": (
-            "source_match_id"
-        ),
-
-        "fixture_count": int(
-            len(
-                comparison
-            )
-        ),
-
-        "fixture_date_utc": (
-            comparison[
-                "kickoff_utc"
-            ]
-            .min()
-            .date()
-            .isoformat()
-        ),
-
-        "pick_change_count": (
-            pick_changes
-        ),
-
-        "pick_change_rate": (
-            pick_changes
-            /
-            len(
-                comparison
-            )
-        ),
-
-        "overall_mean_absolute_probability_delta_pp": (
-            overall_mean_abs_delta
-        ),
-
-        "maximum_class_probability_delta_pp": (
-            max_class_shift_pp
-        ),
-
-        "maximum_shift_fixture": {
-            "source_match_id": str(
-                largest_row[
-                    "source_match_id"
-                ]
-            ),
-
-            "home_team": str(
-                largest_row[
-                    "home_team"
-                ]
-            ),
-
-            "away_team": str(
-                largest_row[
-                    "away_team"
-                ]
-            ),
-        },
-
-        "output_files": {
-            "comparison": (
-                relative_path(
-                    SHADOW_COMPARISON_FILE
-                )
-            ),
-
-            "feature_matrix": (
-                relative_path(
-                    SHADOW_FEATURE_MATRIX_FILE
-                )
-            ),
-        },
-
-        "protected_production_files": {
-            "unchanged": True,
-
-            "files_checked": sorted(
-                protected_before.keys()
-            ),
-        },
-
-        "rules": {
-            "v1_model_modified": False,
-
-            "v1_metadata_modified": False,
-
-            "production_prediction_files_modified": False,
-
-            "public_app_files_modified": False,
-
-            "prediction_history_modified": False,
-
-            "production_release_called": False,
-
-            "v2_promoted": False,
-
-            "same_290_live_features_used_for_both_models": True,
-
-            "v2_only_adds_locked_uefa_features": True,
-
-            "fuzzy_uefa_matching_used": False,
-
-            "2025_confirmation_re_run": False,
-
-            "raw_probabilities_only": True,
-
-            "probability_is_not_confidence": True,
-
-            "shadow_results_are_not_performance_evidence": True,
-        },
-    }
-
-    with SHADOW_METADATA_FILE.open(
-        "w",
-        encoding="utf-8",
-    ) as file:
-        json.dump(
-            metadata,
-            file,
-            indent=2,
-            ensure_ascii=False,
+    try:
+        comparison.to_csv(
+            archive_paths[
+                "comparison"
+            ],
+            index=False,
+            encoding="utf-8",
         )
+
+        feature_matrix.to_csv(
+            archive_paths[
+                "feature_matrix"
+            ],
+            index=False,
+            encoding="utf-8",
+        )
+
+        protected_after = (
+            snapshot_protected_files()
+        )
+
+        frozen_legacy_after = (
+            snapshot_frozen_legacy_shadow_files()
+        )
+
+        verify_protected_files_unchanged(
+            protected_before,
+            protected_after,
+        )
+
+        verify_frozen_legacy_shadow_files_unchanged(
+            frozen_legacy_before,
+            frozen_legacy_after,
+        )
+
+        comparison_sha256 = sha256_file(
+            archive_paths[
+                "comparison"
+            ]
+        )
+
+        feature_matrix_sha256 = sha256_file(
+            archive_paths[
+                "feature_matrix"
+            ]
+        )
+
+        metadata = {
+            "created_at_utc": (
+                datetime.now(
+                    timezone.utc
+                ).isoformat()
+            ),
+
+            "status": (
+                "shadow_research_only"
+            ),
+
+            "production_promoted": (
+                False
+            ),
+
+            "public_predictions_modified": (
+                False
+            ),
+
+            "prediction_history_modified": (
+                False
+            ),
+
+            "comparison_season_re_run": (
+                False
+            ),
+
+            "v1_model_version": (
+                V1_MODEL_VERSION
+            ),
+
+            "v2_model_version": (
+                V2_MODEL_VERSION
+            ),
+
+            "v2_model_status": (
+                V2_REQUIRED_STATUS
+            ),
+
+            "v1_feature_count": (
+                EXPECTED_V1_FEATURES
+            ),
+
+            "v2_feature_count": (
+                EXPECTED_V2_FEATURES
+            ),
+
+            "selected_uefa_features": (
+                LOCKED_UEFA_FEATURES
+            ),
+
+            "live_feature_builder": (
+                "src.ml.predict_live_fixed."
+                "build_fixture_features"
+            ),
+
+            "fixture_identity": (
+                "source_match_id"
+            ),
+
+            "fixture_count": int(
+                len(
+                    comparison
+                )
+            ),
+
+            "fixture_date_utc": (
+                fixture_date_utc
+            ),
+
+            "pick_change_count": (
+                pick_changes
+            ),
+
+            "pick_change_rate": (
+                pick_changes
+                /
+                len(
+                    comparison
+                )
+            ),
+
+            "overall_mean_absolute_probability_delta_pp": (
+                overall_mean_abs_delta
+            ),
+
+            "maximum_class_probability_delta_pp": (
+                max_class_shift_pp
+            ),
+
+            "maximum_shift_fixture": {
+                "source_match_id": str(
+                    largest_row[
+                        "source_match_id"
+                    ]
+                ),
+
+                "home_team": str(
+                    largest_row[
+                        "home_team"
+                    ]
+                ),
+
+                "away_team": str(
+                    largest_row[
+                        "away_team"
+                    ]
+                ),
+            },
+
+            "archive": {
+                "archive_id": (
+                    fixture_date_utc
+                ),
+
+                "immutable": True,
+
+                "overwrite_allowed": False,
+
+                "directory": (
+                    relative_path(
+                        archive_paths[
+                            "directory"
+                        ]
+                    )
+                ),
+
+                "comparison_sha256": (
+                    comparison_sha256
+                ),
+
+                "feature_matrix_sha256": (
+                    feature_matrix_sha256
+                ),
+            },
+
+            "input_hashes": (
+                input_hashes
+            ),
+
+            "output_files": {
+                "comparison": (
+                    relative_path(
+                        archive_paths[
+                            "comparison"
+                        ]
+                    )
+                ),
+
+                "feature_matrix": (
+                    relative_path(
+                        archive_paths[
+                            "feature_matrix"
+                        ]
+                    )
+                ),
+
+                "metadata": (
+                    relative_path(
+                        archive_paths[
+                            "metadata"
+                        ]
+                    )
+                ),
+            },
+
+            "protected_production_files": {
+                "unchanged": True,
+
+                "files_checked": sorted(
+                    protected_before.keys()
+                ),
+            },
+
+            "frozen_legacy_shadow_files": {
+                "unchanged": True,
+
+                "files_checked": sorted(
+                    frozen_legacy_before.keys()
+                ),
+            },
+
+            "rules": {
+                "v1_model_modified": False,
+
+                "v1_metadata_modified": False,
+
+                "production_prediction_files_modified": False,
+
+                "public_app_files_modified": False,
+
+                "prediction_history_modified": False,
+
+                "production_release_called": False,
+
+                "v2_promoted": False,
+
+                "same_290_live_features_used_for_both_models": True,
+
+                "v2_only_adds_locked_uefa_features": True,
+
+                "fuzzy_uefa_matching_used": False,
+
+                "2025_confirmation_re_run": False,
+
+                "raw_probabilities_only": True,
+
+                "probability_is_not_confidence": True,
+
+                "shadow_results_are_not_performance_evidence": True,
+
+                "immutable_archive_write": True,
+
+                "existing_snapshot_overwrite_allowed": False,
+
+                "legacy_first_shadow_snapshot_protected": True,
+            },
+        }
+
+        with archive_paths[
+            "metadata"
+        ].open(
+            "x",
+            encoding="utf-8",
+        ) as file:
+            json.dump(
+                metadata,
+                file,
+                indent=2,
+                ensure_ascii=False,
+            )
+
+    except Exception:
+        # If this run fails after reserving a new archive directory,
+        # remove only the directory created by this process. Existing
+        # archives are never touched because the date guard and
+        # exist_ok=False prevent entering this block for them.
+        if archive_dir.exists():
+            shutil.rmtree(
+                archive_dir
+            )
+
+        raise
 
     print_shadow_results(
         comparison
@@ -2866,7 +3385,9 @@ def run_shadow_inference() -> None:
     )
 
     print(
-        SHADOW_COMPARISON_FILE
+        archive_paths[
+            "comparison"
+        ]
     )
 
     print()
@@ -2875,7 +3396,9 @@ def run_shadow_inference() -> None:
     )
 
     print(
-        SHADOW_FEATURE_MATRIX_FILE
+        archive_paths[
+            "feature_matrix"
+        ]
     )
 
     print()
@@ -2884,7 +3407,9 @@ def run_shadow_inference() -> None:
     )
 
     print(
-        SHADOW_METADATA_FILE
+        archive_paths[
+            "metadata"
+        ]
     )
 
     print()
