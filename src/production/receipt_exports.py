@@ -839,7 +839,7 @@ def build_receipt_image(
     center_text(
         draw,
         xy_y=112,
-        text="PRODUCTION PREDICTION RECEIPT",
+        text="MATCH FORECAST RECEIPT",
         font=mono_small,
         fill=MUTED_RGB,
     )
@@ -991,7 +991,7 @@ def build_receipt_image(
     center_text(
         draw,
         xy_y=680,
-        text="PROJECTED SCORE // RESULT-CONSISTENT POISSON",
+        text="PROJECTED SCORE",
         font=mono_small,
         fill=MUTED_RGB,
     )
@@ -1001,7 +1001,7 @@ def build_receipt_image(
         xy_y=714,
         text=(
             f"{exact_score_probability * 100:.1f}% "
-            "EXACT-SCORE PROBABILITY"
+            "CHANCE OF THIS SCORE"
         ),
         font=mono_bold,
     )
@@ -1026,7 +1026,7 @@ def build_receipt_image(
     center_text(
         draw,
         xy_y=788,
-        text="CATBOOST RESULT PICK",
+        text="PREDICTED WINNER",
         font=mono_small,
         fill=MUTED_RGB,
     )
@@ -1226,13 +1226,13 @@ def build_receipt_image(
             80,
             distribution_top,
         ),
-        "// SCORE RANGE",
+        "MOST LIKELY SCORELINES",
         font=mono_bold,
         fill=INK_RGB,
     )
 
     relative_note = (
-        "TOP 5 EXACT-SCORE CELLS // "
+        "TOP 5 SCORE OUTCOMES // "
         "BARS = RELATIVE LIKELIHOOD"
     )
 
@@ -1405,7 +1405,7 @@ def build_receipt_image(
             if is_mode:
 
                 tags.append(
-                    "MODE"
+                    "MOST LIKELY"
                 )
 
             if is_projected:
@@ -1644,17 +1644,15 @@ def build_receipt_image(
 
             modal_note = (
                 "PROJECTED SCORE IS ALSO "
-                "THE GLOBAL MODAL EXACT SCORE."
+                "THE MOST LIKELY SCORE OVERALL."
             )
 
         else:
 
             modal_note = (
-                f"MODE {global_modal_scoreline} = "
-                "HIGHEST-PROBABILITY EXACT SCORE OVERALL // "
-                f"PROJECTED {projected_scoreline} = "
-                "HIGHEST-PROBABILITY SCORE CONSISTENT "
-                "WITH RESULT PICK"
+                f"MOST LIKELY: {global_modal_scoreline} // "
+                f"PROJECTED: {projected_scoreline} BECAUSE "
+                f"{pick} IS THE PREDICTED WINNER."
             )
 
         modal_note_font = fit_font(
@@ -1705,7 +1703,7 @@ def build_receipt_image(
     draw_row(
         draw,
         y=1620,
-        label="EVIDENCE CONFIDENCE",
+        label="EVIDENCE STRENGTH",
         value=f"{confidence:.2f}%",
         font=mono_medium,
         value_font=mono_bold,
@@ -1795,11 +1793,14 @@ def build_receipt_image(
         y=1745,
     )
 
-    exact_score_share = (
+    top_score_probability = (
         float(
-            row[
-                "predicted_scoreline_probability"
-            ]
+            row.get(
+                "score_top_1_probability",
+                row[
+                    "predicted_scoreline_probability"
+                ],
+            )
         )
         *
         100.0
@@ -1808,9 +1809,10 @@ def build_receipt_image(
     draw_row(
         draw,
         y=1770,
-        label="PROJECTED EXACT-SCORE PROB.",
+        label="MOST LIKELY SCORE OVERALL",
         value=(
-            f"{exact_score_share:.2f}%"
+            f"{global_modal_scoreline} // "
+            f"{top_score_probability:.2f}%"
         ),
         font=mono_small,
         value_font=mono_bold,
@@ -1819,11 +1821,9 @@ def build_receipt_image(
     draw_row(
         draw,
         y=1805,
-        label="EXPECTED GOALS",
+        label="PREDICTED RESULT CHANCE",
         value=(
-            f"{float(row['score_home_lambda']):.2f}"
-            " - "
-            f"{float(row['score_away_lambda']):.2f}"
+            f"{float(row['max_probability']) * 100:.2f}%"
         ),
         font=mono_small,
         value_font=mono_bold,
@@ -1832,10 +1832,9 @@ def build_receipt_image(
     draw_row(
         draw,
         y=1840,
-        label="BRIDGE QUALITY",
+        label="DATA COVERAGE",
         value=(
-            f"{row['score_bridge_quality']} // "
-            f"{float(row['score_bridge_max_error_pp']):.3f} PP"
+            f"{float(row['overall_feature_availability']) * 100:.2f}%"
         ),
         font=mono_small,
         value_font=mono_bold,
@@ -1851,9 +1850,8 @@ def build_receipt_image(
     )
 
     feature_text = (
-        f"ELO {int(row['elo_features_available'])}/6  //  "
-        f"UCL {int(row['ucl_form_features_available'])}/81  //  "
-        f"DOM {int(row['domestic_features_available'])}/102"
+        f"{int(row['overall_features_available'])}/290 "
+        "PRE-MATCH SIGNALS AVAILABLE"
     )
 
     center_text(
@@ -1863,17 +1861,12 @@ def build_receipt_image(
         font=mono_small,
     )
 
-    feature_text_2 = (
-        f"SQUAD {int(row['squad_features_available'])}/101  //  "
-        f"TOTAL {int(row['overall_features_available'])}/290  "
-        f"({float(row['overall_feature_availability']) * 100:.2f}%)"
-    )
-
     center_text(
         draw,
         xy_y=1943,
-        text=feature_text_2,
+        text="TEAM STRENGTH // FORM // SQUAD EVIDENCE",
         font=mono_small,
+        fill=MUTED_RGB,
     )
 
     # ========================================================
@@ -1893,7 +1886,7 @@ def build_receipt_image(
     center_text(
         draw,
         xy_y=2015,
-        text="PROBABILITY != CONFIDENCE",
+        text="PROBABILITIES ARE NOT CERTAINTIES",
         font=mono_bold,
     )
 
@@ -1901,7 +1894,7 @@ def build_receipt_image(
         draw,
         xy_y=2047,
         text=(
-            "PROJECTED SCORE = RESULT-CONSISTENT POISSON ESTIMATE"
+            "PROJECTED SCORE IS A PLAUSIBLE OUTCOME, NOT A GUARANTEE"
         ),
         font=mono_small,
         fill=MUTED_RGB,

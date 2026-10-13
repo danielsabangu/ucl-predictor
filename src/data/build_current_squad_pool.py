@@ -31,6 +31,13 @@ CURRENT_TEAM_SNAPSHOT_FILE = (
     / "football_data_ucl_teams.csv"
 )
 
+CURRENT_SQUAD_PLAYERS_FILE = (
+    INTERIM_DATA_DIR
+    / "players"
+    / "current_2026_27"
+    / "football_data_ucl_squads.csv"
+)
+
 CURRENT_TEAM_MAP_FILE = (
     INTERIM_DATA_DIR
     / "matches"
@@ -86,13 +93,15 @@ METADATA_FILE = (
 
 EXPECTED_UCL_CLUBS = 36
 
-EXPECTED_FOOTBALL_DATA_SQUAD_CLUBS = 33
+EXPECTED_FOOTBALL_DATA_SQUAD_CLUBS = 35
 
 MIN_TRUSTED_FOOTBALL_DATA_SQUAD_SIZE = 20
 
+# Refreshed provider state:
+# - Sabah FK now has a trusted football-data squad.
+# - Slavia Prague now has a trusted football-data squad.
+# - ŠK Slovan Bratislava remains the only expected fallback club.
 EXPECTED_FALLBACK_CLUBS = {
-    "Sabah FK",
-    "Slavia Prague",
     "ŠK Slovan Bratislava",
 }
 
@@ -235,6 +244,42 @@ def load_team_snapshot() -> pd.DataFrame:
 
 
 # ============================================================
+# LOAD CURRENT FOOTBALL-DATA SQUAD PLAYERS
+# ============================================================
+
+
+def load_current_squad_players() -> pd.DataFrame:
+    """
+    Load the freshly collected football-data player snapshot.
+
+    This is used when the current provider squad is trustworthy
+    but the downstream valuation/mapping artifact still reflects
+    an older provider response.
+    """
+
+    if not CURRENT_SQUAD_PLAYERS_FILE.exists():
+
+        raise FileNotFoundError(
+            "Football-data squad player snapshot not found:\n"
+            f"{CURRENT_SQUAD_PLAYERS_FILE}"
+        )
+
+    dataframe = pd.read_csv(
+        CURRENT_SQUAD_PLAYERS_FILE,
+        low_memory=False,
+    )
+
+    if "canonical_team" not in dataframe.columns:
+
+        raise RuntimeError(
+            "Current squad player snapshot missing "
+            "canonical_team."
+        )
+
+    return dataframe
+
+
+# ============================================================
 # LOAD EXTENDED TRANSFERMARKT MAP
 # ============================================================
 
@@ -338,6 +383,366 @@ def load_resolved_current_players() -> pd.DataFrame:
         )
 
     return dataframe
+
+
+# ============================================================
+# REFRESH TRUSTED PROVIDER ROWS WHEN MAPPING ARTIFACT IS STALE
+# ============================================================
+
+
+def refresh_trusted_provider_rows(
+    *,
+    resolved_players: pd.DataFrame,
+    current_squad_players: pd.DataFrame,
+    team_snapshot: pd.DataFrame,
+    current_team_map: pd.DataFrame,
+    club_map: pd.DataFrame,
+    fallback_clubs: set[str],
+) -> pd.DataFrame:
+    """
+    Recover fresh football-data squad rows for trusted clubs
+    that are absent or stale in the resolved valuation artifact.
+
+    Transfermarkt player IDs and market values are deliberately
+    left missing for recovered rows rather than being fabricated.
+    """
+
+    snapshot = team_snapshot[
+        [
+            "canonical_team",
+            "squad_size",
+        ]
+    ].copy()
+
+    snapshot[
+        "squad_size"
+    ] = pd.to_numeric(
+        snapshot[
+            "squad_size"
+        ],
+        errors="raise",
+    ).astype(
+        int
+    )
+
+    trusted_clubs = set(
+        snapshot.loc[
+            snapshot[
+                "squad_size"
+            ]
+            >=
+            MIN_TRUSTED_FOOTBALL_DATA_SQUAD_SIZE,
+            "canonical_team",
+        ].astype(
+            str
+        )
+    ) - fallback_clubs
+
+    resolved_counts = (
+        resolved_players[
+            "canonical_team"
+        ]
+        .astype(
+            str
+        )
+        .value_counts()
+        .to_dict()
+    )
+
+    stale_trusted_clubs = {
+        club
+        for club in trusted_clubs
+        if int(
+            resolved_counts.get(
+                club,
+                0,
+            )
+        )
+        <
+        MIN_TRUSTED_FOOTBALL_DATA_SQUAD_SIZE
+    }
+
+    if not stale_trusted_clubs:
+
+        return resolved_players
+
+    print(
+        "\nRefreshing trusted football-data clubs "
+        "missing from the resolved valuation artifact:"
+    )
+
+    for club in sorted(
+        stale_trusted_clubs
+    ):
+
+        print(
+            f"  {club}"
+        )
+
+    raw = current_squad_players.copy()
+
+    player_id_column = detect_column(
+        dataframe=raw,
+        candidates=[
+            "football_data_player_id",
+            "player_id",
+            "id",
+        ],
+        description="current squad football-data player ID",
+    )
+
+    player_name_column = detect_column(
+        dataframe=raw,
+        candidates=[
+            "player_name",
+            "name",
+        ],
+        description="current squad player name",
+    )
+
+    team_id_column = detect_column(
+        dataframe=raw,
+        candidates=[
+            "football_data_team_id",
+            "team_id",
+        ],
+        description="current squad football-data team ID",
+        required=False,
+    )
+
+    dob_column = detect_column(
+        dataframe=raw,
+        candidates=[
+            "date_of_birth",
+            "birth_date",
+        ],
+        description="current squad date of birth",
+        required=False,
+    )
+
+    position_column = detect_column(
+        dataframe=raw,
+        candidates=[
+            "position",
+        ],
+        description="current squad position",
+        required=False,
+    )
+
+    nationality_column = detect_column(
+        dataframe=raw,
+        candidates=[
+            "nationality",
+            "country_of_citizenship",
+        ],
+        description="current squad nationality",
+        required=False,
+    )
+
+    recovered_rows = []
+
+    for canonical_team in sorted(
+        stale_trusted_clubs
+    ):
+
+        team_rows = raw[
+            raw[
+                "canonical_team"
+            ].astype(
+                str
+            )
+            ==
+            canonical_team
+        ].copy()
+
+        if len(
+            team_rows
+        ) < MIN_TRUSTED_FOOTBALL_DATA_SQUAD_SIZE:
+
+            raise RuntimeError(
+                "Fresh football-data squad rows are too small "
+                f"for trusted club {canonical_team}: "
+                f"{len(team_rows)}."
+            )
+
+        current_team = current_team_map[
+            current_team_map[
+                "canonical_team"
+            ].astype(
+                str
+            )
+            ==
+            canonical_team
+        ]
+
+        if len(
+            current_team
+        ) != 1:
+
+            raise RuntimeError(
+                "Could not resolve exactly one current team row "
+                f"for {canonical_team}."
+            )
+
+        tm_team = club_map[
+            club_map[
+                "canonical_team"
+            ].astype(
+                str
+            )
+            ==
+            canonical_team
+        ]
+
+        if len(
+            tm_team
+        ) != 1:
+
+            raise RuntimeError(
+                "Could not resolve exactly one Transfermarkt club "
+                f"row for {canonical_team}."
+            )
+
+        fallback_team_id = int(
+            current_team.iloc[
+                0
+            ][
+                "football_data_team_id"
+            ]
+        )
+
+        transfermarkt_club_id = int(
+            tm_team.iloc[
+                0
+            ][
+                "transfermarkt_club_id"
+            ]
+        )
+
+        for (
+            _,
+            player,
+        ) in team_rows.iterrows():
+
+            raw_team_id = (
+                player[
+                    team_id_column
+                ]
+                if team_id_column is not None
+                else fallback_team_id
+            )
+
+            if pd.isna(
+                raw_team_id
+            ):
+
+                raw_team_id = fallback_team_id
+
+            recovered_rows.append(
+                {
+                    "canonical_team": canonical_team,
+                    "football_data_team_id": int(
+                        raw_team_id
+                    ),
+                    "football_data_player_id": int(
+                        player[
+                            player_id_column
+                        ]
+                    ),
+                    "player_name": (
+                        player[
+                            player_name_column
+                        ]
+                    ),
+                    "date_of_birth": (
+                        player[
+                            dob_column
+                        ]
+                        if dob_column is not None
+                        else pd.NA
+                    ),
+                    "position": (
+                        player[
+                            position_column
+                        ]
+                        if position_column is not None
+                        else pd.NA
+                    ),
+                    "nationality": (
+                        player[
+                            nationality_column
+                        ]
+                        if nationality_column is not None
+                        else pd.NA
+                    ),
+                    "transfermarkt_club_id": (
+                        transfermarkt_club_id
+                    ),
+                    "mapping_status": (
+                        "FOOTBALL_DATA_CURRENT_UNMAPPED"
+                    ),
+                    "transfermarkt_player_id": pd.NA,
+                    "usable_market_value_eur": np.nan,
+                    "valuation_source": pd.NA,
+                }
+            )
+
+    recovered = pd.DataFrame(
+        recovered_rows
+    )
+
+    retained = resolved_players[
+        ~resolved_players[
+            "canonical_team"
+        ].astype(
+            str
+        ).isin(
+            stale_trusted_clubs
+        )
+    ].copy()
+
+    refreshed = pd.concat(
+        [
+            retained,
+            recovered,
+        ],
+        ignore_index=True,
+    )
+
+    refreshed = refreshed.sort_values(
+        by=[
+            "canonical_team",
+            "player_name",
+        ],
+        kind="stable",
+    ).reset_index(
+        drop=True
+    )
+
+    print(
+        f"Recovered fresh provider rows: "
+        f"{len(recovered):,}"
+    )
+
+    for club in sorted(
+        stale_trusted_clubs
+    ):
+
+        count = int(
+            (
+                recovered[
+                    "canonical_team"
+                ]
+                ==
+                club
+            ).sum()
+        )
+
+        print(
+            f"  {club}: {count}"
+        )
+
+    return refreshed
 
 
 # ============================================================
@@ -1907,6 +2312,10 @@ def build_current_squad_pool() -> None:
         load_resolved_current_players()
     )
 
+    current_squad_players = (
+        load_current_squad_players()
+    )
+
     transfermarkt_players = (
         load_transfermarkt_players()
     )
@@ -1917,13 +2326,24 @@ def build_current_squad_pool() -> None:
         )
     )
 
+    resolved_players = (
+        refresh_trusted_provider_rows(
+            resolved_players=resolved_players,
+            current_squad_players=current_squad_players,
+            team_snapshot=team_snapshot,
+            current_team_map=current_team_map,
+            club_map=club_map,
+            fallback_clubs=fallback_clubs,
+        )
+    )
+
     print(
         f"\nCurrent UCL clubs: "
         f"{len(current_team_map)}"
     )
 
     print(
-        f"Resolved football-data players: "
+        f"Resolved/current football-data players: "
         f"{len(resolved_players):,}"
     )
 

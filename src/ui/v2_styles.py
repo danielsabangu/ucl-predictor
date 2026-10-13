@@ -2772,6 +2772,1056 @@ div.stDownloadButton > button:hover {
 
 
 
+
+/* ========================================================
+   STAGE 6F — EVIDENCE VAULT
+======================================================== */
+
+.vault-summary-grid {
+    display:
+        grid;
+
+    gap:
+        0.75rem;
+
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(
+                0,
+                1fr
+            )
+        );
+
+    margin:
+        1rem 0;
+}
+
+
+.vault-summary-card {
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.025
+        );
+
+    border:
+        1px solid
+        #292929;
+
+    border-radius:
+        8px;
+
+    min-width:
+        0;
+
+    padding:
+        1rem;
+}
+
+
+.vault-summary-card span,
+.vault-record-label,
+.vault-compare-card span,
+.vault-proof-grid span,
+.vault-detail-kicker {
+    color:
+        #6d6d6d;
+
+    display:
+        block;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size:
+        0.55rem;
+
+    letter-spacing:
+        0.10em;
+
+    text-transform:
+        uppercase;
+}
+
+
+.vault-summary-card strong {
+    color:
+        #f0f0f0;
+
+    display:
+        block;
+
+    font-size:
+        clamp(
+            1.6rem,
+            4vw,
+            2.4rem
+        );
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        -0.055em;
+
+    line-height:
+        1;
+
+    margin-top:
+        0.35rem;
+}
+
+
+.vault-summary-card small {
+    color:
+        #555;
+
+    display:
+        block;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size:
+        0.48rem;
+
+    letter-spacing:
+        0.08em;
+
+    margin-top:
+        0.42rem;
+}
+
+
+.vault-sample-warning {
+    background:
+        rgba(
+            255,
+            214,
+            102,
+            0.055
+        );
+
+    border:
+        1px solid
+        rgba(
+            255,
+            214,
+            102,
+            0.22
+        );
+
+    border-radius:
+        7px;
+
+    color:
+        #91866c;
+
+    font-size:
+        0.72rem;
+
+    line-height:
+        1.55;
+
+    margin:
+        0.8rem 0
+        1.1rem;
+
+    padding:
+        0.85rem
+        0.95rem;
+}
+
+
+.vault-sample-warning strong {
+    color:
+        var(--amber);
+
+    display:
+        inline-block;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size:
+        0.61rem;
+
+    letter-spacing:
+        0.08em;
+
+    margin-right:
+        0.45rem;
+}
+
+
+
+.vault-provenance {
+    color:
+        #7f7f7f;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size:
+        0.49rem;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        0.08em;
+
+    margin-top:
+        0.55rem;
+
+    text-transform:
+        uppercase;
+}
+
+
+.vault-provenance-detail {
+    color:
+        var(--green);
+
+    margin-top:
+        0.42rem;
+}
+
+
+.vault-provenance-summary {
+    align-items:
+        center;
+
+    color:
+        #656565;
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size:
+        0.5rem;
+
+    gap:
+        0.5rem
+        1rem;
+
+    justify-content:
+        center;
+
+    letter-spacing:
+        0.06em;
+
+    margin:
+        0.5rem 0
+        1rem;
+
+    text-transform:
+        uppercase;
+}
+
+
+.vault-proof-source {
+    border-top:
+        1px solid
+        rgba(
+            141,
+            255,
+            99,
+            0.12
+        );
+
+    color:
+        #64725e;
+
+    font-size:
+        0.65rem;
+
+    line-height:
+        1.5;
+
+    margin-top:
+        0.8rem;
+
+    padding-top:
+        0.7rem;
+}
+
+
+.vault-filter-heading {
+    color:
+        #656565;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size:
+        0.56rem;
+
+    letter-spacing:
+        0.12em;
+
+    margin:
+        1.15rem 0
+        0.45rem;
+
+    text-transform:
+        uppercase;
+}
+
+
+.vault-record-card {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(
+                255,
+                255,
+                255,
+                0.028
+            ),
+            rgba(
+                255,
+                255,
+                255,
+                0.01
+            )
+        );
+
+    border:
+        1px solid
+        #292929;
+
+    border-radius:
+        9px;
+
+    margin-top:
+        0.85rem;
+
+    min-height:
+        330px;
+
+    padding:
+        0.95rem;
+}
+
+
+.vault-record-card.correct {
+    border-color:
+        rgba(
+            141,
+            255,
+            99,
+            0.24
+        );
+}
+
+
+.vault-record-card.missed {
+    border-color:
+        rgba(
+            255,
+            104,
+            95,
+            0.22
+        );
+}
+
+
+.vault-record-topline {
+    align-items:
+        center;
+
+    color:
+        #666;
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size:
+        0.51rem;
+
+    gap:
+        0.5rem;
+
+    justify-content:
+        space-between;
+
+    letter-spacing:
+        0.06em;
+}
+
+
+.vault-outcome-badge {
+    border:
+        1px solid
+        #333;
+
+    border-radius:
+        999px;
+
+    display:
+        inline-flex;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size:
+        0.49rem;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        0.06em;
+
+    padding:
+        0.27rem
+        0.48rem;
+
+    text-transform:
+        uppercase;
+}
+
+
+.vault-outcome-badge.correct {
+    background:
+        rgba(
+            141,
+            255,
+            99,
+            0.065
+        );
+
+    border-color:
+        rgba(
+            141,
+            255,
+            99,
+            0.28
+        );
+
+    color:
+        var(--green);
+}
+
+
+.vault-outcome-badge.missed {
+    background:
+        rgba(
+            255,
+            104,
+            95,
+            0.06
+        );
+
+    border-color:
+        rgba(
+            255,
+            104,
+            95,
+            0.27
+        );
+
+    color:
+        var(--red);
+}
+
+
+.vault-record-fixture,
+.vault-final-score {
+    align-items:
+        center;
+
+    display:
+        grid;
+
+    gap:
+        0.65rem;
+
+    grid-template-columns:
+        minmax(
+            0,
+            1fr
+        )
+        auto
+        minmax(
+            0,
+            1fr
+        );
+
+    margin-top:
+        1rem;
+}
+
+
+.vault-record-team,
+.vault-final-score > div {
+    min-width:
+        0;
+
+    text-align:
+        center;
+}
+
+
+.vault-record-team
+.club-crest-wrap,
+.vault-final-score
+.club-crest-wrap {
+    height:
+        58px;
+
+    margin:
+        0 auto
+        0.4rem;
+
+    width:
+        64px;
+}
+
+
+.vault-record-team
+.club-crest,
+.vault-final-score
+.club-crest {
+    height:
+        52px;
+
+    max-width:
+        58px;
+}
+
+
+.vault-record-team span,
+.vault-final-score > div > span {
+    color:
+        #dfdfdf;
+
+    display:
+        block;
+
+    font-size:
+        0.73rem;
+
+    font-weight:
+        800;
+
+    line-height:
+        1.15;
+
+    overflow-wrap:
+        anywhere;
+}
+
+
+.vault-record-score {
+    color:
+        #f3f3f3;
+
+    font-family:
+        "Arial Black",
+        Arial,
+        sans-serif;
+
+    font-size:
+        1.5rem;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        -0.07em;
+}
+
+
+.vault-record-grid {
+    border-top:
+        1px solid
+        #272727;
+
+    display:
+        grid;
+
+    gap:
+        0.55rem;
+
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(
+                0,
+                1fr
+            )
+        );
+
+    margin-top:
+        1rem;
+
+    padding-top:
+        0.8rem;
+}
+
+
+.vault-record-grid > div {
+    min-width:
+        0;
+}
+
+
+.vault-record-grid strong {
+    color:
+        #eeeeee;
+
+    display:
+        block;
+
+    font-size:
+        0.77rem;
+
+    line-height:
+        1.15;
+
+    margin-top:
+        0.2rem;
+
+    overflow-wrap:
+        anywhere;
+}
+
+
+.vault-record-grid small {
+    color:
+        #555;
+
+    display:
+        block;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size:
+        0.43rem;
+
+    line-height:
+        1.35;
+
+    margin-top:
+        0.22rem;
+}
+
+
+.vault-proof-line {
+    color:
+        #59744e;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size:
+        0.5rem;
+
+    letter-spacing:
+        0.05em;
+
+    margin-top:
+        0.9rem;
+
+    text-align:
+        center;
+}
+
+
+.vault-empty {
+    border:
+        1px dashed
+        #323232;
+
+    border-radius:
+        8px;
+
+    margin-top:
+        1rem;
+
+    padding:
+        2rem
+        1rem;
+
+    text-align:
+        center;
+}
+
+
+.vault-empty-title {
+    color:
+        #cfcfcf;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size:
+        0.72rem;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        0.10em;
+}
+
+
+.vault-empty-copy {
+    color:
+        #666;
+
+    font-size:
+        0.72rem;
+
+    margin:
+        0.5rem auto
+        0;
+
+    max-width:
+        520px;
+}
+
+
+/* ========================================================
+   VAULT DETAIL
+======================================================== */
+
+.vault-detail {
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.018
+        );
+
+    border:
+        1px solid
+        #292929;
+
+    border-radius:
+        10px;
+
+    margin:
+        0.75rem 0;
+
+    padding:
+        clamp(
+            1rem,
+            3vw,
+            1.5rem
+        );
+}
+
+
+.vault-detail-head {
+    align-items:
+        flex-start;
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        0.75rem;
+
+    justify-content:
+        space-between;
+}
+
+
+.vault-detail-title {
+    color:
+        #f0f0f0;
+
+    font-size:
+        clamp(
+            1.25rem,
+            3vw,
+            1.9rem
+        );
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        -0.045em;
+
+    margin-top:
+        0.25rem;
+}
+
+
+.vault-final-score {
+    margin:
+        1.3rem auto;
+
+    max-width:
+        610px;
+}
+
+
+.vault-final-score > strong {
+    color:
+        #f3f3f3;
+
+    font-family:
+        "Arial Black",
+        Arial,
+        sans-serif;
+
+    font-size:
+        clamp(
+            2.6rem,
+            8vw,
+            4.6rem
+        );
+
+    letter-spacing:
+        -0.08em;
+}
+
+
+.vault-compare-grid {
+    display:
+        grid;
+
+    gap:
+        0.65rem;
+
+    grid-template-columns:
+        repeat(
+            4,
+            minmax(
+                0,
+                1fr
+            )
+        );
+
+    margin-top:
+        1.1rem;
+}
+
+
+.vault-compare-card {
+    background:
+        #0e0e0e;
+
+    border:
+        1px solid
+        #252525;
+
+    border-radius:
+        7px;
+
+    min-width:
+        0;
+
+    padding:
+        0.8rem;
+}
+
+
+.vault-compare-card strong {
+    color:
+        #efefef;
+
+    display:
+        block;
+
+    font-size:
+        1rem;
+
+    font-weight:
+        900;
+
+    line-height:
+        1.15;
+
+    margin-top:
+        0.28rem;
+
+    overflow-wrap:
+        anywhere;
+}
+
+
+.vault-compare-card small {
+    color:
+        #555;
+
+    display:
+        block;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size:
+        0.45rem;
+
+    margin-top:
+        0.32rem;
+}
+
+
+.vault-proof-panel {
+    background:
+        rgba(
+            141,
+            255,
+            99,
+            0.035
+        );
+
+    border:
+        1px solid
+        rgba(
+            141,
+            255,
+            99,
+            0.20
+        );
+
+    border-radius:
+        8px;
+
+    margin-top:
+        1rem;
+
+    padding:
+        0.9rem;
+}
+
+
+.vault-proof-title {
+    color:
+        var(--green);
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size:
+        0.62rem;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        0.09em;
+}
+
+
+.vault-proof-grid {
+    display:
+        grid;
+
+    gap:
+        0.65rem;
+
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(
+                0,
+                1fr
+            )
+        );
+
+    margin-top:
+        0.75rem;
+}
+
+
+.vault-proof-grid > div {
+    min-width:
+        0;
+}
+
+
+.vault-proof-grid strong {
+    color:
+        #dedede;
+
+    display:
+        block;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size:
+        0.62rem;
+
+    line-height:
+        1.4;
+
+    margin-top:
+        0.2rem;
+
+    overflow-wrap:
+        anywhere;
+}
+
+
+@media (
+    max-width:
+    760px
+) {
+
+    .vault-summary-grid,
+    .vault-compare-grid,
+    .vault-proof-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .vault-record-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .vault-record-card {
+        min-height:
+            0;
+    }
+}
+
+
 /* ========================================================
    STAGE 6E — SCREEN-BASED PRODUCT FLOW
 ======================================================== */
@@ -5969,6 +7019,209 @@ The thermal receipt also keeps its paper palette in both modes.
     color-scheme:
         light;
 }
+
+
+
+/* ========================================================
+   EVIDENCE VAULT — LIGHT MODE
+======================================================== */
+
+
+.vault-provenance,
+.vault-provenance-summary {
+    color:
+        #77736b;
+}
+
+
+.vault-provenance-detail {
+    color:
+        #337d18;
+}
+
+
+.vault-proof-source {
+    border-color:
+        rgba(
+            58,
+            127,
+            28,
+            0.14
+        );
+
+    color:
+        #5f6d58;
+}
+
+
+
+.vault-summary-card,
+.vault-record-card,
+.vault-detail,
+.vault-compare-card {
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.72
+        );
+
+    border-color:
+        var(--light-border);
+}
+
+
+.vault-summary-card strong,
+.vault-record-team span,
+.vault-record-score,
+.vault-record-grid strong,
+.vault-detail-title,
+.vault-final-score > strong,
+.vault-final-score > div > span,
+.vault-compare-card strong,
+.vault-proof-grid strong {
+    color:
+        #1b1b1b;
+}
+
+
+.vault-summary-card span,
+.vault-record-label,
+.vault-compare-card span,
+.vault-proof-grid span,
+.vault-detail-kicker,
+.vault-record-topline,
+.vault-filter-heading {
+    color:
+        #6f6b63;
+}
+
+
+.vault-record-grid {
+    border-color:
+        #d6d1c5;
+}
+
+
+.vault-record-grid small,
+.vault-summary-card small,
+.vault-compare-card small {
+    color:
+        #7a766e;
+}
+
+
+.vault-record-card.correct {
+    border-color:
+        rgba(
+            58,
+            127,
+            28,
+            0.28
+        );
+}
+
+
+.vault-record-card.missed {
+    border-color:
+        rgba(
+            164,
+            58,
+            50,
+            0.26
+        );
+}
+
+
+.vault-outcome-badge.correct {
+    color:
+        #337d18;
+}
+
+
+.vault-outcome-badge.missed {
+    color:
+        #a43d36;
+}
+
+
+.vault-proof-line {
+    color:
+        #477336;
+}
+
+
+.vault-proof-panel {
+    background:
+        rgba(
+            71,
+            143,
+            41,
+            0.055
+        );
+
+    border-color:
+        rgba(
+            58,
+            127,
+            28,
+            0.24
+        );
+}
+
+
+.vault-proof-title {
+    color:
+        #337d18;
+}
+
+
+.vault-sample-warning {
+    background:
+        rgba(
+            166,
+            114,
+            0,
+            0.055
+        );
+
+    border-color:
+        rgba(
+            150,
+            102,
+            0,
+            0.23
+        );
+
+    color:
+        #6f6247;
+}
+
+
+.vault-sample-warning strong {
+    color:
+        #8a6208;
+}
+
+
+.vault-empty {
+    border-color:
+        #bbb7ad;
+}
+
+
+.vault-empty-title {
+    color:
+        #262626;
+}
+
+
+.vault-empty-copy {
+    color:
+        #6b675f;
+}
+
 
 
 /* ========================================================

@@ -41,6 +41,16 @@ from src.ui.v2_components import (
     build_idle_machine_html,
 )
 
+
+from src.ui.evidence_vault import (
+    build_vault_card_html,
+    build_vault_detail_html,
+    filter_evaluations,
+    find_evaluation,
+    load_evidence_vault,
+    receipt_asset_path,
+)
+
 from src.ui.startup_loader import (
     show_startup_loading_screen,
 )
@@ -654,6 +664,20 @@ if (
     ] = "fixtures"
 
 
+# Migrate an open Stage 6E Evidence session into the new Vault.
+if (
+    st.session_state[
+        "v2_screen"
+    ]
+    ==
+    "evidence"
+):
+
+    st.session_state[
+        "v2_screen"
+    ] = "vault"
+
+
 if (
     "show_share_forecast"
     not in
@@ -665,7 +689,46 @@ if (
     ] = False
 
 
+
 if (
+    "vault_filter"
+    not in
+    st.session_state
+):
+
+    st.session_state[
+        "vault_filter"
+    ] = "all"
+
+
+if (
+    "vault_record_id"
+    not in
+    st.session_state
+):
+
+    st.session_state[
+        "vault_record_id"
+    ] = None
+
+
+if (
+    "vault_show_receipt"
+    not in
+    st.session_state
+):
+
+    st.session_state[
+        "vault_show_receipt"
+    ] = False
+
+
+if (
+    st.session_state[
+        "selected_fixture_id"
+    ]
+    is not None
+    and
     st.session_state[
         "selected_fixture_id"
     ]
@@ -677,9 +740,17 @@ if (
         "selected_fixture_id"
     ] = None
 
-    st.session_state[
-        "v2_screen"
-    ] = "fixtures"
+    if (
+        st.session_state[
+            "v2_screen"
+        ]
+        ==
+        "printer"
+    ):
+
+        st.session_state[
+            "v2_screen"
+        ] = "fixtures"
 
     st.session_state[
         "show_share_forecast"
@@ -802,16 +873,12 @@ with nav_2:
 with nav_3:
 
     if st.button(
-        "03  EVIDENCE",
-        key="nav_evidence",
+        "03  EVIDENCE VAULT",
+        key="nav_evidence_vault",
         use_container_width=True,
-        disabled=(
-            selected_fixture_id
-            is None
-        ),
         type=(
             "primary"
-            if current_screen == "evidence"
+            if current_screen == "vault"
             else
             "secondary"
         ),
@@ -819,7 +886,15 @@ with nav_3:
 
         st.session_state[
             "v2_screen"
-        ] = "evidence"
+        ] = "vault"
+
+        st.session_state[
+            "vault_record_id"
+        ] = None
+
+        st.session_state[
+            "vault_show_receipt"
+        ] = False
 
         st.rerun()
 
@@ -1148,14 +1223,18 @@ elif current_screen == "printer":
     with action_col_1:
 
         if st.button(
-            "VIEW EVIDENCE",
-            key="open_evidence_page",
+            "OPEN EVIDENCE VAULT",
+            key="open_evidence_vault",
             use_container_width=True,
         ):
 
             st.session_state[
                 "v2_screen"
-            ] = "evidence"
+            ] = "vault"
+
+            st.session_state[
+                "vault_record_id"
+            ] = None
 
             st.rerun()
 
@@ -1301,459 +1380,637 @@ elif current_screen == "printer":
 
 
 # ============================================================
-# PAGE 03 — EVIDENCE
+# PAGE 03 — EVIDENCE VAULT
 # ============================================================
 
-elif current_screen == "evidence":
+elif current_screen == "vault":
 
-    if (
-        selected_row is None
-        or
-        presentation is None
-    ):
-
-        st.session_state[
-            "v2_screen"
-        ] = "fixtures"
-
-        st.rerun()
-
-    row = selected_row
-
-    home_probability = (
-        presentation.home_probability
+    vault = (
+        load_evidence_vault()
     )
 
-    draw_probability = (
-        presentation.draw_probability
-    )
-
-    away_probability = (
-        presentation.away_probability
-    )
-
-    confidence_percent = (
-        presentation.confidence_percent
-    )
-
-    top_two_margin = (
-        presentation.top_two_margin
-    )
-
-    score_distribution_available = (
-        presentation
-        .score_distribution
-        .available
-    )
-
-    projected_scoreline = (
-        presentation
-        .score_distribution
-        .projected_scoreline
-    )
-
-    global_modal_scoreline = (
-        presentation
-        .score_distribution
-        .global_modal_scoreline
-    )
-
-    exact_score_probability = (
-        presentation
-        .score_distribution
-        .exact_score_probability
-    )
-
-    home_3plus_probability = (
-        presentation
-        .score_distribution
-        .home_3plus_probability
-    )
-
-    away_3plus_probability = (
-        presentation
-        .score_distribution
-        .away_3plus_probability
-    )
-
-
-    if (
-        projected_scoreline
-        ==
-        global_modal_scoreline
-    ):
-
-        score_explanation = (
-            f"{projected_scoreline} is also the single "
-            "most likely exact score overall."
+    selected_vault_record = (
+        find_evaluation(
+            vault.records,
+            st.session_state[
+                "vault_record_id"
+            ],
         )
+        if vault.available
+        else None
+    )
+
+
+    # ========================================================
+    # VAULT RECORD DETAIL
+    # ========================================================
+
+    if selected_vault_record is not None:
+
+        render_html(
+            """
+            <div class="v2-page-shell evidence-page-intro">
+
+                <div class="interaction-kicker">
+                    03 // EVIDENCE VAULT
+                </div>
+
+                <div class="interaction-title">
+                    FORECAST RECORD
+                </div>
+
+                <div class="interaction-copy">
+                    This is the archived pre-match forecast
+                    compared with the verified final result.
+                </div>
+
+            </div>
+            """
+        )
+
+        render_html(
+            build_vault_detail_html(
+                selected_vault_record
+            )
+        )
+
+        record_col_1, record_col_2 = (
+            st.columns(
+                2
+            )
+        )
+
+        with record_col_1:
+
+            if st.button(
+                "← BACK TO VAULT",
+                key="vault_back_to_list",
+                use_container_width=True,
+            ):
+
+                st.session_state[
+                    "vault_record_id"
+                ] = None
+
+                st.session_state[
+                    "vault_show_receipt"
+                ] = False
+
+                st.rerun()
+
+
+        with record_col_2:
+
+            if (
+                selected_fixture_id
+                is not None
+            ):
+
+                if st.button(
+                    "RETURN TO CURRENT PRINTER",
+                    key="vault_return_to_printer",
+                    use_container_width=True,
+                ):
+
+                    st.session_state[
+                        "v2_screen"
+                    ] = "printer"
+
+                    st.rerun()
+
+
+        receipt_path = (
+            receipt_asset_path(
+                selected_vault_record
+            )
+        )
+
+        if receipt_path is not None:
+
+            if st.button(
+                (
+                    "HIDE ORIGINAL RECEIPT"
+                    if
+                    st.session_state[
+                        "vault_show_receipt"
+                    ]
+                    else
+                    "VIEW ORIGINAL RECEIPT"
+                ),
+                key="vault_toggle_original_receipt",
+                use_container_width=True,
+            ):
+
+                st.session_state[
+                    "vault_show_receipt"
+                ] = (
+                    not
+                    st.session_state[
+                        "vault_show_receipt"
+                    ]
+                )
+
+                st.rerun()
+
+
+            if st.session_state[
+                "vault_show_receipt"
+            ]:
+
+                st.image(
+                    str(
+                        receipt_path
+                    ),
+                    caption=(
+                        "Original pre-match UCL Predictor receipt"
+                    ),
+                    use_container_width=True,
+                )
+
+
+        with st.expander(
+            "Technical scoring details"
+        ):
+
+            st.markdown(
+                f"""
+**Provenance:**
+`{selected_vault_record.provenance}`
+
+**Home / Draw / Away probabilities:**
+{selected_vault_record.home_probability * 100:.2f}% /
+{selected_vault_record.draw_probability * 100:.2f}% /
+{selected_vault_record.away_probability * 100:.2f}%
+
+**Receipt transaction ID:**
+`{selected_vault_record.receipt_transaction_id or "N/A"}`
+
+**Model version:**
+`{selected_vault_record.model_version or "Historical receipt artifact"}`
+
+**Prediction revision:**
+{selected_vault_record.revision or "N/A"}
+                """
+            )
+
+            if (
+                selected_vault_record
+                .predicted_scoreline_probability
+                is not None
+            ):
+
+                st.markdown(
+                    f"""
+**Chance of projected exact score:**
+{selected_vault_record.predicted_scoreline_probability * 100:.2f}%
+                    """
+                )
+
+            if (
+                selected_vault_record.expected_home_goals
+                is not None
+                and
+                selected_vault_record.expected_away_goals
+                is not None
+            ):
+
+                st.markdown(
+                    f"""
+**Expected goals:**
+{selected_vault_record.expected_home_goals:.2f} -
+{selected_vault_record.expected_away_goals:.2f}
+                    """
+                )
+
+            if (
+                selected_vault_record.multiclass_brier
+                is not None
+            ):
+
+                st.markdown(
+                    f"""
+**Multiclass Brier score:**
+{selected_vault_record.multiclass_brier:.4f} *(lower is better)*
+
+**Log loss:**
+{selected_vault_record.log_loss:.4f} *(lower is better)*
+                    """
+                )
+
+
+    # ========================================================
+    # VAULT INDEX
+    # ========================================================
 
     else:
 
-        score_explanation = (
-            f"{global_modal_scoreline} is the single most "
-            "likely exact score overall. "
-            f"{projected_scoreline} is shown because "
-            f"{row['predicted_selection']} is the "
-            "predicted winner."
+        render_html(
+            """
+            <div class="v2-page-shell evidence-page-intro">
+
+                <div class="interaction-kicker">
+                    03 // EVIDENCE VAULT
+                </div>
+
+                <div class="interaction-title">
+                    THE RECEIPTS DON'T DISAPPEAR AFTER KICKOFF.
+                </div>
+
+                <div class="interaction-copy">
+                    Every live forecast is locked before the
+                    match begins. When the result is verified,
+                    the original prediction is compared with
+                    what actually happened.
+                </div>
+
+            </div>
+            """
         )
 
 
-    render_html(
-        f"""
-        <div class="v2-page-shell evidence-page-intro">
+        if not vault.available:
 
-            <div class="interaction-kicker">
-                03 // WHY THIS PREDICTION?
-            </div>
+            render_html(
+                f"""
+                <div class="vault-empty">
 
-            <div class="interaction-title">
-                {escape(row["home_team"])}
-                VS
-                {escape(row["away_team"])}
-            </div>
+                    <div class="vault-empty-title">
+                        HISTORY IS STILL BUILDING
+                    </div>
 
-            <div class="interaction-copy">
-                Here is what the forecast means without the
-                machine-learning jargon.
-            </div>
+                    <div class="vault-empty-copy">
+                        {escape(
+                            vault.message
+                            or
+                            "No completed forecasts yet."
+                        )}
+                    </div>
 
-        </div>
-
-        <div class="explain-grid">
-
-            <div class="explain-card">
-
-                <div class="explain-label">
-                    PREDICTED WINNER
                 </div>
-
-                <div class="explain-value">
-                    {escape(
-                        row[
-                            "predicted_selection"
-                        ]
-                    )}
-                </div>
-
-                <div class="explain-copy">
-                    This result has a
-                    {float(
-                        row[
-                            "max_probability"
-                        ]
-                    ) * 100:.1f}%
-                    chance according to the model.
-                </div>
-
-            </div>
-
-            <div class="explain-card">
-
-                <div class="explain-label">
-                    PROJECTED SCORE
-                </div>
-
-                <div class="explain-value">
-                    {escape(projected_scoreline)}
-                </div>
-
-                <div class="explain-copy">
-                    Chance of this exact score:
-                    {exact_score_probability * 100:.1f}%.
-                    {escape(score_explanation)}
-                </div>
-
-            </div>
-
-            <div class="explain-card">
-
-                <div class="explain-label">
-                    EVIDENCE STRENGTH
-                </div>
-
-                <div class="explain-value">
-                    {confidence_percent:.0f}%
-                </div>
-
-                <div class="explain-copy">
-                    {escape(
-                        confidence_explanation(
-                            row
-                        )
-                    )}
-                </div>
-
-            </div>
-
-        </div>
-        """
-    )
-
-
-    evidence_back_1, evidence_back_2 = (
-        st.columns(
-            2
-        )
-    )
-
-    with evidence_back_1:
-
-        if st.button(
-            "BACK TO PRINTED FORECAST",
-            key="evidence_back_to_printer",
-            use_container_width=True,
-        ):
-
-            st.session_state[
-                "v2_screen"
-            ] = "printer"
-
-            st.rerun()
-
-
-    with evidence_back_2:
-
-        if st.button(
-            "CHOOSE ANOTHER MATCH",
-            key="evidence_choose_another",
-            use_container_width=True,
-        ):
-
-            st.session_state[
-                "selected_fixture_id"
-            ] = None
-
-            st.session_state[
-                "v2_screen"
-            ] = "fixtures"
-
-            st.session_state[
-                "show_share_forecast"
-            ] = False
-
-            st.rerun()
-
-
-    with st.expander(
-        "See the technical model details"
-    ):
-
-        detail_rows = [
-            {
-                "Item":
-                    "Home result probability",
-
-                "Value":
-                    percentage(
-                        row[
-                            "home_probability"
-                        ]
-                    ),
-            },
-
-            {
-                "Item":
-                    "Draw probability",
-
-                "Value":
-                    percentage(
-                        row[
-                            "draw_probability"
-                        ]
-                    ),
-            },
-
-            {
-                "Item":
-                    "Away result probability",
-
-                "Value":
-                    percentage(
-                        row[
-                            "away_probability"
-                        ]
-                    ),
-            },
-
-            {
-                "Item":
-                    "CatBoost result pick",
-
-                "Value":
-                    row[
-                        "predicted_selection"
-                    ],
-            },
-
-            {
-                "Item":
-                    "Top-two result margin",
-
-                "Value":
-                    f"{top_two_margin:.2f} pp",
-            },
-
-            {
-                "Item":
-                    "Evidence confidence",
-
-                "Value":
-                    f"{confidence_percent:.2f}%",
-            },
-
-            {
-                "Item":
-                    "Confidence label",
-
-                "Value":
-                    display_confidence_label(
-                        row[
-                            "confidence_label"
-                        ]
-                    ),
-            },
-
-            {
-                "Item":
-                    "Projected exact-score probability",
-
-                "Value":
-                    (
-                        f"{exact_score_probability * 100:.2f}%"
-                    ),
-            },
-
-            {
-                "Item":
-                    "Global modal exact score",
-
-                "Value":
-                    global_modal_scoreline,
-            },
-
-            {
-                "Item":
-                    "Home Poisson lambda",
-
-                "Value":
-                    (
-                        f"{float(
-                            row[
-                                'score_home_lambda'
-                            ]
-                        ):.3f}"
-                    ),
-            },
-
-            {
-                "Item":
-                    "Away Poisson lambda",
-
-                "Value":
-                    (
-                        f"{float(
-                            row[
-                                'score_away_lambda'
-                            ]
-                        ):.3f}"
-                    ),
-            },
-
-            {
-                "Item":
-                    "Score bridge max error",
-
-                "Value":
-                    (
-                        f"{float(
-                            row[
-                                'score_bridge_max_error_pp'
-                            ]
-                        ):.3f} pp"
-                    ),
-            },
-
-            {
-                "Item":
-                    "Data coverage",
-
-                "Value":
-                    (
-                        f"{float(
-                            row[
-                                'overall_feature_availability'
-                            ]
-                        ) * 100:.2f}%"
-                    ),
-            },
-        ]
-
-        if score_distribution_available:
-
-            detail_rows.extend(
-                [
-                    {
-                        "Item":
-                            f"{row['home_team']} 3+ goals",
-
-                        "Value":
-                            (
-                                f"{home_3plus_probability * 100:.2f}%"
-                            ),
-                    },
-
-                    {
-                        "Item":
-                            f"{row['away_team']} 3+ goals",
-
-                        "Value":
-                            (
-                                f"{away_3plus_probability * 100:.2f}%"
-                            ),
-                    },
-                ]
+                """
             )
 
-        st.dataframe(
-            pd.DataFrame(
-                detail_rows
-            ),
-            hide_index=True,
-            use_container_width=True,
-        )
+        else:
+
+            summary = vault.summary
+
+            resolved_count = int(
+                summary.get(
+                    "resolved_fixture_count",
+                    0,
+                )
+            )
+
+            correct_count = int(
+                summary.get(
+                    "correct_result_picks",
+                    0,
+                )
+            )
+
+            exact_eligible = int(
+                summary.get(
+                    "exact_score_eligible",
+                    0,
+                )
+            )
+
+            exact_correct = int(
+                summary.get(
+                    "exact_scores_correct",
+                    0,
+                )
+            )
+
+            historical_count = int(
+                summary.get(
+                    "historical_receipt_count",
+                    0,
+                )
+            )
+
+            system_count = int(
+                summary.get(
+                    "system_archive_count",
+                    0,
+                )
+            )
+
+            sample_warning = (
+                summary.get(
+                    "sample_warning"
+                )
+            )
+
+            render_html(
+                f"""
+                <div class="vault-summary-grid">
+
+                    <div class="vault-summary-card">
+
+                        <span>
+                            COMPLETED FORECASTS
+                        </span>
+
+                        <strong>
+                            {resolved_count}
+                        </strong>
+
+                        <small>
+                            VERIFIED RESULTS
+                        </small>
+
+                    </div>
+
+                    <div class="vault-summary-card">
+
+                        <span>
+                            RESULT PICKS CORRECT
+                        </span>
+
+                        <strong>
+                            {correct_count}
+                            /
+                            {resolved_count}
+                        </strong>
+
+                        <small>
+                            SO FAR
+                        </small>
+
+                    </div>
+
+                    <div class="vault-summary-card">
+
+                        <span>
+                            EXACT SCORE HITS
+                        </span>
+
+                        <strong>
+                            {exact_correct}
+                            /
+                            {exact_eligible}
+                        </strong>
+
+                        <small>
+                            HARDER THAN RESULT PICKS
+                        </small>
+
+                    </div>
+
+                </div>
+
+                <div class="vault-provenance-summary">
+
+                    <span>
+                        {system_count}
+                        SYSTEM-ARCHIVED FORWARD TESTS
+                    </span>
+
+                    <span>
+                        {historical_count}
+                        VERIFIED HISTORICAL PRE-KICKOFF RECEIPTS
+                    </span>
+
+                </div>
+                """
+            )
 
 
-    with st.expander(
-        "How this forecast is made"
-    ):
+            if sample_warning:
 
-        st.markdown(
-            """
-The main result forecast asks:
-**home win, draw or away win?**
+                render_html(
+                    """
+                    <div class="vault-sample-warning">
 
-It weighs 290 pre-match signals covering team strength,
-Champions League form, domestic form and squad evidence.
+                        <strong>
+                            EARLY SAMPLE
+                        </strong>
 
-**Evidence strength** tells you how complete and trustworthy
-the available pre-match evidence is. It is not the same thing
-as the predicted result probability.
+                        There are not enough completed matches
+                        yet to make reliable claims about the
+                        model's long-term performance. This
+                        page shows the record transparently
+                        while the sample grows.
 
-**Projected score** is also separate. The app uses the result
-probabilities to build a range of plausible scores, then shows
-a score that agrees with the predicted winner or draw.
+                    </div>
+                    """
+                )
 
-That is why the projected score can differ from the single most
-likely exact score overall.
 
-For technical users, the frozen CatBoost classifier supplies
-the home/draw/away result probabilities and the independent
-Poisson bridge supplies the score distribution.
+            render_html(
+                """
+                <div class="vault-filter-heading">
+                    FILTER RECORDS
+                </div>
+                """
+            )
 
-No post-match result information is used as a prediction input.
-            """
-        )
+            filter_1, filter_2, filter_3 = (
+                st.columns(
+                    3
+                )
+            )
+
+            with filter_1:
+
+                if st.button(
+                    "ALL",
+                    key="vault_filter_all",
+                    use_container_width=True,
+                    type=(
+                        "primary"
+                        if
+                        st.session_state[
+                            "vault_filter"
+                        ]
+                        ==
+                        "all"
+                        else
+                        "secondary"
+                    ),
+                ):
+
+                    st.session_state[
+                        "vault_filter"
+                    ] = "all"
+
+                    st.rerun()
+
+
+            with filter_2:
+
+                if st.button(
+                    "CORRECT PICKS",
+                    key="vault_filter_correct",
+                    use_container_width=True,
+                    type=(
+                        "primary"
+                        if
+                        st.session_state[
+                            "vault_filter"
+                        ]
+                        ==
+                        "correct"
+                        else
+                        "secondary"
+                    ),
+                ):
+
+                    st.session_state[
+                        "vault_filter"
+                    ] = "correct"
+
+                    st.rerun()
+
+
+            with filter_3:
+
+                if st.button(
+                    "MISSED PICKS",
+                    key="vault_filter_missed",
+                    use_container_width=True,
+                    type=(
+                        "primary"
+                        if
+                        st.session_state[
+                            "vault_filter"
+                        ]
+                        ==
+                        "missed"
+                        else
+                        "secondary"
+                    ),
+                ):
+
+                    st.session_state[
+                        "vault_filter"
+                    ] = "missed"
+
+                    st.rerun()
+
+
+            filtered_records = (
+                filter_evaluations(
+                    vault.records,
+                    st.session_state[
+                        "vault_filter"
+                    ],
+                )
+            )
+
+
+            if not filtered_records:
+
+                render_html(
+                    """
+                    <div class="vault-empty">
+
+                        <div class="vault-empty-title">
+                            NO RECORDS IN THIS FILTER
+                        </div>
+
+                    </div>
+                    """
+                )
+
+            else:
+
+                for start_index in range(
+                    0,
+                    len(
+                        filtered_records
+                    ),
+                    2,
+                ):
+
+                    vault_columns = (
+                        st.columns(
+                            2
+                        )
+                    )
+
+                    for offset in range(
+                        2
+                    ):
+
+                        record_index = (
+                            start_index
+                            +
+                            offset
+                        )
+
+                        if (
+                            record_index
+                            >=
+                            len(
+                                filtered_records
+                            )
+                        ):
+
+                            continue
+
+                        evaluation = (
+                            filtered_records[
+                                record_index
+                            ]
+                        )
+
+                        with vault_columns[
+                            offset
+                        ]:
+
+                            render_html(
+                                build_vault_card_html(
+                                    evaluation
+                                )
+                            )
+
+                            if st.button(
+                                "OPEN RECORD",
+                                key=(
+                                    "vault_open_"
+                                    +
+                                    evaluation.record_id
+                                ),
+                                use_container_width=True,
+                            ):
+
+                                st.session_state[
+                                    "vault_record_id"
+                                ] = (
+                                    evaluation.record_id
+                                )
+
+                                st.session_state[
+                                    "vault_show_receipt"
+                                ] = False
+
+                                st.rerun()
+
+
+            with st.expander(
+                "How the Vault stays honest"
+            ):
+
+                st.markdown(
+                    """
+The Vault keeps two provenance classes separate.
+
+**System-archived forward tests** come from the immutable app
+history. A live forward-test prediction must be published
+before kickoff, and existing prediction IDs or fixture
+revisions cannot silently change.
+
+**Verified historical pre-kickoff receipts** are older original
+receipt artifacts that existed before kickoff and have separate
+creator verification evidence. They stay labeled as historical
+receipts instead of being passed off as system-archived data.
+
+After a match finishes, every record is compared with the
+verified final result. Each fixture is counted once.
+                    """
+                )
 
 
 # ============================================================
