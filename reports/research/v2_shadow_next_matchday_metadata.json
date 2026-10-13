@@ -1,0 +1,63 @@
+{
+  "created_at_utc": "2026-10-13T06:35:04.001486+00:00",
+  "status": "shadow_research_only",
+  "production_promoted": false,
+  "public_predictions_modified": false,
+  "prediction_history_modified": false,
+  "comparison_season_re_run": false,
+  "v1_model_version": "ucl_predictor_v1",
+  "v2_model_version": "ucl_predictor_v2_candidate",
+  "v2_model_status": "candidate_not_promoted",
+  "v1_feature_count": 290,
+  "v2_feature_count": 292,
+  "selected_uefa_features": [
+    "uefa_coefficient_diff",
+    "uefa_strength_percentile_diff"
+  ],
+  "live_feature_builder": "src.ml.predict_live_fixed.build_fixture_features",
+  "fixture_identity": "source_match_id",
+  "fixture_count": 9,
+  "fixture_date_utc": "2026-10-13",
+  "pick_change_count": 0,
+  "pick_change_rate": 0.0,
+  "overall_mean_absolute_probability_delta_pp": 1.668717609450833,
+  "maximum_class_probability_delta_pp": 5.730867289705194,
+  "maximum_shift_fixture": {
+    "source_match_id": "575342",
+    "home_team": "Sabah FK",
+    "away_team": "Slavia Prague"
+  },
+  "output_files": {
+    "comparison": "reports\\research\\v2_shadow_next_matchday_comparison.csv",
+    "feature_matrix": "reports\\research\\v2_shadow_next_matchday_features.csv"
+  },
+  "protected_production_files": {
+    "unchanged": true,
+    "files_checked": [
+      "data\\app\\current_predictions.csv",
+      "data\\app\\pipeline_status.json",
+      "data\\app\\snapshot_metadata.json",
+      "data\\predictions\\ucl_2026_27_next_matchday_features.csv",
+      "data\\predictions\\ucl_2026_27_next_matchday_predictions.csv",
+      "data\\predictions\\ucl_2026_27_next_matchday_predictions_metadata.json",
+      "models\\metadata\\production_model.json",
+      "models\\trained\\production_catboost.joblib"
+    ]
+  },
+  "rules": {
+    "v1_model_modified": false,
+    "v1_metadata_modified": false,
+    "production_prediction_files_modified": false,
+    "public_app_files_modified": false,
+    "prediction_history_modified": false,
+    "production_release_called": false,
+    "v2_promoted": false,
+    "same_290_live_features_used_for_both_models": true,
+    "v2_only_adds_locked_uefa_features": true,
+    "fuzzy_uefa_matching_used": false,
+    "2025_confirmation_re_run": false,
+    "raw_probabilities_only": true,
+    "probability_is_not_confidence": true,
+    "shadow_results_are_not_performance_evidence": true
+  }
+}
