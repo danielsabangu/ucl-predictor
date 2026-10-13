@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "policy_name": "V2_FORWARD_PROMOTION_POLICY",
+  "status": "PREREGISTERED",
+  "candidate": {
+    "name": "ucl_predictor_v2_candidate",
+    "feature_count": 292,
+    "production_promoted": false,
+    "v1_feature_count": 290,
+    "new_probability_features": [
+      "uefa_coefficient_diff",
+      "uefa_strength_percentile_diff"
+    ],
+    "candidate_model_sha256": "ad155ed3bcc782eee38c84be59ce0af4ecd9cd8f1b71d8ac7ac0759b5ade3f26",
+    "candidate_metadata_sha256": "7e9c4544167ee0db911bce3b9428ebfad587b5b9358b92ec83a115a7f4d03312"
+  },
+  "forward_evidence": {
+    "minimum_fixtures_for_reliable_claims": 30,
+    "minimum_fixtures_for_promotion_review": 72,
+    "minimum_distinct_shadow_dates_for_promotion_review": 8,
+    "partial_shadow_sets_may_be_scored": false,
+    "historical_2025_2026_confirmation_counts_toward_forward_sample": false,
+    "only_immutable_prematch_shadow_predictions_count": true,
+    "only_verified_finished_results_count": true,
+    "same_fixture_population_required_for_v1_and_v2": true
+  },
+  "primary_metrics": {
+    "mean_log_loss": {
+      "direction": "LOWER_IS_BETTER",
+      "promotion_requirement": "V2_STRICTLY_BETTER_THAN_V1"
+    },
+    "mean_multiclass_brier": {
+      "direction": "LOWER_IS_BETTER",
+      "promotion_requirement": "V2_STRICTLY_BETTER_THAN_V1"
+    }
+  },
+  "secondary_metrics": {
+    "accuracy": {
+      "direction": "HIGHER_IS_BETTER",
+      "promotion_gate": false
+    },
+    "macro_f1": {
+      "direction": "HIGHER_IS_BETTER",
+      "promotion_gate": false
+    },
+    "draw_recall": {
+      "direction": "HIGHER_IS_BETTER",
+      "promotion_gate": false
+    },
+    "mean_actual_result_probability": {
+      "direction": "HIGHER_IS_BETTER",
+      "promotion_gate": false
+    }
+  },
+  "candidate_change_policy": {
+    "feature_set_change_resets_forward_evidence": true,
+    "model_parameter_change_resets_forward_evidence": true,
+    "model_retraining_resets_forward_evidence": true,
+    "calibration_change_resets_forward_evidence": true,
+    "probability_postprocessing_change_resets_forward_evidence": true,
+    "candidate_artifact_hash_change_resets_forward_evidence": true
+  },
+  "promotion_rules": {
+    "promotion_is_automatic": false,
+    "minimum_sample_only_grants_review_eligibility": true,
+    "both_primary_metrics_must_improve": true,
+    "production_v1_remains_frozen_until_explicit_promotion": true,
+    "no_metric_or_threshold_retuning_after_forward_results_are_seen": true
+  },
+  "decision_states": {
+    "under_30_fixtures": "INSUFFICIENT_FORWARD_SAMPLE",
+    "30_to_71_fixtures": "CONTINUE_SHADOW_EVALUATION",
+    "72_plus_but_under_8_dates": "CONTINUE_SHADOW_EVALUATION",
+    "72_plus_and_8_plus_dates_primary_metrics_not_both_better": "DO_NOT_PROMOTE",
+    "72_plus_and_8_plus_dates_primary_metrics_both_better": "ELIGIBLE_FOR_PROMOTION_REVIEW"
+  },
+  "notes": [
+    "This policy was preregistered before the first V2 forward shadow outcomes were evaluated.",
+    "The first immutable V2 forward shadow set contains nine fixtures dated 2026-10-13.",
+    "A single matchday must never be used to justify production promotion.",
+    "Forward evaluation exists to compare the frozen V1 and frozen V2 candidates on genuinely unseen fixtures."
+  ]
+}
