@@ -11,6 +11,9 @@ from src.production.club_crests import (
 
 from src.production.receipt_exports import (
     margin_pp,
+    SCORE_GRID_LABELS,
+    score_grid_for_row,
+    scoreline_summary_for_row,
 )
 
 from src.ui.formatters import (
@@ -303,35 +306,18 @@ def build_score_distribution_view(
     row: pd.Series,
     available_columns: Collection[str],
 ) -> ScoreDistributionView:
+    del available_columns  # The public snapshot intentionally omits top-five fields.
 
-    projected_scoreline = str(
-        row[
-            "predicted_scoreline"
-        ]
-    )
+    projected_scoreline = str(row["predicted_scoreline"])
+    global_modal_scoreline = str(row["global_modal_scoreline"])
+    exact_score_probability = float(row["predicted_scoreline_probability"])
 
-    global_modal_scoreline = str(
-        row[
-            "global_modal_scoreline"
-        ]
-    )
-
-    exact_score_probability = float(
-        row[
-            "predicted_scoreline_probability"
-        ]
-    )
-
-    available = (
-        SCORE_DISTRIBUTION_COLUMNS
-        <=
-        set(
-            available_columns
+    try:
+        probability_grid = score_grid_for_row(row)
+        scorelines, home_3plus_probability, away_3plus_probability = (
+            scoreline_summary_for_row(row)
         )
-    )
-
-    if not available:
-
+    except (KeyError, TypeError, ValueError, OverflowError):
         return ScoreDistributionView(
             available=False,
             projected_scoreline=projected_scoreline,
@@ -342,217 +328,108 @@ def build_score_distribution_view(
             html="",
         )
 
-    home_3plus_probability = float(
-        row[
-            "score_home_3plus_probability"
-        ]
-    )
-
-    away_3plus_probability = float(
-        row[
-            "score_away_3plus_probability"
-        ]
-    )
-
-    score_rows: list[str] = []
-
-    top_probability = max(
-        float(
-            row[
-                "score_top_1_probability"
-            ]
-        ),
-        1e-12,
-    )
-
-    for rank in range(
-        1,
-        6,
-    ):
-
-        scoreline = str(
-            row[
-                f"score_top_{rank}_scoreline"
-            ]
-        )
-
-        probability = float(
-            row[
-                f"score_top_{rank}_probability"
-            ]
-        )
-
-        bar_width = max(
-            0.0,
-            min(
-                100.0,
-                (
-                    probability
-                    /
-                    top_probability
-                )
-                *
-                100.0,
-            ),
-        )
-
-        is_projected = (
-            scoreline
-            ==
-            projected_scoreline
-        )
-
-        is_mode = (
-            scoreline
-            ==
-            global_modal_scoreline
-        )
-
+    score_rows = []
+    top_probability = max(scorelines[0][1], 1e-12)
+    for scoreline, probability in scorelines:
+        is_projected = (scoreline == projected_scoreline)
+        is_mode = (scoreline == global_modal_scoreline)
         row_class = (
-            "score-distribution-row projected"
-            if is_projected
-            else
-            "score-distribution-row"
+            "score-distribution-row projected" if is_projected
+            else "score-distribution-row"
         )
-
-        tags: list[str] = []
-
+        bar_width = min(100.0, max(0.0, 100.0 * probability / top_probability))
+        tags = []
         if is_mode:
-
-            tags.append(
-                '<span class="score-distribution-tag">'
-                'MOST LIKELY'
-                '</span>'
-            )
-
+            tags.append('<span class="score-distribution-tag">MOST LIKELY</span>')
         if is_projected:
-
-            tags.append(
-                '<span class="score-distribution-tag">'
-                'PROJECTED'
-                '</span>'
-            )
-
-        tags_html = ""
-
-        if tags:
-
-            tags_html = (
-                '<div class="score-distribution-tags">'
-                +
-                "".join(
-                    tags
-                )
-                +
-                '</div>'
-            )
-
-        score_rows.append(
-            f"""
-            <div class="{row_class}">
-
-                <div class="score-distribution-score">
-                    {escape(scoreline)}
-                </div>
-
-                <div class="score-distribution-track">
-
-                    <div
-                        class="score-distribution-fill"
-                        style="
-                            width:
-                            {bar_width:.2f}%;
-                        "
-                    >
-                    </div>
-
-                </div>
-
-                <div class="score-distribution-probability">
-                    {probability * 100:.1f}%
-                </div>
-
-                {tags_html}
-
+            tags.append('<span class="score-distribution-tag">PROJECTED</span>')
+        tags_html = (
+            '<div class="score-distribution-tags">'
+            + "".join(tags)
+            + '</div>'
+        ) if tags else ""
+        score_rows.append(f"""
+        <div class="{row_class}">
+            <div class="score-distribution-score">{escape(scoreline)}</div>
+            <div class="score-distribution-track">
+                <div class="score-distribution-fill" style="width:{bar_width:.2f}%"></div>
             </div>
-            """
+            <div class="score-distribution-probability">{probability * 100:.1f}%</div>
+            {tags_html}
+        </div>
+        """)
+
+    header_cells = "".join(
+        f'<th scope="col">{escape(label)}</th>'
+        for label in SCORE_GRID_LABELS
+    )
+    body_rows: list[str] = []
+    for home_goals, home_label in enumerate(SCORE_GRID_LABELS):
+        cells: list[str] = []
+        for away_goals, away_label in enumerate(SCORE_GRID_LABELS):
+            is_projected = (
+                home_goals < 6 and away_goals < 6
+                and f"{home_goals}-{away_goals}" == projected_scoreline
+            )
+            cell_class = ' class="projected-score-cell"' if is_projected else ""
+            probability = probability_grid[home_goals][away_goals]
+            label = (
+                "&lt;0.1%" if 0 < probability < .0005
+                else f"{probability * 100:.1f}%"
+            )
+            cells.append(f'<td{cell_class}>{label}</td>')
+        body_rows.append(
+            '<tr><th scope="row">' + escape(home_label) + '</th>'
+            + "".join(cells) + '</tr>'
         )
 
-    if (
-        projected_scoreline
-        ==
-        global_modal_scoreline
-    ):
+    matrix_html = (
+        '<section class="score-matrix">'
+        '<div class="score-distribution-title">ALL POSSIBLE SCORE OUTCOMES</div>'
+        '<div class="score-matrix-caption">HOME GOALS DOWN &darr; / '
+        'AWAY GOALS ACROSS &rarr;</div>'
+        '<div class="score-matrix-scroll"><table class="score-matrix-table">'
+        '<thead><tr><th scope="col">H/A</th>'
+        + header_cells + '</tr></thead>'
+        '<tbody>' + "".join(body_rows) + '</tbody>'
+        '</table></div>'
+        '<p class="score-matrix-footnote">'
+        '6+ means six or more goals (pooled, not an exact score). '
+        'All 49 mutually exclusive outcomes sum to 100%. '
+        'These are Poisson-bridge estimates, not a player-goalscorer model.'
+        '</p></section>'
+    )
 
-        modal_note = (
-            "THIS IS ALSO THE SINGLE MOST LIKELY "
-            "EXACT SCORE OVERALL."
-        )
-
+    if projected_scoreline == global_modal_scoreline:
+        modal_note = "PROJECTED SCORE IS ALSO THE MOST LIKELY EXACT SCORE OVERALL."
     else:
-
         modal_note = (
-            f"{global_modal_scoreline} IS THE SINGLE MOST LIKELY "
-            "EXACT SCORE OVERALL. "
-            f"{projected_scoreline} IS SHOWN AS THE PROJECTED SCORE "
-            f"BECAUSE {row['predicted_selection']} IS THE "
-            "PREDICTED WINNER."
+            f"{global_modal_scoreline} IS THE MOST LIKELY EXACT SCORE OVERALL. "
+            f"{projected_scoreline} IS PROJECTED TO MATCH THE MOST LIKELY "
+            "HOME / DRAW / AWAY RESULT."
         )
 
     distribution_html = f"""
     <div class="score-distribution">
-
         <div class="score-distribution-head">
-
-            <div class="score-distribution-title">
-                MOST LIKELY SCORELINES
-            </div>
-
-            <div class="score-distribution-subtitle">
-                BAR LENGTHS SHOW RELATIVE LIKELIHOOD
-            </div>
-
+            <div class="score-distribution-title">MOST LIKELY SCORELINES</div>
+            <div class="score-distribution-subtitle">BARS SHOW RELATIVE LIKELIHOOD</div>
         </div>
-
-        {"".join(score_rows)}
-
+        {''.join(score_rows)}
+        {matrix_html}
         <div class="goal-range-grid">
-
             <div class="goal-range-cell">
-
-                <div class="goal-range-label">
-                    {escape(row["home_team"])}
-                    TO SCORE 3+
-                </div>
-
-                <div class="goal-range-value">
-                    {home_3plus_probability * 100:.1f}%
-                </div>
-
+                <div class="goal-range-label">{escape(row['home_team'])} TO SCORE 3+</div>
+                <div class="goal-range-value">{home_3plus_probability * 100:.1f}%</div>
             </div>
-
             <div class="goal-range-cell">
-
-                <div class="goal-range-label">
-                    {escape(row["away_team"])}
-                    TO SCORE 3+
-                </div>
-
-                <div class="goal-range-value">
-                    {away_3plus_probability * 100:.1f}%
-                </div>
-
+                <div class="goal-range-label">{escape(row['away_team'])} TO SCORE 3+</div>
+                <div class="goal-range-value">{away_3plus_probability * 100:.1f}%</div>
             </div>
-
         </div>
-
-        <div class="score-distribution-note">
-            {escape(modal_note)}
-        </div>
-
+        <div class="score-distribution-note">{escape(modal_note)}</div>
     </div>
     """
-
     return ScoreDistributionView(
         available=True,
         projected_scoreline=projected_scoreline,

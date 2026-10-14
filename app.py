@@ -931,100 +931,106 @@ if current_screen == "fixtures":
         predictions
     )
 
-    for start_index in range(
-        0,
-        fixture_count,
-        3,
-    ):
+    # A keyed container scopes the mobile two-column CSS to this
+    # picker only; navigation, exports and Evidence Vault retain
+    # Streamlit's normal responsive behavior.
+    with st.container(key="fixture_picker_grid"):
 
-        columns = st.columns(
-            3
-        )
-
-        for offset in range(
-            3
+        for start_index in range(
+            0,
+            fixture_count,
+            2,
         ):
 
-            index = (
-                start_index
-                +
-                offset
+            columns = st.columns(
+                2,
+                gap="small",
             )
 
-            if index >= fixture_count:
+            for offset in range(
+                2
+            ):
 
-                continue
+                index = (
+                    start_index
+                    +
+                    offset
+                )
 
-            fixture_row = (
-                predictions.iloc[
-                    index
-                ]
-            )
+                if index >= fixture_count:
 
-            fixture_id = (
-                fixture_ids[
-                    index
-                ]
-            )
+                    continue
 
-            fixture_kickoff = (
-                pd.Timestamp(
-                    fixture_row[
-                        "kickoff_utc"
+                fixture_row = (
+                    predictions.iloc[
+                        index
                     ]
                 )
-                .tz_convert(
-                    LOCAL_TZ
+
+                fixture_id = (
+                    fixture_ids[
+                        index
+                    ]
                 )
-            )
 
-            selected = (
-                fixture_id
-                ==
-                selected_fixture_id
-            )
-
-            with columns[
-                offset
-            ]:
-
-                render_html(
-                    build_fixture_choice_html(
-                        row=fixture_row,
-                        kickoff_local=fixture_kickoff,
-                        selected=selected,
+                fixture_kickoff = (
+                    pd.Timestamp(
+                        fixture_row[
+                            "kickoff_utc"
+                        ]
+                    )
+                    .tz_convert(
+                        LOCAL_TZ
                     )
                 )
 
-                button_label = (
-                    "OPEN PRINTER"
-                    if selected
-                    else
-                    "PRINT FORECAST"
+                selected = (
+                    fixture_id
+                    ==
+                    selected_fixture_id
                 )
 
-                if st.button(
-                    button_label,
-                    key=(
-                        f"fixture_select_"
-                        f"{index}"
-                    ),
-                    use_container_width=True,
-                ):
+                with columns[
+                    offset
+                ]:
 
-                    st.session_state[
-                        "selected_fixture_id"
-                    ] = fixture_id
+                    render_html(
+                        build_fixture_choice_html(
+                            row=fixture_row,
+                            kickoff_local=fixture_kickoff,
+                            selected=selected,
+                        )
+                    )
 
-                    st.session_state[
-                        "v2_screen"
-                    ] = "printer"
+                    button_label = (
+                        "OPEN PRINTER"
+                        if selected
+                        else
+                        "PRINT FORECAST"
+                    )
 
-                    st.session_state[
-                        "show_share_forecast"
-                    ] = False
+                    if st.button(
+                        button_label,
+                        key=(
+                            f"fixture_select_"
+                            f"{index}"
+                        ),
+                        use_container_width=True,
+                    ):
 
-                    st.rerun()
+                        st.session_state[
+                            "selected_fixture_id"
+                        ] = fixture_id
+
+                        st.session_state[
+                            "v2_screen"
+                        ] = "printer"
+
+                        st.session_state[
+                            "show_share_forecast"
+                        ] = False
+
+                        st.rerun()
 
 
     with st.expander(

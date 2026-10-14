@@ -6317,6 +6317,154 @@ div.stButton > button:focus-visible {
             none;
     }
 }
+
+/* ========================================================
+   MOBILE FIXTURE GRID / EXTENDED SCORE MATRIX (STAGE 6G)
+======================================================== */
+
+.st-key-fixture_picker_grid .fixture-choice-card {
+    min-width: 0;
+    min-height: 149px;
+    padding: 0.55rem 0.45rem;
+}
+
+.st-key-fixture_picker_grid .fixture-choice-teams {
+    margin-top: 0.33rem;
+    gap: 0.15rem;
+}
+
+.st-key-fixture_picker_grid .fixture-choice-topline {
+    flex-wrap: wrap;
+    gap: 0.1rem 0.45rem;
+    font-size: 0.49rem;
+    line-height: 1.2;
+}
+
+.st-key-fixture_picker_grid .fixture-choice-card .club-crest-wrap {
+    width: 47px;
+    height: 45px;
+    margin-bottom: 0.2rem;
+}
+
+.st-key-fixture_picker_grid .fixture-choice-card .club-crest {
+    height: 43px;
+    max-width: 46px;
+}
+
+.st-key-fixture_picker_grid .fixture-choice-name {
+    font-size: 0.69rem;
+    line-height: 1.14;
+}
+
+.st-key-fixture_picker_grid div.stButton > button {
+    min-height: 37px !important;
+    padding: 0.2rem 0.18rem !important;
+    font-size: 0.57rem !important;
+    line-height: 1.2 !important;
+}
+
+.score-matrix {
+    border-top: 1px dashed rgba(0, 0, 0, 0.35);
+    margin-top: 1.2rem;
+    padding-top: 0.9rem;
+}
+
+.score-matrix-caption,
+.score-matrix-footnote {
+    color: #595449;
+    font-family: "Courier New", monospace;
+    font-size: 0.55rem;
+    line-height: 1.4;
+}
+
+.score-matrix-caption {
+    margin: 0.5rem 0;
+}
+
+.score-matrix-footnote {
+    margin: 0.6rem 0 0;
+}
+
+.score-matrix-scroll {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.score-matrix-table {
+    width: 100%;
+    table-layout: fixed;
+    border-spacing: 1px;
+    border-collapse: separate;
+    color: #181818;
+    font-family: "Courier New", monospace;
+    font-size: 0.58rem;
+    text-align: center;
+}
+
+.score-matrix-table th,
+.score-matrix-table td {
+    min-width: 0;
+    padding: 0.36rem 0.08rem;
+    background: rgba(0, 0, 0, 0.04);
+    font-variant-numeric: tabular-nums;
+}
+
+.score-matrix-table th {
+    background: rgba(0, 0, 0, 0.11);
+    font-weight: 900;
+}
+
+.score-matrix-table td.projected-score-cell {
+    background: #1b1b1b;
+    color: #f4f1e8;
+    font-weight: 900;
+    outline: 1px solid #1b1b1b;
+}
+
+@media (max-width: 760px) {
+    /* Override Streamlit's mobile column stacking for this one picker. */
+    .st-key-fixture_picker_grid [data-testid="stHorizontalBlock"] {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        gap: 0.48rem !important;
+        align-items: stretch !important;
+    }
+
+    .st-key-fixture_picker_grid [data-testid="stColumn"] {
+        flex: 1 1 0% !important;
+        width: calc(50% - 0.24rem) !important;
+        min-width: 0 !important;
+        max-width: calc(50% - 0.24rem) !important;
+    }
+
+    .score-matrix-table {
+        font-size: clamp(0.45rem, 1.7vw, 0.58rem);
+    }
+
+    .score-matrix-table th,
+    .score-matrix-table td {
+        padding: 0.38rem 0.02rem;
+    }
+}
+
+@media (max-width: 370px) {
+    .st-key-fixture_picker_grid .fixture-choice-card {
+        padding: 0.5rem 0.25rem;
+    }
+    .st-key-fixture_picker_grid .fixture-choice-name {
+        font-size: 0.62rem;
+    }
+    .st-key-fixture_picker_grid .fixture-choice-card .club-crest-wrap {
+        height: 36px;
+        width: 39px;
+    }
+    .st-key-fixture_picker_grid .fixture-choice-card .club-crest {
+        height: 35px;
+        max-width: 38px;
+    }
+}
+
 """
 
 

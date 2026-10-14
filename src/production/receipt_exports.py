@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import io
+import math
 import re
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -44,7 +45,7 @@ EXPORT_DIR = (
 )
 
 RECEIPT_WIDTH = 900
-RECEIPT_HEIGHT = 2180
+RECEIPT_HEIGHT = 2860
 
 PAPER_RGB = (
     238,
@@ -69,6 +70,101 @@ LIGHT_RGB = (
     199,
     184,
 )
+
+
+
+# ============================================================
+# COMPLETE EXACT-SCORE PROBABILITY GRID
+# ============================================================
+
+SCORE_GRID_LABELS = ("0", "1", "2", "3", "4", "5", "6+")
+
+
+def score_probability_grid(
+    home_lambda: float,
+    away_lambda: float,
+) -> tuple[tuple[float, ...], ...]:
+    """49 disjoint cells covering ALL scores under the Poisson bridge.
+
+    Each axis has exact goals 0..5 and a pooled 6+ bucket. The grid
+    sums to 100% (within float tolerance). These are SCORE estimates
+    from the auxiliary Poisson bridge, not new CatBoost predictions.
+    Rows represent home goals, columns away goals.
+    """
+    rates = (float(home_lambda), float(away_lambda))
+    if any(not math.isfinite(rate) or rate < 0 for rate in rates):
+        raise ValueError("Poisson goal rates must be finite and nonnegative")
+
+    marginals = []
+    for rate in rates:
+        probs = [
+            math.exp(-rate) * rate ** goals / math.factorial(goals)
+            for goals in range(6)
+        ]
+        probs.append(max(0.0, 1.0 - sum(probs)))
+        marginals.append(probs)
+
+    home, away = marginals
+    return tuple(
+        tuple(home[h] * away[a] for a in range(7))
+        for h in range(7)
+    )
+
+
+def score_grid_for_row(row: pd.Series) -> tuple[tuple[float, ...], ...]:
+    return score_probability_grid(
+        float(row["score_home_lambda"]),
+        float(row["score_away_lambda"]),
+    )
+
+def scoreline_summary_for_row(
+    row: pd.Series,
+) -> tuple[list[tuple[str, float]], float, float]:
+    """Top five and 3+ goal chances, with a public-snapshot fallback.
+
+    The sanitized public snapshot has only 32 fields, with goal-rate
+    lambdas but without score_top_1..5. Derive the same Poisson-bridge
+    distribution rather than hiding the feature in deployed Streamlit.
+    """
+    grid = score_grid_for_row(row)
+    top_scorelines = sorted(
+        (
+            (f"{home}-{away}", grid[home][away])
+            for home in range(6)
+            for away in range(6)
+        ),
+        key=lambda entry: -entry[1],
+    )[:5]
+    home_three_plus = sum(sum(grid[h]) for h in range(3, 7))
+    away_three_plus = sum(
+        grid[h][a] for h in range(7) for a in range(3, 7)
+    )
+
+    # Prefer the source pipeline's top-five ranking when published.
+    required = {
+        f"score_top_{rank}_{field}"
+        for rank in range(1, 6)
+        for field in ("scoreline", "probability")
+    }
+    if required <= set(row.index):
+        try:
+            top_scorelines = [
+                (str(row[f"score_top_{rank}_scoreline"]),
+                 float(row[f"score_top_{rank}_probability"]))
+                for rank in range(1, 6)
+            ]
+        except (ValueError, TypeError, KeyError):
+            pass
+
+    if ("score_home_3plus_probability" in row.index
+            and "score_away_3plus_probability" in row.index):
+        try:
+            home_three_plus = float(row["score_home_3plus_probability"])
+            away_three_plus = float(row["score_away_3plus_probability"])
+        except (ValueError, TypeError):
+            pass
+
+    return top_scorelines, home_three_plus, away_three_plus
 
 
 # ============================================================
@@ -784,13 +880,18 @@ def build_receipt_image(
         "score_top_5_probability",
     }
 
-    distribution_available = (
-        distribution_columns
-        <=
-        set(
-            row.index
+    # Sanitized Streamlit snapshots omit score_top_1..5, but the
+    # Poisson lambdas are retained. Fall back to deriving them.
+    try:
+        top_scorelines, home_three_plus, away_three_plus = (
+            scoreline_summary_for_row(row)
         )
-    )
+        distribution_available = True
+    except (KeyError, ValueError, TypeError, OverflowError):
+        top_scorelines = []
+        home_three_plus = None
+        away_three_plus = None
+        distribution_available = False
 
     # ========================================================
     # TOP TEAR
@@ -1231,10 +1332,7 @@ def build_receipt_image(
         fill=INK_RGB,
     )
 
-    relative_note = (
-        "TOP 5 SCORE OUTCOMES // "
-        "BARS = RELATIVE LIKELIHOOD"
-    )
+    relative_note = "RELATIVE BARS"
 
     relative_font = load_font(
         size=17,
@@ -1267,14 +1365,7 @@ def build_receipt_image(
 
     if distribution_available:
 
-        top_probability = max(
-            float(
-                row[
-                    "score_top_1_probability"
-                ]
-            ),
-            1e-12,
-        )
+        top_probability = max(top_scorelines[0][1], 1e-12)
 
         score_y = distribution_top + 48
 
@@ -1283,17 +1374,7 @@ def build_receipt_image(
             6,
         ):
 
-            scoreline = str(
-                row[
-                    f"score_top_{rank}_scoreline"
-                ]
-            )
-
-            probability = float(
-                row[
-                    f"score_top_{rank}_probability"
-                ]
-            )
+            scoreline, probability = top_scorelines[rank - 1]
 
             relative_width = max(
                 0.0,
@@ -1435,17 +1516,8 @@ def build_receipt_image(
 
             score_y += 46
 
-        home_3plus = float(
-            row[
-                "score_home_3plus_probability"
-            ]
-        )
-
-        away_3plus = float(
-            row[
-                "score_away_3plus_probability"
-            ]
-        )
+        home_3plus = home_three_plus
+        away_3plus = away_three_plus
 
         three_plus_top = 1443
 
@@ -1794,16 +1866,9 @@ def build_receipt_image(
     )
 
     top_score_probability = (
-        float(
-            row.get(
-                "score_top_1_probability",
-                row[
-                    "predicted_scoreline_probability"
-                ],
-            )
-        )
-        *
-        100.0
+        top_scorelines[0][1] * 100.0
+        if distribution_available else
+        float(row["predicted_scoreline_probability"]) * 100.0
     )
 
     draw_row(
@@ -1901,22 +1966,115 @@ def build_receipt_image(
     )
 
     # ========================================================
-    # BARCODE
+    # COMPLETE SCORE GRID / 6+ BINS
     # ========================================================
 
-    draw_fake_barcode(
-        draw,
-        y=2090,
-        identifier=receipt_id,
+    draw_dashed_line(draw, y=2105)
+    draw.text(
+        (78, 2128),
+        "EVERY SCORE POSSIBILITY",
+        font=mono_bold,
+        fill=INK_RGB,
+    )
+    draw.text(
+        (78, 2160),
+        "HOME GOALS DOWN / AWAY GOALS ACROSS",
+        font=mono_small,
+        fill=MUTED_RGB,
     )
 
+    try:
+        grid = score_grid_for_row(row)
+    except (KeyError, ValueError, TypeError):
+        grid = None
+
+    if grid is None:
+        draw.text(
+            (78, 2230),
+            "FULL SCORE PROBABILITIES UNAVAILABLE",
+            font=mono_small,
+            fill=MUTED_RGB,
+        )
+    else:
+        matrix_left = 74
+        label_width = 88
+        cell_width = 92
+        first_row_y = 2250
+        row_height = 54
+        grid_font = load_font(size=18, mono=True)
+        grid_bold = load_font(size=18, mono=True, bold=True)
+        draw.text(
+            (matrix_left, first_row_y - 37),
+            "H / A",
+            font=grid_font,
+            fill=MUTED_RGB,
+        )
+        for column, label in enumerate(SCORE_GRID_LABELS):
+            x = matrix_left + label_width + column * cell_width
+            draw.text(
+                (x + 23, first_row_y - 37),
+                label,
+                font=grid_bold,
+                fill=INK_RGB,
+            )
+        projected = str(row["predicted_scoreline"])
+        for home_goals, label in enumerate(SCORE_GRID_LABELS):
+            y = first_row_y + home_goals * row_height
+            draw.text(
+                (matrix_left + 20, y + 10),
+                label,
+                font=grid_bold,
+                fill=INK_RGB,
+            )
+            for away_goals in range(7):
+                x = matrix_left + label_width + away_goals * cell_width
+                is_projected = (
+                    home_goals < 6 and away_goals < 6
+                    and f"{home_goals}-{away_goals}" == projected
+                )
+                if is_projected:
+                    draw.rectangle(
+                        (x - 5, y + 1, x + cell_width - 9, y + 43),
+                        outline=INK_RGB,
+                        width=2,
+                    )
+                cell_probability = grid[home_goals][away_goals]
+                probability_text = (
+                    "<0.1%" if 0 < cell_probability < .0005
+                    else f"{cell_probability * 100:.1f}%"
+                )
+                bounds = draw.textbbox((0, 0), probability_text, font=grid_font)
+                center_x = x + (cell_width - 14) / 2
+                draw.text(
+                    (center_x - (bounds[2] - bounds[0]) / 2, y + 12),
+                    probability_text,
+                    font=grid_bold if is_projected else grid_font,
+                    fill=INK_RGB,
+                )
+
+    draw.text(
+        (80, 2650),
+        "6+ IS A POOLED GOAL COUNT, NOT AN EXACT SCORE.",
+        font=mono_small,
+        fill=MUTED_RGB,
+    )
+    draw.text(
+        (80, 2682),
+        "GRID: AUXILIARY POISSON BRIDGE / ALL CELLS = 100%",
+        font=mono_small,
+        fill=MUTED_RGB,
+    )
+    # No player scorer probabilities are claimed without a validated
+    # player-level model and current availability evidence.
+    draw_fake_barcode(
+        draw,
+        y=2740,
+        identifier=receipt_id,
+    )
     center_text(
         draw,
-        xy_y=2155,
-        text=receipt_id.replace(
-            "-",
-            "",
-        ),
+        xy_y=2810,
+        text=receipt_id.replace("-", ""),
         font=mono_small,
         fill=MUTED_RGB,
     )
