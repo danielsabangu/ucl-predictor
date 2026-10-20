@@ -59,13 +59,31 @@ from src.ui.v2_styles import (
     apply_v2_styles,
 )
 
+from src.ui.matchday import (
+    matchday_hero_html,
+    matchday_section_heading,
+    fixture_card_html,
+    scoreboard_html,
+    forecast_vs_reality_html,
+    empty_pitch_html,
+    feed_notice_html,
+)
+
+from src.ui.matchday_styles import (
+    apply_matchday_styles,
+)
+
+from src.ui.nightfall_styles import (
+    apply_nightfall_styles,
+)
+
 
 # ============================================================
 # PAGE
 # ============================================================
 
 st.set_page_config(
-    page_title="UCL Predictor",
+    page_title="UCL Predictor | Matchday",
     page_icon="⚽",
     layout="wide",
     initial_sidebar_state="collapsed",
@@ -194,6 +212,12 @@ apply_v2_styles(
     render_html,
     theme=CURRENT_THEME,
 )
+
+# Additional styling is scoped to the two new football screens.
+apply_matchday_styles(render_html)
+# Nightfall palette/typography overrides the old industrial presentation.
+# Existing thermal receipt, probabilities and exports are untouched.
+apply_nightfall_styles(render_html, theme=CURRENT_THEME)
 
 
 # ============================================================
@@ -339,35 +363,21 @@ next_kickoff_display = (
 
 
 # ============================================================
-# HEADER
+# NIGHTFALL BRAND — COMPACT FIRST IMPRESSION
 # ============================================================
 
 render_html(
     """
-    <div class="main-app-brand">
-
-        <div class="main-app-wordmark-ucl">
-            UCL
-        </div>
-
-        <div class="main-app-wordmark-predictor">
-            PREDICTOR
-        </div>
-
-    </div>
-
-    <div class="app-kicker main-app-kicker">
-        UEFA CHAMPIONS LEAGUE // MATCH FORECASTS
-    </div>
-
-    <div class="app-subtitle main-app-subtitle">
-        Pick a Champions League match and print a forecast.
-        The predictor weighs team strength, recent form and
-        squad evidence, then shows the result as probabilities
-        rather than pretending football is certain.
-    </div>
-
-    <div class="top-rule"></div>
+    <header class="nf-app-header" aria-label="UCL Predictor">
+      <div class="nf-brand-lockup">
+        <span class="nf-brand-emblem" aria-hidden="true">✦</span>
+        <div class="nf-wordmark">UCL <span>PREDICTOR<span class="nf-period">.</span></span></div>
+      </div>
+      <div class="nf-header-right">
+        <span class="nf-header-category">FOOTBALL · FORECASTS · MATCHDAY</span>
+        <span class="nf-brand-edition">V2</span>
+      </div>
+    </header>
     """
 )
 
@@ -398,13 +408,13 @@ with theme_control:
     )
 
     theme_button_label = (
-        "☀  LIGHT MODE"
+        "☀  LIGHT"
         if
         next_theme
         ==
         "light"
         else
-        "◐  DARK MODE"
+        "◐  DARK"
     )
 
     if st.button(
@@ -532,7 +542,10 @@ if not health[
             "python -m src.production.run"
         )
 
-    st.stop()
+    # Keep the Matchday and Evidence Vault pages accessible even when the
+    # forecast service cannot issue *new* predictions. Printing remains gated.
+
+FORECASTS_AVAILABLE = bool(health["can_serve_predictions"])
 
 
 # ============================================================
@@ -596,20 +609,15 @@ except Exception as error:
     st.stop()
 
 
-predictions = (
-    filter_upcoming_predictions(
-        predictions
-    )
-)
+# Match Centre sees all fixtures in the published snapshot, including
+# already-started matches. This is fixture information, NOT a live score feed.
+matchday_predictions = predictions.copy()
 
-if predictions.empty:
-
-    st.error(
-        "No upcoming fixtures remain "
-        "in this forecast artifact."
-    )
-
-    st.stop()
+# The printer continues to use only upcoming fixtures, and is disabled if
+# production health checks cannot safely serve fresh forecasts.
+predictions = filter_upcoming_predictions(predictions)
+if not FORECASTS_AVAILABLE:
+    predictions = predictions.iloc[0:0].copy()
 
 
 # ============================================================
@@ -617,16 +625,11 @@ if predictions.empty:
 # ============================================================
 
 matchday_date = (
-    predictions[
-        "kickoff_utc"
-    ]
-    .min()
-    .tz_convert(
-        LOCAL_TZ
-    )
-    .strftime(
-        "%d %B %Y"
-    )
+    matchday_predictions["kickoff_utc"].min()
+    .tz_convert(LOCAL_TZ)
+    .strftime("%d %B %Y")
+    if not matchday_predictions.empty
+    else "the next matchday"
 )
 
 fixture_ids = [
@@ -661,7 +664,7 @@ if (
 
     st.session_state[
         "v2_screen"
-    ] = "fixtures"
+    ] = "home"
 
 
 # Migrate an open Stage 6E Evidence session into the new Vault.
@@ -811,99 +814,181 @@ if selected_fixture_id is not None:
 
 
 # ============================================================
-# SCREEN NAVIGATION
+# SCREEN NAVIGATION — HOME / MATCHES / LIVE / PRINTER / VAULT
 # ============================================================
 
-current_screen = (
-    st.session_state[
-        "v2_screen"
-    ]
-)
+current_screen = st.session_state["v2_screen"]
 
-nav_1, nav_2, nav_3 = st.columns(
-    3
-)
-
-with nav_1:
-
-    if st.button(
-        "01  MATCHES",
-        key="nav_matches",
-        use_container_width=True,
-        type=(
-            "primary"
-            if current_screen == "fixtures"
-            else
-            "secondary"
-        ),
-    ):
-
-        st.session_state[
-            "v2_screen"
-        ] = "fixtures"
-
-        st.rerun()
+nav_items = [
+    ("⌂  HOME", "home", "nav_home"),
+    ("⚽  FIXTURES", "fixtures", "nav_matches"),
+    ("◉  LIVE", "live", "nav_live"),
+    ("✦  PRINTER", "printer", "nav_printer"),
+    ("▤  VAULT", "vault", "nav_evidence_vault"),
+]
+with st.container(key="matchday_top_nav"):
+    nav_columns = st.columns(5, gap="small")
+    for col, (label, target, key) in zip(nav_columns, nav_items):
+        with col:
+            if st.button(
+                label,
+                key=key,
+                use_container_width=True,
+                disabled=(target == "printer" and selected_fixture_id is None),
+                type="primary" if current_screen == target else "secondary",
+            ):
+                st.session_state["v2_screen"] = target
+                if target == "vault":
+                    st.session_state["vault_record_id"] = None
+                    st.session_state["vault_show_receipt"] = False
+                st.rerun()
 
 
-with nav_2:
+# ============================================================
+# NEW PAGE — MATCHDAY HOME
+# ============================================================
 
-    if st.button(
-        "02  PRINTER",
-        key="nav_printer",
-        use_container_width=True,
-        disabled=(
-            selected_fixture_id
-            is None
-        ),
-        type=(
-            "primary"
-            if current_screen == "printer"
-            else
-            "secondary"
-        ),
-    ):
+if current_screen == "home":
+    render_html(matchday_hero_html(matchday_predictions))
 
-        st.session_state[
-            "v2_screen"
-        ] = "printer"
+    # Genuine navigation controls positioned immediately beneath the hero.
+    # The pre-kickoff gate remains authoritative for creating new receipts.
+    home_can_print = FORECASTS_AVAILABLE and not predictions.empty
+    with st.container(key="nightfall_home_actions"):
+        home_print_col, home_live_col = st.columns(2, gap="small")
+        with home_print_col:
+            if st.button(
+                "✦  PRINT FORECAST",
+                key="nf_home_print",
+                type="primary",
+                use_container_width=True,
+                disabled=not home_can_print,
+                help="Select the next upcoming fixture and open its prediction printer.",
+            ):
+                first_upcoming = predictions.iloc[0]
+                st.session_state["selected_fixture_id"] = match_identifier(first_upcoming)
+                st.session_state["show_share_forecast"] = False
+                st.session_state["v2_screen"] = "printer"
+                st.rerun()
+        with home_live_col:
+            if st.button(
+                "◉  OPEN MATCH CENTRE",
+                key="nf_home_live",
+                type="secondary",
+                use_container_width=True,
+            ):
+                if not matchday_predictions.empty:
+                    st.session_state["matchday_selected_id"] = match_identifier(
+                        matchday_predictions.iloc[0]
+                    )
+                st.session_state["v2_screen"] = "live"
+                st.rerun()
 
-        st.rerun()
+    if not home_can_print:
+        st.caption("Printing is available only for valid forecasts before kickoff."
+                   " You can still explore Match Centre and Evidence Vault.")
+
+    render_html(feed_notice_html())
+    render_html(matchday_section_heading(
+        "THE MATCHDAY BOARD",
+        "Choose your club. Follow the story. Every pre-match forecast stays archived.",
+    ))
+
+    if matchday_predictions.empty:
+        st.info("No fixtures are available in the current snapshot.")
+    else:
+        fixtures_for_board = matchday_predictions.reset_index(drop=True)
+        for start_index in range(0, len(fixtures_for_board), 2):
+            card_columns = st.columns(2, gap="small")
+            for offset in range(2):
+                index = start_index + offset
+                if index >= len(fixtures_for_board):
+                    continue
+                board_row = fixtures_for_board.iloc[index]
+                board_id = match_identifier(board_row)
+                with card_columns[offset]:
+                    render_html(fixture_card_html(board_row))
+                    if st.button(
+                        "OPEN MATCH CENTRE →",
+                        key=f"md_open_{index}",
+                        use_container_width=True,
+                    ):
+                        st.session_state["matchday_selected_id"] = board_id
+                        st.session_state["v2_screen"] = "live"
+                        st.rerun()
 
 
-with nav_3:
+# ============================================================
+# NEW PAGE — CUSTOM MATCH CENTRE (NO INVENTED LIVE DATA)
+# ============================================================
 
-    if st.button(
-        "03  EVIDENCE VAULT",
-        key="nav_evidence_vault",
-        use_container_width=True,
-        type=(
-            "primary"
-            if current_screen == "vault"
-            else
-            "secondary"
-        ),
-    ):
+elif current_screen == "live":
+    render_html(matchday_section_heading(
+        "THE MATCH CENTRE",
+        "A football-first display for scores and your original pre-match forecast.",
+    ))
+    render_html(feed_notice_html())
 
-        st.session_state[
-            "v2_screen"
-        ] = "vault"
+    if matchday_predictions.empty:
+        st.info("No matchday fixture snapshot is available.")
+    else:
+        centre_rows = matchday_predictions.reset_index(drop=True)
+        centre_ids = [match_identifier(row) for _, row in centre_rows.iterrows()]
+        display_labels = {
+            match_identifier(row): (
+                f"{row['home_team']} vs {row['away_team']} — "
+                f"{pd.Timestamp(row['kickoff_utc']).tz_convert(LOCAL_TZ).strftime('%H:%M SAST')}"
+            )
+            for _, row in centre_rows.iterrows()
+        }
+        if st.session_state.get("matchday_selected_id") not in centre_ids:
+            st.session_state["matchday_selected_id"] = centre_ids[0]
+        centre_selected = st.selectbox(
+            "SELECT A MATCH",
+            centre_ids,
+            format_func=lambda value: display_labels.get(value, value),
+            index=centre_ids.index(st.session_state["matchday_selected_id"]),
+        )
+        st.session_state["matchday_selected_id"] = centre_selected
+        centre_row = centre_rows.iloc[centre_ids.index(centre_selected)]
 
-        st.session_state[
-            "vault_record_id"
-        ] = None
-
-        st.session_state[
-            "vault_show_receipt"
-        ] = False
-
-        st.rerun()
+        # No external feed has been connected or authorised for public display.
+        render_html(scoreboard_html(centre_row, score=None))
+        pitch_col, forecast_col = st.columns([1.15, 1], gap="medium")
+        with pitch_col:
+            render_html(empty_pitch_html())
+        with forecast_col:
+            render_html(forecast_vs_reality_html(
+                centre_row,
+                forecasts_available=FORECASTS_AVAILABLE,
+                score=None,
+            ))
+        can_print = (
+            FORECASTS_AVAILABLE
+            and centre_selected in fixture_ids
+        )
+        if st.button(
+            "PRINT THIS PRE-MATCH FORECAST →",
+            key="md_print_selected",
+            use_container_width=True,
+            disabled=not can_print,
+        ):
+            st.session_state["selected_fixture_id"] = centre_selected
+            st.session_state["v2_screen"] = "printer"
+            st.session_state["show_share_forecast"] = False
+            st.rerun()
+        if not can_print:
+            st.caption(
+                "New receipts can only be printed while a valid "
+                "pre-kickoff forecast is available."
+            )
 
 
 # ============================================================
 # PAGE 01 — CHOOSE MATCH
 # ============================================================
 
-if current_screen == "fixtures":
+elif current_screen == "fixtures":
 
     render_html(
         f"""
@@ -930,6 +1015,11 @@ if current_screen == "fixtures":
     fixture_count = len(
         predictions
     )
+    if fixture_count == 0:
+        st.info(
+            "There are no upcoming printable predictions in this snapshot. "
+            "Visit Match Centre for the matchday board or Vault for history."
+        )
 
     # A keyed container scopes the mobile two-column CSS to this
     # picker only; navigation, exports and Evidence Vault retain
@@ -2182,7 +2272,7 @@ render_html(
 
         //
 
-        290 PRE-MATCH SIGNALS
+        INDEPENDENT PRE-MATCH FOOTBALL FORECASTS
 
         {creator_footer_html}
 
