@@ -1,19 +1,34 @@
-"""Nightfall first-visit loading overlay for UCL Predictor V2.
+"""Football-night intro with the same original logo as the app header.
 
-Pure presentation; a lightweight original geometric football SVG avoids
-copyrighted competition marks, font/image downloads and sleep-based delays.
+No external images and no artificial sleep delay. Displayed once in a
+Streamlit session, with a static accessible fallback for reduced motion.
 """
 from __future__ import annotations
 
 import streamlit as st
+from src.ui.broadcast_identity import brand_icon_html
 
-STARTUP_SESSION_KEY = "_ucl_predictor_startup_complete"
+STARTUP_SESSION_KEY = '_ucl_predictor_startup_complete'
 
 
 def build_startup_html() -> str:
-    """Return compact markup safe for Streamlit's HTML/Markdown pipeline."""
-    # Preserve old test strings in non-visible data attributes for compatibility
-    # with the pre-Nightfall loader tests. Actual onscreen copy is fully replaced.
+    ball = (
+        '<div class="nf-splash-ball-area" aria-hidden="true">'
+        '<div class="nf-ball-trail"></div>'
+        '<div class="nf-splash-ball">'
+        '<svg viewBox="0 0 144 144" xmlns="http://www.w3.org/2000/svg" focusable="false">'
+        '<defs><radialGradient id="bpball" cx="30%" cy="25%" r="80%">'
+        '<stop offset="0" stop-color="#f7fcff"/>'
+        '<stop offset=".62" stop-color="#d3e7fd"/>'
+        '<stop offset="1" stop-color="#2d6dad"/></radialGradient></defs>'
+        '<circle cx="72" cy="72" r="64" fill="url(#bpball)" stroke="#bce8ff" stroke-width="2"/>'
+        '<path d="M59 29L84 28L106 52L95 82L69 93L43 77L38 52Z" fill="#0c3261" '
+        'stroke="#66b2ec" stroke-width="2"/>'
+        '<path d="M59 29L43 12M84 28L102 13M106 52L133 50M95 82L115 105M69 93L69 135M43 77L21 97M38 52L12 46" '
+        'stroke="#18518b" stroke-width="3" fill="none"/>'
+        '<path d="M59 29L75 13M84 28L113 33M106 52L120 78M95 82L88 120M69 93L46 119" '
+        'stroke="#659ac9" stroke-width="2" fill="none"/></svg></div></div>'
+    )
     return (
         '<div class="ucl-startup-overlay" role="status" aria-live="polite" '
         'aria-label="UCL Predictor is opening the matchday" '
@@ -22,49 +37,19 @@ def build_startup_html() -> str:
         '<div class="ucl-startup-scan" aria-hidden="true"></div>'
         '<div class="ucl-startup-inner">'
         '<div class="nf-splash-eyebrow">THE LIGHTS ARE COMING ON</div>'
-        '<div class="nf-splash-ball-area" aria-hidden="true">'
-        '<div class="nf-ball-trail"></div>'
-        '<div class="nf-splash-ball">'
-        '<svg viewBox="0 0 144 144" xmlns="http://www.w3.org/2000/svg" '
-        'focusable="false">'
-        '<defs>'
-        '<radialGradient id="nfBall" cx="32%" cy="23%" r="82%">'
-        '<stop offset="0" stop-color="#ffffff"/>'
-        '<stop offset=".54" stop-color="#dceffd"/>'
-        '<stop offset=".87" stop-color="#a0c8e7"/>'
-        '<stop offset="1" stop-color="#46719d"/>'
-        '</radialGradient>'
-        '<linearGradient id="nfPanel" x1="0" x2="1" y1="0" y2="1">'
-        '<stop offset="0" stop-color="#154c88"/>'
-        '<stop offset="1" stop-color="#0b2955"/>'
-        '</linearGradient>'
-        '</defs>'
-        '<circle cx="72" cy="72" r="64" fill="url(#nfBall)" '
-        'stroke="#a8e2ff" stroke-width="1.7"/>'
-        '<path d="M58 29L86 27L104 51L96 80L70 93L44 76L39 52Z" '
-        'fill="url(#nfPanel)" stroke="#69b7e9" stroke-width="2.5"/>'
-        '<path d="M58 29L50 13M86 27L99 17M104 51L132 51M96 80L117 101M70 93L71 134M44 76L21 95M39 52L13 47" '
-        'stroke="#255b93" stroke-width="3" fill="none"/>'
-        '<path d="M58 29L69 13M86 27L107 35M104 51L116 76M96 80L89 119M70 93L47 124M44 76L16 73M39 52L31 25" '
-        'stroke="#5c9dcd" stroke-width="1.7" fill="none"/>'
-        '<path d="M40 52L72 70L102 52M70 93L72 70M44 76L72 70L96 80" '
-        'stroke="#badcf5" stroke-width="1.3" fill="none" opacity=".72"/>'
-        '<path d="M32 20Q22 28 18 39" stroke="#fff" stroke-width="4" '
-        'stroke-linecap="round" opacity=".7" fill="none"/>'
-        '</svg>'
-        '</div></div>'
+        '<div class="bp-startup-brand">' + brand_icon_html(54) +
+        '<span>UCL <strong>PREDICTOR<em>.</em></strong></span></div>'
+        '<div class="bp-startup-tagline">THE NIGHT IS OURS.</div>'
+        + ball +
         '<div class="ucl-startup-fallback">UCL<span>PREDICTOR</span></div>'
         '<div class="ucl-startup-copy">A NIGHT OF POSSIBILITIES</div>'
-        '<div class="ucl-startup-progress">'
-        '<div class="ucl-startup-progress-fill"></div></div>'
-        '<div class="ucl-startup-system">'
-        'PREPARING YOUR MATCHDAY EXPERIENCE</div>'
+        '<div class="ucl-startup-progress"><div class="ucl-startup-progress-fill"></div></div>'
+        '<div class="ucl-startup-system">PREPARING YOUR MATCHDAY EXPERIENCE</div>'
         '</div></div>'
     )
 
 
 def show_startup_loading_screen() -> None:
-    """One short, non-blocking intro per Streamlit browser session."""
     if st.session_state.get(STARTUP_SESSION_KEY, False):
         return
     st.session_state[STARTUP_SESSION_KEY] = True

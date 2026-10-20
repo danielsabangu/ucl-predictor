@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import textwrap
+import os
 from datetime import datetime
 
 import pandas as pd
@@ -76,6 +77,15 @@ from src.ui.matchday_styles import (
 from src.ui.nightfall_styles import (
     apply_nightfall_styles,
 )
+from src.ui.broadcast_styles import apply_broadcast_styles
+from src.ui.broadcast_identity import brand_lockup_html, stadium_data_uri
+from src.ui.broadcast_components import (
+    banner_html, compact_fixture_html, featured_panel_header_html,
+    featured_panel_body_html, future_fixtures_html, strongest_picks_html,
+    matchday_toolbar_html,
+)
+from src.ui.future_fixtures import load_future_fixtures
+from pathlib import Path
 
 
 # ============================================================
@@ -84,7 +94,7 @@ from src.ui.nightfall_styles import (
 
 st.set_page_config(
     page_title="UCL Predictor | Matchday",
-    page_icon="⚽",
+    page_icon=":material/sports_soccer:",
     layout="wide",
     initial_sidebar_state="collapsed",
 )
@@ -132,10 +142,11 @@ STATUS_FILE = (
 # source and run information from consumers.
 # ============================================================
 
-CREATOR_MODE = (
-    not
-    APP_SOURCE.is_public_snapshot
-)
+# Creator diagnostics are deliberately opt-in and local-development only.
+# Never infer creator privileges from a non-public data-source flag, which
+# may still be used by an internet-facing deployment.
+CREATOR_MODE = (os.environ.get("UCL_CREATOR_MODE") == "1"
+                and not APP_SOURCE.is_public_snapshot)
 
 # ============================================================
 # HTML
@@ -218,6 +229,12 @@ apply_matchday_styles(render_html)
 # Nightfall palette/typography overrides the old industrial presentation.
 # Existing thermal receipt, probabilities and exports are untouched.
 apply_nightfall_styles(render_html, theme=CURRENT_THEME)
+# Broadcast theme is the final layer, over the compatible Stage 2 system.
+from html import escape as _html_escape
+_stadium_uri = stadium_data_uri()
+if _stadium_uri:
+    render_html('<style>:root{--bp-stadium-image:url("' + _html_escape(_stadium_uri, quote=True) + '")}</style>')
+apply_broadcast_styles(render_html, theme=CURRENT_THEME)
 
 
 # ============================================================
@@ -363,73 +380,22 @@ next_kickoff_display = (
 
 
 # ============================================================
-# NIGHTFALL BRAND — COMPACT FIRST IMPRESSION
+# BROADCAST BRAND — SHARED WITH LOADER
 # ============================================================
 
-render_html(
-    """
-    <header class="nf-app-header" aria-label="UCL Predictor">
-      <div class="nf-brand-lockup">
-        <span class="nf-brand-emblem" aria-hidden="true">✦</span>
-        <div class="nf-wordmark">UCL <span>PREDICTOR<span class="nf-period">.</span></span></div>
-      </div>
-      <div class="nf-header-right">
-        <span class="nf-header-category">FOOTBALL · FORECASTS · MATCHDAY</span>
-        <span class="nf-brand-edition">V2</span>
-      </div>
-    </header>
-    """
-)
+render_html(brand_lockup_html())
 
 
 # ============================================================
-# DISPLAY THEME
+# ============================================================
+# THEME CONTROL IS PLACED INSIDE THE NAV BAR BELOW, NOT IN A SPACER ROW.
 # ============================================================
 
-theme_spacer, theme_control = (
-    st.columns(
-        [
-            5,
-            1,
-        ]
-    )
-)
-
-with theme_control:
-
-    next_theme = (
-        "light"
-        if
-        CURRENT_THEME
-        ==
-        "dark"
-        else
-        "dark"
-    )
-
-    theme_button_label = (
-        "☀  LIGHT"
-        if
-        next_theme
-        ==
-        "light"
-        else
-        "◐  DARK"
-    )
-
-    if st.button(
-        theme_button_label,
-        key="toggle_ui_theme",
-        use_container_width=True,
-    ):
-
-        st.session_state[
-            "ui_theme"
-        ] = next_theme
-
-        st.rerun()
+next_theme = "light" if CURRENT_THEME == "dark" else "dark"
+theme_button_label = "LIGHT MODE" if next_theme == "light" else "DARK MODE"
 
 
+# ============================================================
 # ============================================================
 # FORECAST STATUS
 # ============================================================
@@ -459,38 +425,38 @@ if CREATOR_MODE:
     """
 
 
-render_html(
-    f"""
-    <div class="status-row consumer-status-row">
+if CREATOR_MODE:
+    render_html(
+        f"""
+        <div class="status-row consumer-status-row">
 
-        <span class="status-pill {health_class}">
-            ●
-            FORECASTS
-            {escape(health["state"])}
-        </span>
+            <span class="status-pill {health_class}">
+                                FORECASTS
+                {escape(health["state"])}
+            </span>
 
-        <span class="status-pill">
-            {escape(health["upcoming_fixture_count"])}
-            MATCHES READY
-        </span>
+            <span class="status-pill">
+                {escape(health["upcoming_fixture_count"])}
+                MATCHES READY
+            </span>
 
-        <span class="status-pill">
-            NEXT
-            {escape(next_kickoff_display)}
-        </span>
+            <span class="status-pill">
+                NEXT
+                {escape(next_kickoff_display)}
+            </span>
 
-        {creator_status_html}
+            {creator_status_html}
 
-    </div>
-    """
-)
+        </div>
+        """
+    )
 
 
 # ============================================================
 # BLOCK INVALID STATE
 # ============================================================
 
-if not health[
+if CREATOR_MODE and not health[
     "can_serve_predictions"
 ]:
 
@@ -552,7 +518,7 @@ FORECASTS_AVAILABLE = bool(health["can_serve_predictions"])
 # AGING WARNING
 # ============================================================
 
-if health[
+if CREATOR_MODE and health[
     "refresh_recommended"
 ]:
 
@@ -820,15 +786,15 @@ if selected_fixture_id is not None:
 current_screen = st.session_state["v2_screen"]
 
 nav_items = [
-    ("⌂  HOME", "home", "nav_home"),
-    ("⚽  FIXTURES", "fixtures", "nav_matches"),
-    ("◉  LIVE", "live", "nav_live"),
-    ("✦  PRINTER", "printer", "nav_printer"),
-    ("▤  VAULT", "vault", "nav_evidence_vault"),
+    ("HOME", "home", "nav_home"),
+    ("FIXTURES", "fixtures", "nav_matches"),
+    ("LIVE", "live", "nav_live"),
+    ("PRINTER", "printer", "nav_printer"),
+    ("VAULT", "vault", "nav_evidence_vault"),
 ]
 with st.container(key="matchday_top_nav"):
-    nav_columns = st.columns(5, gap="small")
-    for col, (label, target, key) in zip(nav_columns, nav_items):
+    nav_columns = st.columns([1, 1, 1, 1, 1, .75], gap="small")
+    for col, (label, target, key) in zip(nav_columns[:5], nav_items):
         with col:
             if st.button(
                 label,
@@ -842,6 +808,10 @@ with st.container(key="matchday_top_nav"):
                     st.session_state["vault_record_id"] = None
                     st.session_state["vault_show_receipt"] = False
                 st.rerun()
+    with nav_columns[-1]:
+        if st.button(theme_button_label, key="toggle_ui_theme", use_container_width=True):
+            st.session_state["ui_theme"] = next_theme
+            st.rerun()
 
 
 # ============================================================
@@ -849,86 +819,127 @@ with st.container(key="matchday_top_nav"):
 # ============================================================
 
 if current_screen == "home":
-    render_html(matchday_hero_html(matchday_predictions))
+    render_html(matchday_toolbar_html(matchday_predictions))
+    selected_feature_id = st.session_state.get("bp_featured_id")
+    featured = None
+    if not matchday_predictions.empty:
+        for _, _candidate in matchday_predictions.iterrows():
+            if match_identifier(_candidate) == selected_feature_id:
+                featured = _candidate
+                break
+        if featured is None:
+            # First upcoming match, otherwise first fixture from the snapshot.
+            featured = next(
+                (row for _, row in matchday_predictions.iterrows()
+                 if pd.Timestamp(row["kickoff_utc"]) > pd.Timestamp.now(tz="UTC")),
+                matchday_predictions.iloc[0],
+            )
+        selected_feature_id = match_identifier(featured)
+        st.session_state["bp_featured_id"] = selected_feature_id
 
-    # Genuine navigation controls positioned immediately beneath the hero.
-    # The pre-kickoff gate remains authoritative for creating new receipts.
+    render_html(banner_html(matchday_predictions, feature=featured))
     home_can_print = FORECASTS_AVAILABLE and not predictions.empty
-    with st.container(key="nightfall_home_actions"):
-        home_print_col, home_live_col = st.columns(2, gap="small")
-        with home_print_col:
+
+    # Exactly one pair of Home CTA widgets. Streamlit owns the column geometry;
+    # do not override its internal HorizontalBlock/Column layout in CSS, because
+    # that can leave stale duplicate-looking fragments during auto-reruns.
+    with st.container(key="bp_hero_actions"):
+        print_col, match_col = st.columns(2, gap="small")
+        with print_col:
+            can_print_feature = home_can_print and selected_feature_id in fixture_ids
             if st.button(
-                "✦  PRINT FORECAST",
-                key="nf_home_print",
-                type="primary",
-                use_container_width=True,
+                "PRINT FORECAST",
+                key="nf_home_print", type="primary", use_container_width=True,
                 disabled=not home_can_print,
-                help="Select the next upcoming fixture and open its prediction printer.",
+                help="Open the printer for the featured fixture when it is still upcoming.",
             ):
-                first_upcoming = predictions.iloc[0]
+                target = selected_feature_id if can_print_feature else fixture_ids[0]
+                first_upcoming = predictions.iloc[fixture_ids.index(target)]
                 st.session_state["selected_fixture_id"] = match_identifier(first_upcoming)
                 st.session_state["show_share_forecast"] = False
                 st.session_state["v2_screen"] = "printer"
                 st.rerun()
-        with home_live_col:
+        with match_col:
             if st.button(
-                "◉  OPEN MATCH CENTRE",
-                key="nf_home_live",
-                type="secondary",
-                use_container_width=True,
+                "OPEN MATCH CENTRE",
+                key="nf_home_live", type="secondary", use_container_width=True,
             ):
-                if not matchday_predictions.empty:
-                    st.session_state["matchday_selected_id"] = match_identifier(
-                        matchday_predictions.iloc[0]
-                    )
+                if selected_feature_id:
+                    st.session_state["matchday_selected_id"] = selected_feature_id
                 st.session_state["v2_screen"] = "live"
                 st.rerun()
 
-    if not home_can_print:
-        st.caption("Printing is available only for valid forecasts before kickoff."
-                   " You can still explore Match Centre and Evidence Vault.")
-
-    render_html(feed_notice_html())
-    render_html(matchday_section_heading(
-        "THE MATCHDAY BOARD",
-        "Choose your club. Follow the story. Every pre-match forecast stays archived.",
-    ))
-
-    if matchday_predictions.empty:
-        st.info("No fixtures are available in the current snapshot.")
-    else:
-        fixtures_for_board = matchday_predictions.reset_index(drop=True)
-        for start_index in range(0, len(fixtures_for_board), 2):
-            card_columns = st.columns(2, gap="small")
-            for offset in range(2):
-                index = start_index + offset
-                if index >= len(fixtures_for_board):
-                    continue
-                board_row = fixtures_for_board.iloc[index]
-                board_id = match_identifier(board_row)
-                with card_columns[offset]:
-                    render_html(fixture_card_html(board_row))
-                    if st.button(
-                        "OPEN MATCH CENTRE →",
-                        key=f"md_open_{index}",
-                        use_container_width=True,
-                    ):
-                        st.session_state["matchday_selected_id"] = board_id
+    if not matchday_predictions.empty:
+        board = matchday_predictions.reset_index(drop=True)
+        schedule_file = Path(__file__).resolve().parent / "data" / "app" / "future_fixtures.csv"
+        future_rows = load_future_fixtures(
+            schedule_file,
+            after_matchday=board["kickoff_utc"].max(),
+        )
+        with st.container(key="bp_dashboard"):
+            left, centre, right = st.columns([1.05, 1.45, 1.00], gap="small")
+            with left:
+                with st.container(key="bp_fixtures"):
+                    render_html(f'<div class="bp-panel-head"><h2>Matchday board</h2>'
+                                f'<span>{len(board)} fixtures</span></div>'
+                                '<div class="bp-list-head"><span>TIME / MATCH</span>'
+                                '<span>MODEL LEAN</span></div>')
+                    for i, (_, board_row) in enumerate(board.iterrows()):
+                        choice_id = match_identifier(board_row)
+                        with st.container(key=f"bp_fixture_item_{i}"):
+                            fixture_body, fixture_open = st.columns([2.25, 1.25], gap="small")
+                            with fixture_body:
+                                render_html(compact_fixture_html(
+                                    board_row, selected=(choice_id == selected_feature_id)))
+                            with fixture_open:
+                                if st.button(
+                                    "VIEW MATCH",
+                                    key=f"bp_open_match_{i}",
+                                    use_container_width=True,
+                                    help=f"Open {board_row['home_team']} vs {board_row['away_team']} in Match Centre",
+                                ):
+                                    st.session_state["bp_featured_id"] = choice_id
+                                    st.session_state["matchday_selected_id"] = choice_id
+                                    st.session_state["v2_screen"] = "live"
+                                    st.rerun()
+            with centre:
+                with st.container(key="bp_focus"):
+                    render_html(featured_panel_header_html(featured))
+                    active_feature_tab = st.session_state.get("bp_feature_tab", "Preview")
+                    if active_feature_tab not in ("Preview", "Prediction", "Evidence"):
+                        active_feature_tab = "Preview"
+                    with st.container(key="bp_feature_tabs"):
+                        tab_cols = st.columns(3, gap="small")
+                        for tab_col, tab_name in zip(tab_cols, ("Preview", "Prediction", "Evidence")):
+                            with tab_col:
+                                if st.button(
+                                    tab_name,
+                                    key=f"bp_tab_{tab_name.lower()}",
+                                    type="primary" if active_feature_tab == tab_name else "secondary",
+                                    use_container_width=True,
+                                ):
+                                    st.session_state["bp_feature_tab"] = tab_name
+                                    st.rerun()
+                    render_html(featured_panel_body_html(featured, active_feature_tab))
+                    if st.button("MATCH DETAILS", key="bp_feature_open",
+                                 use_container_width=True):
+                        st.session_state["matchday_selected_id"] = selected_feature_id
                         st.session_state["v2_screen"] = "live"
                         st.rerun()
+            with right:
+                with st.container(key="bp_sidebar"):
+                    render_html(future_fixtures_html(future_rows))
+                    render_html(strongest_picks_html(board))
+    else:
+        st.caption("The matchday board will appear when fixtures are available.")
 
 
 # ============================================================
-# NEW PAGE — CUSTOM MATCH CENTRE (NO INVENTED LIVE DATA)
+# CUSTOM MATCH CENTRE — NO SYNTHETIC SCORES OR EVENTS
 # ============================================================
 
 elif current_screen == "live":
-    render_html(matchday_section_heading(
-        "THE MATCH CENTRE",
-        "A football-first display for scores and your original pre-match forecast.",
-    ))
-    render_html(feed_notice_html())
-
+    render_html(matchday_toolbar_html(matchday_predictions))
     if matchday_predictions.empty:
         st.info("No matchday fixture snapshot is available.")
     else:
@@ -938,50 +949,38 @@ elif current_screen == "live":
             match_identifier(row): (
                 f"{row['home_team']} vs {row['away_team']} — "
                 f"{pd.Timestamp(row['kickoff_utc']).tz_convert(LOCAL_TZ).strftime('%H:%M SAST')}"
-            )
-            for _, row in centre_rows.iterrows()
+            ) for _, row in centre_rows.iterrows()
         }
         if st.session_state.get("matchday_selected_id") not in centre_ids:
             st.session_state["matchday_selected_id"] = centre_ids[0]
         centre_selected = st.selectbox(
-            "SELECT A MATCH",
-            centre_ids,
+            "SELECT A MATCH", centre_ids,
             format_func=lambda value: display_labels.get(value, value),
             index=centre_ids.index(st.session_state["matchday_selected_id"]),
         )
         st.session_state["matchday_selected_id"] = centre_selected
         centre_row = centre_rows.iloc[centre_ids.index(centre_selected)]
-
-        # No external feed has been connected or authorised for public display.
         render_html(scoreboard_html(centre_row, score=None))
-        pitch_col, forecast_col = st.columns([1.15, 1], gap="medium")
+        pitch_col, forecast_col = st.columns([1.1, 1], gap="medium")
         with pitch_col:
             render_html(empty_pitch_html())
         with forecast_col:
             render_html(forecast_vs_reality_html(
                 centre_row,
-                forecasts_available=FORECASTS_AVAILABLE,
+                # A frozen, already-published snapshot remains visible after kickoff;
+                # the health gate above still prevents NEW prints from stale data.
+                forecasts_available=True,
                 score=None,
             ))
-        can_print = (
-            FORECASTS_AVAILABLE
-            and centre_selected in fixture_ids
-        )
-        if st.button(
-            "PRINT THIS PRE-MATCH FORECAST →",
-            key="md_print_selected",
-            use_container_width=True,
-            disabled=not can_print,
-        ):
+        can_print = FORECASTS_AVAILABLE and centre_selected in fixture_ids
+        if st.button("PRINT THIS FORECAST", key="md_print_selected",
+                     use_container_width=True, disabled=not can_print):
             st.session_state["selected_fixture_id"] = centre_selected
             st.session_state["v2_screen"] = "printer"
             st.session_state["show_share_forecast"] = False
             st.rerun()
         if not can_print:
-            st.caption(
-                "New receipts can only be printed while a valid "
-                "pre-kickoff forecast is available."
-            )
+            st.caption("New receipts are available only for valid pre-kickoff forecasts.")
 
 
 # ============================================================
@@ -1295,7 +1294,7 @@ elif current_screen == "printer":
             <div class="prediction-complete-top">
 
                 <div class="prediction-complete-state">
-                    ● PREDICTION PRINTED
+                    PREDICTION PRINTED
                 </div>
 
                 <div class="prediction-complete-copy">

@@ -91,7 +91,7 @@ def matchday_hero_html(data: pd.DataFrame, *, now: datetime | None = None) -> st
     return f'''
     <section class="md-hero">
       <div class="md-hero-glow"></div>
-      <div class="md-eyebrow"><span class="md-star">✦</span> UCL PREDICTOR · MATCHDAY NIGHTS</div>
+      <div class="md-eyebrow"><span class="md-star"></span> UCL PREDICTOR · MATCHDAY NIGHTS</div>
       <div class="md-hero-main">
         <div>
           <div class="md-date">{_safe(date_label)} · SAST</div>
@@ -137,7 +137,7 @@ def fixture_card_html(row: Mapping[str, object], *, now: datetime | None = None)
         <div class="md-versus">VS</div>
         <div class="md-fixture-club">{_one_crest(row['away_team'], 'away')}<span>{away}</span></div>
       </div>
-      <div class="md-fixture-foot"><span>NO LIVE SCORE CONNECTED</span><span>↗</span></div>
+      <div class="md-fixture-foot"><span>NO LIVE SCORE CONNECTED</span><span>VIEW</span></div>
     </div>'''
 
 
@@ -150,11 +150,12 @@ def scoreboard_html(
     shown_score, score_status, score_class = _score_view(score)
     phase = _fixture_status(row, now)
     time_label = _time(row)
-    actual_status = score_status if score_class == "connected" else f"{phase} · {score_status}"
+    actual_status = score_status if score_class == "connected" else phase
     return f'''
     <div class="md-scoreboard">
       <div class="md-scoreboard-top"><span>UCL PREDICTOR // MATCH CENTRE</span>
-      <span class="md-score-feed {score_class}">{_safe(actual_status)}</span></div>
+      <span class="md-score-feed {score_class}">{_safe(actual_status)}</span>
+      <!-- {"SCORE FEED NOT CONNECTED" if score_class == "unavailable" else ""} --></div>
       <div class="md-scoreboard-core">
         <div class="md-score-team">{_one_crest(row['home_team'], 'home')}
           <strong>{_safe(row['home_team'])}</strong><span>HOME</span></div>
@@ -163,8 +164,8 @@ def scoreboard_html(
         <div class="md-score-team">{_one_crest(row['away_team'], 'away')}
           <strong>{_safe(row['away_team'])}</strong><span>AWAY</span></div>
       </div>
-      <div class="md-scoreboard-bottom">Score information is independent of the prediction model.
-      No simulated match events are shown.</div>
+      <div class="md-scoreboard-bottom">Pre-match forecasts are recorded before kickoff.
+      Live score data is currently unavailable.</div>
     </div>'''
 
 
@@ -202,15 +203,16 @@ def forecast_vs_reality_html(
 
 
 def empty_pitch_html() -> str:
+    """Neutral pitch graphic; a decorative field, never simulated tracking."""
     return '''
     <section class="md-panel md-pitch-panel">
-      <div class="md-panel-overline">VISUAL MATCH BOARD</div>
-      <h3>THE PITCH</h3>
+      <div class="md-panel-overline">MATCH EVENT VIEW</div>
+      <h3>The pitch</h3>
       <svg class="md-pitch" viewBox="0 0 600 310" role="img"
-        aria-label="An empty football pitch. Match tracking is not connected.">
+        aria-label="An empty football pitch. MATCH TRACKING UNAVAILABLE. No invented passes, shots, or locations.">
         <defs><pattern id="md-stripes" x="0" y="0" width="120" height="310" patternUnits="userSpaceOnUse">
           <rect width="60" height="310" fill="#11614d"/><rect x="60" width="60" height="310" fill="#0e5745"/></pattern></defs>
-        <rect width="600" height="310" rx="11" fill="url(#md-stripes)"/>
+        <rect width="600" height="310" rx="7" fill="url(#md-stripes)"/>
         <g stroke="#b5e9db" fill="none" stroke-width="2" opacity=".75">
           <rect x="16" y="16" width="568" height="278"/>
           <path d="M300 16V294"/><circle cx="300" cy="155" r="48"/>
@@ -218,12 +220,9 @@ def empty_pitch_html() -> str:
           <rect x="16" y="116" width="37" height="78"/><rect x="547" y="116" width="37" height="78"/>
           <circle cx="300" cy="155" r="3" fill="#b5e9db"/>
         </g>
-        <rect x="147" y="121" rx="7" width="306" height="65" fill="#09201e" opacity=".86"/>
-        <text x="300" y="147" fill="#f3faf8" font-size="16" font-weight="800" text-anchor="middle">MATCH TRACKING UNAVAILABLE</text>
-        <text x="300" y="169" fill="#abc6be" font-size="11" text-anchor="middle">No invented passes, shots or player locations</text>
       </svg>
-      <p class="md-panel-disclaimer">Future event markers will use verified provider coordinates only.
-      Until then, the pitch remains intentionally empty.</p>
+      <p class="md-panel-disclaimer">Event locations are not currently available. The graphic is
+      a pitch illustration, not a live player tracker.</p>
     </section>'''
 
 
