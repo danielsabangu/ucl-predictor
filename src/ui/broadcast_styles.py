@@ -203,6 +203,11 @@ border-bottom:1px solid #223b55;padding:9px 1px}
 .bp-future-badge{display:flex!important;align-items:center!important;justify-content:center!important;
  width:22px!important;height:22px!important;max-width:22px!important;max-height:22px!important;
  min-width:22px!important;min-height:22px!important;overflow:hidden!important}
+/* Lille and Real Betis are external PNG crest overrides; match the
+   monochrome competition listing without altering their underlying assets. */
+.bp-future-badge img.bp-club-crest{
+ filter:grayscale(1) saturate(0) brightness(1.35) contrast(.92)!important;
+}
 .bp-future-badge img,.bp-future-badge svg{display:block!important;width:20px!important;height:20px!important;
  max-width:20px!important;max-height:20px!important;object-fit:contain!important;
  margin:0 auto!important;flex:none!important}
@@ -236,8 +241,6 @@ box-shadow:none!important}.md-panel{border-radius:9px!important;background:#0b1e
 .fixture-choice-card,.vault-filter-card,.evidence-vault-card,.v2-page-shell,.print-stage,.terminal-shell{
 border-radius:10px!important}
 .interaction-title{font-weight:800!important;letter-spacing:-.045em!important}
-/* Theme control is small, not a second navigation row. */
-[data-testid="stAppViewContainer"] .st-key-toggle_ui_theme div.stButton>button{min-height:34px!important}
 @media(max-width:1100px){.block-container{padding-left:1rem!important;padding-right:1rem!important}
 .bp-hero{grid-template-columns:1fr minmax(280px,390px);gap:13px;padding:21px}
 .st-key-bp_dashboard>[data-testid="stVerticalBlock"]>[data-testid="stHorizontalBlock"]{gap:8px!important}
@@ -262,11 +265,119 @@ min-width:calc(50% - 6px)!important;max-width:calc(50% - 6px)!important;flex-bas
 .st-key-bp_dashboard>[data-testid="stVerticalBlock"]>[data-testid="stHorizontalBlock"]>[data-testid="stColumn"]{
 min-width:100%!important;max-width:100%!important;flex-basis:100%!important}
 .st-key-bp_hero_actions div.stButton>button{font-size:10px!important;padding:0 3px!important;height:52px!important;min-height:52px!important}
-.st-key-matchday_top_nav [data-testid="stColumn"]{min-width:0!important;width:17.4%!important;max-width:17.4%!important;flex-basis:17.4%!important}
 .st-key-matchday_top_nav [data-testid="stColumn"]:nth-child(4){display:none!important}
-.st-key-matchday_top_nav [data-testid="stColumn"]:not(:nth-child(4)){min-width:0!important;width:20%!important;max-width:20%!important;flex-basis:20%!important}
+.st-key-matchday_top_nav [data-testid="stColumn"]:not(:nth-child(4)){min-width:0!important;width:25%!important;max-width:25%!important;flex-basis:25%!important}
 .st-key-matchday_top_nav div.stButton>button{font-size:9px!important;letter-spacing:-.025em!important;padding:4px 1px!important}
 .bp-focus-photo{height:114px}}
+/* Mobile scoreboard layout: Streamlit may insert stElementContainer wrappers
+   around st.columns(), so direct-child selectors above do not reliably match.
+   Target ONLY the horizontal block containing all three dashboard panels.
+   Do not change Streamlit's nested fixture buttons or featured tabs. */
+@media (max-width: 820px) {
+  .st-key-bp_dashboard [data-testid="stHorizontalBlock"]:has(.st-key-bp_fixtures):has(.st-key-bp_focus):has(.st-key-bp_sidebar) {
+    display: flex !important;
+    flex-flow: column nowrap !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    gap: 12px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .st-key-bp_dashboard [data-testid="stHorizontalBlock"]:has(.st-key-bp_fixtures):has(.st-key-bp_focus):has(.st-key-bp_sidebar) > [data-testid="stColumn"] {
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+  /* Feature the selected match first on mobile; users need not scroll past
+     nine fixture actions before seeing the pre-match preview. */
+  .st-key-bp_dashboard [data-testid="stHorizontalBlock"]:has(.st-key-bp_fixtures):has(.st-key-bp_focus):has(.st-key-bp_sidebar) > [data-testid="stColumn"]:has(.st-key-bp_focus) {order: 0 !important;}
+  .st-key-bp_dashboard [data-testid="stHorizontalBlock"]:has(.st-key-bp_fixtures):has(.st-key-bp_focus):has(.st-key-bp_sidebar) > [data-testid="stColumn"]:has(.st-key-bp_fixtures) {order: 1 !important;}
+  .st-key-bp_dashboard [data-testid="stHorizontalBlock"]:has(.st-key-bp_fixtures):has(.st-key-bp_focus):has(.st-key-bp_sidebar) > [data-testid="stColumn"]:has(.st-key-bp_sidebar) {order: 2 !important;}
+  .st-key-bp_fixtures, .st-key-bp_focus, .st-key-bp_sidebar {
+    min-height: 0 !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  /* Phone layout: full-width match summary and a complete, readable action.
+     Never squeeze 3 inner columns + the button into half a phone screen. */
+  .st-key-bp_fixtures [class*="st-key-bp_fixture_item_"] [data-testid="stHorizontalBlock"] {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 5px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .st-key-bp_fixtures [class*="st-key-bp_fixture_item_"] [data-testid="stHorizontalBlock"] > [data-testid="stColumn"] {
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+  /* Explicitly reset the desktop minimum for the second Streamlit column. */
+  .st-key-bp_fixtures [class*="st-key-bp_fixture_item_"] [data-testid="stHorizontalBlock"] > [data-testid="stColumn"]:last-child {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+  .st-key-bp_fixtures [class*="st-key-bp_fixture_item_"] div.stButton > button {
+    display: block !important;
+    width: 100% !important;
+    height: 34px !important;
+    min-height: 34px !important;
+    max-height: 34px !important;
+    font-size: 11px !important;
+    white-space: nowrap !important;
+    text-overflow: clip !important;
+    overflow: visible !important;
+    letter-spacing: .025em !important;
+  }
+  /* Time / pair of clubs / model lean have all of the panel's width. */
+  .st-key-bp_fixtures .bp-fixture-row {
+    grid-template-columns: 45px minmax(0,1fr) 58px !important;
+    gap: 9px !important;
+    min-height: 62px !important;
+    padding: 7px 4px !important;
+  }
+  .st-key-bp_fixtures .bp-fixture-clubs {min-width:0 !important; gap:5px !important;}
+  .st-key-bp_fixtures .bp-fixture-clubs > div {min-width:0 !important; gap:7px !important;}
+  .st-key-bp_fixtures .bp-fixture-clubs span {
+    font-size: 12.5px !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+    white-space: normal !important;
+    hyphens: none !important;
+    -webkit-line-clamp: 2 !important;
+  }
+  .st-key-bp_fixtures .bp-fixture-row img {flex:0 0 17px !important;}
+  .st-key-bp_fixtures .bp-fixture-prob {font-size:11px !important;}
+  .bp-focus-score strong, .bp-future-name {
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+    hyphens: none !important;
+  }
+  .bp-focus-score {
+    grid-template-columns: minmax(0, 1fr) 78px minmax(0, 1fr) !important;
+  }
+  .bp-focus-score strong {
+    font-size: clamp(12px, 3.7vw, 15px) !important;
+    line-height: 1.35 !important;
+  }
+  .bp-panel-head h2 {font-size: 14px !important;}
+  .bp-panel-head > span {white-space: nowrap; flex-shrink: 0;}
+  .bp-future-match-meta {width: 100px !important; min-width: 100px !important;}
+  .bp-future-name {font-size: 12px !important;}
+}
+@media (max-width: 390px) {
+  .st-key-bp_fixtures .bp-fixture-row {
+    grid-template-columns: 41px minmax(0,1fr) 53px !important;
+    gap: 6px !important;
+  }
+  .st-key-bp_fixtures .bp-fixture-clubs span {font-size: 12px !important;}
+  .bp-focus-score {grid-template-columns: minmax(0, 1fr) 65px minmax(0, 1fr) !important;}
+}
 /* Loader uses same logo and exact background asset as Home, like one coherent product. */
 .ucl-startup-overlay{background:linear-gradient(0deg,#041222ed 0%,#06162ae0 32%,#05132995 72%),
 var(--bp-stadium-image,none) center center/cover no-repeat,#071329!important}
@@ -319,5 +430,6 @@ BROADCAST_LIGHT_CSS = r"""
 
 
 def apply_broadcast_styles(render_html, theme: str = 'dark') -> None:
-    css = BROADCAST_CSS + (BROADCAST_LIGHT_CSS if theme == 'light' else '')
+    # Nightfall is intentionally dark-only; ignore legacy theme arguments.
+    css = BROADCAST_CSS
     render_html('<style>' + css + '</style>')

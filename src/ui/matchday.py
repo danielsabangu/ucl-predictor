@@ -151,6 +151,11 @@ def scoreboard_html(
     phase = _fixture_status(row, now)
     time_label = _time(row)
     actual_status = score_status if score_class == "connected" else phase
+    score_caption = (
+        "Scores supplied by Realtime Sports API; updates may be delayed."
+        if score_class == "connected"
+        else "Live score data is currently unavailable."
+    )
     return f'''
     <div class="md-scoreboard">
       <div class="md-scoreboard-top"><span>UCL PREDICTOR // MATCH CENTRE</span>
@@ -165,7 +170,7 @@ def scoreboard_html(
           <strong>{_safe(row['away_team'])}</strong><span>AWAY</span></div>
       </div>
       <div class="md-scoreboard-bottom">Pre-match forecasts are recorded before kickoff.
-      Live score data is currently unavailable.</div>
+      {_safe(score_caption)}</div>
     </div>'''
 
 
@@ -185,13 +190,18 @@ def forecast_vs_reality_html(
     a = float(row["away_probability"]) * 100
     current, _, score_class = _score_view(score)
     actual = current if score_class == "connected" else "NOT AVAILABLE"
+    actual_label = (
+        "CURRENT SCORE" if score is not None and score.status in {"LIVE", "HALF_TIME"}
+        else "FINAL SCORE" if score is not None and score.status == "FULL_TIME"
+        else "ACTUAL SCORE"
+    )
     return f'''
     <section class="md-panel md-forecast-panel">
       <div class="md-panel-overline">THE PRE-MATCH RECEIPT</div>
       <h3>FORECAST <span>VS</span> REALITY</h3>
       <div class="md-forecast-row"><span>PRE-MATCH PICK</span><strong>{pick}</strong></div>
       <div class="md-forecast-row"><span>PROJECTED SCORE</span><strong>{_safe(row['predicted_scoreline'])}</strong></div>
-      <div class="md-forecast-row"><span>ACTUAL SCORE</span><strong>{_safe(actual)}</strong></div>
+      <div class="md-forecast-row"><span>{_safe(actual_label)}</span><strong>{_safe(actual)}</strong></div>
       <div class="md-chance-title">ORIGINAL 1X2 PROBABILITIES</div>
       <div class="md-prob-track" role="img" aria-label="Home {h:.1f} percent, Draw {d:.1f} percent, Away {a:.1f} percent">
         <span style="width:{h:.3f}%"></span><span style="width:{d:.3f}%"></span><span style="width:{a:.3f}%"></span>

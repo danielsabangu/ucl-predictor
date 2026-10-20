@@ -1,6 +1,7 @@
 """Pure presentation contracts for the Nightfall design stage."""
 from __future__ import annotations
 
+import ast
 import importlib
 import sys
 from pathlib import Path
@@ -64,12 +65,47 @@ def test_visual_code_does_not_request_live_data():
 
 
 def test_home_has_two_working_primary_actions():
+    """Check the real button callbacks, not a removed inline click handler.
+
+    Navigation now happens in on_click callbacks before Streamlit rerenders.
+    Requiring an old inline assignment would reject the correct implementation.
+    """
     source = (Path(__file__).resolve().parents[1] / "app.py").read_text(encoding="utf-8")
-    assert 'key="nf_home_print"' in source
-    assert 'key="nf_home_live"' in source
-    assert 'st.session_state["selected_fixture_id"] = match_identifier(first_upcoming)' in source
-    assert 'st.session_state["v2_screen"] = "live"' in source
+    tree = ast.parse(source)
+
+    button_callbacks = {}
+    for node in ast.walk(tree):
+        if not isinstance(node, ast.Call):
+            continue
+        if not (isinstance(node.func, ast.Attribute)
+                and isinstance(node.func.value, ast.Name)
+                and node.func.value.id == "st"
+                and node.func.attr == "button"):
+            continue
+        options = {kw.arg: kw.value for kw in node.keywords if kw.arg is not None}
+        key_node = options.get("key")
+        callback_node = options.get("on_click")
+        if (isinstance(key_node, ast.Constant)
+                and isinstance(key_node.value, str)
+                and isinstance(callback_node, ast.Name)):
+            button_callbacks[key_node.value] = callback_node.id
+
+    assert button_callbacks.get("nf_home_print") == "_go_to_printer"
+    assert button_callbacks.get("nf_home_live") == "_go_to_match"
     assert 'home_can_print = FORECASTS_AVAILABLE and not predictions.empty' in source
+
+    callbacks = {
+        node.name: node for node in tree.body
+        if isinstance(node, ast.FunctionDef)
+    }
+    assert "_go_to_printer" in callbacks
+    assert "_go_to_match" in callbacks
+    printer_body = ast.unparse(callbacks["_go_to_printer"])
+    live_body = ast.unparse(callbacks["_go_to_match"])
+    assert "st.session_state['selected_fixture_id'] = fixture_id" in printer_body
+    assert "st.session_state['v2_screen'] = 'printer'" in printer_body
+    assert "st.session_state['v2_screen'] = 'live'" in live_body
+    assert "st.session_state['matchday_selected_id'] = choice_id" in live_body
 
 
 def test_thermal_paper_is_not_restyled():
