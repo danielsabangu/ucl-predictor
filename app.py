@@ -371,7 +371,17 @@ def render_selected_match_score(
         with pitch_col:
             st.markdown("**MATCH EVENT VIEW**")
             st.markdown("#### The pitch")
-            st.image(pitch_svg_bytes(), use_container_width=True)
+            # Streamlit's st.image() sends SVG bytes through Pillow, which
+            # raises UnidentifiedImageError. Render SVG in an isolated browser
+            # component instead, without conversion or fabricated match events.
+            components.html(
+                '<style>'
+                'html,body{margin:0;height:100%;overflow:hidden;background:transparent}'
+                'svg{display:block;width:100%;height:100%}'
+                '</style>' + pitch_svg_bytes().decode("utf-8"),
+                height=300,
+                scrolling=False,
+            )
             st.caption("Illustration only — verified event locations and player tracking are not available.")
         with forecast_col:
             render_html(forecast_vs_reality_html(
