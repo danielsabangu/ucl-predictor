@@ -1,14 +1,14 @@
 {
-  "all_prematch_revision_count": 33,
-  "correct_result_picks": 12,
+  "all_prematch_revision_count": 60,
+  "correct_result_picks": 18,
   "evaluation_schema_version": 1,
   "exact_score_accuracy": 0.0,
-  "exact_score_eligible": 24,
+  "exact_score_eligible": 33,
   "exact_scores_correct": 0,
   "headline_population": "LATEST_PREMATCH_REVISION_PER_FIXTURE",
-  "mean_actual_result_probability": 0.41388676054364665,
-  "mean_log_loss": 0.9604939020350564,
-  "mean_multiclass_brier": 0.5734071176314149,
+  "mean_actual_result_probability": 0.4188567226199138,
+  "mean_log_loss": 0.9497444197323998,
+  "mean_multiclass_brier": 0.5638878189181538,
   "metric_definitions": {
     "exact_score_accuracy": "Predicted regulation/final scoreline exactly equals the stored final scoreline.",
     "log_loss": "Negative natural logarithm of the probability assigned to the actual H/D/A result. Lower is better.",
@@ -21,21 +21,21 @@
   "performance_by_actual_result": {
     "A": {
       "accuracy": 0.5,
-      "correct_picks": 4,
-      "sample_size": 8
+      "correct_picks": 5,
+      "sample_size": 10
     },
     "D": {
       "accuracy": 0.0,
       "correct_picks": 0,
-      "sample_size": 3
+      "sample_size": 5
     },
     "H": {
-      "accuracy": 0.6153846153846154,
-      "correct_picks": 8,
-      "sample_size": 13
+      "accuracy": 0.7222222222222222,
+      "correct_picks": 13,
+      "sample_size": 18
     }
   },
-  "resolved_fixture_count": 24,
-  "result_pick_accuracy": 0.5,
-  "sample_warning": "INSUFFICIENT_SAMPLE_FOR_RELIABLE_PERFORMANCE_CLAIMS"
+  "resolved_fixture_count": 33,
+  "result_pick_accuracy": 0.5454545454545454,
+  "sample_warning": null
 }
