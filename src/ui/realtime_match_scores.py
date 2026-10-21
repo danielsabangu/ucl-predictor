@@ -200,3 +200,44 @@ def match_fixture_score(
         if score is not None:
             matches.append(score)
     return matches[0] if len(matches) == 1 else None
+
+
+def match_fixture_event_id(
+    fixture: Mapping[str, Any],
+    events: Sequence[Mapping[str, Any]],
+    *,
+    kickoff_tolerance_minutes: int = 45,
+) -> str | None:
+    """Select only one exact home/away/kickoff event with a safe provider ID.
+
+    Unknown or ambiguous identities are rejected, not guessed.
+    """
+    try:
+        home_name = _canonical_team(fixture["home_team"])
+        away_name = _canonical_team(fixture["away_team"])
+        kickoff = _utc(fixture["kickoff_utc"])
+    except (KeyError, ValueError, TypeError, OverflowError):
+        return None
+    ids: list[str] = []
+    if not home_name or not away_name:
+        return None
+    for event in events:
+        if not isinstance(event, Mapping):
+            continue
+        home, away = event.get("homeTeam"), event.get("awayTeam")
+        if not isinstance(home, Mapping) or not isinstance(away, Mapping):
+            continue
+        if _canonical_team(home.get("name")) != home_name:
+            continue
+        if _canonical_team(away.get("name")) != away_name:
+            continue
+        try:
+            event_time = _utc(event.get("date"))
+        except (ValueError, TypeError, OverflowError):
+            continue
+        if abs((event_time - kickoff).total_seconds()) > kickoff_tolerance_minutes * 60:
+            continue
+        event_id = str(event.get("id") or "")
+        if re.fullmatch(r"[A-Za-z0-9_-]{1,80}", event_id):
+            ids.append(event_id)
+    return ids[0] if len(ids) == 1 else None
