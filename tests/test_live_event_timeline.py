@@ -88,7 +88,9 @@ def test_empty_and_disabled_states_are_honest():
 
 def test_selected_fixture_uses_tested_adapter_and_cache_only_when_authorized():
     app = APP.read_text(encoding="utf-8")
-    assert "if _live_event_display_allowed():" in app
+    assert "public_allowed = _live_event_display_allowed()" in app
+    assert "local_preview = _live_event_local_preview_allowed()" in app
+    assert "if public_allowed or local_preview:" in app
     assert "match_fixture_event_id(centre_row.to_dict(), provider_events)" in app
     assert "_cached_live_plays(key, event_id)" in app
     assert "fetch_match_plays(api_key, event_id, limit=50)" in app
