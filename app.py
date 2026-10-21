@@ -332,6 +332,20 @@ def _live_event_display_allowed() -> bool:
     return enabled("LIVE_EVENT_TIMELINE_ENABLED") and enabled("LIVE_EVENT_DISPLAY_AUTHORIZED")
 
 
+def _live_event_local_preview_allowed() -> bool:
+    """Opt-in local creator preview; never enabled for public snapshots.
+
+    Preview is for development while public redistribution rights are pending.
+    Do not expose a local preview instance to outside visitors.
+    """
+    return (
+        CREATOR_MODE
+        and APP_SOURCE.mode == "LOCAL"
+        and not APP_SOURCE.is_public_snapshot
+        and os.environ.get("UCL_LOCAL_EVENT_PREVIEW") == "1"
+    )
+
+
 @st.cache_data(ttl=600, show_spinner=False)
 def _cached_live_plays(api_key: str, event_id: str) -> tuple[list[dict], bool]:
     try:
@@ -413,9 +427,17 @@ def render_selected_match_score(
                 centre_row, forecasts_available=True, score=match_score,
             ))
 
-    # Never request or publicly display detailed provider data by default.
+    # Public data requires explicit authorization. Local development is
+    # independently opt-in and never runs against a public snapshot.
     state, moments = "disabled", []
-    if _live_event_display_allowed():
+    public_allowed = _live_event_display_allowed()
+    local_preview = _live_event_local_preview_allowed()
+    if local_preview and not public_allowed:
+        st.caption(
+            "LOCAL CREATOR PREVIEW — match events are for private testing only. "
+            "Public event display remains disabled pending provider permission."
+        )
+    if public_allowed or local_preview:
         state = "unavailable"
         kickoff = pd.Timestamp(centre_row["kickoff_utc"])
         now = pd.Timestamp.now(tz="UTC")
