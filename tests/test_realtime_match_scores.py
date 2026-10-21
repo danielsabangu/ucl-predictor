@@ -42,6 +42,51 @@ def test_expected_club_normalization_is_explicit():
     assert _canonical_team('Bodø/Glimt') == _canonical_team('Bodo/Glimt')
 
 
+
+def test_explicit_matchday_aliases_cover_provider_variants():
+    pairs = [
+        ('Como 1907', 'Como'),
+        ('Lille', 'Lille OSC'),
+        ('Galatasaray', 'Galatasaray Istanbul'),
+        ('Inter Milan', 'Inter'),
+        ('Shakhtar Donetsk', 'FC Shakhtar Donetsk'),
+        ('Sporting CP', 'Sporting Lisbon'),
+        ('LASK Linz', 'LASK'),
+        ('Real Betis Balompié', 'Real Betis'),
+        ('Club Brugge', 'Club Brugge KV'),
+        ('Lens', 'Racing Club de Lens'),
+        ('Bayern Munich', 'FC Bayern München'),
+    ]
+    for predicted, provider in pairs:
+        assert _canonical_team(predicted) == _canonical_team(provider)
+
+
+def test_known_team_alias_does_not_bypass_kickoff_or_home_away():
+    fixture = {
+        'home_team': 'Como 1907', 'away_team': 'Manchester United',
+        'kickoff_utc': datetime(2026, 10, 21, 16, 45, tzinfo=timezone.utc),
+    }
+    result = event(home_name='Como', away_name='Manchester United',
+                   kickoff='2026-10-21T16:45:00Z')
+    assert match_fixture_score(fixture, [result]) == ProviderScore(1, 0, 'LIVE', 54)
+    assert match_fixture_score(fixture, [
+        event(home_name='Manchester United', away_name='Como',
+              kickoff='2026-10-21T16:45:00Z')
+    ]) is None
+    assert match_fixture_score(fixture, [event(
+        home_name='Como', away_name='Manchester United',
+        kickoff='2026-10-22T16:45:00Z')]) is None
+
+
+def test_pitch_is_always_renderable_as_svg_without_tracking():
+    from src.ui.matchday import pitch_svg_bytes
+    markup = pitch_svg_bytes()
+    assert markup.startswith(b'<svg')
+    assert b'viewBox="0 0 600 310"' in markup
+    assert b'<rect' in markup and b'</svg>' in markup
+    assert b'player-position' not in markup
+
+
 def test_verified_live_score_and_minute():
     assert match_fixture_score(FIXTURE, [event()]) == ProviderScore(1, 0, 'LIVE', 54)
 

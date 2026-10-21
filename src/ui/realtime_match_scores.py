@@ -75,6 +75,33 @@ def _canonical_team(value: object) -> str:
         "paris sg": "paris saint germain", "psg": "paris saint germain",
         "vfb stuttgart": "vfb stuttgart", "stuttgart": "vfb stuttgart",
         "atletico de madrid": "atletico madrid",
+        # Verified club-name variants used by official scoreboards.
+        # Keep aliases explicit: no fuzzy team guesses or reversed fixtures.
+        "como": "como 1907",
+        "lille osc": "lille",
+        "galatasaray istanbul": "galatasaray",
+        "aston villa fc": "aston villa",
+        "club brugge kv": "club brugge",
+        "rc lens": "lens",
+        "racing club de lens": "lens",
+        "inter": "inter milan",
+        "internazionale": "inter milan",
+        "fc internazionale milano": "inter milan",
+        "fc shakhtar donetsk": "shakhtar donetsk",
+        "bayern munchen": "bayern munich",
+        "fc bayern munchen": "bayern munich",
+        "fc bayern munich": "bayern munich",
+        "real betis balompie": "real betis",
+        "feyenoord rotterdam": "feyenoord",
+        "sporting lisbon": "sporting cp",
+        "lask": "lask linz",
+        "manchester united fc": "manchester united",
+        "liverpool fc": "liverpool",
+        "villarreal cf": "villarreal",
+        "fc barcelona": "barcelona",
+        "ssc napoli": "napoli",
+        "sabah masazir": "sabah fk",
+        "psv eindhoven": "psv",
     }
     return aliases.get(name, name)
 
