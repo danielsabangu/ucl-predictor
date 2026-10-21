@@ -96,3 +96,32 @@ def test_selected_fixture_uses_tested_adapter_and_cache_only_when_authorized():
     assert "fetch_match_plays(api_key, event_id, limit=50)" in app
     assert "render_html(event_timeline_html(moments, state=state))" in app
     assert "@st.cache_data(ttl=600, show_spinner=False)" in app
+
+
+def test_private_preview_only_runs_locally():
+    tree = ast.parse(APP.read_text(encoding="utf-8"))
+    node = next(
+        item for item in tree.body
+        if isinstance(item, ast.FunctionDef)
+        and item.name == "_live_event_local_preview_allowed"
+    )
+    compiled = compile(ast.Module(body=[node], type_ignores=[]), str(APP), "exec")
+
+    def check(creator, mode, public_snapshot, preview):
+        scope = {
+            "CREATOR_MODE": creator,
+            "APP_SOURCE": SimpleNamespace(
+                mode=mode, is_public_snapshot=public_snapshot,
+            ),
+            "os": SimpleNamespace(
+                environ={"UCL_LOCAL_EVENT_PREVIEW": preview},
+            ),
+        }
+        exec(compiled, scope)
+        return scope["_live_event_local_preview_allowed"]()
+
+    assert check(True, "LOCAL", False, "1") is True
+    assert check(True, "LOCAL", False, "0") is False
+    assert check(False, "LOCAL", False, "1") is False
+    assert check(True, "PUBLIC", True, "1") is False
+    assert check(True, "LOCAL", True, "1") is False
