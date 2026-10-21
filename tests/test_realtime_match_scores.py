@@ -87,6 +87,15 @@ def test_pitch_is_always_renderable_as_svg_without_tracking():
     assert b'player-position' not in markup
 
 
+
+def test_streamlit_presents_pitch_as_svg_html_not_pillow_image():
+    source = (ROOT / 'app.py').read_text(encoding='utf-8')
+    assert 'pitch_svg_bytes().decode("utf-8")' in source
+    assert 'components.html(' in source
+    assert 'st.image(pitch_svg_bytes()' not in source
+
+
+
 def test_verified_live_score_and_minute():
     assert match_fixture_score(FIXTURE, [event()]) == ProviderScore(1, 0, 'LIVE', 54)
 
