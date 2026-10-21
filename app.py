@@ -73,6 +73,7 @@ from src.ui.matchday import (
     scoreboard_html,
     forecast_vs_reality_html,
     empty_pitch_html,
+    pitch_svg_bytes,
     feed_notice_html,
 )
 
@@ -335,11 +336,14 @@ def render_selected_match_score(
     match_score = None
     connected = False
     key = _realtime_api_key()
+    reason = "not_configured" if not key else "outside_fetch_window" if not allow_fetch else "request_failed"
     if key and allow_fetch:
         events, connected = _cached_realtime_scoreboard(key)
         if connected:
+            reason = "no_matching_verified_result"
             native = match_fixture_score(centre_row, events)
             if native is not None:
+                reason = "connected"
                 match_score = MatchScore(
                     home_goals=native.home_goals,
                     away_goals=native.away_goals,
@@ -355,15 +359,20 @@ def render_selected_match_score(
             "Pre-match forecasts are frozen."
         )
     else:
-        st.caption(
-            "A verified score for this fixture is not available in the custom "
-            "Match Centre right now. The independent scoreboard below may "
-            "have more recent information."
-        )
+        messages = {
+            "not_configured": "Native score feed not configured on this server. The embedded scoreboard works independently.",
+            "outside_fetch_window": "The native score feed checks around matchday kickoff; no verified native score was requested yet.",
+            "request_failed": "The native score provider could not be reached or rejected this request. The embedded scoreboard is independent.",
+            "no_matching_verified_result": "The provider returned data, but there was no unambiguous verified score for this selected fixture.",
+        }
+        st.caption(messages.get(reason, "Verified native score unavailable."))
     with st.container(key="md_native_score_details"):
         pitch_col, forecast_col = st.columns([1.1, 1], gap="medium")
         with pitch_col:
-            render_html(empty_pitch_html())
+            st.markdown("**MATCH EVENT VIEW**")
+            st.markdown("#### The pitch")
+            st.image(pitch_svg_bytes(), use_container_width=True)
+            st.caption("Illustration only — verified event locations and player tracking are not available.")
         with forecast_col:
             render_html(forecast_vs_reality_html(
                 centre_row, forecasts_available=True, score=match_score,
