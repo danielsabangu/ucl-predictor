@@ -11,6 +11,8 @@ import streamlit.components.v1 as components
 from src.ui.realtime_match_scores import (
     fetch_champions_league_events, match_fixture_score,
 )
+from src.ui.realtime_match_events import fetch_match_plays, match_fixture_event_id
+from src.ui.live_event_view import event_timeline_html, parse_match_moments
 
 from src.production.app_health import (
     evaluate_app_health,
@@ -317,6 +319,27 @@ def _cached_realtime_scoreboard(api_key: str) -> tuple[list[dict], bool]:
         return [], False
 
 
+def _live_event_display_allowed() -> bool:
+    """Detailed events require explicit enablement and provider display permission."""
+    def enabled(name: str) -> bool:
+        value = os.environ.get(name)
+        if value is None:
+            try:
+                value = st.secrets.get(name)
+            except Exception:
+                value = None
+        return str(value or "").strip().lower() in {"1", "true", "yes"}
+    return enabled("LIVE_EVENT_TIMELINE_ENABLED") and enabled("LIVE_EVENT_DISPLAY_AUTHORIZED")
+
+
+@st.cache_data(ttl=600, show_spinner=False)
+def _cached_live_plays(api_key: str, event_id: str) -> tuple[list[dict], bool]:
+    try:
+        return fetch_match_plays(api_key, event_id, limit=50), True
+    except Exception:
+        return [], False
+
+
 def _matchday_near_kickoff(frame: pd.DataFrame) -> bool:
     """Request the paid-key endpoint only around real matchday play."""
     if frame.empty:
@@ -335,11 +358,13 @@ def render_selected_match_score(
     """Independently refresh only native scores; frozen picks stay unchanged."""
     match_score = None
     connected = False
+    provider_events = []
     key = _realtime_api_key()
     reason = "not_configured" if not key else "outside_fetch_window" if not allow_fetch else "request_failed"
     if key and allow_fetch:
         events, connected = _cached_realtime_scoreboard(key)
         if connected:
+            provider_events = events
             reason = "no_matching_verified_result"
             native = match_fixture_score(centre_row, events)
             if native is not None:
@@ -387,6 +412,29 @@ def render_selected_match_score(
             render_html(forecast_vs_reality_html(
                 centre_row, forecasts_available=True, score=match_score,
             ))
+
+    # Never request or publicly display detailed provider data by default.
+    state, moments = "disabled", []
+    if _live_event_display_allowed():
+        state = "unavailable"
+        kickoff = pd.Timestamp(centre_row["kickoff_utc"])
+        now = pd.Timestamp.now(tz="UTC")
+        if now < kickoff:
+            state = "before_kickoff"
+        elif not allow_fetch or now > kickoff + pd.Timedelta(hours=5):
+            state = "unavailable"
+        elif not key:
+            state = "not_configured"
+        elif not connected:
+            state = "request_failed"
+        else:
+            event_id = match_fixture_event_id(centre_row.to_dict(), provider_events)
+            if event_id:
+                raw_plays, ok = _cached_live_plays(key, event_id)
+                state = "no_data" if ok else "request_failed"
+                if ok:
+                    moments = parse_match_moments(raw_plays)
+    render_html(event_timeline_html(moments, state=state))
 
 
 # ============================================================
