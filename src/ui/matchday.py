@@ -236,6 +236,20 @@ def empty_pitch_html() -> str:
     </section>'''
 
 
+
+def pitch_svg_bytes() -> bytes:
+    """Return the decorative pitch as an SVG image for reliable Streamlit rendering.
+
+    This is NOT event or player tracking. No fabricated coordinates are added.
+    """
+    markup = empty_pitch_html()
+    start = markup.find("<svg ")
+    end = markup.find("</svg>", start)
+    if start < 0 or end < 0:
+        raise ValueError("Pitch illustration SVG is missing")
+    return markup[start:end + len("</svg>")].encode("utf-8")
+
+
 def feed_notice_html() -> str:
     return '''<div class="md-feed-notice"><span class="md-feed-dot"></span>
       <div><strong>LIVE FEED NOT CONNECTED</strong><div>This is a custom matchday interface, not a real-time scores service yet.
